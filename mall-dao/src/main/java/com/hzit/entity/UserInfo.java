@@ -122,7 +122,7 @@ public class UserInfo {
         return "UserInfo{" +
                 "userId=" + userId +
                 ", loginName='" + loginName + '\'' +
-                ", loginPwdl='" + loginPwd + '\'' +
+                ", loginPwd='" + loginPwd + '\'' +
                 ", pwdQuestion='" + pwdQuestion + '\'' +
                 ", pwdAnswer='" + pwdAnswer + '\'' +
                 ", userSex='" + userSex + '\'' +
