@@ -10,7 +10,7 @@ package com.hzit.entity;
 public class UserInfo {
     private int userId;
     private String loginName;//登陆名
-    private String loginPwdl;//登陆密码
+    private String loginPwd;//登陆密码
     private String pwdQuestion;//找回密码验证问题
     private String pwdAnswer;//找回密码验证答案
     private String userSex;
@@ -37,12 +37,12 @@ public class UserInfo {
         this.loginName = loginName;
     }
 
-    public String getLoginPwdl() {
-        return loginPwdl;
+    public String getLoginPwd() {
+        return loginPwd;
     }
 
-    public void setLoginPwdl(String loginPwdl) {
-        this.loginPwdl = loginPwdl;
+    public void setLoginPwd(String loginPwdl) {
+        this.loginPwd = loginPwdl;
     }
 
     public String getPwdQuestion() {
@@ -122,7 +122,7 @@ public class UserInfo {
         return "UserInfo{" +
                 "userId=" + userId +
                 ", loginName='" + loginName + '\'' +
-                ", loginPwdl='" + loginPwdl + '\'' +
+                ", loginPwdl='" + loginPwd + '\'' +
                 ", pwdQuestion='" + pwdQuestion + '\'' +
                 ", pwdAnswer='" + pwdAnswer + '\'' +
                 ", userSex='" + userSex + '\'' +
