@@ -21,6 +21,17 @@ public class UserInfo {
     private String storeName;//店铺名称
     private String userEmail;
     private int roleId;
+    private int userStateId;
+
+    public int getUserStateId() {
+        return userStateId;
+    }
+
+    public void setUserStateId(int userStateId) {
+        this.userStateId = userStateId;
+    }
+
+
 
     public int getUserId() {
         return userId;

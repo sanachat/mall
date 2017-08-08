@@ -13,22 +13,15 @@ package com.hzit.entity;
  */
 public class UserState {
     private int userStateId;//状态id,主键自增
-    private int userId;//用户id，外键
-    private int userState;//1:正常/0:屏蔽
 
-    public int getUserId() {
-        return userId;
-    }
+    private String userState;//正常/屏蔽
 
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
 
-    public int getUserState() {
+    public String getUserState() {
         return userState;
     }
 
-    public void setUserState(int userState) {
+    public void setUserState(String userState) {
         this.userState = userState;
     }
 
@@ -44,8 +37,7 @@ public class UserState {
     public String toString() {
         return "UserState{" +
                 "userStateId=" + userStateId +
-                ", userId=" + userId +
-                ", userState=" + userState +
+                ",  userState=" + userState +
                 '}';
     }
 }
