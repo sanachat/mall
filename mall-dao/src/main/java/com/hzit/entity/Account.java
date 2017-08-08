@@ -20,13 +20,13 @@ public class Account {
 
     private double payMoney;
 
-    private Date payDate;
+    private String payDate;
 
     private int orderId;
 
     private double saveMoney;
 
-    private Date SaveDate;
+    private String SaveDate;
 
     public int getAccountId() {
         return accountId;
@@ -52,11 +52,11 @@ public class Account {
         this.payMoney = payMoney;
     }
 
-    public Date getPayDate() {
+    public String getPayDate() {
         return payDate;
     }
 
-    public void setPayDate(Date payDate) {
+    public void setPayDate(String payDate) {
         this.payDate = payDate;
     }
 
@@ -76,11 +76,11 @@ public class Account {
         this.saveMoney = saveMoney;
     }
 
-    public Date getSaveDate() {
+    public String getSaveDate() {
         return SaveDate;
     }
 
-    public void setSaveDate(Date saveDate) {
+    public void setSaveDate(String saveDate) {
         SaveDate = saveDate;
     }
 }
