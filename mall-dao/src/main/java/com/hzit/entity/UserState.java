@@ -14,14 +14,14 @@ package com.hzit.entity;
 public class UserState {
     private int userStateId;//状态id,主键自增
 
-    private int userState;//正常/屏蔽
+    private String userState;//正常/屏蔽
 
 
-    public int getUserState() {
+    public String getUserState() {
         return userState;
     }
 
-    public void setUserState(int userState) {
+    public void setUserState(String userState) {
         this.userState = userState;
     }
 
