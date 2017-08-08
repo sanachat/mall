@@ -22,6 +22,17 @@ public class GamegoodInfo {
     private int gameGoodCount;//游戏商品上架数量
     private String describe;
     private String sellerName;//卖家店铺名称
+    private double unitPrice;//商品单价
+
+    public double getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(double unitPrice) {
+        this.unitPrice = unitPrice;
+    }
+
+
 
     public int getGameGoodId() {
         return gameGoodId;
