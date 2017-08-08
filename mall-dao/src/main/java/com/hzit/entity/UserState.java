@@ -12,8 +12,8 @@ package com.hzit.entity;
  * +---------------------------------Oooo---------------------------------------+
  */
 public class UserState {
-    private int userStateId;
-    private int userId;
+    private int userStateId;//状态id,主键自增
+    private int userId;//用户id，外键
     private int userState;//1:正常/0:屏蔽
 
     public int getUserId() {
