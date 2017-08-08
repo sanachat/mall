@@ -4,7 +4,7 @@ package com.hzit.entity;
  * +-------oOOo-----( _ )-----oOOo--------------------------------------------+
  * |　@author 谢文强　　　　　　                                                                 　|
  * |　@create 2017年08月08日 - 10:13
- * |  @description
+ * |  @description 用户实体类
  * +---------------------------------Oooo---------------------------------------+
  */
 public class UserInfo {
@@ -20,6 +20,7 @@ public class UserInfo {
     private String idCard;
     private String storeName;//店铺名称
     private String userEmail;
+    private int roleId;
 
     public int getUserId() {
         return userId;
@@ -41,8 +42,8 @@ public class UserInfo {
         return loginPwd;
     }
 
-    public void setLoginPwd(String loginPwdl) {
-        this.loginPwd = loginPwdl;
+    public void setLoginPwd(String loginPwd) {
+        this.loginPwd = loginPwd;
     }
 
     public String getPwdQuestion() {
@@ -117,6 +118,14 @@ public class UserInfo {
         this.userEmail = userEmail;
     }
 
+    public int getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(int roleId) {
+        this.roleId = roleId;
+    }
+
     @Override
     public String toString() {
         return "UserInfo{" +
@@ -132,6 +141,7 @@ public class UserInfo {
                 ", idCard='" + idCard + '\'' +
                 ", storeName='" + storeName + '\'' +
                 ", userEmail='" + userEmail + '\'' +
+                ", roleId=" + roleId +
                 '}';
     }
 }
