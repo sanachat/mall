@@ -12,40 +12,40 @@ package com.hzit.entity;
  * +---------------------------------Oooo---------------------------------------+
  */
 public class UserState {
-    private int UserStateId;
-    private int UserId;
-    private int UserState;//1:正常/0:屏蔽
+    private int userStateId;
+    private int userId;
+    private int userState;//1:正常/0:屏蔽
 
     public int getUserId() {
-        return UserId;
+        return userId;
     }
 
     public void setUserId(int userId) {
-        UserId = userId;
+        this.userId = userId;
     }
 
     public int getUserState() {
-        return UserState;
+        return userState;
     }
 
     public void setUserState(int userState) {
-        UserState = userState;
+        this.userState = userState;
     }
 
     public int getUserStateId() {
-        return UserStateId;
+        return userStateId;
     }
 
     public void setUserStateId(int userStateId) {
-        UserStateId = userStateId;
+        this.userStateId = userStateId;
     }
 
     @Override
     public String toString() {
         return "UserState{" +
-                "UserStateId=" + UserStateId +
-                ", UserId=" + UserId +
-                ", UserState=" + UserState +
+                "userStateId=" + userStateId +
+                ", userId=" + userId +
+                ", userState=" + userState +
                 '}';
     }
 }
