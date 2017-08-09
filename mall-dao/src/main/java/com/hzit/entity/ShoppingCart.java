@@ -18,6 +18,15 @@ public class ShoppingCart
     private double price;
     private int gameGoodId;
     private int count;
+    private GamegoodInfo gamegoodInfo;
+
+    public GamegoodInfo getGamegoodInfo() {
+        return gamegoodInfo;
+    }
+
+    public void setGamegoodInfo(GamegoodInfo gamegoodInfo) {
+        this.gamegoodInfo = gamegoodInfo;
+    }
 
     public int getShopId() {
         return shopId;
@@ -57,5 +66,17 @@ public class ShoppingCart
 
     public void setGameGoodId(int gameGoodId) {
         this.gameGoodId = gameGoodId;
+    }
+
+    @Override
+    public String toString() {
+        return "ShoppingCart{" +
+                "shopId=" + shopId +
+                ", userId=" + userId +
+                ", price=" + price +
+                ", gameGoodId=" + gameGoodId +
+                ", count=" + count +
+                ", gamegoodInfo=" + gamegoodInfo +
+                '}';
     }
 }
