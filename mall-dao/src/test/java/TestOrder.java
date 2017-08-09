@@ -1,5 +1,6 @@
 import com.hzit.dao.OrderDao;
 import com.hzit.dao.SqlSessionHelper;
+import com.hzit.entity.GamegoodOrder;
 import com.hzit.entity.Order;
 import org.apache.ibatis.session.SqlSession;
 
@@ -33,11 +34,11 @@ public class TestOrder {
         session.commit();
         System.out.println("增加成功，受到影响的行数是："+num);*/
 
-
+/*
         List<Order> list=dao.selectall();
         for(Object ob:list){
            System.out.println(ob);
-         }//查询所有订单
+         }//查询所有订单*/
 
         /*List<Order> list=dao.selectbyid(5);
         System.out.println(list);//根据订单号查询订单*/
@@ -54,6 +55,11 @@ public class TestOrder {
        /* num=dao.delete(4);
         session.commit();
         System.out.println("删除成功，受到影响的行数是："+num);//通过传入订单号删除订单*/
+        List<Order> ggo=dao.selectgame(1);
+        for(Object ob:ggo){
+            System.out.println(ob);
+        }
+
 
     }
 }

@@ -67,6 +67,7 @@ public class Order {
                 ", userId=" + userId +
                 ", date='" + date + '\'' +
                 ", price=" + price +
+                ", gamegoodinfo=" + gamegoodinfo +
                 '}';
     }
 }
