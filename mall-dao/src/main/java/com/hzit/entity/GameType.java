@@ -13,7 +13,7 @@ package com.hzit.entity;
  */
 public class GameType {
     private int gameTypeId;
-    private String gameTypeName;
+    private String gameGoodType;
 
     public int getGameTypeId() {
         return gameTypeId;
@@ -23,19 +23,19 @@ public class GameType {
         this.gameTypeId = gameTypeId;
     }
 
-    public String getGameTypeName() {
-        return gameTypeName;
+    public String getGameGoodType() {
+        return gameGoodType;
     }
 
     public void setGameTypeName(String gameTypeName) {
-        this.gameTypeName = gameTypeName;
+        this.gameGoodType = gameGoodType;
     }
 
     @Override
     public String toString() {
         return "GameType{" +
                 "gameTypeId=" + gameTypeId +
-                ", gameTypeName='" + gameTypeName + '\'' +
+                ", gameTypeName='" + gameGoodType + '\'' +
                 '}';
     }
 }
