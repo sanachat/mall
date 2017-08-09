@@ -26,4 +26,21 @@
         delete from gamegoodinfo where gamegoodid = #{gamegoodid}
     </delete>
 
+
+    <resultMap type="GamegoodInfo" id="gamegoodinfoMap">
+        <id property="gamegoodid" column="gamegoodid" />
+        <result property="gamegoodname" column="gamegoodname" />
+        <result property="gameid" column="gameid" />
+    </resultMap>
+
+    <resultMap type="GamegoodInfo" id="gamegoodinfoOrderMap" extends="gamegoodinfoMap">
+        <collection property="order" ofType="Order">
+            <id property="Orderid" column="Orderid" />
+            <result property="date" column="date" />
+            <result property="price" column="price" />
+        </collection>
+    </resultMap>
+
+
+
 </mapper>

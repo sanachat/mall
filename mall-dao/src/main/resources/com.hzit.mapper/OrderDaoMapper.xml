@@ -17,26 +17,25 @@
         SELECT * FROM `order` WHERE OrderId=#{orderId}
     </select>
 
-    <!--<select id="OrdergoodMap"  resultMap="OrdergoodMap">
-        select Order.*,Gamegood.gamegoodname,Gamegood.gameId,gamegoodorder.OrderId,Gamegoodorder.GameGoodid from Order,Gamegood,gamegoodorder where gamegoodorder.OrderId=Order.OrderId AND gamegoodorder.GameGoodid=gamegood.GameGoodid
-    </select>
-    <resultMap type="Order" id="OrdergoodMap">
-        <id property="OrderId" column="OrderId"/>
-        <result property="UserId" column="UserId"/>
-        <result property="Date" column="Date"/>
-        <result property="Price" column="Price"/>
-        <association property="Gamegoodorder" javaType="Gamegoodorder">
-            <id property="OrderId" column="OrdertId"/>
-            <result property="GameGoodid" column="GameGoodid"/>
-        </association>
-        <collection property="GamegoodInfo" javaType="com.hzit.entity.GamegoodInfo">
-            <id property="GameGoodid" column="GameGoodid"/>
-            <result property="GameGoodname" column="GameGoodname"/>
-            <result property="gameid" column="gameid"/>
+    <resultMap type="Order" id="orderMap">
+        <id property="orderId" column="orderId" />
+        <result property="userId" column="userId" />
+        <result property="date" column="date" />
+        <result property="price" column="price" />
+    </resultMap>
+
+    <resultMap type="Order" id="OrdergamegoodinfoMap" extends="orderMap">
+        <collection property="gamegoodinfo" ofType="Gamegoodinfo">
+            <id property="gameGoodId" column="gameGoodId" />
+            <result property="gameGoodName" column="gameGoodName" />
+            <result property="gameId" column="gameId" />
         </collection>
     </resultMap>
--->
+    <select id="selectbyorderid"  parameterType="int" resultMap="OrdergamegoodinfoMap">
+    select o.orderId,o.userId,g.gamegoodid,g.gamegoodname from  `order` o left join gamegoodorder ggo on  o.orderid=ggo.oid
+    Left join  gamegood g on ggo.gid=g.gamegoodid where orderId=#{orderId}
 
+    </select>
 </mapper>
 
 
