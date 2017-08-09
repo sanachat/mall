@@ -34,10 +34,10 @@ public class TestOrder {
         System.out.println("增加成功，受到影响的行数是："+num);*/
 
 
-       /* List<Order> list=dao.selectall();
+        List<Order> list=dao.selectall();
         for(Object ob:list){
            System.out.println(ob);
-         }//查询所有订单*/
+         }//查询所有订单
 
         /*List<Order> list=dao.selectbyid(5);
         System.out.println(list);//根据订单号查询订单*/
@@ -51,9 +51,9 @@ public class TestOrder {
         session.commit();
         System.out.println("修改成功，受到影响的行数是："+num);//传入订单实体更新对应订单*/
 
-        num=dao.delete(4);
+       /* num=dao.delete(4);
         session.commit();
-        System.out.println("删除成功，受到影响的行数是："+num);//通过传入订单号删除订单
+        System.out.println("删除成功，受到影响的行数是："+num);//通过传入订单号删除订单*/
 
     }
 }

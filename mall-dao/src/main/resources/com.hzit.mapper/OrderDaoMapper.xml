@@ -16,12 +16,11 @@
     <select id="selectbyid" parameterType="int" resultType="Order">
         SELECT * FROM `order` WHERE OrderId=#{orderId}
     </select>
-</mapper>
+
     <!--<select id="OrdergoodMap"  resultMap="OrdergoodMap">
         select Order.*,Gamegood.gamegoodname,Gamegood.gameId,gamegoodorder.OrderId,Gamegoodorder.GameGoodid from Order,Gamegood,gamegoodorder where gamegoodorder.OrderId=Order.OrderId AND gamegoodorder.GameGoodid=gamegood.GameGoodid
-    </select>-->
-
-   <!-- <resultMap type="Order" id="OrdergoodMap">
+    </select>
+    <resultMap type="Order" id="OrdergoodMap">
         <id property="OrderId" column="OrderId"/>
         <result property="UserId" column="UserId"/>
         <result property="Date" column="Date"/>
@@ -35,5 +34,9 @@
             <result property="GameGoodname" column="GameGoodname"/>
             <result property="gameid" column="gameid"/>
         </collection>
-    </resultMap>-->
+    </resultMap>
+-->
+
+</mapper>
+
 
