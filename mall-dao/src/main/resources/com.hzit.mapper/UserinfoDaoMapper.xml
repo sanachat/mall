@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.hzit.dao.UserinfoDao">
+<mapper namespace="com.hzit.dao.UserInfoDao">
     <insert id="insertUser" parameterType="UserInfo">
-        INSERT INTO userinfo VALUES(#{UserId},#{LoginName},#{LoginPwd},#{PwdQuestion},#{PwdAnswer},#{UserSex},#{UserName},#{Tel},#{Address},#{IdCard},#{StoreName},#{UserEmail},#{RoleId},#{UserStateId})
+        INSERT INTO userinfo VALUES(null,#{LoginName},#{LoginPwd},#{PwdQuestion},#{PwdAnswer},#{UserSex},#{UserName},#{Tel},#{Address},#{IdCard},#{StoreName},#{UserEmail},2,1)
     </insert>
     <update id="updateUser" parameterType="UserInfo">
         UPDATE userinfo SET LoginPwd=#{LoginPwd},PwdQuestion=#{PwdQuestion},PwdAnswer=#{PwdAnswer},Tel=#{Tel},Address=#{Address},UserEmail=#{UserEmail}
     </update>
     <select id="checkLogin"  parameterType="UserInfo" resultType="UserInfo">
-        SELECT * FROM userinfo WHERE LoginName=#{LoginName} AND LoginPwd=#{LoginPwd}
+        SELECT * FROM userinfo WHERE LoginName=#{loginName} AND LoginPwd=#{loginPwd}
     </select>
+    <select id="findAll"  resultType="UserInfo">
+        select *from userinfo
+    </select>
+    <delete id="deleteUser" parameterType="int">
+        DELETE from userinfo where userid=#{userId}
+    </delete>
+    <insert id="insertAdmin" parameterType="UserInfo">
+        INSERT INTO userinfo VALUES(null,#{LoginName},#{LoginPwd},'','','','','','','','','',2,1)
+    </insert>
+    <update id="updateSeller" parameterType="int">
+        UPDATE userinfo SET RoleId=3 where userId=#{userId}
+    </update>
+    <update id="updateUserState" parameterType="int">
+        UPDATE userinfo SET UserState=#{userStateId} where userId=#{userId}
+    </update>
 </mapper>
