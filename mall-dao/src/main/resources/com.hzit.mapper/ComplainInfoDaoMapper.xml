@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hzit.dao.ComplainInfoDao">
+    <select id="findAll" resultType="ComplainInfo">
+        SELECT * FROM complain
+    </select>
+    <select id="findComplainByUserId" parameterType="java.lang.Integer" resultType="ComplainInfo">
+        SELECT * FROM complain WHERE UserId=#{userId}
+    </select>
+    <insert id="insertComplain" parameterType="ComplainInfo">
+        INSERT INTO complain VALUES (#{complainId},#{userId},#{content})
+    </insert>
+    <delete id="deleteComplain" parameterType="java.lang.Integer">
+        DELETE FROM complain WHERE ComplainId=#{complainId}
+    </delete>
+
+</mapper>
