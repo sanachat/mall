@@ -12,18 +12,35 @@
         select * from gamegood
     </select>
     <select id="findOneGood" parameterType="java.lang.Integer" resultType="com.hzit.entity.GamegoodInfo">
-        select * from userinfo where gamegoodid=#{gamegoodid}
+        select * from gamegood where gamegoodid=#{gameGoodId}
     </select>
     <insert id="insertGood" parameterType="com.hzit.entity.GamegoodInfo">
-        insert into gamegood(gamegoodname,gameid,gameserverid,rolename,gamesellcount,gamegoodcount,describe,unitprice)
-        values(#{gamegoodname},#{gameid},#{gameserverid},#{rolename},#{gamesellcount},#{gamegoodcount},#{describe},#{unitprice})
+        insert into gamegood(gamegoodname,gameid,gameserverid,rolename,GameTypeId,gamegoodsellcount,gamegoodcount,`describe`,sellername,unitprice)
+                      values(#{gameGoodName},#{gameId},#{gameServerId},#{roleName},#{gameTypeId},#{gameGoodSellCount},#{gameGoodCount},#{describe},#{sellerName},#{unitPrice})
     </insert>
     <update id="updateGood" parameterType="com.hzit.entity.GamegoodInfo">
-        update gamegoodinfo set gamesellcount=#{gamesellcount},gamegoodcount=#{gamegoodcount},unitprice=#{unitprice}
-        where gamegoodid=#{gamegoodid}
+        update gamegood set gamesellcount=#{gameSellCount},gamegoodcount=#{gameGoodCount},unitprice=#{unitPrice}
+        where gamegoodid=#{gameGoodId}
     </update>
     <delete id="deleteGood" parameterType="java.lang.Integer">
-        delete from gamegoodinfo where gamegoodid = #{gamegoodid}
+        delete from gamegood where gamegoodid = #{gameGoodId}
     </delete>
+
+
+    <resultMap type="GamegoodInfo" id="gamegoodinfoMap">
+        <id property="gamegoodid" column="gamegoodid" />
+        <result property="gamegoodname" column="gamegoodname" />
+        <result property="gameid" column="gameid" />
+    </resultMap>
+
+    <resultMap type="GamegoodInfo" id="gamegoodinfoOrderMap" extends="gamegoodinfoMap">
+        <collection property="order" ofType="Order">
+            <id property="Orderid" column="Orderid" />
+            <result property="date" column="date" />
+            <result property="price" column="price" />
+        </collection>
+    </resultMap>
+
+
 
 </mapper>

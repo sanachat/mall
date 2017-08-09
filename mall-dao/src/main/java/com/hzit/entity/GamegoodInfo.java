@@ -117,6 +117,14 @@ public class GamegoodInfo {
         this.sellerName = sellerName;
     }
 
+    public List<Order> getList() {
+        return list;
+    }
+
+    public void setList(List<Order> list) {
+        this.list = list;
+    }
+
     @Override
     public String toString() {
         return "GamegoodInfo{" +

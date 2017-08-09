@@ -6,6 +6,9 @@
         <typeAlias type="com.hzit.entity.Announcement" alias="Announcement"/>
         <typeAlias type="com.hzit.entity.UserInfo" alias="UserInfo" />
         <typeAlias type="com.hzit.entity.ShoppingCart" alias="ShoppingCart"/>
+        <typeAlias type="com.hzit.entity.Order" alias="Order" />
+        <typeAlias type="com.hzit.entity.GamegoodInfo" alias="GamegoodInfo" />
+
     </typeAliases>
     <environments default="development">
         <!-- >配置运行环境，环境编号为development< -->
@@ -25,5 +28,8 @@
         <mapper resource="com.hzit.mapper/AnnouncementDaoMapper.xml"></mapper>
         <mapper resource="com.hzit.mapper/UserinfoDaoMapper.xml"></mapper>
         <mapper resource="com.hzit.mapper/ShoppingCartDaoMapper.xml"></mapper>
+        <mapper resource="com.hzit.mapper/GameGoodInfoDaoMapper.xml"></mapper>
+        <mapper resource="com.hzit.mapper/OrderDaoMapper.xml"></mapper>
+        <mapper resource="com.hzit.mapper/BalanceDaoMapper.xml"></mapper>
     </mappers>
 </configuration>
