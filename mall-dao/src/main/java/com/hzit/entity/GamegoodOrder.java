@@ -12,22 +12,60 @@ package com.hzit.entity;
  * +---------------------------------Oooo---------------------------------------+
  */
 public class GamegoodOrder {
-    private Order order;
-    private GamegoodInfo gamegoodInfo;
+    private int orderId;
+    private int userId;
+    private int gamegoodId;
+    private String gamegoodname;
+    private int gameId;
 
-    public GamegoodInfo getGamegoodInfo() {
-        return gamegoodInfo;
+    public int getOrderId() {
+        return orderId;
     }
 
-    public void setGamegoodInfo(GamegoodInfo gamegoodInfo) {
-        this.gamegoodInfo = gamegoodInfo;
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
     }
 
-    public Order getOrder() {
-        return order;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setOrder(Order order) {
-        this.order = order;
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public int getGamegoodId() {
+        return gamegoodId;
+    }
+
+    public void setGamegoodId(int gamegoodId) {
+        this.gamegoodId = gamegoodId;
+    }
+
+    public String getGamegoodname() {
+        return gamegoodname;
+    }
+
+    public void setGamegoodname(String gamegoodname) {
+        this.gamegoodname = gamegoodname;
+    }
+
+    public int getGameId() {
+        return gameId;
+    }
+
+    public void setGameId(int gameId) {
+        this.gameId = gameId;
+    }
+
+    @Override
+    public String toString() {
+        return "GamegoodOrder{" +
+                "orderId=" + orderId +
+                ", userId=" + userId +
+                ", gamegoodId=" + gamegoodId +
+                ", gamegoodname='" + gamegoodname + '\'' +
+                ", gameId=" + gameId +
+                '}';
     }
 }
