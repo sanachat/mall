@@ -1,5 +1,7 @@
 package com.hzit.entity;
 
+import java.util.List;
+
 /**
  * 　　  　  　           \\\|///
  * 　　　 　  　   \\　.-.-　//
@@ -23,6 +25,7 @@ public class GamegoodInfo {
     private String describe;
     private String sellerName;//卖家店铺名称
     private double unitPrice;//商品单价
+    private List<Order> list;
 
     public double getUnitPrice() {
         return unitPrice;
