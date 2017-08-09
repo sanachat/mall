@@ -7,6 +7,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2017/8/9.
  */
+/*
 public interface UserInfoDao {
     public List<UserInfo> findAll();
     public int deleteUser(int userId);//删除用户
@@ -17,3 +18,4 @@ public interface UserInfoDao {
     public int updateUserState(int userstate, int userid);//修改用户状态
     public UserInfo checkLogin(UserInfo userInfo);//检查登录名和密码
 }
+*/
