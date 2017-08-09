@@ -10,8 +10,6 @@ public class TestShop {
         SqlSession session= SqlSessionHelper.getSqlSession();
         ShoppingCartDao dao=session.getMapper(ShoppingCartDao.class);
         int num=0;
-        //Announcement a=new Announcement();
-        //查找所有的公告
         List<ShoppingCart> list=new ArrayList<ShoppingCart>();
         list=dao.findshoppingcart(1);
         for(ShoppingCart s:list){
