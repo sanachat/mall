@@ -25,5 +25,6 @@
         <mapper resource="com.hzit.mapper/AnnouncementDaoMapper.xml"></mapper>
         <mapper resource="com.hzit.mapper/UserinfoDaoMapper.xml"></mapper>
         <mapper resource="com.hzit.mapper/ShoppingCartDaoMapper.xml"></mapper>
+        <mapper resource="com.hzit.mapper/GameGoodInfoDaoMapper.xml"></mapper>
     </mappers>
 </configuration>
