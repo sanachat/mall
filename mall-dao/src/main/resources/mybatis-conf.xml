@@ -4,8 +4,7 @@
     <properties resource="db.properties"/>
     <typeAliases>
         <typeAlias type="com.hzit.entity.Announcement" alias="Announcement"/>
-        <typeAlias type="com.hzit.entity.UserInfo" alias="UserInfo" />
-        <typeAlias type="com.hzit.entity.ShoppingCart" alias="ShoppingCart"/>
+        <typeAlias type="com.hzit.entity.ComplainInfo" alias="ComplainInfo"/>
     </typeAliases>
     <environments default="development">
         <!-- >配置运行环境，环境编号为development< -->
@@ -23,7 +22,6 @@
     </environments>
     <mappers>
         <mapper resource="com.hzit.mapper/AnnouncementDaoMapper.xml"></mapper>
-        <mapper resource="com.hzit.mapper/UserinfoDaoMapper.xml"></mapper>
-        <mapper resource="com.hzit.mapper/ShoppingCartDaoMapper.xml"></mapper>
+        <mapper resource="com.hzit.mapper/ComplainInfoDaoMapper.xml"></mapper>
     </mappers>
 </configuration>
