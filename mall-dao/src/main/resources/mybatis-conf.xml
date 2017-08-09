@@ -18,6 +18,6 @@
         </environment>
     </environments>
     <mappers>
-
+        <mapper resource="com.hzit.mapper/GameGoodInfoDaoMapper.xml" ></mapper>
     </mappers>
 </configuration>
