@@ -8,17 +8,17 @@
              resultType代表方法返回集合中元素的类型
     -->
 
-    <select id="FindAllGood"  resultType="GameGoodInfo">
+    <select id="findAllGood"  resultType="com.hzit.entity.GamegoodInfo">
         select * from gamegood
     </select>
-    <select id="FindOneGood" parameterType="String" resultType="GameGoodInfo">
+    <select id="findOneGood" parameterType="java.lang.Integer" resultType="com.hzit.entity.GamegoodInfo">
         select * from userinfo where gamegoodid=#{gamegoodid}
     </select>
-    <insert id="InsertGood" parameterType="GameGoodInfo">
+    <insert id="insertGood" parameterType="com.hzit.entity.GamegoodInfo">
         insert into gamegood(gamegoodname,gameid,gameserverid,rolename,gamesellcount,gamegoodcount,describe,unitprice)
         values(#{gamegoodname},#{gameid},#{gameserverid},#{rolename},#{gamesellcount},#{gamegoodcount},#{describe},#{unitprice})
     </insert>
-    <update id="updateGood" parameterType="GameGoodInfo">
+    <update id="updateGood" parameterType="com.hzit.entity.GamegoodInfo">
         update gamegoodinfo set gamesellcount=#{gamesellcount},gamegoodcount=#{gamegoodcount},unitprice=#{unitprice}
         where gamegoodid=#{gamegoodid}
     </update>
