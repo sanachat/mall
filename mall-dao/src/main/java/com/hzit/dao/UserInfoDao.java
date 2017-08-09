@@ -14,6 +14,6 @@ public interface UserInfoDao {
     public int updateSeller(int userId);//成为卖家
     public int insertUser(UserInfo userInfo);//默认注册成为买家
     public int updateUser(UserInfo userInfo);//个人信息管理，修改登录密码等
-    public int updateUserState(int userid);//修改用户状态
+    public int updateUserState(int userstate,int userid);//修改用户状态
     public UserInfo checkLogin(UserInfo userInfo);//检查登录名和密码
 }
