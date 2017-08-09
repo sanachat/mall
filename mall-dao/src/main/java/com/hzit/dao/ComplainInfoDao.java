@@ -13,7 +13,7 @@ import java.util.List;
 
 public interface ComplainInfoDao {
     public List<ComplainInfo> findAll();
-    public ComplainInfo findComplainById(int userId);
+    public List<ComplainInfo> findComplainByUserId(int userId);
     public int insertComplain(ComplainInfo complainInfo);
     public int deleteComplain(int complainId);
 
