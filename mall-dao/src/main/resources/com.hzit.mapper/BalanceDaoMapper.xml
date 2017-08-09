@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hzit.dao.BalanceDao">
 
-    <select id="findBalanceByUserid" parameterType="int"
+    <select id="findBalanceByUserid" parameterType="java.lang.Integer"
             resultType="com.hzit.entity.Balance">
         select * from balance where userId=#{userId}
     </select>
@@ -15,8 +15,8 @@
         update balance set money=#{money}-#{payMoney} where userId=#{userId}
     </update>
 
-    <insert id="insert" parameterType="int">
-        insert into balance values(null,#{userId},#{money})
+    <insert id="insert" parameterType="com.hzit.entity.Balance" >
+        insert into balance values(null,#{userId},#{money},#{payPwd})
     </insert>
 
     <update id="updatePwd" parameterType="com.hzit.entity.Balance">
