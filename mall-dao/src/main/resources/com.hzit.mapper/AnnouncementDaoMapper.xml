@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hzit.dao.AnnouncementDao">
+    <select id="findAll" resultType="Announcement">
+        SELECT * FROM announcement
+    </select>
+    <select id="findAnnouncementById" parameterType="java.lang.Integer" resultType="Announcement">
+        SELECT * FROM announcement WHERE AnnouncementId=#{announcementId}
+    </select>
+    <insert id="insertAnnouncement" parameterType="Announcement">
+        INSERT INTO announcement VALUES (#{announcementId},#{announcementContent},#{announcementName})
+    </insert>
+    <delete id="deleteAnnouncement" parameterType="String">
+        DELETE FROM announcement WHERE AnnouncementId=#{announcementId}
+    </delete>
+    
+</mapper>
