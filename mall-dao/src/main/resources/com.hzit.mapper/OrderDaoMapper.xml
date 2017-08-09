@@ -33,7 +33,7 @@
     </resultMap>
     <select id="selectbyorderid"  parameterType="int" resultMap="OrdergamegoodinfoMap">
     select o.orderId,o.userId,g.gamegoodid,g.gamegoodname from  `order` o left join gamegoodorder ggo on  o.orderid=ggo.oid
-    Left join  gamegood g on ggo.gid=g.gamegoodid where orderId=#{orderId}
+    Left join  gamegood g on ggo.gid=g.gamegoodid  where orderId=#{orderId}
 
     </select>
 </mapper>
