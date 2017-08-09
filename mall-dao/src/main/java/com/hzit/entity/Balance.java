@@ -18,6 +18,8 @@ public class Balance {
 
     private double money;
 
+    private String payPwd;
+
     public int getBalanceId() {
         return balanceId;
     }
@@ -40,5 +42,23 @@ public class Balance {
 
     public void setMoney(double money) {
         this.money = money;
+    }
+
+    public String getPayPwd() {
+        return payPwd;
+    }
+
+    public void setPayPwd(String payPwd) {
+        this.payPwd = payPwd;
+    }
+
+    @Override
+    public String toString() {
+        return "Balance{" +
+                "balanceId=" + balanceId +
+                ", userId=" + userId +
+                ", money=" + money +
+                ", payPwd='" + payPwd + '\'' +
+                '}';
     }
 }
