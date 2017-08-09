@@ -4,6 +4,7 @@
     <properties resource="db.properties"/>
     <typeAliases>
         <typeAlias type="com.hzit.entity.Announcement" alias="Announcement"/>
+        <typeAlias type="com.hzit.entity.UserInfo" alias="UserInfo" />
     </typeAliases>
     <environments default="development">
         <!-- >配置运行环境，环境编号为development< -->
@@ -21,5 +22,6 @@
     </environments>
     <mappers>
         <mapper resource="com.hzit.mapper/AnnouncementDaoMapper.xml"></mapper>
+        <mapper resource="com.hzit.mapper/UserinfoDaoMapper.xml"></mapper>
     </mappers>
 </configuration>
