@@ -2,26 +2,26 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hzit.dao.OrderDao">
     <insert id="insert" parameterType="Order">
-        INSERT INTO Order VALUES(#{OrderId},#{UserId},#{Date},#{Price})
+        INSERT INTO order VALUES(#{orderId},#{userId},#{date},#{price})
     </insert>
-    <update id="update" parameterType="Order">
-        UPDATE Order SET OrderId=#{OrderId},UserId=#{UserId},Date=#{Date},Price=#{Price}}
+    <!--<update id="update" parameterType="Order">
+        UPDATE order SET orderId=#{orderId},UserId=#{userId},Date=#{date},Price=#{price}
     </update>
     <select id="delete"  parameterType="int" >
-        SELECT * FROM Order WHERE OrderId=#{OrderId}
+        SELECT * FROM order WHERE OrderId=#{orderId}
     </select>
     <select id="selectall"  resultType="Order">
-        SELECT * FROM Order
+        SELECT * FROM order
     </select>
     <select id="selectbyid" parameterType="int" resultType="Order">
-        SELECT * FROM Order WHERE OrderId=#{OrderId}
+        SELECT * FROM order WHERE OrderId=#{orderId}
     </select>
 
     <select id="OrdergoodMap"  resultMap="OrdergoodMap">
         select Order.*,Gamegood.gamegoodname,Gamegood.gameId,gamegoodorder.OrderId,Gamegoodorder.GameGoodid from Order,Gamegood,gamegoodorder where gamegoodorder.OrderId=Order.OrderId AND gamegoodorder.GameGoodid=gamegood.GameGoodid
-    </select>
+    </select>-->
 
-    <resultMap type="Order" id="OrdergoodMap">
+   <!-- <resultMap type="Order" id="OrdergoodMap">
         <id property="OrderId" column="OrderId"/>
         <result property="UserId" column="UserId"/>
         <result property="Date" column="Date"/>
@@ -35,6 +35,6 @@
             <result property="GameGoodname" column="GameGoodname"/>
             <result property="gameid" column="gameid"/>
         </collection>
-    </resultMap>
+    </resultMap>-->
 
 </mapper>

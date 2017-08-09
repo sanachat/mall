@@ -1,13 +1,6 @@
 package com.hzit.dao;
-
-/**
- * Created by wan on 2017/8/9.
- */
-
-
-        import com.hzit.entity.Order;
-
-        import java.util.List;
+import com.hzit.entity.Order;
+import java.util.List;
 
 /**
  * Created by wan on 2017/8/9.
