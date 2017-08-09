@@ -9,13 +9,13 @@ import java.util.List;
  */
 public interface GameGoodInfoDao
 {
-    public GamegoodInfo FindOneGood(int gameGoodId);
+    public GamegoodInfo findOneGood(int gameGoodId);
 
-    public List<GamegoodInfo> FindAllGood();
+    public List<GamegoodInfo> findAllGood();
 
-    public int InsertGood(GamegoodInfo gamegoodInfo);
+    public int insertGood(GamegoodInfo gamegoodInfo);
 
-    public int UpdateGood(GamegoodInfo gamegoodInfo);
+    public int updateGood(GamegoodInfo gamegoodInfo);
 
-    public int DeleteGood(int gameGoodId);
+    public int deleteGood(int gameGoodId);
 }
