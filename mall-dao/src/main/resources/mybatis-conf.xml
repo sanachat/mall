@@ -2,7 +2,9 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <properties resource="db.properties"/>
-
+    <typeAliases>
+        <typeAlias type="com.hzit.entity.Announcement" alias="Announcement"/>
+    </typeAliases>
     <environments default="development">
         <!-- >配置运行环境，环境编号为development< -->
         <environment id="development">
@@ -18,6 +20,6 @@
         </environment>
     </environments>
     <mappers>
-
+        <mapper resource="com.hzit.mapper/AnnouncementDaoMapper.xml"></mapper>
     </mappers>
 </configuration>
