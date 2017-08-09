@@ -58,7 +58,7 @@ public class TestOrder {
         List<Order> ggo=dao.selectgame(1);
         for(Object ob:ggo){
             System.out.println(ob);
-        }
+        }//通过传入订单号查询订单及对应的商品信息
 
 
     }
