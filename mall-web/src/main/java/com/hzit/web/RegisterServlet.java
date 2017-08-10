@@ -15,7 +15,7 @@ import java.io.IOException;
 /**
  * Created by THINK on 2017/8/9.
  */
-@WebServlet(name = "RegisterServlet")
+@WebServlet(name = "RegisterServlet",value = "/register")
 public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
