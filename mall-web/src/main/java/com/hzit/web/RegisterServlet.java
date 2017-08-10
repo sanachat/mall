@@ -23,15 +23,33 @@ public class RegisterServlet extends HttpServlet {
         SqlSession session= SqlSessionHelper.getSqlSession();
         UserInfoDao dao=session.getMapper(UserInfoDao.class);
         String name=request.getParameter("loginName");
+        String sex=request.getParameter("sex");
         String pwd=request.getParameter("loginPwd");
+        String cfpwd=request.getParameter("comfirmPwd");
+        String tureName=request.getParameter("userName");
+        String tel=request.getParameter("tel");
+        String emil=request.getParameter("email");
+        String idcard=request.getParameter("idCard");
+        String address=request.getParameter("address");
+        String storeName=request.getParameter("storeName");
+        String question=request.getParameter("question");
+        String answer=request.getParameter("answer");
         UserInfo user=new UserInfo();
         user.setLoginName(name);
+        user.setUserSex(sex);
         user.setLoginPwd(pwd);
-        UserInfo userInfo=dao.checkLogin(user);
-        if(userInfo==null){
-            response.sendRedirect("register.html");
-        }else{
-            request.getSession().setAttribute("user",userInfo);
+        user.setUserName(tureName);
+        user.setTel(tel);
+        user.setUserEmail(emil);
+        user.setIdCard(idcard);
+        user.setAddress(address);
+        user.setStoreName(storeName);
+        user.setPwdQuestion(question);
+        user.setPwdAnswer(answer);
+        int num=dao.insertUser(user);
+        session.commit();
+        if(num!=0){
+            response.sendRedirect("login.html");
         }
     }
 
