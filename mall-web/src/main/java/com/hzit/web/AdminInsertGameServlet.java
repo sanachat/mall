@@ -15,13 +15,15 @@ import java.io.IOException;
 /**
  * Created by Administrator on 2017/8/10.
  */
-@WebServlet(name = "AdminDeleteGameServlet",value="/admindeletegame")
-public class AdminDeleteGameServlet extends HttpServlet {
+@WebServlet(name = "AdminInsertGameServlet",value="/admininsertgame")
+public class AdminInsertGameServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         SqlSession session = SqlSessionHelper.getSqlSession();
         GameInfoDao dao =session.getMapper(GameInfoDao.class);
-        int id=Integer.parseInt(request.getParameter("gameid"));
-        int num=dao.deleteGame(id);
+        GameInfo game=new GameInfo();
+        game.setGameName(request.getParameter("name"));
+        game.setGameArea(request.getParameter("area"));
+        int num=dao.insertGame(game);
         if (num==1){
             session.commit();
             request.getRequestDispatcher("/admingame").forward(request,response);

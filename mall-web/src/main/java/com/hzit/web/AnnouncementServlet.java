@@ -1,8 +1,8 @@
 package com.hzit.web;
 
-import com.hzit.dao.GameInfoDao;
+import com.hzit.dao.AnnouncementDao;
 import com.hzit.dao.SqlSessionHelper;
-import com.hzit.entity.GameInfo;
+import com.hzit.entity.Announcement;
 import org.apache.ibatis.session.SqlSession;
 
 import javax.servlet.ServletException;
@@ -11,23 +11,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 /**
- * Created by Administrator on 2017/8/10.
+ * Created by THINK on 2017/8/10.
  */
-@WebServlet(name = "AdminDeleteGameServlet",value="/admindeletegame")
-public class AdminDeleteGameServlet extends HttpServlet {
+@WebServlet(name = "AnnouncementServlet",urlPatterns = "/findAllAnnouncement")
+public class AnnouncementServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        SqlSession session = SqlSessionHelper.getSqlSession();
-        GameInfoDao dao =session.getMapper(GameInfoDao.class);
-        int id=Integer.parseInt(request.getParameter("gameid"));
-        int num=dao.deleteGame(id);
-        if (num==1){
-            session.commit();
-            request.getRequestDispatcher("/admingame").forward(request,response);
-        }else{
-            session.rollback();
-        }
+        response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
+        AnnouncementDao dao= SqlSessionHelper.getSqlSession().getMapper(AnnouncementDao.class);
+        List<Announcement> list=dao.findAll();
+        request.setAttribute("li",list);
+        request.getRequestDispatcher("Announcement.jsp").forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

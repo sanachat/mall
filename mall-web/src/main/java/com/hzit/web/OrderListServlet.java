@@ -11,19 +11,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+
 /**
- * Created by Administrator on 2017/8/10.
+ * Created by wan on 2017/8/10.
  */
-@WebServlet(name = "AdminRecordServlet",value="/adminrecord")
-public class AdminRecordServlet extends HttpServlet {
+@WebServlet(name = "OrderListServlet",value = "/OrderList")
+public class OrderListServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
         OrderDao dao= SqlSessionHelper.getSqlSession().getMapper(OrderDao.class);
-        List<Order> allrecord=dao.selectall();
-        request.setAttribute("allrecord",allrecord);
-        request.getRequestDispatcher("adminrecord.jsp").forward(request,response);
+        List<Order> l=dao.selectall();
+        request.setAttribute("l",l);
+        request.getRequestDispatcher("OrderList.jsp").forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       doPost(request,response);
+
+        doPost(request,response);
+
     }
 }
