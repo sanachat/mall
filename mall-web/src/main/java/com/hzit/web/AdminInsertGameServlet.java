@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by Administrator on 2017/8/9.
+ * Created by Administrator on 2017/8/10.
  */
-@WebServlet(name = "AdminGoodServlet",value="/admingood")
-public class AdminGoodServlet extends HttpServlet {
+@WebServlet(name = "AdminInsertGameServlet",value="/admininsertgame")
+public class AdminInsertGameServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
