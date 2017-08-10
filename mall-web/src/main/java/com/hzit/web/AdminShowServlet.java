@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2017/8/9.
  */
-@WebServlet(name = "AdminShowServlet",value="/adminShow")
+@WebServlet(name = "AdminShowServlet",value="/adminshow")
 public class AdminShowServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserInfoDao dao= SqlSessionHelper.getSqlSession().getMapper(UserInfoDao.class);
