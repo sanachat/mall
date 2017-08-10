@@ -31,6 +31,9 @@
   <div class="td w20">
     ${o.price}
   </div>
+  <div class="td w20">
+      ${o.gamegoodinfo}
+  </div>
 </c:forEach>
 
 </body>
