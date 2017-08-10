@@ -15,7 +15,7 @@ import java.io.IOException;
 /**
  * Created by Tracy McGrady on 2017/8/9.
  */
-@WebServlet(name = "SellerServlet")
+@WebServlet(name = "SellerServlet",value = "/seller")
 public class SellerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         SqlSession session = SqlSessionHelper.getSqlSession();
@@ -23,6 +23,7 @@ public class SellerServlet extends HttpServlet {
         UserInfo userInfo =(UserInfo)request.getSession().getAttribute("");
         dao.updateSeller(userInfo.getUserId());
         session.commit();
+        response.sendRedirect("BecomeSeller.jsp");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

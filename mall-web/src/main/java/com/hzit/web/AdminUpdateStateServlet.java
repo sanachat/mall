@@ -1,8 +1,7 @@
 package com.hzit.web;
 
-import com.hzit.dao.GameInfoDao;
 import com.hzit.dao.SqlSessionHelper;
-import com.hzit.entity.GameInfo;
+import com.hzit.dao.UserInfoDao;
 import org.apache.ibatis.session.SqlSession;
 
 import javax.servlet.ServletException;
@@ -15,21 +14,21 @@ import java.io.IOException;
 /**
  * Created by Administrator on 2017/8/10.
  */
-@WebServlet(name = "AdminDeleteGameServlet",value="/admindeletegame")
-public class AdminDeleteGameServlet extends HttpServlet {
+@WebServlet(name = "AdminUpdateStateServlet",value="/adminupdatestate")
+public class AdminUpdateStateServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         SqlSession session = SqlSessionHelper.getSqlSession();
-        GameInfoDao dao =session.getMapper(GameInfoDao.class);
-        int id=Integer.parseInt(request.getParameter("gameid"));
-        int num=dao.deleteGame(id);
-        if (num==1){
+        UserInfoDao dao = session.getMapper(UserInfoDao.class);
+        int userid = Integer.parseInt(request.getParameter("userid"));
+        int stateid = Integer.parseInt(request.getParameter("stateid"));
+        int num = dao.updateUserState(stateid, userid);
+        if (num == 1) {
             session.commit();
-            request.getRequestDispatcher("/admingame").forward(request,response);
-        }else{
+            request.getRequestDispatcher("/adminshow").forward(request, response);
+        } else {
             session.rollback();
         }
-    }
-
+}
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request,response);
     }
