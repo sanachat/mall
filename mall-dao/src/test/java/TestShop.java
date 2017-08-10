@@ -17,6 +17,20 @@ public class TestShop {
         }
         session.commit();
 
+       /* ShoppingCart shoppingCart=new ShoppingCart();
+        shoppingCart.setUserId(1);
+        shoppingCart.setShopId(4);
+        shoppingCart.setCount(2);
+        shoppingCart.setPrice(21);
+        shoppingCart.setGameGoodId(2);
+        dao.insertshoppingcart(shoppingCart);
+        session.commit();
+        System.out.println(shoppingCart);*/
+
+
+
+
+
     }
 }
 
