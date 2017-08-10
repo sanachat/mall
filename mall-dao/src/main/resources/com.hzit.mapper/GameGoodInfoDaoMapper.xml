@@ -19,7 +19,7 @@
                       values(#{gameGoodName},#{gameId},#{gameServerId},#{roleName},#{gameTypeId},#{gameGoodSellCount},#{gameGoodCount},#{describe},#{sellerName},#{unitPrice})
     </insert>
     <update id="updateGood" parameterType="com.hzit.entity.GamegoodInfo">
-        update gamegood set gamesellcount=#{gameSellCount},gamegoodcount=#{gameGoodCount},unitprice=#{unitPrice}
+        update gamegood set gamesellcount=#{gameSellCount},gamegoodcount=#{gameGoodCount},`describe`=#{describe},unitprice=#{unitPrice}
         where gamegoodid=#{gameGoodId}
     </update>
     <delete id="deleteGood" parameterType="java.lang.Integer">
@@ -40,7 +40,5 @@
             <result property="price" column="price" />
         </collection>
     </resultMap>
-
-
 
 </mapper>

@@ -1,8 +1,8 @@
 package com.hzit.web;
 
-import com.hzit.dao.AnnouncementDao;
+import com.hzit.dao.GameGoodInfoDao;
 import com.hzit.dao.SqlSessionHelper;
-import com.hzit.entity.Announcement;
+import com.hzit.entity.GamegoodInfo;
 import org.apache.ibatis.session.SqlSession;
 
 import javax.servlet.ServletException;
@@ -11,24 +11,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by THINK on 2017/8/10.
+ * Created by Tracy McGrady on 2017/8/10.
  */
-@WebServlet(name = "AnnouncementServlet",urlPatterns = "/findAllAnnouncement")
-public class AnnouncementServlet extends HttpServlet {
+@WebServlet(name = "SellerManageServlet",value = "/sellerManage")
+public class SellerManageServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setCharacterEncoding("utf-8");
-        request.setCharacterEncoding("utf-8");
-        AnnouncementDao dao= SqlSessionHelper.getSqlSession().getMapper(AnnouncementDao.class);
-        List<Announcement> list=dao.findAll();
-        request.setAttribute("li",list);
-        request.getRequestDispatcher("Announcement.jsp").forward(request,response);
-
+        SqlSession session = SqlSessionHelper.getSqlSession();
+        GameGoodInfoDao dao = session.getMapper(GameGoodInfoDao.class);
+        List<GamegoodInfo> list = dao.findAllGood();
+        request.getSession().setAttribute("list", list);
+        response.sendRedirect("index.jsp");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request,response);
+        doPost(request, response);
     }
 }
