@@ -25,14 +25,14 @@ public class TestOrder {
         OrderDao dao=session.getMapper(OrderDao.class);
         int num=0;
         Order o=new Order();
-      /*  //新增订单
-        o.setOrderId(5);
-        o.setUserId(1);
-        o.setDate("2017-8-9");
-        o.setPrice(500);
+        //新增订单
+        o.setOrderId(4);
+        o.setUserId(2);
+        o.setDate("2017-8-10");
+        o.setPrice(888);
         num=dao.insert(o);
         session.commit();
-        System.out.println("增加成功，受到影响的行数是："+num);*/
+        System.out.println("增加成功，受到影响的行数是："+num);
 
 /*
         List<Order> list=dao.selectall();
@@ -55,10 +55,13 @@ public class TestOrder {
        /* num=dao.delete(4);
         session.commit();
         System.out.println("删除成功，受到影响的行数是："+num);//通过传入订单号删除订单*/
+
+
+       /*
         List<Order> ggo=dao.selectgame(1);
         for(Object ob:ggo){
             System.out.println(ob);
-        }
+        }//通过传入订单号查询订单及对应的商品信息*/
 
 
     }
