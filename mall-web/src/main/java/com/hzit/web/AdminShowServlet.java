@@ -19,7 +19,7 @@ public class AdminShowServlet extends HttpServlet {
         UserInfoDao dao= SqlSessionHelper.getSqlSession().getMapper(UserInfoDao.class);
         List<UserInfo> alluser = dao.findAll();
         request.setAttribute("alluser",alluser);
-        request.getRequestDispatcher("Admin.jsp").forward(request,response);
+        request.getRequestDispatcher("admin.jsp").forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
