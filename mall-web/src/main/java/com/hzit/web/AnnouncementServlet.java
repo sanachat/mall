@@ -25,6 +25,7 @@ public class AnnouncementServlet extends HttpServlet {
         List<Announcement> list=dao.findAll();
         request.setAttribute("li",list);
         request.getRequestDispatcher("Announcement.jsp").forward(request,response);
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
