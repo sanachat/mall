@@ -8,6 +8,7 @@
         <typeAlias type="com.hzit.entity.ShoppingCart" alias="ShoppingCart"/>
         <typeAlias type="com.hzit.entity.Order" alias="Order" />
         <typeAlias type="com.hzit.entity.GamegoodInfo" alias="GamegoodInfo" />
+        <typeAlias type="com.hzit.entity.OrderDetail" alias="OrderDetail" />
 
     </typeAliases>
     <environments default="development">
@@ -31,5 +32,6 @@
         <mapper resource="com.hzit.mapper/GameGoodInfoDaoMapper.xml"></mapper>
         <mapper resource="com.hzit.mapper/OrderDaoMapper.xml"></mapper>
         <mapper resource="com.hzit.mapper/BalanceDaoMapper.xml"></mapper>
+        <mapper resource="com.hzit.mapper/GameInfoDaoMapper.xml"></mapper>
     </mappers>
 </configuration>

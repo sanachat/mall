@@ -1,8 +1,10 @@
 package com.hzit.web;
 
 import com.hzit.dao.AnnouncementDao;
+import com.hzit.dao.ComplainInfoDao;
 import com.hzit.dao.SqlSessionHelper;
 import com.hzit.entity.Announcement;
+import com.hzit.entity.ComplainInfo;
 import org.apache.ibatis.session.SqlSession;
 
 import javax.servlet.ServletException;
@@ -13,31 +15,32 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by THINK on 2017/8/9.
+ * Created by THINK on 2017/8/11.
  */
-@WebServlet(name = "AnnouncementAddServlet",urlPatterns ="/addAnnouncement")
-public class AnnouncementAddServlet extends HttpServlet {
+@WebServlet(name = "ComplainAddServlet",urlPatterns = "/addComplain")
+public class ComplainAddServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
-        String announcementId=request.getParameter("announcementId");
-        String announcementname=request.getParameter("announcementName");
-        String announcementContent=request.getParameter("announcementContent");
+        String complainId=request.getParameter("complainId");
+        String userId=request.getParameter("userId");
+        String content=request.getParameter("content");
 
-        SqlSession session=SqlSessionHelper.getSqlSession();
-        AnnouncementDao dao= session.getMapper(AnnouncementDao.class);
-        Announcement a=new Announcement();
-        a.setAnnouncementId(Integer.parseInt(announcementId));
-        a.setAnnouncementName(announcementname);
-        a.setAnnouncementContent(announcementContent);
-        int num=dao.insertAnnouncement(a);
+        SqlSession session= SqlSessionHelper.getSqlSession();
+        ComplainInfoDao dao= session.getMapper(ComplainInfoDao.class);
+        ComplainInfo a=new ComplainInfo();
+        a.setComplainId(Integer.parseInt(complainId));
+        a.setUserId(Integer.parseInt(userId));
+        a.setContent(content);
+        int num=dao.insertComplain(a);
         if(num==1){
             session.commit();
-           response.sendRedirect("AnnouncementFindAll.jsp");
+            response.sendRedirect("ComplainFindAll.jsp");
         }else{
             session.rollback();
-            System.out.println("AnnouncementAdd.jsp");
+            System.out.println("ComplainFindAll.jsp");
         }
+
 
     }
 

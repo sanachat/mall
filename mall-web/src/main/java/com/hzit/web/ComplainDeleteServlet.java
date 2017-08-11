@@ -1,8 +1,8 @@
 package com.hzit.web;
 
 import com.hzit.dao.AnnouncementDao;
+import com.hzit.dao.ComplainInfoDao;
 import com.hzit.dao.SqlSessionHelper;
-import com.hzit.entity.Announcement;
 import org.apache.ibatis.session.SqlSession;
 
 import javax.servlet.ServletException;
@@ -11,21 +11,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 /**
- * Created by THINK on 2017/8/10.
+ * Created by THINK on 2017/8/11.
  */
-@WebServlet(name = "AnnouncementServlet",urlPatterns = "/findAllAnnouncement")
-public class AnnouncementServlet extends HttpServlet {
+@WebServlet(name = "ComplainDeleteServlet",urlPatterns = "/dodeleteComplain.action")
+public class ComplainDeleteServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setCharacterEncoding("utf-8");
-        request.setCharacterEncoding("utf-8");
-        AnnouncementDao dao= SqlSessionHelper.getSqlSession().getMapper(AnnouncementDao.class);
-        List<Announcement> list=dao.findAll();
-        request.setAttribute("li",list);
-        request.getRequestDispatcher("AnnouncementFindAll.jsp").forward(request,response);
-
+        String complainId=request.getParameter("pid");
+        SqlSession session= SqlSessionHelper.getSqlSession();
+        ComplainInfoDao dao= session.getMapper(ComplainInfoDao.class);
+        int num=dao.deleteComplain(Integer.parseInt(complainId));
+        session.commit();
+        if(num==1){
+            response.sendRedirect("ComplainFindAll.jsp");
+        }else{
+            session.rollback();
+            response.sendRedirect("ComplainFindAll.jsp");
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
