@@ -8,8 +8,9 @@ import java.util.List;
  * Created by THINK on 2017/8/9.
  */
 public interface ShoppingCartDao {
-    public List<ShoppingCart> findshoppingcart(int userId);
-    public int insertshoppingcart(ShoppingCart shoppingCart);
-    public int deleteshoppingcart(int shopId);
+    public List<ShoppingCart> findshoppingcart(int userId);//根据用户显示购物车商品
+    public int insertshoppingcart(ShoppingCart shoppingCart);//增加购物车内容
+    public int deleteshoppingcart(int shopId);//根据编号删除
+    public int allmoney(int userId);
 
 }
