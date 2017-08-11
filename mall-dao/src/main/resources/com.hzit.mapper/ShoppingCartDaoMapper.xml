@@ -11,4 +11,7 @@
     <delete id="deleteRole" parameterType="java.lang.Integer" >
         DELETE from ShoppingCart WHERE gameGoodId=#{gameGoodId}
     </delete>
+    <select id="allmoney" parameterType="int" resultType="int" >
+        SELECT SUM(price) from ShoppingCart WHERE userId=#{userId}
+    </select>
 </mapper>
