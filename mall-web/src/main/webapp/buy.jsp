@@ -121,7 +121,7 @@
             </a>
           </li>
           <li>
-            <a href="userInfo.html">
+            <a href="ShoppingCart.jsp">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">购物车</span>
             </a>

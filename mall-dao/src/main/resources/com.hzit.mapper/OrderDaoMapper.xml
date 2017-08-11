@@ -22,19 +22,25 @@
         <result property="userId" column="userId" />
         <result property="date" column="date" />
         <result property="price" column="price" />
-        <collection property="OrderDetail" ofType="OrderDetail">
-            <id property="detailId" column=" detailId" />
-            <result property="orderId" column="orderId" />
-            <result property="gamegoodId" column="gamegoodId" />
-            <result property="price" column="price" />
-            <result property="count" column="count" />
-            <result property="summoney" column="summoney" />
+        <collection property="gamegoodinfo" ofType="Gamegoodinfo">
+            <id property="gameGoodId" column="gameGoodId" />
+            <result property="gameGoodName" column="gameGoodName" />
+            <result property="gameId" column="gameId" />
+            <result property="gameServerId" column="gameServerId" />
+            <result property="roleName" column="roleName" />
+            <result property="gameTypeId" column="gameTypeId" />
+            <result property="gameGoodSellCount" column="gameGoodSellCount" />
+            <result property="gameGoodCount" column="gameGoodCount" />
+            <result property="describe" column="describe" />
+            <result property="sellerName" column="sellerName" />
         </collection>
     </resultMap>
-    <select id="selectdetail"  parameterType="int"  resultMap="orderMap">
-    select o.orderId,o.userId,o.date,o.price,de.gamegooid,de.price,de.count,de.summoney
-
-     from  `order` o left join orderdetail de on  o.orderid=de.orderid WHERE orderId=#{orderId}
+    <select id="selectgame"  parameterType="int"  resultMap="orderMap">
+    select o.orderId,o.userId,o.date,o.price,
+    g.gamegoodid,g.gamegoodname,g.gameid,g.gameserverid,g.rolename,g.gametypeid,g.gameGoodSellCount,g.gameGoodCount,
+    g.describe,g.sellerName
+     from  `order` o left join gamegoodorder ggo on  o.orderid=ggo.oid
+    Left join  gamegood g on ggo.gid=g.gamegoodid WHERE orderId=#{orderId}
 
     </select>
 </mapper>

@@ -3,6 +3,7 @@ package com.hzit.web;
 import com.hzit.dao.ShoppingCartDao;
 import com.hzit.dao.SqlSessionHelper;
 import com.hzit.entity.ShoppingCart;
+import com.hzit.entity.UserInfo;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,9 +22,10 @@ public class ShoppingCartServlet extends HttpServlet {
         response.setCharacterEncoding("utf-8");
         request.setCharacterEncoding("utf-8");
         ShoppingCartDao dao= SqlSessionHelper.getSqlSession().getMapper(ShoppingCartDao.class);
-
-        List<ShoppingCart> list=dao.findshoppingcart(1);
-        request.setAttribute("shop",list);
+        UserInfo userInfo=(UserInfo)request.getSession().getAttribute("user");
+        int user=userInfo.getUserId();
+        List<ShoppingCart> list=dao.findshoppingcart(user);
+        request.setAttribute("list",list);
         request.getRequestDispatcher("ShoppingCart.jsp").forward(request,response);
     }
 

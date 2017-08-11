@@ -33,7 +33,7 @@ public class AnnouncementAddServlet extends HttpServlet {
         int num=dao.insertAnnouncement(a);
         if(num==1){
             session.commit();
-           response.sendRedirect("AnnouncementFindAll.jsp");
+           response.sendRedirect("Announcement.jsp");
         }else{
             session.rollback();
             System.out.println("AnnouncementAdd.jsp");
