@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect("register.html");
         }else{
             request.getSession().setAttribute("user",userInfo);
-            response.sendRedirect("buy.html");
+            response.sendRedirect("buy.jsp");
         }
     }
 

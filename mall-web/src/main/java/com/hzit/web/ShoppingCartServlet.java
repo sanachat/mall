@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by THINK on 2017/8/10.
  */
-@WebServlet(name = "ShoppingCartServlet",urlPatterns = "/findAll")
+@WebServlet(name = "ShoppingCartServlet",urlPatterns = "/findAllcart")
 public class ShoppingCartServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setCharacterEncoding("utf-8");
@@ -25,7 +25,7 @@ public class ShoppingCartServlet extends HttpServlet {
         request.setAttribute("shop",list);
         request.getRequestDispatcher("ShoppingCart.jsp").forward(request,response);
     }
-//
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       doPost(request,response);
     }
