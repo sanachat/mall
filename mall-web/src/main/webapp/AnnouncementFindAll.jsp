@@ -76,7 +76,7 @@
       </div>
       <div class="authority-content">
         <div class="list-content show">
-          <a href="/findAllAnnouncement"></a><br>
+          <a href="findAllAnnouncement"></a><br>
           <div class="offcial-table tr-border margin-big-top clearfix">
             <div class="tr-th clearfix">
               <div class="th w25">
@@ -105,7 +105,7 @@
               </div>
               <div class="td w25">
                 <a href="AnnouncementAdd.jsp"  class="button-word2 btn_ajax_confirm">增加</a> |
-                <a href="dodeleteResource.action?pid=${a.announcementId}"  class="button-word2 btn_ajax_confirm">删除</a>
+                <a href="dodeleteAnnouncement.action?pid=${a.announcementId}"  class="button-word2 btn_ajax_confirm">删除</a>
               </div>
             </div>
             </c:forEach>
