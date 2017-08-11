@@ -4,6 +4,7 @@ import com.hzit.dao.SqlSessionHelper;
 import com.hzit.dao.UserInfoDao;
 import com.hzit.entity.UserInfo;
 import org.apache.ibatis.session.SqlSession;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,6 +19,8 @@ import java.io.IOException;
 @WebServlet(name = "AdminInsertServlet",value="/admininsert")
 public class AdminInsertServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=utf-8");
+        PrintWriter out = response.getWriter();
         SqlSession session = SqlSessionHelper.getSqlSession();
         UserInfoDao dao=session.getMapper(UserInfoDao.class);
         String name=request.getParameter("loginname");
@@ -31,10 +34,10 @@ public class AdminInsertServlet extends HttpServlet {
             request.getRequestDispatcher("/adminshow").forward(request,response);
         }else{
             session.rollback();
-            response.sendRedirect("/inserterror.jsp");
+            out.println("添加失败！<a href='admininsert.jsp'>点击返回</a>");
         }
-        }else{
-            response.sendRedirect("/pwderror.jsp");
+        } else {
+            out.println("两次密码不一致！<a href='admininsert.jsp'>点击返回</a>");
         }
     }
 
