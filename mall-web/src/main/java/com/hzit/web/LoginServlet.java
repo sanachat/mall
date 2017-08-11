@@ -28,13 +28,11 @@ public class LoginServlet extends HttpServlet {
         user.setLoginName(name);
         user.setLoginPwd(pwd);
         UserInfo userInfo=dao.checkLogin(user);
-        String n=userInfo.getLoginName();
         if(userInfo==null){
             response.sendRedirect("register.html");
         }else{
             request.getSession().setAttribute("user",userInfo);
-            request.getSession().setAttribute("username",n);
-            response.sendRedirect("buy.jsp");
+            response.sendRedirect("buy.html");
         }
     }
 
