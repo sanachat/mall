@@ -29,7 +29,7 @@
             <result property="gameServerId" column="gameServerId" />
             <result property="roleName" column="roleName" />
             <result property="gameTypeId" column="gameTypeId" />
-            <result property="gameGoodSellCount" column="gameGoodSellCount"/>
+            <result property="gameGoodSellCount" column="gameGoodSellCount" />
             <result property="gameGoodCount" column="gameGoodCount" />
             <result property="describe" column="describe" />
             <result property="sellerName" column="sellerName" />
