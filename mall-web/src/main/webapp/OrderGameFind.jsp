@@ -170,7 +170,7 @@
                     ${o.price}
                 </div>
                   <div class="td w20">
-                      ${o.gamegoodinfo}
+                      ${o.orderDetail }
                   </div>
 
 
