@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -66,14 +68,26 @@
 							
 							<a href="#">
 								<span class="icon"><b class="fl icon-arrow-down"></b></span>
-								<span class="text-normal">个人信息</span>
+								<span class="text-normal">用户管理</span>
 							</a>
 						</div>
 						<ul class="sidebar-trans">
 							<li>
-								<a href="webSet.html">
+								<a href="/adminshow">
 									<b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-									<span class="text-normal">注册一个新用户</span>
+									<span class="text-normal">用户列表</span>
+								</a>
+							</li>
+							<li>
+								<a href="adminupdatestate.jsp">
+									<b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
+									<span class="text-normal">修改用户状态</span>
+								</a>
+							</li>
+							<li>
+								<a href="admininsert.jsp">
+									<b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
+									<span class="text-normal">增加管理员</span>
 								</a>
 							</li>
 							
@@ -83,25 +97,89 @@
 						<div class="sidebar-title">
 							<a href="#">
 								<span class="icon"><b class="fl icon-arrow-down"></b></span>
-								<span class="text-normal">商品信息</span>
+								<span class="text-normal">交易信息</span>
 							</a>
 						</div>
 						<ul class="sidebar-trans">
 							<li>
-								<a href="userInfo.html">
+								<a href="/adminrecord">
+									<b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+									<span class="text-normal">交易信息记录</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+						<div class="sidebar-nav">
+						<div class="sidebar-title">
+							<a href="#">
+								<span class="icon"><b class="fl icon-arrow-down"></b></span>
+								<span class="text-normal">商品管理</span>
+							</a>
+						</div>
+						<ul class="sidebar-trans">
+
+							<li>
+								<a href="/admingood">
 									<b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
 									<span class="text-normal">商品列表</span>
 								</a>
 							</li>
 						</ul>
 					</div>
-						
-						
-					
-						
 						<div class="sidebar-nav">
 						<div class="sidebar-title">
 							<a href="#">
+								<span class="icon"><b class="fl icon-arrow-down"></b></span>
+								<span class="text-normal">游戏管理</span>
+							</a>
+						</div>
+						<ul class="sidebar-trans">
+							<li>
+								<a href="/admingame">
+									<b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+									<span class="text-normal">游戏列表</span>
+								</a>
+							</li>
+							<li>
+								<a href="admininsertgame.jsp">
+									<b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+									<span class="text-normal">增加游戏</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+						<div class="sidebar-nav">
+						<div class="sidebar-title">
+							<a href="#">
+								<span class="icon"><b class="fl icon-arrow-down"></b></span>
+								<span class="text-normal">客户服务</span>
+							</a>
+						</div>
+						<ul class="sidebar-trans">
+							<li>
+								<a href="userInfo.html">
+									<b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+									<span class="text-normal">投诉处理</span>
+								</a>
+							</li>
+							<li>
+								<a href="userInfo.html">
+									<b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+									<span class="text-normal">发布公告</span>
+								</a>
+							</li>
+							<li>
+								<a href="userInfo.html">
+									<b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+									<span class="text-normal">公告</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+						
+						<div class="sidebar-nav">
+						<div class="sidebar-title">
+							<a href="/adminshow">
 								<span class="icon"><b ></b></span>
 								<span class="text-normal">返回首页</span>
 							</a>
@@ -114,52 +192,69 @@
 				<div class="authority">
 					<div class="authority-head">
 						<div class="manage-head">
-							<h6 class="layout padding-left manage-head-con">站点管理</h6>
+							<h6 class="layout padding-left manage-head-con">用户管理</h6>
 						</div>
 					</div>
 					<div class="authority-content">
 						<div class="list-content show">
 							<div class="offcial-table tr-border margin-big-top clearfix">
 								<div class="tr-th clearfix">
-									<div class="th w20">
-										站点名称
-									</div>
-									<div class="th w20">
-										站点域名
+									<div class="th w10">
+										用户ID
 									</div>
 									<div class="th w15">
-										版本号
+										登陆名
 									</div>
 									<div class="th w15">
-										安装时间
+										登陆密码
 									</div>
 									<div class="th w15">
-										授权证书
+										电话
 									</div>
 									<div class="th w15">
+										地址
+									</div>
+									<div class="th w10">
+										用户角色
+									</div>
+									<div class="th w10">
+										用户状态
+									</div>
+									<div class="th w10">
 										操作
 									</div>
 								</div>
+								<c:forEach var="list" items="${alluser}">
 								<div class="tr clearfix border-bottom-none">
-									<div class="td w20">
-										我的系统
-									</div>
-									<div class="td w20">
-										localhost
+									<div class="td w10">
+										${list.userId}
 									</div>
 									<div class="td w15">
-										--
+										${list.loginName}
 									</div>
 									<div class="td w15">
-										2016-01-10 11:54:07
+										${list.loginPwd}
 									</div>
 									<div class="td w15">
-										<a href="#" class="button-word2">无</a>
+										${list.tel}
 									</div>
 									<div class="td w15">
+										${list.address}
+									</div>
+									<div class="td w10">
+										${list.userStateId}
+									</div>
+									<div class="td w10">
+										${list.roleId}
+									</div>
+									<div class="td w5">
+										<a href="#"  class="button-word2 btn_ajax_confirm">修改</a>
+									</div>
+									<div class="td w5">
 										<a href="#" msg="您是否删除此站点，如果删除会影响站点通信导致部分功能无法使用？" callback="del_site(624)" data-id="" class="button-word2 btn_ajax_confirm">删除</a>
 									</div>
 								</div>
+								</c:forEach>
 							</div>
 						</div>
 						<div class="show-page padding-big-right">

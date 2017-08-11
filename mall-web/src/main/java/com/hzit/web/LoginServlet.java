@@ -13,43 +13,30 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by THINK on 2017/8/9.
+ * Created by THINK on 2017/8/10.
  */
-@WebServlet(name = "RegisterServlet",value = "/register")
-public class RegisterServlet extends HttpServlet {
+@WebServlet(name = "LoginServlet",value = "/login")
+public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
         SqlSession session= SqlSessionHelper.getSqlSession();
         UserInfoDao dao=session.getMapper(UserInfoDao.class);
         String name=request.getParameter("loginName");
-        String sex=request.getParameter("sex");
         String pwd=request.getParameter("loginPwd");
-        String cfpwd=request.getParameter("comfirmPwd");
-        String tureName=request.getParameter("userName");
-        String tel=request.getParameter("tel");
-        String emil=request.getParameter("email");
-        String idcard=request.getParameter("idCard");
-        String address=request.getParameter("address");
-        String storeName=request.getParameter("storeName");
-        String question=request.getParameter("question");
-        String answer=request.getParameter("answer");
         UserInfo user=new UserInfo();
         user.setLoginName(name);
-        user.setUserSex(sex);
         user.setLoginPwd(pwd);
-        user.setUserName(tureName);
-        user.setTel(tel);
-        user.setUserEmail(emil);
-        user.setIdCard(idcard);
-        user.setAddress(address);
-        user.setStoreName(storeName);
-        user.setPwdQuestion(question);
-        user.setPwdAnswer(answer);
-        int num=dao.insertUser(user);
-        session.commit();
-        if(num!=0){
-            response.sendRedirect("login.html");
+        UserInfo userInfo=dao.checkLogin(user);
+        String n=userInfo.getLoginName();
+        int u=userInfo.getUserId();
+        if(userInfo==null){
+            response.sendRedirect("register.html");
+        }else{
+            request.getSession().setAttribute("user",userInfo);
+            request.getSession().setAttribute("username",n);
+            request.getSession().setAttribute("userId",u);
+            response.sendRedirect("buy.jsp");
         }
     }
 
