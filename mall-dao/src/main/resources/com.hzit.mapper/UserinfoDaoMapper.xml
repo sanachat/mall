@@ -5,19 +5,19 @@
         INSERT INTO userinfo VALUES(null,#{loginName},#{loginPwd},#{pwdQuestion},#{pwdAnswer},#{userSex},#{userName},#{tel},#{address},#{idCard},#{storeName},#{userEmail},2,1)
     </insert>
     <update id="updateUser" parameterType="UserInfo">
-        UPDATE userinfo SET loginPwd=#{loginPwd},pwdQuestion=#{pwdQuestion},pwdAnswer=#{pwdAnswer},tel=#{tel},address=#{address},userEmail=#{userEmail} WHERE userid=#{userId}
+        UPDATE userinfo SET loginPwd=#{loginPwd},pwdQuestion=#{pwdQuestion},pwdAnswer=#{pwdAnswer},tel=#{tel},address=#{address},userEmail=#{userEmail} WHERE userId=#{userId}
     </update>
     <select id="checkLogin"  parameterType="UserInfo" resultType="UserInfo">
         SELECT * FROM userinfo WHERE LoginName=#{loginName} AND LoginPwd=#{loginPwd}
     </select>
     <select id="findAll"  resultType="UserInfo">
-        SELECT * FROM userinfo
+        select *from userinfo
     </select>
     <delete id="deleteUser" parameterType="int">
         DELETE from userinfo where userid=#{userId}
     </delete>
     <insert id="insertAdmin" parameterType="String">
-        INSERT INTO userinfo VALUES(null,#{LoginName},#{LoginPwd},'','','',#{UserName},'','','','','',2,1)
+        INSERT INTO userinfo VALUES(null,#{LoginName},#{LoginPwd},'','','','','','','','','',2,1)
     </insert>
     <update id="updateSeller" parameterType="int">
         UPDATE userinfo SET RoleId=3 where userId=#{userId}

@@ -20,11 +20,11 @@ public class TestAnnouncement {
         }
         session.commit();*/
         //根据公告ID查找公告
-        /*a=dao.findAnnouncementById(4);
+        a=dao.findAnnouncementById(4);
         session.commit();
-        System.out.println(a);*/
+        System.out.println(a);
         //增加一条公告
-       a.setAnnouncementId(4);
+       /* a.setAnnouncementId(4);
         a.setAnnouncementName("《王者荣耀》收费调整公告");
         a.setAnnouncementContent("尊敬的用户：\n" +
                 "　　\n" +
@@ -37,7 +37,7 @@ public class TestAnnouncement {
                 "2017年7月10日");
         num=dao.insertAnnouncement(a);
         session.commit();
-        System.out.println("增加成功，受到影响的行数是："+num);
+        System.out.println("增加成功，受到影响的行数是："+num);*/
         //删除发布了的公告
         /*num=dao.deleteAnnouncement("3");
         session.commit();
