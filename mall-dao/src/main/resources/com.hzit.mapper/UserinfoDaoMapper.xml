@@ -11,7 +11,7 @@
         SELECT * FROM userinfo WHERE LoginName=#{loginName} AND LoginPwd=#{loginPwd}
     </select>
     <select id="findAll"  resultType="UserInfo">
-        select *from userinfo
+        SELECT * FROM userinfo
     </select>
     <delete id="deleteUser" parameterType="int">
         DELETE from userinfo where userid=#{userId}
