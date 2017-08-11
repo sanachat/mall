@@ -17,7 +17,7 @@
         DELETE from userinfo where userid=#{userId}
     </delete>
     <insert id="insertAdmin" parameterType="String">
-        INSERT INTO userinfo VALUES(null,#{LoginName},#{LoginPwd},'','','',#{UserName},'','','','','',2,1)
+        INSERT INTO userinfo VALUES(null,#{0},#{1},'','','',#{2},'','','','','',2,1)
     </insert>
     <update id="updateSeller" parameterType="int">
         UPDATE userinfo SET RoleId=3 where userId=#{userId}

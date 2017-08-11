@@ -21,12 +21,6 @@
                       values(#{gameGoodName},#{gameId},#{gameServerId},#{roleName},#{gameTypeId},#{gameGoodSellCount},#{gameGoodCount},#{describe},#{sellerName},#{unitPrice})
     </insert>
     <update id="updateGood" parameterType="com.hzit.entity.GamegoodInfo">
-<<<<<<< HEAD
-        update gamegood set gamesellcount=#{gameSellCount},gamegoodcount=#{gameGoodCount},`describe`=#{describe},unitprice=#{unitPrice},pictureurl=#{pictureUrl}
-=======
-        update gamegood set gamesellcount=#{gameSellCount},gamegoodcount=#{gameGoodCount},unitprice=#{unitPrice}
->>>>>>> origin/master
-        where gamegoodid=#{gameGoodId}
     </update>
     <delete id="deleteGood" parameterType="java.lang.Integer">
         delete from gamegood where gamegoodid = #{gameGoodId}

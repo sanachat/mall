@@ -9,6 +9,7 @@
         <typeAlias type="com.hzit.entity.Order" alias="Order" />
         <typeAlias type="com.hzit.entity.GamegoodInfo" alias="GamegoodInfo" />
         <typeAlias type="com.hzit.entity.OrderDetail" alias="OrderDetail" />
+        <typeAlias type="com.hzit.entity.ComplainInfo" alias="ComplainInfo" />
 
     </typeAliases>
     <environments default="development">
@@ -33,5 +34,7 @@
         <mapper resource="com.hzit.mapper/OrderDaoMapper.xml"></mapper>
         <mapper resource="com.hzit.mapper/BalanceDaoMapper.xml"></mapper>
         <mapper resource="com.hzit.mapper/GameInfoDaoMapper.xml"></mapper>
+        <mapper resource="com.hzit.mapper/ComplainInfoDaoMapper.xml"></mapper>
+
     </mappers>
 </configuration>
