@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
         user.setLoginName(name);
         user.setLoginPwd(pwd);
         UserInfo userInfo=dao.checkLogin(user);
-        String n=userInfo.getUserName();
+        String n=userInfo.getLoginName();
         if(userInfo==null){
             response.sendRedirect("register.html");
         }else{
