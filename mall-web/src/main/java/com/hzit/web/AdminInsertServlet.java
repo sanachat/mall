@@ -25,7 +25,7 @@ public class AdminInsertServlet extends HttpServlet {
         String rpwd=request.getParameter("rpwd");
         String realname=request.getParameter("realname");
         if(pwd.equals(rpwd)){
-        int num=dao.insertAdmin(name,pwd);
+        int num=dao.insertAdmin(name,pwd,realname);
         if (num==1){
             session.commit();
             request.getRequestDispatcher("/adminshow").forward(request,response);
