@@ -73,19 +73,19 @@
 						</div>
 						<ul class="sidebar-trans">
 							<li>
-								<a href="webSet.html">
+								<a href="/adminshow">
 									<b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
 									<span class="text-normal">用户列表</span>
 								</a>
 							</li>
 							<li>
-								<a href="webSet.html">
+								<a href="adminupdatestate.jsp">
 									<b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
 									<span class="text-normal">修改用户状态</span>
 								</a>
 							</li>
 							<li>
-								<a href="webSet.html">
+								<a href="admininsert.jsp">
 									<b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
 									<span class="text-normal">增加管理员</span>
 								</a>
@@ -102,7 +102,7 @@
 						</div>
 						<ul class="sidebar-trans">
 							<li>
-								<a href="userInfo.html">
+								<a href="/adminrecord">
 									<b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
 									<span class="text-normal">交易信息记录</span>
 								</a>
@@ -113,18 +113,13 @@
 						<div class="sidebar-title">
 							<a href="#">
 								<span class="icon"><b class="fl icon-arrow-down"></b></span>
-								<span class="text-normal">账户信息</span>
+								<span class="text-normal">商品管理</span>
 							</a>
 						</div>
 						<ul class="sidebar-trans">
+
 							<li>
-								<a href="userInfo.html">
-									<b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
-									<span class="text-normal">商品管理</span>
-								</a>
-							</li>
-							<li>
-								<a href="userInfo.html">
+								<a href="/admingood">
 									<b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
 									<span class="text-normal">商品列表</span>
 								</a>
@@ -140,13 +135,13 @@
 						</div>
 						<ul class="sidebar-trans">
 							<li>
-								<a href="userInfo.html">
+								<a href="/admingame">
 									<b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
 									<span class="text-normal">游戏列表</span>
 								</a>
 							</li>
 							<li>
-								<a href="userInfo.html">
+								<a href="admininsertgame.jsp">
 									<b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
 									<span class="text-normal">增加游戏</span>
 								</a>
@@ -184,7 +179,7 @@
 						
 						<div class="sidebar-nav">
 						<div class="sidebar-title">
-							<a href="#">
+							<a href="/adminshow">
 								<span class="icon"><b ></b></span>
 								<span class="text-normal">返回首页</span>
 							</a>
