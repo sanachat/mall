@@ -24,7 +24,8 @@ public class AnnouncementServlet extends HttpServlet {
         AnnouncementDao dao= SqlSessionHelper.getSqlSession().getMapper(AnnouncementDao.class);
         List<Announcement> list=dao.findAll();
         request.setAttribute("li",list);
-        request.getRequestDispatcher("Announcement.jsp").forward(request,response);
+        request.getRequestDispatcher("AnnouncementFindAll.jsp").forward(request,response);
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
