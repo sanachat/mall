@@ -75,7 +75,7 @@
                 公告编号
               </p>
               <div class="content-right-zoon">
-                <input class="width-main input" type="text" name="rname" datatype="*" value="">
+                <input class="width-main input" type="text" name="announcementId" datatype="*" value="">
               </div>
             </div>
             <div class="real-name-con height-main margin-top-25">
@@ -83,7 +83,7 @@
                 公告名称
               </p>
               <div class="content-right-zoon">
-                <input class="width-main input" type="text" name="rurl" datatype="*" value="">
+                <input class="width-main input" type="text" name="announcementName" datatype="*" value="">
               </div>
             </div>
             <div class="real-name-con height-main margin-top-25">
@@ -91,7 +91,7 @@
                 公告内容
               </p>
               <div class="content-right-zoon">
-                <textarea name="" id="" style="height: 150px;width:300px"></textarea>
+                <textarea name="announcementContent" id="" style="height: 150px;width:300px"></textarea>
               </div>
             </div>
           </div>
