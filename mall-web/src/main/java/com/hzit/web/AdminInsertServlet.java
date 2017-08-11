@@ -22,12 +22,19 @@ public class AdminInsertServlet extends HttpServlet {
         UserInfoDao dao=session.getMapper(UserInfoDao.class);
         String name=request.getParameter("loginname");
         String pwd=request.getParameter("loginpwd");
+        String rpwd=request.getParameter("rpwd");
+        String realname=request.getParameter("realname");
+        if(pwd.equals(rpwd)){
         int num=dao.insertAdmin(name,pwd);
         if (num==1){
             session.commit();
             request.getRequestDispatcher("/adminshow").forward(request,response);
         }else{
             session.rollback();
+            response.sendRedirect("/inserterror.jsp");
+        }
+        }else{
+            response.sendRedirect("/pwderror.jsp");
         }
     }
 
