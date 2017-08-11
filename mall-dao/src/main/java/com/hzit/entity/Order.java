@@ -18,7 +18,7 @@ public class Order {
     private int userId;
     private String date;
     private double price;
-    private List<OrderDetail> orderDetail;
+    private List<GamegoodInfo> gamegoodinfo;
 
     public int getOrderId() {
         return orderId;
@@ -52,12 +52,12 @@ public class Order {
         this.price = price;
     }
 
-    public List<OrderDetail> getOrderDetail() {
-        return orderDetail;
+    public List<GamegoodInfo> getGamegoodinfo() {
+        return gamegoodinfo;
     }
 
-    public void setOrderDetail(List<OrderDetail> orderDetail) {
-        this.orderDetail = orderDetail;
+    public void setGamegoodinfo(List<GamegoodInfo> gamegoodinfo) {
+        this.gamegoodinfo = gamegoodinfo;
     }
 
     @Override
@@ -67,7 +67,7 @@ public class Order {
                 ", userId=" + userId +
                 ", date='" + date + '\'' +
                 ", price=" + price +
-                ", orderDetail=" + orderDetail +
+                ", gamegoodinfo=" + gamegoodinfo +
                 '}';
     }
 }

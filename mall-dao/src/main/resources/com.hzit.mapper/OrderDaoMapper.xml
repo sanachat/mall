@@ -22,7 +22,7 @@
         <result property="userId" column="userId" />
         <result property="date" column="date" />
         <result property="price" column="price" />
-        <collection property="orderDetail" ofType="OrderDetail">
+        <collection property="OrderDetail" ofType="OrderDetail">
             <id property="detailId" column=" detailId" />
             <result property="orderId" column="orderId" />
             <result property="gamegoodId" column="gamegoodId" />
@@ -32,8 +32,9 @@
         </collection>
     </resultMap>
     <select id="selectdetail"  parameterType="int"  resultMap="orderMap">
-    select o.*,de.*
-     from  `order` o, orderdetail de where  o.orderid=de.orderid and o.orderId=#{orderId}
+    select o.orderId,o.userId,o.date,o.price,de.gamegooid,de.price,de.count,de.summoney
+
+     from  `order` o left join orderdetail de on  o.orderid=de.orderid WHERE orderId=#{orderId}
 
     </select>
 </mapper>
