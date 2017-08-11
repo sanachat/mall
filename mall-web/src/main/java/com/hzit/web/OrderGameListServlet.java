@@ -27,7 +27,7 @@ public class OrderGameListServlet extends HttpServlet {
         String id=request.getParameter("orderId");
         List<Order> l=dao.selectgame(Integer.parseInt(id));
         request.setAttribute("l",l);
-        request.getRequestDispatcher("OrderList.jsp").forward(request,response);
+        request.getRequestDispatcher("OrderGameFind.jsp").forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
