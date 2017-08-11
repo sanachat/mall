@@ -23,9 +23,9 @@ public class ShoppingCartServlet extends HttpServlet {
         ShoppingCartDao dao= SqlSessionHelper.getSqlSession().getMapper(ShoppingCartDao.class);
         List<ShoppingCart> list=dao.findshoppingcart(1);
         request.setAttribute("shop",list);
-        request.getRequestDispatcher("ShoppingCart.jsp").forward(request,response);
+        request.getRequestDispatcher("").forward(request,response);
     }
-//
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       doPost(request,response);
     }
