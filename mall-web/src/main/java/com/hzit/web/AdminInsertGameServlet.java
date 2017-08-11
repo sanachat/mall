@@ -20,10 +20,9 @@ public class AdminInsertGameServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         SqlSession session = SqlSessionHelper.getSqlSession();
         GameInfoDao dao =session.getMapper(GameInfoDao.class);
-        GameInfo game=new GameInfo();
-        game.setGameName(request.getParameter("name"));
-        game.setGameArea(request.getParameter("area"));
-        int num=dao.insertGame(game);
+        String name=request.getParameter("gamename");
+        String area=request.getParameter("area");
+        int num=dao.insertGame(name,area);
         if (num==1){
             session.commit();
             request.getRequestDispatcher("/admingame").forward(request,response);
