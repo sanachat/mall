@@ -9,6 +9,7 @@ public class Picture {
     private int pictureId;
     private String pictureName;
     private String pictureUrl;
+    private GamegoodInfo gamegoodInfo;
 
     public int getPictureId() {
         return pictureId;

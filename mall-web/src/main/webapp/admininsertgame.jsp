@@ -191,45 +191,35 @@
   <div class="view-product">
     <div class="company_identify">
       <div class="manage-head">
-        <h6 class="padding-left manage-head-con">新增管理员</h6>
+        <h6 class="padding-left manage-head-con">新增游戏</h6>
       </div>
-      <form name="setp0" action="/addResource" method="post" autocomplete="off">
+      <form name="setp0" action="/admininsertgame" method="post" autocomplete="off">
         <div class="basic-info-detail clearfix">
 
           <div class="unit-style padding-big-lr clearfix">
-            <h4 class="real-name-head margin-large-top">填写管理员信息</h4>
+            <h4 class="real-name-head margin-large-top">填写游戏信息</h4>
             <div class="real-name-con height-main margin-top-25">
               <p class="content-left-zoon">
-                登陆用户
+                游戏名称
               </p>
               <div class="content-right-zoon">
-                <input class="width-main input" type="text" name="loginname" datatype="*" value="">
+                <input class="width-main input" type="text" name="gamename" datatype="*" value="">
               </div>
             </div>
             <div class="real-name-con height-main margin-top-25">
               <p class="content-left-zoon">
-                登录密码
+                游戏描述
               </p>
               <div class="content-right-zoon">
-                <input class="width-main input" type="text" name="loginpwd" datatype="*" value="">
+                <input class="width-main input" type="text" name="area" datatype="*" value="">
               </div>
             </div>
 
             <div class="real-name-con height-main margin-top-25">
-              <p class="content-left-zoon">
-                确认密码
+              <p class="content-right-zoon">
+                注：由于政策原因 目前运营区域只支持中国大陆
               </p>
-              <div class="content-right-zoon">
-                <input class="width-main input" type="text" name="rpwd" datatype="*" value="">
-              </div>
-            </div>
-            <div class="real-name-con height-main margin-top-25">
-              <p class="content-left-zoon">
-                真实姓名
-              </p>
-              <div class="content-right-zoon">
-                <input class="width-main input" type="text" name="realname" datatype="*" value="">
-              </div>
+
             </div>
 
 
