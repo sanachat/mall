@@ -2,16 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hzit.dao.ShoppingCartDao">
     <!-- 配置映射字段 -->
-    <select id="findshoppingcart" parameterType="int" resultType="ShoppingCart">
+    <select id="findshoppingcart" parameterType="String" resultType="ShoppingCart">
         select * from ShoppingCart WHERE userId=#{userId}
     </select>
     <insert id="insertshoppingcart" parameterType="ShoppingCart" >
-        INSERT INTO ShoppingCart VALUES (#{shopId},#{userId},#{price},#{gameGoodId},#{count})
+        INSERT INTO ShoppingCart VALUES (#{shopId},#{userId},#{price},#{gameGoodId},#{num})
     </insert>
     <delete id="deleteRole" parameterType="java.lang.Integer" >
         DELETE from ShoppingCart WHERE gameGoodId=#{gameGoodId}
     </delete>
     <select id="allmoney" parameterType="int" resultType="int" >
-        SELECT SUM(price) from ShoppingCart WHERE userId=#{userId}
+    SELECT SUM(price*num) from ShoppingCart WHERE userId=#{userId}
+</select>
+    <select id="banlanceBygameGoodId" parameterType="int" resultType="int" >
+        SELECT SUM(price*num) from ShoppingCart WHERE userId=#{userId} and gamegoodId=#{gamegoodId}
     </select>
 </mapper>

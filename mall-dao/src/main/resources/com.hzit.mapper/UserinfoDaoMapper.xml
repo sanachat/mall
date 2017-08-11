@@ -16,7 +16,7 @@
     <delete id="deleteUser" parameterType="int">
         DELETE from userinfo where userid=#{userId}
     </delete>
-    <insert id="insertAdmin" parameterType="UserInfo">
+    <insert id="insertAdmin" parameterType="String">
         INSERT INTO userinfo VALUES(null,#{LoginName},#{LoginPwd},'','','','','','','','','',2,1)
     </insert>
     <update id="updateSeller" parameterType="int">
