@@ -170,7 +170,7 @@
                     ${o.price}
                 </div>
                   <div class="td w20">
-                      ${o.orderDetail}
+                      ${o.orderDetail }
                   </div>
 
 
