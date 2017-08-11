@@ -8,6 +8,7 @@
         <typeAlias type="com.hzit.entity.ShoppingCart" alias="ShoppingCart"/>
         <typeAlias type="com.hzit.entity.Order" alias="Order" />
         <typeAlias type="com.hzit.entity.GamegoodInfo" alias="GamegoodInfo" />
+        <typeAlias type="com.hzit.entity.OrderDetail" alias="OrderDetail" />
 
     </typeAliases>
     <environments default="development">

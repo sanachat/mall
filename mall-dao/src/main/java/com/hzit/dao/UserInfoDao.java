@@ -10,7 +10,7 @@ import java.util.List;
 public interface UserInfoDao {
     public List<UserInfo> findAll();
     public int deleteUser(int userId);//删除用户
-    public int insertAdmin(String name, String password,String realname);//增加管理员
+    public int insertAdmin(String name, String password);//增加管理员
     public int updateSeller(int userId);//成为卖家
     public int insertUser(UserInfo userInfo);//默认注册成为买家
     public int updateUser(UserInfo userInfo);//个人信息管理，修改登录密码等
