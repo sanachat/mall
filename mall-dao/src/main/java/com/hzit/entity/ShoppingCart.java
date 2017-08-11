@@ -17,7 +17,7 @@ public class ShoppingCart
     private int userId;
     private double price;
     private int gameGoodId;
-    private int count;
+    private int sum;
     private GamegoodInfo gamegoodInfo;
 
     public GamegoodInfo getGamegoodInfo() {
@@ -52,12 +52,12 @@ public class ShoppingCart
         this.price = price;
     }
 
-    public int getCount() {
-        return count;
+    public int getSum() {
+        return sum;
     }
 
-    public void setCount(int count) {
-        this.count = count;
+    public void setSum(int sum) {
+        this.sum = sum;
     }
 
     public int getGameGoodId() {
@@ -75,7 +75,7 @@ public class ShoppingCart
                 ", userId=" + userId +
                 ", price=" + price +
                 ", gameGoodId=" + gameGoodId +
-                ", count=" + count +
+                ", count=" + sum +
                 ", gamegoodInfo=" + gamegoodInfo +
                 '}';
     }
