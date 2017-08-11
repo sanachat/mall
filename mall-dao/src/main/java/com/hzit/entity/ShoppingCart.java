@@ -18,9 +18,15 @@ public class ShoppingCart
     private double price;
     private int gameGoodId;
     private int sum;
+    private GamegoodInfo gamegoodInfo;
 
+    public GamegoodInfo getGamegoodInfo() {
+        return gamegoodInfo;
+    }
 
-
+    public void setGamegoodInfo(GamegoodInfo gamegoodInfo) {
+        this.gamegoodInfo = gamegoodInfo;
+    }
 
     public int getShopId() {
         return shopId;
@@ -70,6 +76,7 @@ public class ShoppingCart
                 ", price=" + price +
                 ", gameGoodId=" + gameGoodId +
                 ", count=" + sum +
+                ", gamegoodInfo=" + gamegoodInfo +
                 '}';
     }
 }
