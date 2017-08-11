@@ -18,6 +18,8 @@ import java.io.IOException;
 @WebServlet(name = "AdminInsertGameServlet",value="/admininsertgame")
 public class AdminInsertGameServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+
         SqlSession session = SqlSessionHelper.getSqlSession();
         GameInfoDao dao =session.getMapper(GameInfoDao.class);
         String name=request.getParameter("gamename");
