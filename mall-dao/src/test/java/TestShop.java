@@ -9,7 +9,6 @@ public class TestShop {
     public static void main(String[] args) {
         SqlSession session= SqlSessionHelper.getSqlSession();
         ShoppingCartDao dao=session.getMapper(ShoppingCartDao.class);
-
         List<ShoppingCart> list=new ArrayList<ShoppingCart>();
         list=dao.findshoppingcart(1);
         for(ShoppingCart s:list){
@@ -26,10 +25,10 @@ public class TestShop {
         dao.insertshoppingcart(shoppingCart);
         session.commit();
         System.out.println(shoppingCart);*/
-
+/*
         int num=0;
         num=dao.allmoney(1);
-        System.out.println(num);
+        System.out.println(num);*/
 
 
 
