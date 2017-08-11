@@ -21,6 +21,7 @@ public class ShoppingCartServlet extends HttpServlet {
         response.setCharacterEncoding("utf-8");
         request.setCharacterEncoding("utf-8");
         ShoppingCartDao dao= SqlSessionHelper.getSqlSession().getMapper(ShoppingCartDao.class);
+
         List<ShoppingCart> list=dao.findshoppingcart(1);
         request.setAttribute("shop",list);
         request.getRequestDispatcher("ShoppingCart.jsp").forward(request,response);
