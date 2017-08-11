@@ -16,19 +16,19 @@ import java.util.List;
 /**
  * Created by THINK on 2017/8/10.
  */
-@WebServlet(name = "ShoppingCartServlet",urlPatterns = "/findAll")
+@WebServlet(name = "ShoppingCartServlet",urlPatterns = "/findAllcart")
 public class ShoppingCartServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setCharacterEncoding("utf-8");
         request.setCharacterEncoding("utf-8");
         ShoppingCartDao dao= SqlSessionHelper.getSqlSession().getMapper(ShoppingCartDao.class);
         UserInfo userInfo=(UserInfo)request.getSession().getAttribute("user");
-        int user=userInfo.getUserId();
-        List<ShoppingCart> list=dao.findshoppingcart(user);
+        int num=userInfo.getUserId();
+        List<ShoppingCart> list=dao.findshoppingcart(num);
         request.setAttribute("list",list);
         request.getRequestDispatcher("ShoppingCart.jsp").forward(request,response);
     }
-//
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       doPost(request,response);
     }

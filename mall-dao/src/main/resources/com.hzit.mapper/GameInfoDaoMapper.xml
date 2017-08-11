@@ -9,8 +9,8 @@
     <select id="findGame"  resultType="com.hzit.entity.GameInfo">
         select *from gameinfo
     </select>
-    <insert id="insertGame" parameterType="String" >
-        insert into gameinfo(gamename,gamearea) values(#{0},#{1})
+    <insert id="insertGame" parameterType="com.hzit.entity.GameInfo" >
+        insert into gameinfo(gamename,gamearea) values(#{gameName},#{gameArea})
     </insert>
     <delete id="deleteGame" parameterType="int">
         DELETE from gameinfo where gameid=#{gameId}
