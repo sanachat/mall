@@ -244,13 +244,12 @@
               <div class="td w10">
                 ${c.unitPrice}
               </div>
-              <div class="td w10">
-                ${c.prctureUrl}
+              <div class="td w15">
+                <a href="#" class="button-word2">无</a>
               </div>
-              <div class="td w10">
+              <div class="td w15">
                 <a href="#" msg="您是否删除此站点，如果删除会影响站点通信导致部分功能无法使用？" callback="del_site(624)" data-id="" class="button-word2 btn_ajax_confirm">删除</a>
               </div>
-               </c:forEach>
             </div>
           </div>
         </div>
@@ -285,4 +284,5 @@
   });
 </script>
 </body>
+
 </html>
