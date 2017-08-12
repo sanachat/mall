@@ -1,9 +1,7 @@
 package com.hzit.web;
-
 import com.hzit.dao.ShoppingCartDao;
 import com.hzit.dao.SqlSessionHelper;
 import org.apache.ibatis.session.SqlSession;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
