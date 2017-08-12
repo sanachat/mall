@@ -1,7 +1,7 @@
 package com.hzit.web;
 
-import com.hzit.dao.GameGoodInfoDao;
 import com.hzit.dao.SqlSessionHelper;
+import com.hzit.dao.UserInfoDao;
 import org.apache.ibatis.session.SqlSession;
 
 import javax.servlet.ServletException;
@@ -14,23 +14,22 @@ import java.io.IOException;
 /**
  * Created by Administrator on 2017/8/10.
  */
-@WebServlet(name = "AdminDeleteGoodServlet",value="/admindeletegood")
-public class AdminDeleteGoodServlet extends HttpServlet {
+@WebServlet(name = "AdminFreezeStateServlet",value="/adminfreezestate")
+public class AdminFreezeStateServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        SqlSession session= SqlSessionHelper.getSqlSession();
-        GameGoodInfoDao dao=session.getMapper(GameGoodInfoDao.class);
-        int goodid=Integer.parseInt(request.getParameter("goodid"));
-        int num=dao.deleteGood(goodid);
-        if (num==1){
+        SqlSession session = SqlSessionHelper.getSqlSession();
+        UserInfoDao dao = session.getMapper(UserInfoDao.class);
+        int userid = Integer.parseInt(request.getParameter("userid"));
+        int num=dao.fzUserState(userid);
+        if (num == 1) {
             session.commit();
-            request.getRequestDispatcher("/admingood");
-        }else{
+            request.getRequestDispatcher("/adminshow").forward(request, response);
+        } else {
             session.rollback();
         }
-    }
-
+}
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      doPost(request,response);
+        doPost(request,response);
 
     }
 }

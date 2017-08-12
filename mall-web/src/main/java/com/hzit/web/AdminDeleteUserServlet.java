@@ -20,7 +20,7 @@ public class AdminDeleteUserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         SqlSession session = SqlSessionHelper.getSqlSession();
         UserInfoDao dao=session.getMapper(UserInfoDao.class);
-        int id=Integer.parseInt(request.getParameter("userid"));
+        int id=Integer.parseInt(request.getParameter("uid"));
         int num=dao.deleteUser(id);
         if (num==1){
             session.commit();
@@ -32,5 +32,6 @@ public class AdminDeleteUserServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request,response);
+
     }
 }
