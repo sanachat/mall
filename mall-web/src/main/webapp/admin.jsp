@@ -251,7 +251,7 @@
 										<a href="#"  class="button-word2 btn_ajax_confirm">修改</a>
 									</div>
 									<div class="td w5">
-										<a href="#" msg="您是否删除此站点，如果删除会影响站点通信导致部分功能无法使用？" callback="del_site(624)" data-id="" class="button-word2 btn_ajax_confirm">删除</a>
+										<a href="admindeleteuser?uid=${list.userId}" class="button-word2 btn_ajax_confirm">删除</a>
 									</div>
 								</div>
 								</c:forEach>
