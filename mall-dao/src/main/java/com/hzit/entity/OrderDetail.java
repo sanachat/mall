@@ -15,7 +15,7 @@ public class OrderDetail {
     private int detailId;
     private int orderId;
     private int gamegoodId;
-    private double price;
+    private double prices;
     private int count;
     private double summoney;
 
@@ -43,13 +43,17 @@ public class OrderDetail {
         this.gamegoodId = gamegoodId;
     }
 
-    public double getPrice() {
-        return price;
+
+
+    public double getPrices() {
+        return prices;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setPrices(double prices) {
+        this.prices = prices;
     }
+
+
 
     public int getCount() {
         return count;
@@ -73,7 +77,7 @@ public class OrderDetail {
                 "detailId=" + detailId +
                 ", orderId=" + orderId +
                 ", gamegoodId=" + gamegoodId +
-                ", price=" + price +
+                ", prices=" + prices +
                 ", count=" + count +
                 ", summoney=" + summoney +
                 '}';

@@ -139,42 +139,48 @@
         <div class="list-content show">
           <div class="offcial-table tr-border margin-big-top clearfix">
             <div class="tr-th clearfix">
-              <div class="th w20">
+              <div class="th w25">
                 订单编号
               </div>
-              <div class="th w20">
+              <div class="th w25">
                 下单用户
               </div>
-              <div class="th w20">
+              <div class="th w25">
                 订单日期
               </div>
-              <div class="th w20">
-                创建时间
+              <div class="th w25">
+                总价
               </div>
-              <div class="th w20">
-                商品信息
-              </div>
+
             </div>
             <c:forEach var="o" items="${l}">
               <div class="tr clearfix border-bottom-none">
-                <div class="td w10">
+                <div class="td w25">
                     ${o.orderId}
                 </div>
-                <div class="td w10">
+                <div class="td w25">
                     ${o.userId}
                 </div>
-                <div class="td w10">
+                <div class="td w25">
                     ${o.date}
-                </div>
-                <div class="td w10">
-                    ${o.price}
-                </div>
-                  <div class="td w50">
+                </div></div><br/>
+<div class=" tr-th clearfix">
                     <c:forEach items="${o.orderDetail}" var="d">
-                      ${d.summoney}${d.gamegoodId}<br/>
+                      <div class="td w25">
+                          ${d.summoney}
+                      </div>
+                      <div class="td w25">
+                          ${d.gamegoodId}
+                      </div>
+                      <div class="td w25">
+                          ${d.prices}
+                      </div>
+                      <div class="td w25">
+                          ${d.count}
+                      </div><br/>
                     </c:forEach>
 
-                  </div>
+</div>
 
 
               </div>
