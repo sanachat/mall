@@ -230,7 +230,7 @@
                     中国大陆
                 </div>
                 <div class="td w15">
-                  <a href="#" msg="您是否删除此站点，如果删除会影响站点通信导致部分功能无法使用？" callback="del_site(624)" data-id="" class="button-word2 btn_ajax_confirm">删除</a>
+                  <a href="admindeletegame" msg="您是否删除此站点，如果删除会影响站点通信导致部分功能无法使用？" callback="del_site(624)" data-id="" class="button-word2 btn_ajax_confirm">删除</a>
                 </div>
               </div>
             </c:forEach>
