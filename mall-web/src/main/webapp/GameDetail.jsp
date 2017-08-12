@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: wan
-  Date: 2017/8/11
-  Time: 11:21
-  To change this template use File | Settings | File Templates.
---%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -31,7 +24,7 @@
       <a href="#" class="topbar-logo fl">
         <span><img src="Images/logo.png" width="20" height="20"/></span>
       </a>
-      <a href="index.html" class="topbar-home-link topbar-btn text-center fl"><span>订单管理</span></a>
+      <a href="index.html" class="topbar-home-link topbar-btn text-center fl"><span>商品首页</span></a>
     </div>
   </div>
   <div class="topbar-info">
@@ -128,9 +121,9 @@
     <div class="authority">
       <div class="authority-head">
         <div class="manage-head">
-          <h6 class="layout padding-left manage-head-con">订单管理
+          <h6 class="layout padding-left manage-head-con">商品详细信息
             <span class="fr text-small text-normal padding-top">发布时间：2017-08-11</span>
-            <span class="fr margin-large-right padding-top text-small text-normal">最新版本：<em class="text-main">2.4.0.160708</em></span>
+            <span class="fr  margin-large-right padding-top text-small text-normal">最新版本：<em class="text-main">2.4.0.160708</em></span>
           </h6>
         </div>
 
@@ -139,69 +132,59 @@
         <div class="list-content show">
           <div class="offcial-table tr-border margin-big-top clearfix">
             <div class="tr-th clearfix">
-              <div class="th w25">
-                订单编号
+              <div class="th w15">
+                商品名字
               </div>
-              <div class="th w25">
-                下单用户
+              <div class="th w15">
+                商品店铺
               </div>
-              <div class="th w25">
-                订单日期
+              <div class="th w15">
+                商品单价
               </div>
-              <div class="th w25">
-                总价
+              <div class="th w15">
+                卖出数量
               </div>
-
+              <div class="th w15">
+                存货
+              </div>
+              <div class="th w15">
+                描述
+              </div>
+              <div class="th w10">
+                <a href="#"  class="button-word2 btn_ajax_confirm">我的购物车</a>
+              </div>
             </div>
-            <c:forEach var="o" items="${l}">
+            <%--//<c:forEach var="o" items="${gd}">--%>
               <div class="tr clearfix border-bottom-none">
-                <div class="td w25">
-                    ${o.orderId}
+                <div class="td w15">
+                    ${gd.gameGoodName}
                 </div>
-                <div class="td w25">
-                    ${o.userId}
+                <div class="td w15">
+                    ${gd.sellerName}
                 </div>
-                <div class="td w25">
-                    ${o.date}
+                <div class="td w15">
+                    ${gd.unitPrice}
                 </div>
-                <div class="td w25">
-                    ${o.price}
-                </div></div><br/>
-<div class=" tr-th clearfix">
+                <div class="td w15">
+                  ${gd. gameGoodSellCount}
+                </div>
+                <div class="td w15">
+                  ${gd. gameGoodCount}
+                </div>
+                <div class="td w15">
+                  ${gd. describe}
+                </div>
 
-  <div class="th w25">
-    商品id
-  </div>
-  <div class="th w25">
-    单价
-  </div>
-  <div class="th w25">
-    数量
-  </div>
-  <div class="th w25">
-  总价
-</div>
-                    <c:forEach items="${o.orderDetail}" var="d">
-
-                      <div class="td w25">
-                          ${d.gamegoodId}
-                      </div>
-                      <div class="td w25">
-                          ${d.prices}
-                      </div>
-                      <div class="td w25">
-                          ${d.count}
-                      </div>
-                      <div class="td w25">
-                          ${d.summoney}
-                      </div><br/>
-                    </c:forEach>
-
-</div>
-
+                  <%--<div class="td w20">
+                      ${o.gamegoodinfo}
+                  </div>--%>
+                <div class="td w10">
+                  <a href="#"  class="button-word2 btn_ajax_confirm">购买</a>
+                  <a href="#"  class="button-word2 btn_ajax_confirm">返回</a>
+                </div>
 
               </div>
-            </c:forEach>
+            <%--</c:forEach>--%>
           </div>
         </div>
         <div class="show-page padding-big-right">

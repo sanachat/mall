@@ -26,7 +26,7 @@ public class GamegoodInfo {
     private String sellerName;//卖家店铺名称
     private double unitPrice;//商品单价
     private List<Order> list;
-    private String prictureUrl;
+    private String pictureUrl;
     private GameInfo gameInfo;
     private GameServer gameServer;
     private GameType gameType;
@@ -56,12 +56,12 @@ public class GamegoodInfo {
         this.gameInfo = gameInfo;
     }
 
-    public String getPrictureUrl() {
-        return prictureUrl;
+    public String getPictureUrl() {
+        return pictureUrl;
     }
 
-    public void setPrictureUrl(String prictureUrl) {
-        this.prictureUrl = prictureUrl;
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
     }
 
     public double getUnitPrice() {
@@ -177,7 +177,7 @@ public class GamegoodInfo {
                 ", sellerName='" + sellerName + '\'' +
                 ", unitPrice=" + unitPrice +
                 ", list=" + list +
-                ", prictureUrl='" + prictureUrl + '\'' +
+                ", pictureUrl='" + pictureUrl + '\'' +
                 ", gameInfo=" + gameInfo +
                 ", gameServer=" + gameServer +
                 ", gameType=" + gameType +
