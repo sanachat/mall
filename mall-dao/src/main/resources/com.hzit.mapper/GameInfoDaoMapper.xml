@@ -15,4 +15,5 @@
     <delete id="deleteGame" parameterType="int">
         DELETE from gameinfo where gameid=#{gameId}
     </delete>
+
 </mapper>

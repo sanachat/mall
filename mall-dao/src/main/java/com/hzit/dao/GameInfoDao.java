@@ -11,4 +11,5 @@ public interface GameInfoDao {
     public int insertGame(String name,String area);
     public int deleteGame(int id);
     public List<GameInfo> findGame();
+
 }
