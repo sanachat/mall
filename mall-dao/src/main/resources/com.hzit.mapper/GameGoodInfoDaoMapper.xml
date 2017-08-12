@@ -8,8 +8,10 @@
              resultType代表方法返回集合中元素的类型
     -->
 
-    <select id="findAllGood"  resultType="com.hzit.entity.GamegoodInfo">
-        select * from gamegood
+    <select id="findAllGood"  resultType="com.hzit.entity.GamegoodInfo" resultMap="GameGoodMap">
+        SELECT * FROM GAMEGOOD A  JOIN GAMEINFO B ON A.`GameId` = B.`GameId`
+                                  JOIN gameserver C ON A.`GameServerId` = C.`GameServerId`
+                                  JOIN GAMETYPE D ON A.`GameTypeId` = D.`GameTypeId`
     </select>
     <select id="findOneGood" parameterType="java.lang.Integer" resultType="com.hzit.entity.GamegoodInfo">
         select * from gamegood where gamegoodid=#{gameGoodId}
@@ -19,12 +21,34 @@
                       values(#{gameGoodName},#{gameId},#{gameServerId},#{roleName},#{gameTypeId},#{gameGoodSellCount},#{gameGoodCount},#{describe},#{sellerName},#{unitPrice})
     </insert>
     <update id="updateGood" parameterType="com.hzit.entity.GamegoodInfo">
-        update gamegood set gamesellcount=#{gameSellCount},gamegoodcount=#{gameGoodCount},unitprice=#{unitPrice}
-        where gamegoodid=#{gameGoodId}
     </update>
     <delete id="deleteGood" parameterType="java.lang.Integer">
         delete from gamegood where gamegoodid = #{gameGoodId}
     </delete>
+
+
+
+    <resultMap type="GamegoodInfo" id="GameGoodMap">
+        <id property="gameGoodId" column="GameGoodId"/>
+        <result property="gameGoodName" column="GameGoodName"/>
+        <result property="roleName" column="RoleName"/>
+        <result property="gameGoodSellCount" column="GameGoodSellCount"/>
+        <result property="gameGoodCount" column="GameGoodCount"/>
+        <result property="describe" column="describe"/>
+        <result property="sellerName" column="SelerName"/>
+        <result property="unitPrice" column="UnitPrice"/>
+        <result property="pictureUrl" column="PictureUrl"/>
+        <association property="gameInfo" javaType="com.hzit.entity.GameInfo">
+            <result property="gameName" column="GameName"/>
+            <result property="gameArea" column="GameArea"/>
+        </association>
+        <association property="gameServer" javaType="com.hzit.entity.GameServer">
+            <result property="gameServerName" column="GameServerName"/>
+        </association>
+        <association property="gameType" javaType="com.hzit.entity.GameType">
+            <result property="gameGoodType" column="GameGoodType"/>
+        </association>
+    </resultMap>
 
 
     <resultMap type="GamegoodInfo" id="gamegoodinfoMap">

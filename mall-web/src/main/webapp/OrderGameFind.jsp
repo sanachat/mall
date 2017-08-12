@@ -157,20 +157,23 @@
             </div>
             <c:forEach var="o" items="${l}">
               <div class="tr clearfix border-bottom-none">
-                <div class="td w20">
+                <div class="td w10">
                     ${o.orderId}
                 </div>
-                <div class="td w20">
+                <div class="td w10">
                     ${o.userId}
                 </div>
-                <div class="td w20">
+                <div class="td w10">
                     ${o.date}
                 </div>
-                <div class="td w20">
+                <div class="td w10">
                     ${o.price}
                 </div>
-                  <div class="td w20">
-                      ${o.gamegoodinfo}
+                  <div class="td w50">
+                    <c:forEach items="${o.orderDetail}" var="d">
+                      ${d.summoney}${d.gamegoodId}<br/>
+                    </c:forEach>
+
                   </div>
 
 

@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,14 +68,26 @@
 
           <a href="#">
             <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">个人信息</span>
+            <span class="text-normal">用户管理</span>
           </a>
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="webSet.html">
+            <a href="/adminshow">
               <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">我的信息</span>
+              <span class="text-normal">用户列表</span>
+            </a>
+          </li>
+          <li>
+            <a href="adminupdatestate.jsp">
+              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
+              <span class="text-normal">修改用户状态</span>
+            </a>
+          </li>
+          <li>
+            <a href="admininsert.jsp">
+              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
+              <span class="text-normal">增加管理员</span>
             </a>
           </li>
 
@@ -84,12 +97,29 @@
         <div class="sidebar-title">
           <a href="#">
             <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">商品信息</span>
+            <span class="text-normal">交易信息</span>
           </a>
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="userInfo.html">
+            <a href="/adminrecord">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">交易信息记录</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-nav">
+        <div class="sidebar-title">
+          <a href="#">
+            <span class="icon"><b class="fl icon-arrow-down"></b></span>
+            <span class="text-normal">商品管理</span>
+          </a>
+        </div>
+        <ul class="sidebar-trans">
+
+          <li>
+            <a href="/admingood">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">商品列表</span>
             </a>
@@ -100,42 +130,20 @@
         <div class="sidebar-title">
           <a href="#">
             <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">账户信息</span>
+            <span class="text-normal">游戏管理</span>
           </a>
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="userInfo.html">
+            <a href="/admingame">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
-              <span class="text-normal">我的账户</span>
+              <span class="text-normal">游戏列表</span>
             </a>
           </li>
           <li>
-            <a href="userInfo.html">
+            <a href="admininsertgame.jsp">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
-              <span class="text-normal">购物车</span>
-            </a>
-          </li>
-          <li>
-            <a href="userInfo.html">
-              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
-              <span class="text-normal">购物记录</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="sidebar-nav">
-        <div class="sidebar-title">
-          <a href="#">
-            <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">商家信息</span>
-          </a>
-        </div>
-        <ul class="sidebar-trans">
-          <li>
-            <a href="userInfo.html">
-              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
-              <span class="text-normal">成为商家</span>
+              <span class="text-normal">增加游戏</span>
             </a>
           </li>
         </ul>
@@ -151,7 +159,13 @@
           <li>
             <a href="userInfo.html">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
-              <span class="text-normal">投诉</span>
+              <span class="text-normal">投诉处理</span>
+            </a>
+          </li>
+          <li>
+            <a href="userInfo.html">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">发布公告</span>
             </a>
           </li>
           <li>
@@ -165,7 +179,7 @@
 
       <div class="sidebar-nav">
         <div class="sidebar-title">
-          <a href="#">
+          <a href="/adminshow">
             <span class="icon"><b ></b></span>
             <span class="text-normal">返回首页</span>
           </a>
@@ -178,51 +192,45 @@
     <div class="authority">
       <div class="authority-head">
         <div class="manage-head">
-          <h6 class="layout padding-left manage-head-con">购物车</h6>
+          <h6 class="layout padding-left manage-head-con">用户管理</h6>
         </div>
       </div>
       <div class="authority-content">
         <div class="list-content show">
           <div class="offcial-table tr-border margin-big-top clearfix">
             <div class="tr-th clearfix">
-              <div class="th w20">
-              购物车编号
+              <div class="th w10">
+                游戏ID
               </div>
               <div class="th w20">
-                用户Id
+                游戏名称
               </div>
-              <div class="th w15">
-                价格
+              <div class="th w25">
+                游戏描述
               </div>
-              <div class="th w15">
-                商品编号
-              </div>
-              <div class="th w15">
-                数量
+              <div class="th w20">
+                运营区域
               </div>
               <div class="th w15">
                 操作
               </div>
             </div>
-            <c:forEach var="cart" items="${shop}">
+            <c:forEach var="li" items="${allgame}">
               <div class="tr clearfix border-bottom-none">
                 <div class="td w10">
-                  ${cart.shopId}
+                    ${li.gameId}
                 </div>
-                <div class="td w30">
-                  ${cart.userId}
+                <div class="td w20">
+                    ${li.gameName}
                 </div>
                 <div class="td w25">
-                  ${cart.price}
-                </div>
-                <div class="td w10">
-                  ${cart.gameGoodId}
+                    ${li.gameArea}
                 </div>
                 <div class="td w20">
-                  ${cart.num}
+                    中国大陆
                 </div>
-                <div class="td w20">
-                  <a href="deleteshoppingcart?shopId=${cart.shopId}" class="button-word2 btn_ajax_confirm">删除</a>
+                <div class="td w15">
+                  <a href="admindeletegame" msg="您是否删除此站点，如果删除会影响站点通信导致部分功能无法使用？" callback="del_site(624)" data-id="" class="button-word2 btn_ajax_confirm">删除</a>
                 </div>
               </div>
             </c:forEach>

@@ -215,10 +215,10 @@
 										地址
 									</div>
 									<div class="th w10">
-										用户角色
+										用户状态
 									</div>
 									<div class="th w10">
-										用户状态
+										用户角色
 									</div>
 									<div class="th w10">
 										操作
@@ -242,10 +242,10 @@
 										${list.address}
 									</div>
 									<div class="td w10">
-										${list.userStateId}
+										${list.userState.userState}
 									</div>
 									<div class="td w10">
-										${list.roleId}
+										${list.roleInfo.roleName}
 									</div>
 									<div class="td w5">
 										<a href="#"  class="button-word2 btn_ajax_confirm">修改</a>
