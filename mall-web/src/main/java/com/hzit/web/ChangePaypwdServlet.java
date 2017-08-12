@@ -17,7 +17,7 @@ import java.io.PrintWriter;
 /**
  * Created by acer on 2017/8/12.
  */
-@WebServlet(name = "BalanceChangepwdServlet", value = "/changePayPwd")
+@WebServlet(name = "ChangePaypwdServle", value = "/changePayPwd")
 public class ChangePaypwdServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setCharacterEncoding("utf-8");
