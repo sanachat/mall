@@ -9,8 +9,8 @@ package com.hzit.entity;/*
 
 public class Announcement {
     private int announcementId;
-    private String announcementName;
     private String announcementContent;
+    private String announcementName;
 
     public String getAnnouncementName() {
         return announcementName;

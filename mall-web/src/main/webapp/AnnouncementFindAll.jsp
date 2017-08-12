@@ -92,7 +92,6 @@
                 操作
               </div>
             </div>
-            <a href="addAnnouncement"></a>
             <c:forEach var="a" items="${li}" >
             <div class="tr clearfix border-bottom-none">
               <div class="td w25">
@@ -106,7 +105,7 @@
               </div>
               <div class="td w25">
                 <a href="AnnouncementAdd.jsp"  class="button-word2 btn_ajax_confirm">增加</a> |
-                <a href="/dodeleteAnnouncement.action?pid=${a.announcementId}"  class="button-word2 btn_ajax_confirm">删除</a>
+                <a href="dodeleteAnnouncement.action?pid=${a.announcementId}"  class="button-word2 btn_ajax_confirm">删除</a>
               </div>
             </div>
             </c:forEach>

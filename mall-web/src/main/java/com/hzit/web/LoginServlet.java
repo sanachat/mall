@@ -27,12 +27,19 @@ public class LoginServlet extends HttpServlet {
         UserInfo user=new UserInfo();
         user.setLoginName(name);
         user.setLoginPwd(pwd);
-        UserInfo userInfo=dao.checkLogin(user);
+        UserInfo userInfo=dao.checkLogin(user);//
         if(userInfo==null){
             response.sendRedirect("register.html");
         }else{
             request.getSession().setAttribute("user",userInfo);
-            response.sendRedirect("buy.html");
+            String n=userInfo.getLoginName();
+            request.getSession().setAttribute("username",n);
+            int roleid=userInfo.getRoleId();
+            if(roleid==1){
+                response.sendRedirect("/adminshow");
+            }else {
+                response.sendRedirect("buy.jsp");
+            }
         }
     }
 
