@@ -248,10 +248,10 @@
 										${list.roleInfo.roleName}
 									</div>
 									<div class="td w5">
-										<a href="#"  class="button-word2 btn_ajax_confirm">启用</a>
+										<a href="adminstartstate?userid=${list.userId}"  class="button-word2 btn_ajax_confirm">启用</a>
 									</div>
 									<div class="td w5">
-										<a href="#"  class="button-word2 btn_ajax_confirm">冻结</a>
+										<a href="adminfreezestate?userid=${list.userId}"  class="button-word2 btn_ajax_confirm">冻结</a>
 									</div>
 									<div class="td w5">
 										<a href="admindeleteuser?uid=${list.userId}" class="button-word2 btn_ajax_confirm">删除</a>

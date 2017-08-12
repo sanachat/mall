@@ -14,14 +14,13 @@ import java.io.IOException;
 /**
  * Created by Administrator on 2017/8/10.
  */
-@WebServlet(name = "AdminUpdateStateServlet",value="/adminupdatestate")
-public class AdminUpdateStateServlet extends HttpServlet {
+@WebServlet(name = "AdminFreezeStateServlet",value="/adminfreezestate")
+public class AdminFreezeStateServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         SqlSession session = SqlSessionHelper.getSqlSession();
         UserInfoDao dao = session.getMapper(UserInfoDao.class);
         int userid = Integer.parseInt(request.getParameter("userid"));
-        int stateid = Integer.parseInt(request.getParameter("stateid"));
-        int num = dao.updateUserState(stateid, userid);
+        int num=dao.fzUserState(userid);
         if (num == 1) {
             session.commit();
             request.getRequestDispatcher("/adminshow").forward(request, response);
