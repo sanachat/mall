@@ -68,7 +68,7 @@
     <div class="authority">
       <div class="authority-head">
         <div class="manage-head">
-          <h6 class="layout padding-left manage-head-con">管理员公告管理
+          <h6 class="layout padding-left manage-head-con">管理员投诉管理
             <span class="fr text-small text-normal padding-top">发布时间：2016-07-08</span>
             <span class="fr margin-large-right padding-top text-small text-normal">最新版本：<em class="text-main">2.4.0.160708</em></span>
           </h6>
@@ -80,35 +80,35 @@
           <div class="offcial-table tr-border margin-big-top clearfix">
             <div class="tr-th clearfix">
               <div class="th w25">
-                公告编号
+                投诉编号
               </div>
               <div class="th w25">
-                公告名称
+                投诉人ID
               </div>
               <div class="th w25">
-                公告内容
+                投诉内容
               </div>
               <div class="th w25">
                 操作
               </div>
             </div>
-            <a href="addAnnouncement"></a>
-            <c:forEach var="a" items="${li}" >
-            <div class="tr clearfix border-bottom-none">
-              <div class="td w25">
-                ${a.announcementId}
+            <a href="findAllComplain"></a>
+            <c:forEach var="c" items="${complain}" >
+              <div class="tr clearfix border-bottom-none">
+                <div class="td w25">
+                    ${c.complainId}
+                </div>
+                <div class="td w25">
+                    ${c.userId}
+                </div>
+                <div class="td w25">
+                    ${c.content}
+                </div>
+                <div class="td w25">
+                  <a href="ComplainAdd.jsp"  class="button-word2 btn_ajax_confirm">增加</a> |
+                  <a href="/dodeleteComplain.action?pid=${c.complainId}"  class="button-word2 btn_ajax_confirm">删除</a>
+                </div>
               </div>
-              <div class="td w25">
-                ${a.announcementName}
-              </div>
-              <div class="td w25">
-                  ${a.announcementContent}
-              </div>
-              <div class="td w25">
-                <a href="AnnouncementAdd.jsp"  class="button-word2 btn_ajax_confirm">增加</a> |
-                <a href="/dodeleteAnnouncement.action?pid=${a.announcementId}"  class="button-word2 btn_ajax_confirm">删除</a>
-              </div>
-            </div>
             </c:forEach>
           </div>
         </div>

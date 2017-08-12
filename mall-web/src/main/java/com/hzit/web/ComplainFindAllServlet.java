@@ -1,9 +1,10 @@
 package com.hzit.web;
 
-import com.hzit.dao.GameGoodInfoDao;
+import com.hzit.dao.AnnouncementDao;
+import com.hzit.dao.ComplainInfoDao;
 import com.hzit.dao.SqlSessionHelper;
-import com.hzit.entity.GamegoodInfo;
-import org.apache.ibatis.session.SqlSession;
+import com.hzit.entity.Announcement;
+import com.hzit.entity.ComplainInfo;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,29 +12,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 /**
- * Created by wan on 2017/8/12.
+ * Created by THINK on 2017/8/11.
  */
-@WebServlet(name = "GameIndexServlet",value = "/GameIndex")
-public class GameIndexServlet extends HttpServlet {
+@WebServlet(name = "ComplainFindAllServlet",urlPatterns = "/findAllComplain")
+public class ComplainFindAllServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setCharacterEncoding("utf-8");
         request.setCharacterEncoding("utf-8");
-        response.setContentType("text/html");
-        PrintWriter ou = response.getWriter();
-        SqlSession session= SqlSessionHelper.getSqlSession();
-        GameGoodInfoDao dao=session.getMapper(GameGoodInfoDao.class);
-        List<GamegoodInfo> g=dao.list();
-        request.setAttribute("g",g);
-        request.getRequestDispatcher("GameIndex.jsp").forward(request,response);
-
+        ComplainInfoDao dao=SqlSessionHelper.getSqlSession().getMapper(ComplainInfoDao.class);
+        List<ComplainInfo> complainInfoList=dao.findAll();
+        request.setAttribute("complain",complainInfoList);
+        request.getRequestDispatcher("ComplainFindAll.jsp").forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request,response);
-
     }
 }

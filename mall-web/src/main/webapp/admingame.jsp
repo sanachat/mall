@@ -199,7 +199,7 @@
         <div class="list-content show">
           <div class="offcial-table tr-border margin-big-top clearfix">
             <div class="tr-th clearfix">
-              <div class="th w15">
+              <div class="th w10">
                 游戏ID
               </div>
               <div class="th w20">
@@ -211,13 +211,13 @@
               <div class="th w20">
                 运营区域
               </div>
-              <div class="th w20">
+              <div class="th w15">
                 操作
               </div>
             </div>
             <c:forEach var="li" items="${allgame}">
               <div class="tr clearfix border-bottom-none">
-                <div class="td w15">
+                <div class="td w10">
                     ${li.gameId}
                 </div>
                 <div class="td w20">
@@ -229,8 +229,8 @@
                 <div class="td w20">
                     中国大陆
                 </div>
-                <div class="td w20">
-                  <a href="admindeletegame?gameid=${li.gameId}" class="button-word2 btn_ajax_confirm">删除</a>
+                <div class="td w15">
+                  <a href="admindeletegame" msg="您是否删除此站点，如果删除会影响站点通信导致部分功能无法使用？" callback="del_site(624)" data-id="" class="button-word2 btn_ajax_confirm">删除</a>
                 </div>
               </div>
             </c:forEach>

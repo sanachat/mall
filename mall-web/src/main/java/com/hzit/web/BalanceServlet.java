@@ -23,7 +23,7 @@ public class BalanceServlet extends HttpServlet {
         BalanceDao dao = SqlSessionHelper.getSqlSession().getMapper(BalanceDao.class);
         UserInfo userInfo=(UserInfo)request.getSession().getAttribute("user");
         Balance balance=dao.findBalanceByUserid(userInfo.getUserId());
-        request.getSession().setAttribute("balance", balance);
+        request.setAttribute("balance", balance);
         request.getRequestDispatcher("balance.jsp").forward(request, response);
     }
 
