@@ -151,7 +151,7 @@
                 描述
               </div>
               <div class="th w10">
-                <a href="#"  class="button-word2 btn_ajax_confirm">我的购物车</a>
+                <a href="#"  class="button-word2 btn_ajax_confirm"> 我的购物车</a>
               </div>
             </div>
             <%--//<c:forEach var="o" items="${gd}">--%>
