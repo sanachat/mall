@@ -4,7 +4,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>权限管理系统</title>
+  <title>4396游戏交易平台</title>
   <link rel="stylesheet" type="text/css" href="Css/identify.css" />
   <link rel="stylesheet" type="text/css" href="Css/layout.css" />
   <link rel="stylesheet" type="text/css" href="Css/account.css" />
@@ -24,7 +24,7 @@
       <a href="#" class="topbar-logo fl">
         <span><img src="Images/logo.png" width="20" height="20"/></span>
       </a>
-      <a href="index.html" class="topbar-home-link topbar-btn text-center fl"><span>管理权限管理系统</span></a>
+      <a href="index.html" class="topbar-home-link topbar-btn text-center fl"><span>订单管理</span></a>
     </div>
   </div>
   <div class="topbar-info">
@@ -33,13 +33,10 @@
       <li class="fl topbar-info-item">
         <div class="dropdown">
           <a href="#" class="topbar-btn">
-            <span class="fl text-normal">
-              <%=session.getAttribute("username")%>
-            </span>
+            <span class="fl text-normal">小朱</span>
             <span class="icon-arrow-down"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="editUser.jsp">编辑</a></li>
             <li><a href="login.html">退出</a></li>
           </ul>
         </div>
@@ -124,55 +121,62 @@
     <div class="authority">
       <div class="authority-head">
         <div class="manage-head">
-          <h6 class="layout padding-left manage-head-con">用户管理
-            <span class="fr text-small text-normal padding-top">发布时间：2016-07-08</span>
+          <h6 class="layout padding-left manage-head-con">购物车
+            <span class="fr text-small text-normal padding-top">发布时间：2017-08-11</span>
             <span class="fr margin-large-right padding-top text-small text-normal">最新版本：<em class="text-main">2.4.0.160708</em></span>
           </h6>
         </div>
+
       </div>
       <div class="authority-content">
         <div class="list-content show">
           <div class="offcial-table tr-border margin-big-top clearfix">
             <div class="tr-th clearfix">
               <div class="th w20">
-                管理员
+                编号
               </div>
               <div class="th w20">
-                所属于角色
+                单价
               </div>
               <div class="th w20">
-                状态
+                商品编号
               </div>
               <div class="th w20">
-                创建时间
+                数量
               </div>
               <div class="th w20">
-                操作
+                <a href="OrderInsert.jsp"  class="button-word2 btn_ajax_confirm">增加订单</a>
               </div>
             </div>
-            <div class="tr clearfix border-bottom-none">
-              <div class="td w20">
-                吴文杰
+            <c:forEach var="o" items="${list}">
+              <div class="tr clearfix border-bottom-none">
+                <div class="td w20">
+                    ${o.shopId}
+                </div>
+                <div class="td w20">
+                    ${o.price}
+                </div>
+                <div class="td w20">
+                    ${o.gameGoodId}
+                </div>
+                <div class="td w20">
+                    ${o.num}
+                </div>
+                <div class="td w20">
+                  <a href="shoppingdelete.action?pid=${o.shopId}"  class="button-word2 btn_ajax_confirm">删除</a>
+                  <a href="OrderUpdate.jsp"  class="button-word2 btn_ajax_confirm">修改</a>
+                  <a href="OrderGameList.jsp"  class="button-word2 btn_ajax_confirm">查询</a>
+                </div>
+
               </div>
-              <div class="td w20">
-                管理员
-              </div>
-              <div class="td w20">
-                水电费
-              </div>
-              <div class="td w20">
-                2016-01-10 11:54:07
-              </div>
-              <div class="td w20">
-                <a href="#"  class="button-word2 btn_ajax_confirm">删除</a>
-              </div>
-            </div>
+            </c:forEach>
           </div>
         </div>
         <div class="show-page padding-big-right">
           <div class="page">
             <div class="page">
               <ul class="offcial-page margin-top margin-big-right">
+
                 <li>共<em class="margin-small-left margin-small-right">1</em>条数据</li>
                 <li>每页显示<em class="margin-small-left margin-small-right">15</em>条</li>
                 <li><a class="next disable">上一页</a></li>
