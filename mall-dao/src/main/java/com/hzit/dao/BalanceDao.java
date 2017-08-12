@@ -20,6 +20,6 @@ public interface BalanceDao {
 
     public int insert(Balance balance);
 
-    public int updatePwd(String pwd);
+    public int updatePwd(String pwd,int userId);
 
 }

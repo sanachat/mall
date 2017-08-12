@@ -3,6 +3,7 @@ package com.hzit.web;
 import com.hzit.dao.BalanceDao;
 import com.hzit.dao.SqlSessionHelper;
 import com.hzit.entity.Balance;
+import com.hzit.entity.UserInfo;
 import org.apache.ibatis.session.SqlSession;
 
 import javax.servlet.ServletException;
@@ -24,6 +25,7 @@ public class ChangePaypwdServlet extends HttpServlet {
         SqlSession session = SqlSessionHelper.getSqlSession();
         BalanceDao dao = session.getMapper(BalanceDao.class);
         Balance balance = (Balance) request.getSession().getAttribute("balance");
+        UserInfo userInfo=(UserInfo)request.getSession().getAttribute("user");
         String oldpwd = request.getParameter("oldpassword");
         String newpwd1 = request.getParameter("newpassword1");
         String newpwd2 = request.getParameter("newpassword2");
@@ -34,7 +36,7 @@ public class ChangePaypwdServlet extends HttpServlet {
         } else if (newpwd1.equals(newpwd2) == false) {
             out.print("两次密码输入不相同！");
         } else {
-            dao.updatePwd(newpwd1);
+            dao.updatePwd(newpwd1,userInfo.getUserId());
             out.print("修改成功！");
             session.commit();
         }
