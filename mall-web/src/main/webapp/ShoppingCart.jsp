@@ -1,10 +1,10 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
-  <title>4396游戏交易平台</title>
+  <title>网游交易平台</title>
   <link rel="stylesheet" type="text/css" href="Css/identify.css" />
   <link rel="stylesheet" type="text/css" href="Css/layout.css" />
   <link rel="stylesheet" type="text/css" href="Css/account.css" />
@@ -24,16 +24,31 @@
       <a href="#" class="topbar-logo fl">
         <span><img src="Images/logo.png" width="20" height="20"/></span>
       </a>
-      <a href="index.html" class="topbar-home-link topbar-btn text-center fl"><span>订单管理</span></a>
+      <a href="#" class="topbar-home-link topbar-btn text-center fl"><span>4396网游交易平台</span></a>
     </div>
   </div>
   <div class="topbar-info">
     <ul class="fr">
+      <li class="fl dropdown topbar-notice topbar-btn">
+        <a href="#" class="dropdown-toggle">
+          <span class="icon-notice"></span>
+          <span class="topbar-num have">0</span>
+          <!--have表示有消息，没有消息去掉have-->
+        </a>
+      </li>
 
       <li class="fl topbar-info-item">
         <div class="dropdown">
           <a href="#" class="topbar-btn">
-            <span class="fl text-normal">小朱</span>
+            <span class="fl text-normal">帮助</span>
+            <span ></span>
+          </a>
+        </div>
+      </li>
+      <li class="fl topbar-info-item">
+        <div class="dropdown">
+          <a href="#" class="topbar-btn">
+            <span class="fl text-normal">欢迎</span>
             <span class="icon-arrow-down"></span>
           </a>
           <ul class="dropdown-menu">
@@ -47,127 +62,176 @@
 <div class="view-body">
   <div class="view-sidebar">
     <div class="sidebar-content">
-      <!--一级菜单循环从这里开始 ，动态循环显示一级菜单-->
+      <div class="sidebar-nav">
+
+        <div class="sidebar-title">
+
+          <a href="#">
+            <span class="icon"><b class="fl icon-arrow-down"></b></span>
+            <span class="text-normal">用户管理</span>
+          </a>
+        </div>
+        <ul class="sidebar-trans">
+          <li>
+            <a href="/adminshow">
+              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
+              <span class="text-normal">用户列表</span>
+            </a>
+          </li>
+          <li>
+            <a href="adminupdatestate.jsp">
+              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
+              <span class="text-normal">修改用户状态</span>
+            </a>
+          </li>
+          <li>
+            <a href="admininsert.jsp">
+              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
+              <span class="text-normal">增加管理员</span>
+            </a>
+          </li>
+
+        </ul>
+      </div>
       <div class="sidebar-nav">
         <div class="sidebar-title">
           <a href="#">
             <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">一级菜单</span>
+            <span class="text-normal">交易信息</span>
           </a>
         </div>
         <ul class="sidebar-trans">
-          <!--二级菜单循环从这里开始 ，动态循环显示二级菜单-->
           <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
+            <a href="/adminrecord">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">交易信息记录</span>
             </a>
           </li>
-          <!--二级菜单循环从这里结束 ，动态循环显示二级菜单-->
-          <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
-            </a>
-          </li>
-
-
         </ul>
       </div>
-      <!--一级菜单循环从这里结束 ，动态循环显示一级菜单-->
-      <!--一级菜单循环从这里开始 ，动态循环显示一级菜单-->
       <div class="sidebar-nav">
         <div class="sidebar-title">
           <a href="#">
             <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">一级菜单</span>
+            <span class="text-normal">商品管理</span>
           </a>
         </div>
         <ul class="sidebar-trans">
-          <!--二级菜单循环从这里开始 ，动态循环显示二级菜单-->
-          <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
-            </a>
-          </li>
-          <!--二级菜单循环从这里结束 ，动态循环显示二级菜单-->
-          <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
-            </a>
-          </li>
 
-
+          <li>
+            <a href="/admingood">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">商品列表</span>
+            </a>
+          </li>
         </ul>
       </div>
-      <!--一级菜单循环从这里结束 ，动态循环显示一级菜单-->
+      <div class="sidebar-nav">
+        <div class="sidebar-title">
+          <a href="#">
+            <span class="icon"><b class="fl icon-arrow-down"></b></span>
+            <span class="text-normal">游戏管理</span>
+          </a>
+        </div>
+        <ul class="sidebar-trans">
+          <li>
+            <a href="/admingame">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">游戏列表</span>
+            </a>
+          </li>
+          <li>
+            <a href="admininsertgame.jsp">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">增加游戏</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-nav">
+        <div class="sidebar-title">
+          <a href="#">
+            <span class="icon"><b class="fl icon-arrow-down"></b></span>
+            <span class="text-normal">客户服务</span>
+          </a>
+        </div>
+        <ul class="sidebar-trans">
+          <li>
+            <a href="userInfo.html">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">投诉处理</span>
+            </a>
+          </li>
+          <li>
+            <a href="userInfo.html">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">发布公告</span>
+            </a>
+          </li>
+          <li>
+            <a href="userInfo.html">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">公告</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-nav">
+        <div class="sidebar-title">
+          <a href="/adminshow">
+            <span class="icon"><b ></b></span>
+            <span class="text-normal">返回首页</span>
+          </a>
+        </div>
+
+      </div>
     </div>
   </div>
   <div class="view-product">
     <div class="authority">
       <div class="authority-head">
         <div class="manage-head">
-          <h6 class="layout padding-left manage-head-con">购物车
-            <span class="fr text-small text-normal padding-top">发布时间：2017-08-11</span>
-            <span class="fr margin-large-right padding-top text-small text-normal">最新版本：<em class="text-main">2.4.0.160708</em></span>
-          </h6>
+          <h6 class="layout padding-left manage-head-con">用户管理</h6>
         </div>
-
       </div>
       <div class="authority-content">
         <div class="list-content show">
           <div class="offcial-table tr-border margin-big-top clearfix">
             <div class="tr-th clearfix">
-              <div class="th w20">
-                编号
+              <div class="th w10">
+                游戏ID
               </div>
               <div class="th w20">
-                单价
+                游戏名称
+              </div>
+              <div class="th w25">
+                游戏描述
               </div>
               <div class="th w20">
-                商品编号
+                运营区域
               </div>
-              <div class="th w20">
-                数量
-              </div>
-              <div class="th w20">
-                <a href="OrderInsert.jsp"  class="button-word2 btn_ajax_confirm">增加订单</a>
+              <div class="th w15">
+                操作
               </div>
             </div>
-            <c:forEach var="o" items="${list}">
+            <c:forEach var="li" items="${allgame}">
               <div class="tr clearfix border-bottom-none">
-                <div class="td w20">
-                    ${o.shopId}
+                <div class="td w10">
+                    ${li.gameId}
                 </div>
                 <div class="td w20">
-                    ${o.price}
+                    ${li.gameName}
+                </div>
+                <div class="td w25">
+                    ${li.gameArea}
                 </div>
                 <div class="td w20">
-                    ${o.gameGoodId}
+                    中国大陆
                 </div>
-                <div class="td w20">
-                    ${o.num}
+                <div class="td w15">
+                  <a href="admindeletegame" msg="您是否删除此站点，如果删除会影响站点通信导致部分功能无法使用？" callback="del_site(624)" data-id="" class="button-word2 btn_ajax_confirm">删除</a>
                 </div>
-                <div class="td w20">
-                  <a href="#"  class="button-word2 btn_ajax_confirm">删除</a>
-                  <a href="OrderUpdate.jsp"  class="button-word2 btn_ajax_confirm">修改</a>
-                  <a href="OrderGameList.jsp"  class="button-word2 btn_ajax_confirm">查询</a>
-                </div>
-
               </div>
             </c:forEach>
           </div>
@@ -176,7 +240,6 @@
           <div class="page">
             <div class="page">
               <ul class="offcial-page margin-top margin-big-right">
-
                 <li>共<em class="margin-small-left margin-small-right">1</em>条数据</li>
                 <li>每页显示<em class="margin-small-left margin-small-right">15</em>条</li>
                 <li><a class="next disable">上一页</a></li>
