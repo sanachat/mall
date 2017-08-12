@@ -17,7 +17,7 @@ import java.io.IOException;
 @WebServlet(name = "AdminUpdateStateServlet",value="/adminupdatestate")
 public class AdminUpdateStateServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        SqlSession session = SqlSessionHelper.getSqlSession();
+       /* SqlSession session = SqlSessionHelper.getSqlSession();
         UserInfoDao dao = session.getMapper(UserInfoDao.class);
         int userid = Integer.parseInt(request.getParameter("userid"));
         int stateid = Integer.parseInt(request.getParameter("stateid"));
@@ -27,7 +27,7 @@ public class AdminUpdateStateServlet extends HttpServlet {
             request.getRequestDispatcher("/adminshow").forward(request, response);
         } else {
             session.rollback();
-        }
+        }*/
 }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request,response);
