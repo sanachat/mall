@@ -22,6 +22,8 @@ public class UserInfo {
     private String userEmail;
     private int roleId;
     private int userStateId;
+    private UserState userState;
+    private RoleInfo roleInfo;
 
     public int getUserStateId() {
         return userStateId;
@@ -153,6 +155,9 @@ public class UserInfo {
                 ", storeName='" + storeName + '\'' +
                 ", userEmail='" + userEmail + '\'' +
                 ", roleId=" + roleId +
+                ", userStateId=" + userStateId +
+                ", userState=" + userState +
+                ", roleInfo=" + roleInfo +
                 '}';
     }
 }

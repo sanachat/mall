@@ -13,6 +13,27 @@
     <select id="findAll"  resultType="UserInfo">
         SELECT * FROM userinfo
     </select>
+    <resultMap type="UserInfo" id="UserMap">
+        <id property="userId" column="UserId"/>
+        <result property="loginName" column="LoginName"/>
+        <result property="loginPwd" column="LoginPwd"/>
+        <result property="pwdQuestion" column="PwdQuestion"/>
+        <result property="pwdAnswer" column="PwdAnswer"/>
+        <result property="userSex" column="UserSex"/>
+        <result property="userName" column="UserName"/>
+        <result property="tel" column="Tel"/>
+        <result property="address" column="Address"/>
+        <result property="idCard" column="IdCard"/>
+        <result property="storeName" column="StoreName"/>
+        <result property="userEmail" column="UserEmail"/>
+        <association property="roleInfo" javaType="com.hzit.entity.RoleInfo">
+            <result property="roleName" column="RoleName"/>
+        </association>
+        <association property="userState" javaType="com.hzit.entity.UserState">
+            <result property="userState" column="UserState"/>
+        </association>
+    </resultMap>
+
     <delete id="deleteUser" parameterType="int">
         DELETE from userinfo where userid=#{userId}
     </delete>
