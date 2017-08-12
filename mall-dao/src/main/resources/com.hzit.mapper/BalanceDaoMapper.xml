@@ -19,7 +19,7 @@
         insert into balance values(null,#{userId},#{money},#{payPwd})
     </insert>
 
-    <update id="updatePwd" parameterType="com.hzit.entity.Balance">
+    <update id="updatePwd" parameterType="String">
         update balance set payPwd=#{payPwd} where userId=#{userId}
     </update>
 </mapper>
