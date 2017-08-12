@@ -165,6 +165,18 @@
                     ${o.date}
                 </div></div><br/>
 <div class=" tr-th clearfix">
+  <div class="th w25">
+    总价
+  </div>
+  <div class="th w25">
+    商品id
+  </div>
+  <div class="th w25">
+    单价
+  </div>
+  <div class="th w25">
+    数量
+  </div>
                     <c:forEach items="${o.orderDetail}" var="d">
                       <div class="td w25">
                           ${d.summoney}
