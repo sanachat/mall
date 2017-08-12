@@ -10,14 +10,36 @@
     <select id="checkLogin"  parameterType="UserInfo" resultType="UserInfo">
         SELECT * FROM userinfo WHERE LoginName=#{loginName} AND LoginPwd=#{loginPwd}
     </select>
-    <select id="findAll"  resultType="UserInfo">
-        SELECT * FROM userinfo
+    <select id="findAll" resultType="com.hzit.entity.UserInfo" resultMap="UserMap">
+        SELECT * FROM userinfo LEFT JOIN userstate ON userinfo.`UserStateId`=userstate.`UserStateId`
+                      LEFT JOIN roleinfo ON userinfo.`RoleId`=roleinfo.`RoleId`
     </select>
+    <resultMap type="UserInfo" id="UserMap">
+        <id property="userId" column="UserId"/>
+        <result property="loginName" column="LoginName"/>
+        <result property="loginPwd" column="LoginPwd"/>
+        <result property="pwdQuestion" column="PwdQuestion"/>
+        <result property="pwdAnswer" column="PwdAnswer"/>
+        <result property="userSex" column="UserSex"/>
+        <result property="userName" column="UserName"/>
+        <result property="tel" column="Tel"/>
+        <result property="address" column="Address"/>
+        <result property="idCard" column="IdCard"/>
+        <result property="storeName" column="StoreName"/>
+        <result property="userEmail" column="UserEmail"/>
+        <association property="roleInfo" javaType="com.hzit.entity.RoleInfo">
+            <result property="roleName" column="RoleName"/>
+        </association>
+        <association property="userState" javaType="com.hzit.entity.UserState">
+            <result property="userState" column="UserState"/>
+        </association>
+    </resultMap>
+
     <delete id="deleteUser" parameterType="int">
         DELETE from userinfo where userid=#{userId}
     </delete>
     <insert id="insertAdmin" parameterType="String">
-        INSERT INTO userinfo VALUES(null,#{0},#{1},'','','',#{2},'','','','','',2,1)
+        INSERT INTO userinfo VALUES(null,#{0},#{1},'','','',#{2},'','','','','',1,1)
     </insert>
     <update id="updateSeller" parameterType="int">
         UPDATE userinfo SET RoleId=3 where userId=#{userId}
