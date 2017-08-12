@@ -18,4 +18,6 @@ public interface GameGoodInfoDao
     public int updateGood(GamegoodInfo gamegoodInfo);
 
     public int deleteGood(int gameGoodId);
+
+    public List<GamegoodInfo> list();
 }

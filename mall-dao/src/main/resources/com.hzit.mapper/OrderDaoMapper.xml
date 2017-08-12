@@ -26,7 +26,7 @@
             <id property="detailId" column=" detailId" />
             <result property="orderId" column="orderId" />
             <result property="gamegoodId" column="gamegoodId" />
-            <result property="price" column="price" />
+            <result property="prices" column="prices" />
             <result property="count" column="count" />
             <result property="summoney" column="summoney" />
         </collection>
