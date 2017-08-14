@@ -1,12 +1,12 @@
 <%--
   Created by IntelliJ IDEA.
   User: Tracy McGrady
-  Date: 2017/8/10
-  Time: 17:51
+  Date: 2017/8/13
+  Time: 10:48
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,13 +22,6 @@
   <script type="text/javascript" src="Js/haidao.offcial.general.js"></script>
   <script type="text/javascript" src="Js/select.js"></script>
   <script type="text/javascript" src="Js/haidao.validate.js"></script>
-  <style>
-    h4{
-
-      font-size: 16px;
-      text-align: center;
-    }
-  </style>
 </head>
 
 <body>
@@ -82,14 +75,26 @@
 
           <a href="#">
             <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">个人信息</span>
+            <span class="text-normal">用户管理</span>
           </a>
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="webSet.html">
+            <a href="/adminshow">
               <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">我的信息</span>
+              <span class="text-normal">用户列表</span>
+            </a>
+          </li>
+          <li>
+            <a href="adminupdatestate.jsp">
+              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
+              <span class="text-normal">修改用户状态</span>
+            </a>
+          </li>
+          <li>
+            <a href="admininsert.jsp">
+              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
+              <span class="text-normal">增加管理员</span>
             </a>
           </li>
 
@@ -99,20 +104,53 @@
         <div class="sidebar-title">
           <a href="#">
             <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">商品信息</span>
+            <span class="text-normal">交易信息</span>
           </a>
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="userInfo.html">
+            <a href="/adminrecord">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">交易信息记录</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-nav">
+        <div class="sidebar-title">
+          <a href="#">
+            <span class="icon"><b class="fl icon-arrow-down"></b></span>
+            <span class="text-normal">商品管理</span>
+          </a>
+        </div>
+        <ul class="sidebar-trans">
+
+          <li>
+            <a href="/admingood">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">商品列表</span>
             </a>
           </li>
+        </ul>
+      </div>
+      <div class="sidebar-nav">
+        <div class="sidebar-title">
+          <a href="#">
+            <span class="icon"><b class="fl icon-arrow-down"></b></span>
+            <span class="text-normal">游戏管理</span>
+          </a>
+        </div>
+        <ul class="sidebar-trans">
           <li>
-            <a href="userInfo.html">
+            <a href="/admingame">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
-              <span class="text-normal">商品管理</span>
+              <span class="text-normal">游戏列表</span>
+            </a>
+          </li>
+          <li>
+            <a href="admininsertgame.jsp">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">增加游戏</span>
             </a>
           </li>
         </ul>
@@ -121,137 +159,97 @@
         <div class="sidebar-title">
           <a href="#">
             <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">账户信息</span>
+            <span class="text-normal">客户服务</span>
           </a>
         </div>
         <ul class="sidebar-trans">
           <li>
             <a href="userInfo.html">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
-              <span class="text-normal">我的账户</span>
+              <span class="text-normal">投诉处理</span>
             </a>
           </li>
           <li>
             <a href="userInfo.html">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
-              <span class="text-normal">购物车</span>
+              <span class="text-normal">发布公告</span>
             </a>
           </li>
           <li>
             <a href="userInfo.html">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
-              <span class="text-normal">购物记录</span>
+              <span class="text-normal">公告</span>
             </a>
           </li>
         </ul>
       </div>
 
-
-
       <div class="sidebar-nav">
         <div class="sidebar-title">
-          <a href="#">
+          <a href="/adminshow">
             <span class="icon"><b ></b></span>
             <span class="text-normal">返回首页</span>
           </a>
         </div>
+
       </div>
     </div>
   </div>
   <div class="view-product">
-    <div class="authority">
-      <div class="authority-head">
-        <div class="manage-head">
-          <h5 class="layout padding-left manage-head-con">卖家管理</h5>
-          <h4 style="margin-left: 90%">
-          <a href="SellerSale.jsp">上架商品</a>
-          </h4>
+    <div class="company_identify">
+      <div class="manage-head">
+        <h6 class="padding-left manage-head-con">修改商品</h6>
+      </div>
+      <form name="setp0" action="/sellerSale" method="post" autocomplete="off">
+        <div class="basic-info-detail clearfix">
+
+          <div class="unit-style padding-big-lr clearfix">
+            <h4 class="real-name-head margin-large-top">修改商品信息</h4>
+            <div class="real-name-con height-main margin-top-25">
+              <p class="content-left-zoon">
+                售出商品数量
+              </p>
+              <div class="content-right-zoon">
+                <input class="width-main input" type="text" name="gamegoodsellcount" datatype="*" value="">
+              </div>
+            </div>
+            <div class="real-name-con height-main margin-top-25">
+              <p class="content-left-zoon">
+                库存
+              </p>
+              <div class="content-right-zoon">
+                <input class="width-main input" type="text" name="gamegoodcount" datatype="*" value="">
+              </div>
+            </div>
+
+            <div class="real-name-con height-main margin-top-25">
+              <p class="content-left-zoon">
+                描述
+              </p>
+              <div class="content-right-zoon">
+                <input class="width-main input" type="text" name="describe" datatype="*" value="">
+              </div>
+            </div>
+            <div class="real-name-con height-main margin-top-25">
+              <p class="content-left-zoon">
+                单价
+              </p>
+              <div class="content-right-zoon">
+                <input class="width-main input" type="text" name="unitprice" datatype="*" value="">
+              </div>
+            </div>
+
+
+          </div>
+          <p>&nbsp;</p>
         </div>
 
-      </div>
-      <div class="authority-content">
-        <div class="list-content show">
-          <div class="offcial-table tr-border margin-big-top clearfix">
-            <div class="tr-th clearfix">
-              <div class="th w20">
-                图片
-              </div>
-              <div class="th w10">
-                游戏编号
-              </div>
-              <div class="th w10">
-                商品名称
-              </div>
-              <div class="th w10">
-                游戏名称
-              </div>
-              <div class="th w10">
-                材料名称
-              </div>
-              <div class="th w10">
-                售出数量
-              </div>
-              <div class="th w10">
-                库存
-              </div>
-              <div class="th w10">
-                单价
-              </div>
-              <div class="th w10">
-                操作
-              </div>
-            </div>
-            <c:forEach var="c" items="${list}">
-            <div class="tr clearfix border-bottom-none">
-              <div class="td w20">
-                <img src=" ${c.pictureUrl}" title="${c.describe}">
-              </div>
-               <div class="td w10">
-               ${c.gameGoodId}
-               </div>
-               <div class="td w10">
-               ${c.gameGoodName}
-               </div>
-               <div class="td w10">
-               ${c.gameInfo.gameName}
-               </div>
-               <div class="td w10">
-               ${c.gameType.gameGoodType}
-               </div>
-               <div class="td w10">
-               ${c.gameGoodSellCount}
-               </div>
-              <div class="td w10">
-               ${c.gameGoodCount}
-              </div>
-              <div class="td w10">
-                ${c.unitPrice}
-              </div>
-              <div class="td w5">
-                <a href="SellerUpdate?id=${c.gameGoodId}" class="button-word2 btn_ajax_confirm">修改</a>
-              </div>
-              <div class="td w5">
-                <a href="SellerDelete?id=${c.gameGoodId}" class="button-word2 btn_ajax_confirm">删除</a>
-              </div>
-            </div>
-            </c:forEach>
+        <div class="unit-style padding-large-tb clearfix">
+          <div class="margin-large-top padding-left text-left content-right-zoon">
+            <input type="submit" value="确认" class="submit fl">
           </div>
         </div>
-        <div class="show-page padding-big-right">
-          <div class="page">
-            <div class="page">
-              <ul class="offcial-page margin-top margin-big-right">
-                <li>共<em class="margin-small-left margin-small-right">1</em>条数据</li>
-                <li>每页显示<em class="margin-small-left margin-small-right">15</em>条</li>
-                <li><a class="next disable">上一页</a></li>
-                <li></li>
-                <li><a class="next disable">下一页</a></li>
-                <li><span class="fl">共<em class="margin-small-left margin-small-right">1</em>页</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+      </form>
     </div>
   </div>
 </div>
