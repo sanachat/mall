@@ -26,23 +26,22 @@ public class TestOrderDetail {
         Order or=new Order();
         //新增订单
 
-        or.setUserId(2);
+       /* or.setUserId(2);
         or.setDate("2017-8-14");
         or.setPrice(1000);
         num=d.insert(or);
         session.commit();
         System.out.println("总订单增加成功，受到影响的行数是："+num);
-       /* o.setOrderId(3);
+        o.setOrderId(3);
         o.setGamegoodId(2);
         o.setPrices(50);
         o.setCount(20);
         double a=o.getPrices();
         int b=o.getCount();
-        o.setSummoney(a*b);*/
-
+        o.setSummoney(a*b);
         num=dao.insert(o);
         session.commit();
-        System.out.println("详细订单增加成功，受到影响的行数是：" + num);
+        System.out.println("详细订单增加成功，受到影响的行数是：" + num);*/
 
 
 

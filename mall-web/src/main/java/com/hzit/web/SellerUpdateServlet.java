@@ -19,12 +19,16 @@ import java.io.IOException;
 public class SellerUpdateServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         SqlSession session = SqlSessionHelper.getSqlSession();
+        response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
         GameGoodInfoDao dao = session.getMapper(GameGoodInfoDao.class);
         GamegoodInfo gamegoodInfo = new GamegoodInfo();
+        int id =Integer.parseInt(request.getParameter("id"));
         int a = Integer.parseInt(request.getParameter("gamegoodsellcount"));
         int b = Integer.parseInt(request.getParameter("gamegoodcount"));
         String c = request.getParameter("describe");
         double d = Double.parseDouble(request.getParameter("unitprice"));
+        gamegoodInfo.setGameGoodId(id);
         gamegoodInfo.setGameGoodSellCount(a);
         gamegoodInfo.setGameGoodCount(b);
         gamegoodInfo.setDescribe(c);

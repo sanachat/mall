@@ -29,9 +29,7 @@ public class GameIndexServlet extends HttpServlet {
         List<GamegoodInfo> g=dao.list();
         request.setAttribute("g",g);
         request.getRequestDispatcher("GameIndex.jsp").forward(request,response);
-
     }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request,response);
 
