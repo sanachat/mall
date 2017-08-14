@@ -23,7 +23,7 @@ public class AdminDeleteGoodServlet extends HttpServlet {
         int num=dao.deleteGood(goodid);
         if (num==1){
             session.commit();
-            request.getRequestDispatcher("/admingood");
+            request.getRequestDispatcher("/admingood").forward(request,response);
         }else{
             session.rollback();
         }
