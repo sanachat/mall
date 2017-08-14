@@ -32,14 +32,7 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect("register.html");
         }else{
             request.getSession().setAttribute("user",userInfo);
-            String n=userInfo.getLoginName();
-            request.getSession().setAttribute("username",n);
-            int roleid=userInfo.getRoleId();
-            if(roleid==1){
-                response.sendRedirect("/adminshow");
-            }else {
-                response.sendRedirect("buy.jsp");
-            }
+            response.sendRedirect("buy.jsp");
         }
     }
 

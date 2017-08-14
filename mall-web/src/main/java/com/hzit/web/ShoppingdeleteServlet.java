@@ -1,7 +1,8 @@
 package com.hzit.web;
+
 import com.hzit.dao.ShoppingCartDao;
 import com.hzit.dao.SqlSessionHelper;
-import org.apache.ibatis.session.SqlSession;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,17 +18,14 @@ public class ShoppingdeleteServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setCharacterEncoding("utf-8");
         request.setCharacterEncoding("utf-8");
-        SqlSession session=SqlSessionHelper.getSqlSession();
-        ShoppingCartDao dao= session.getMapper(ShoppingCartDao.class);
+        ShoppingCartDao dao= SqlSessionHelper.getSqlSession().getMapper(ShoppingCartDao.class);
         int Id=Integer.parseInt(request.getParameter("pid"));
         int num=0;
         num=dao.deleteshoppingcart(Id);
         if (num==1){
             response.sendRedirect("findAllcart");
-            session.commit();
         }else {
             response.getWriter().append("删除失败！");
-            session.rollback();
         }
 
     }

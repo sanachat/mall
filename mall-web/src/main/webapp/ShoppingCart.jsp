@@ -164,7 +164,7 @@
                 </div>
                 <div class="td w20">
                   <a href="shoppingdelete.action?pid=${o.shopId}"  class="button-word2 btn_ajax_confirm">删除</a>
-                  <a href="OrderUpdate.jsp"  class="button-word2 btn_ajax_confirm">修改</a>
+                  <a href="OrderUpdate.jsp"  class="button-word2 btn_ajax_confirm">结算</a>
                   <a href="OrderGameList.jsp"  class="button-word2 btn_ajax_confirm">查询</a>
                 </div>
 

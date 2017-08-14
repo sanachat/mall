@@ -5,7 +5,7 @@
         INSERT INTO userinfo VALUES(null,#{loginName},#{loginPwd},#{pwdQuestion},#{pwdAnswer},#{userSex},#{userName},#{tel},#{address},#{idCard},#{storeName},#{userEmail},2,1)
     </insert>
     <update id="updateUser" parameterType="UserInfo">
-        UPDATE userinfo SET loginPwd=#{loginPwd},pwdQuestion=#{pwdQuestion},pwdAnswer=#{pwdAnswer},tel=#{tel},address=#{address},userEmail=#{userEmail} WHERE userId=#{userId}
+        UPDATE userinfo SET LoginPwd=#{LoginPwd},PwdQuestion=#{PwdQuestion},PwdAnswer=#{PwdAnswer},Tel=#{Tel},Address=#{Address},UserEmail=#{UserEmail}
     </update>
     <select id="checkLogin"  parameterType="UserInfo" resultType="UserInfo">
         SELECT * FROM userinfo WHERE LoginName=#{loginName} AND LoginPwd=#{loginPwd}
