@@ -19,9 +19,6 @@ public class ShoppingCart
     private int gameGoodId;
     private int num;
 
-
-
-
     public int getShopId() {
         return shopId;
     }
