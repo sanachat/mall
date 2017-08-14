@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
         user.setLoginPwd(pwd);
         UserInfo userInfo=dao.checkLogin(user);
         if(userInfo==null){
-            response.sendRedirect("register.html");//
+            response.sendRedirect("register.html");
         }else{
             int stateid=userInfo.getUserStateId();
             if(stateid==2){
