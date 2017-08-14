@@ -250,7 +250,7 @@
 									</div>
 
 									<div class="td w10">
-										<a href="admindeletegood?goodid=${list.gameGoodId}" class="button-word2 btn_ajax_confirm">删除</a>
+										<a href="admindeletegood?goodid=${list.gameGoodId}" class="button-word2 btn_ajax_confirm">下架</a>
 									</div>
 								</div>
 								</c:forEach>
