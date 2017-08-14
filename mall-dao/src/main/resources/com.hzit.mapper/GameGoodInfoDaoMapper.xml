@@ -40,7 +40,7 @@
         <result property="gameGoodSellCount" column="GameGoodSellCount"/>
         <result property="gameGoodCount" column="GameGoodCount"/>
         <result property="describe" column="describe"/>
-        <result property="sellerName" column="SelerName"/>
+        <result property="sellerName" column="SellerName"/>
         <result property="unitPrice" column="UnitPrice"/>
         <result property="pictureUrl" column="PictureUrl"/>
         <association property="gameInfo" javaType="com.hzit.entity.GameInfo">

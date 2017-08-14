@@ -22,6 +22,8 @@ public class UserInfo {
     private String userEmail;
     private int roleId;
     private int userStateId;
+    private UserState userState;
+    private RoleInfo roleInfo;
 
     public int getUserStateId() {
         return userStateId;
@@ -32,6 +34,21 @@ public class UserInfo {
     }
 
 
+    public UserState getUserState() {
+        return userState;
+    }
+
+    public void setUserState(UserState userState) {
+        this.userState = userState;
+    }
+
+    public RoleInfo getRoleInfo() {
+        return roleInfo;
+    }
+
+    public void setRoleInfo(RoleInfo roleInfo) {
+        this.roleInfo = roleInfo;
+    }
 
     public int getUserId() {
         return userId;
@@ -153,6 +170,9 @@ public class UserInfo {
                 ", storeName='" + storeName + '\'' +
                 ", userEmail='" + userEmail + '\'' +
                 ", roleId=" + roleId +
+                ", userStateId=" + userStateId +
+                ", userState=" + userState +
+                ", roleInfo=" + roleInfo +
                 '}';
     }
 }
