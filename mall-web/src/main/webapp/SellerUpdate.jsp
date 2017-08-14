@@ -200,7 +200,7 @@
       <div class="manage-head">
         <h6 class="padding-left manage-head-con">修改商品</h6>
       </div>
-      <form name="setp0" action="/sellerSale" method="post" autocomplete="off">
+      <form name="setp0" action="/SellerUpdate" method="post" autocomplete="off">
         <div class="basic-info-detail clearfix">
 
           <div class="unit-style padding-big-lr clearfix">
@@ -238,7 +238,14 @@
                 <input class="width-main input" type="text" name="unitprice" datatype="*" value="">
               </div>
             </div>
-
+            <div class="real-name-con height-main margin-top-25">
+              <p class="content-left-zoon">
+                图片
+              </p>
+              <div class="content-right-zoon">
+                <input class="width-main input" type="text" name="pictureUrl" datatype="*" value="">
+              </div>
+            </div>
 
           </div>
           <p>&nbsp;</p>

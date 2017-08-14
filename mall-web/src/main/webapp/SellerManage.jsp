@@ -228,7 +228,7 @@
                 ${c.unitPrice}
               </div>
               <div class="td w5">
-                <a href="SellerUpdate?id=${c.gameGoodId}" class="button-word2 btn_ajax_confirm">修改</a>
+                <a href="SellerUpdate.jsp"  class="button-word2 btn_ajax_confirm">修改</a>
               </div>
               <div class="td w5">
                 <a href="SellerDelete?id=${c.gameGoodId}" class="button-word2 btn_ajax_confirm">删除</a>

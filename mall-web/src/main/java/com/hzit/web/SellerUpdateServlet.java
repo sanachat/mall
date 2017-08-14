@@ -28,11 +28,13 @@ public class SellerUpdateServlet extends HttpServlet {
         int b = Integer.parseInt(request.getParameter("gamegoodcount"));
         String c = request.getParameter("describe");
         double d = Double.parseDouble(request.getParameter("unitprice"));
+        String e = request.getParameter("pictureUrl");
         gamegoodInfo.setGameGoodId(id);
         gamegoodInfo.setGameGoodSellCount(a);
         gamegoodInfo.setGameGoodCount(b);
         gamegoodInfo.setDescribe(c);
         gamegoodInfo.setUnitPrice(d);
+        gamegoodInfo.setPictureUrl(e);
         GamegoodInfo g =gamegoodInfo;
         int  num =dao.updateGood(g);
         if(num==1) {
