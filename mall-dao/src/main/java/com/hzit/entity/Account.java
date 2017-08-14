@@ -1,7 +1,5 @@
 package com.hzit.entity;
 
-import java.sql.Date;
-
 /**
  * 　　  　  　    \\\|///
  * 　　　 　  　  \\　.-.-　//
