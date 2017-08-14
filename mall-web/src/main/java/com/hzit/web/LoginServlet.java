@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.Writer;
 
 /**
  * Created by THINK on 2017/8/10.
@@ -19,7 +21,8 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
-        response.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
+        //response.setCharacterEncoding("utf-8");
         SqlSession session= SqlSessionHelper.getSqlSession();
         UserInfoDao dao=session.getMapper(UserInfoDao.class);
         String name=request.getParameter("loginName");
@@ -31,14 +34,20 @@ public class LoginServlet extends HttpServlet {
         if(userInfo==null){
             response.sendRedirect("register.html");
         }else{
-            request.getSession().setAttribute("user",userInfo);
-            String n=userInfo.getLoginName();
-            request.getSession().setAttribute("username",n);
-            int roleid=userInfo.getRoleId();
-            if(roleid==1){
-                response.sendRedirect("/adminshow");
+            int stateid=userInfo.getUserStateId();
+            if(stateid==2){
+                String script = "<script>alert('您的账号已被冻结，暂无登录权限，请重新注册！');location.href='register.html'</script>";
+                response.getWriter().print(script);
             }else {
-                response.sendRedirect("buy.jsp");
+                request.getSession().setAttribute("user", userInfo);
+                String n = userInfo.getLoginName();
+                request.getSession().setAttribute("username", n);
+                int roleid = userInfo.getRoleId();
+                if (roleid == 1) {
+                    response.sendRedirect("/adminshow");
+                } else {
+                    response.sendRedirect("buy.jsp");
+                }
             }
         }
     }
