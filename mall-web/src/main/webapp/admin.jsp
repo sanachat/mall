@@ -78,12 +78,7 @@
 									<span class="text-normal">用户列表</span>
 								</a>
 							</li>
-							<li>
-								<a href="adminupdatestate.jsp">
-									<b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-									<span class="text-normal">修改用户状态</span>
-								</a>
-							</li>
+
 							<li>
 								<a href="admininsert.jsp">
 									<b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
