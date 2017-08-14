@@ -24,18 +24,21 @@ public class ChangePaypwdServlet extends HttpServlet {
         response.setContentType("text/html;charset=utf-8");
         SqlSession session = SqlSessionHelper.getSqlSession();
         BalanceDao dao = session.getMapper(BalanceDao.class);
-        Balance balance = (Balance) request.getSession().getAttribute("balance");
+        UserInfo userInfo=(UserInfo)request.getSession().getAttribute("user");
+        Balance balance=new Balance();
+        balance.setUserId(userInfo.getUserId());
+        Balance b=dao.findBalanceByUserid(balance);
         String oldpwd = request.getParameter("oldpassword");
         String newpwd1 = request.getParameter("newpassword1");
         String newpwd2 = request.getParameter("newpassword2");
         PrintWriter out = response.getWriter();
-        if (oldpwd.equals(balance.getPayPwd()) == false) {
+        if (oldpwd.equals(b.getPayPwd()) == false) {
             out.print("原密码输入错误！");
 
         } else if (newpwd1.equals(newpwd2) == false) {
             out.print("两次密码输入不相同！");
         } else {
-            balance.setPayPwd(newpwd1);
+            b.setPayPwd(newpwd1);
             dao.updatePwd(balance);
             session.commit();
             out.print("修改成功！");
