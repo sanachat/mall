@@ -26,7 +26,7 @@ public class TestOrderDetail {
         Order or=new Order();
         //新增订单
 
-        or.setUserId(2);
+       /* or.setUserId(2);
         or.setDate("2017-8-14");
         or.setPrice(1000);
         num=d.insert(or);
@@ -39,10 +39,9 @@ public class TestOrderDetail {
         double a=o.getPrices();
         int b=o.getCount();
         o.setSummoney(a*b);
-
         num=dao.insert(o);
         session.commit();
-        System.out.println("详细订单增加成功，受到影响的行数是：" + num);
+        System.out.println("详细订单增加成功，受到影响的行数是：" + num);*/
 
 
 
