@@ -24,9 +24,5 @@ public class TestBalance {
         System.out.println(num + "行受到影响");
         session.commit();*/
 
-        //通过userid查余额表
-        balance.setUserId(123);
-        Balance b = dao.findBalanceByUserid(balance.getUserId());
-        System.out.println(b);
     }
 }

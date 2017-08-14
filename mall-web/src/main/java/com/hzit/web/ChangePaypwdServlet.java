@@ -20,12 +20,11 @@ import java.io.PrintWriter;
 @WebServlet(name = "ChangePaypwdServle", value = "/changePayPwd")
 public class ChangePaypwdServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setCharacterEncoding("utf-8");
         request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
         SqlSession session = SqlSessionHelper.getSqlSession();
         BalanceDao dao = session.getMapper(BalanceDao.class);
         Balance balance = (Balance) request.getSession().getAttribute("balance");
-        UserInfo userInfo=(UserInfo)request.getSession().getAttribute("user");
         String oldpwd = request.getParameter("oldpassword");
         String newpwd1 = request.getParameter("newpassword1");
         String newpwd2 = request.getParameter("newpassword2");
@@ -36,12 +35,13 @@ public class ChangePaypwdServlet extends HttpServlet {
         } else if (newpwd1.equals(newpwd2) == false) {
             out.print("两次密码输入不相同！");
         } else {
-            dao.updatePwd(newpwd1,userInfo.getUserId());
-            out.print("修改成功！");
+            balance.setPayPwd(newpwd1);
+            dao.updatePwd(balance);
             session.commit();
+            out.print("修改成功！");
         }
 
-        request.getRequestDispatcher("changePayPwd.jsp").forward(request, response);
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
