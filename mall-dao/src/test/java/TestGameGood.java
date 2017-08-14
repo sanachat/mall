@@ -35,9 +35,12 @@ public class TestGameGood
         int num = dao.insertGood(g);
         System.out.println(num);
          session.commit();*/
-        int num = dao.deleteGood(5);
-        System.out.println(num);
-        session.commit();
+//        int num = dao.deleteGood(5);
+//        System.out.println(num);
+//        session.commit();
+        List<GamegoodInfo> list =dao.list();
+        for(GamegoodInfo a :list)
+            System.out.println(a);
 
 
 

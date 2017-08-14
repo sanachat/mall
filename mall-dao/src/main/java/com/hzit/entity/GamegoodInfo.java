@@ -26,6 +26,43 @@ public class GamegoodInfo {
     private String sellerName;//卖家店铺名称
     private double unitPrice;//商品单价
     private List<Order> list;
+    private String pictureUrl;
+    private GameInfo gameInfo;
+    private GameServer gameServer;
+    private GameType gameType;
+
+
+    public GameServer getGameServer() {
+        return gameServer;
+    }
+
+    public void setGameServer(GameServer gameServer) {
+        this.gameServer = gameServer;
+    }
+
+    public GameType getGameType() {
+        return gameType;
+    }
+
+    public void setGameType(GameType gameType) {
+        this.gameType = gameType;
+    }
+
+    public GameInfo getGameInfo() {
+        return gameInfo;
+    }
+
+    public void setGameInfo(GameInfo gameInfo) {
+        this.gameInfo = gameInfo;
+    }
+
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
+
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
+    }
 
     public double getUnitPrice() {
         return unitPrice;
@@ -138,6 +175,12 @@ public class GamegoodInfo {
                 ", gameGoodCount=" + gameGoodCount +
                 ", describe='" + describe + '\'' +
                 ", sellerName='" + sellerName + '\'' +
+                ", unitPrice=" + unitPrice +
+                ", list=" + list +
+                ", pictureUrl='" + pictureUrl + '\'' +
+                ", gameInfo=" + gameInfo +
+                ", gameServer=" + gameServer +
+                ", gameType=" + gameType +
                 '}';
     }
 }

@@ -11,26 +11,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 /**
- * Created by wan on 2017/8/10.
+ * Created by wan on 2017/8/12.
  */
-@WebServlet(name = "OrderGameListServlet",value = "/OrderGameList")
-public class OrderGameListServlet extends HttpServlet {
+@WebServlet(name = "OrderdeleteServlet",value = "/orderdelete")
+public class OrderdeleteServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setCharacterEncoding("utf-8");
         request.setCharacterEncoding("utf-8");
-        response.setContentType("text/html");
+        PrintWriter ou = response.getWriter();
         SqlSession session=SqlSessionHelper.getSqlSession();
         OrderDao dao= session.getMapper(OrderDao.class);
-        String id=request.getParameter("orderId");
-        List<Order> l=dao.selectdetail(Integer.parseInt(id));
-        request.setAttribute("l",l);
-        request.getRequestDispatcher("OrderGameFind.jsp").forward(request,response);
+        String id=request.getParameter("oid");
+        int num=dao.delete(Integer.parseInt(id));
+        session.commit();
+        request.getRequestDispatcher("/OrderList").forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request,response);
+
     }
 }

@@ -78,12 +78,7 @@
 									<span class="text-normal">用户列表</span>
 								</a>
 							</li>
-							<li>
-								<a href="adminupdatestate.jsp">
-									<b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-									<span class="text-normal">修改用户状态</span>
-								</a>
-							</li>
+
 							<li>
 								<a href="admininsert.jsp">
 									<b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
@@ -202,7 +197,7 @@
 									<div class="th w10">
 										用户ID
 									</div>
-									<div class="th w15">
+									<div class="th w10">
 										登陆名
 									</div>
 									<div class="th w15">
@@ -220,7 +215,7 @@
 									<div class="th w10">
 										用户状态
 									</div>
-									<div class="th w10">
+									<div class="th w15">
 										操作
 									</div>
 								</div>
@@ -229,7 +224,7 @@
 									<div class="td w10">
 										${list.userId}
 									</div>
-									<div class="td w15">
+									<div class="td w10">
 										${list.loginName}
 									</div>
 									<div class="td w15">
@@ -248,7 +243,10 @@
 										${list.roleId}
 									</div>
 									<div class="td w5">
-										<a href="#"  class="button-word2 btn_ajax_confirm">修改</a>
+										<a href="adminstartstate?userid=${list.userId}"  class="button-word2 btn_ajax_confirm">启用</a>
+									</div>
+									<div class="td w5">
+										<a href="adminfreezestate?userid=${list.userId}"  class="button-word2 btn_ajax_confirm">冻结</a>
 									</div>
 									<div class="td w5">
 										<a href="#" msg="您是否删除此站点，如果删除会影响站点通信导致部分功能无法使用？" callback="del_site(624)" data-id="" class="button-word2 btn_ajax_confirm">删除</a>

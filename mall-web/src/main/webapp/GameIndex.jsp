@@ -24,7 +24,7 @@
             <a href="#" class="topbar-logo fl">
                 <span><img src="Images/logo.png" width="20" height="20"/></span>
             </a>
-            <a href="index.html" class="topbar-home-link topbar-btn text-center fl"><span>订单管理</span></a>
+            <a href="index.html" class="topbar-home-link topbar-btn text-center fl"><span>商品首页</span></a>
         </div>
     </div>
     <div class="topbar-info">
@@ -121,9 +121,9 @@
         <div class="authority">
             <div class="authority-head">
                 <div class="manage-head">
-                    <h6 class="layout padding-left manage-head-con">订单管理
+                    <h6 class="layout padding-left manage-head-con">商品列表
                         <span class="fr text-small text-normal padding-top">发布时间：2017-08-11</span>
-                        <span class="fr margin-large-right padding-top text-small text-normal">最新版本：<em class="text-main">2.4.0.160708</em></span>
+                        <span class="fr  margin-large-right padding-top text-small text-normal">最新版本：<em class="text-main">2.4.0.160708</em></span>
                     </h6>
                 </div>
 
@@ -133,45 +133,44 @@
                     <div class="offcial-table tr-border margin-big-top clearfix">
                         <div class="tr-th clearfix">
                             <div class="th w20">
-                                订单编号
+                                商品名字
                             </div>
                             <div class="th w20">
-                                下单用户
+                                商品店铺
                             </div>
                             <div class="th w20">
-                                订单日期
+                                商品单价
                             </div>
                             <div class="th w20">
-                                创建时间
+                                图片样式
                             </div>
                             <div class="th w20">
-                                <a href="OrderInsert.jsp"  class="button-word2 btn_ajax_confirm">增加订单</a>
+                                <a href="#"  class="button-word2 btn_ajax_confirm">我的购物车</a>
                             </div>
                         </div>
-                        <c:forEach var="o" items="${l}">
-                        <div class="tr clearfix border-bottom-none">
+                        <c:forEach var="o" items="${g}">
+                            <div class="tr clearfix border-bottom-none">
                                 <div class="td w20">
-                                    ${o.orderId}
+                                        ${o.gameGoodName}
                                 </div>
                                 <div class="td w20">
-                                    ${o.userId}
+                                        ${o.sellerName}
                                 </div>
                                 <div class="td w20">
-                                    ${o.date}
+                                        ${o.unitPrice}
                                 </div>
                                 <div class="td w20">
-                                    ${o.price}
+                                    <img src="${o.pictureUrl}">
                                 </div>
-                                <%--<div class="td w20">
-                                    ${o.gamegoodinfo}
-                                </div>--%>
+                                    <%--<div class="td w20">
+                                        ${o.gamegoodinfo}
+                                    </div>--%>
                                 <div class="td w20">
-                                <a href="/orderdelete?oid=${o.orderId}"  class="button-word2 btn_ajax_confirm">删除</a>
-                                <a href="OrderUpdate.jsp"  class="button-word2 btn_ajax_confirm">修改</a>
-                                <a href="OrderGameList.jsp"  class="button-word2 btn_ajax_confirm">查询</a>
-                            </div>
+                                    <a href="#"  class="button-word2 btn_ajax_confirm">购买</a>
+                                    <a href="/gamedetail?oid=${o.gameGoodId}"  class="button-word2 btn_ajax_confirm">查看</a>
+                                </div>
 
-                        </div>
+                            </div>
                         </c:forEach>
                     </div>
                 </div>

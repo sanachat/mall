@@ -2,6 +2,7 @@ package com.hzit.web;
 
 import com.hzit.dao.GameGoodInfoDao;
 import com.hzit.dao.SqlSessionHelper;
+import com.hzit.entity.GamegoodInfo;
 import org.apache.ibatis.session.SqlSession;
 
 import javax.servlet.ServletException;
@@ -10,27 +11,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
 
 /**
- * Created by Administrator on 2017/8/10.
+ * Created by wan on 2017/8/12.
  */
-@WebServlet(name = "AdminDeleteGoodServlet",value="/admindeletegood")
-public class AdminDeleteGoodServlet extends HttpServlet {
+@WebServlet(name = "GameIndexServlet",value = "/GameIndex")
+public class GameIndexServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html");
+        PrintWriter ou = response.getWriter();
         SqlSession session= SqlSessionHelper.getSqlSession();
         GameGoodInfoDao dao=session.getMapper(GameGoodInfoDao.class);
-        int goodid=Integer.parseInt(request.getParameter("goodid"));
-        int num=dao.deleteGood(goodid);
-        if (num==1){
-            session.commit();
-            request.getRequestDispatcher("/admingood");
-        }else{
-            session.rollback();
-        }
+        List<GamegoodInfo> g=dao.list();
+        request.setAttribute("g",g);
+        request.getRequestDispatcher("GameIndex.jsp").forward(request,response);
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      doPost(request,response);
+        doPost(request,response);
 
     }
 }
