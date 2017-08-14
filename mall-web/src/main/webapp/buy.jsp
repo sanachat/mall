@@ -158,13 +158,13 @@
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="userInfo.html">
+            <a href="/findAllAnnouncement">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">投诉</span>
             </a>
           </li>
           <li>
-            <a href="userInfo.html">
+            <a href="/findAllComplain">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">公告</span>
             </a>
