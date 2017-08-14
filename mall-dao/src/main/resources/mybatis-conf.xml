@@ -35,6 +35,7 @@
         <mapper resource="com.hzit.mapper/BalanceDaoMapper.xml"></mapper>
         <mapper resource="com.hzit.mapper/GameInfoDaoMapper.xml"></mapper>
         <mapper resource="com.hzit.mapper/ComplainInfoDaoMapper.xml"></mapper>
+        <mapper resource="com.hzit.mapper/OrderDetailDaoMapper.xml"></mapper>
 
     </mappers>
 </configuration>

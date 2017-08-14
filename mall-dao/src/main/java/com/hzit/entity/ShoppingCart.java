@@ -20,8 +20,6 @@ public class ShoppingCart
     private int num;
 
 
-
-
     public int getShopId() {
         return shopId;
     }
@@ -46,13 +44,7 @@ public class ShoppingCart
         this.price = price;
     }
 
-    public int getNum() {
-        return num;
-    }
 
-    public void setNum(int num) {
-        this.num = num;
-    }
 
     public int getGameGoodId() {
         return gameGoodId;
@@ -60,6 +52,14 @@ public class ShoppingCart
 
     public void setGameGoodId(int gameGoodId) {
         this.gameGoodId = gameGoodId;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
     }
 
     @Override

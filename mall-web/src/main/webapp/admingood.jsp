@@ -48,9 +48,7 @@
 					<li class="fl topbar-info-item">
 					<div class="dropdown">
 						<a href="#" class="topbar-btn">
-						<span class="fl text-normal">
-							<%=session.getAttribute("username")%>
-						</span>
+						<span class="fl text-normal">欢迎</span>
 						<span class="icon-arrow-down"></span>
 						</a>
 						<ul class="dropdown-menu">
@@ -189,7 +187,7 @@
 				<div class="authority">
 					<div class="authority-head">
 						<div class="manage-head">
-							<h6 class="layout padding-left manage-head-con">用户管理</h6>
+							<h6 class="layout padding-left manage-head-con">商品管理</h6>
 						</div>
 					</div>
 					<div class="authority-content">
@@ -197,61 +195,62 @@
 							<div class="offcial-table tr-border margin-big-top clearfix">
 								<div class="tr-th clearfix">
 									<div class="th w10">
-										用户ID
+										商品ID
 									</div>
 									<div class="th w10">
-										登陆名
-									</div>
-									<div class="th w15">
-										登陆密码
-									</div>
-									<div class="th w15">
-										电话
-									</div>
-									<div class="th w15">
-										地址
+										商品名
 									</div>
 									<div class="th w10">
-										用户状态
-									</div>
-									<div class="th w10">
-										用户角色
+										所属游戏
 									</div>
 									<div class="th w15">
+										适用游戏角色
+									</div>
+									<div class="th w15">
+										售出数量
+									</div>
+									<div class="th w10">
+										库存数量
+									</div>
+									<div class="th w10">
+										商店名
+									</div>
+									<div class="th w10">
+										价格
+									</div>
+									<div class="th w10">
 										操作
 									</div>
 								</div>
-								<c:forEach var="list" items="${alluser}">
+								<c:forEach var="list" items="${allgood}">
 								<div class="tr clearfix border-bottom-none">
 									<div class="td w10">
-										${list.userId}
+										${list.gameGoodId}
 									</div>
 									<div class="td w10">
-										${list.loginName}
-									</div>
-									<div class="td w15">
-										${list.loginPwd}
-									</div>
-									<div class="td w15">
-										${list.tel}
-									</div>
-									<div class="td w15">
-										${list.address}
+										${list.gameGoodName}
 									</div>
 									<div class="td w10">
-										${list.userState.userState}
+										${list.gameInfo.gameName}
+									</div>
+									<div class="td w15">
+										${list.roleName}
+									</div>
+									<div class="td w15">
+										${list.gameGoodSellCount}
 									</div>
 									<div class="td w10">
-										${list.roleInfo.roleName}
+										${list.gameGoodCount}
 									</div>
-									<div class="td w5">
-										<a href="adminstartstate?userid=${list.userId}"  class="button-word2 btn_ajax_confirm">启用</a>
+									<div class="td w10">
+										${list.sellerName}
 									</div>
-									<div class="td w5">
-										<a href="adminfreezestate?userid=${list.userId}"  class="button-word2 btn_ajax_confirm">冻结</a>
+									<div class="td w10">
+										${list.unitPrice}
 									</div>
-									<div class="td w5">
-										<a href="admindeleteuser?uid=${list.userId}" class="button-word2 btn_ajax_confirm">删除</a>
+
+									<div class="td w10">
+										<a href="admindeletegood?goodid=${list.gameGoodId}" class="button-word2 btn_ajax_confirm">删除</a>
 									</div>
 								</div>
 								</c:forEach>

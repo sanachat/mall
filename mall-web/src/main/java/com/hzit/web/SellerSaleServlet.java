@@ -15,11 +15,13 @@ import java.io.IOException;
 /**
  * Created by Tracy McGrady on 2017/8/10.
  */
-@WebServlet(name = "SellerSaleServlet",value = "/sellerSale")
+@WebServlet(name = "SellerSaleServlet",value = "/SellerSale")
 public class SellerSaleServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         SqlSession session = SqlSessionHelper.getSqlSession();
         GameGoodInfoDao dao = session.getMapper(GameGoodInfoDao.class);
+        response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
         GamegoodInfo gamegoodInfo = new GamegoodInfo();
         String a=request.getParameter("gamegoodname");
         int b=Integer.parseInt(request.getParameter("gameid"));
@@ -46,7 +48,7 @@ public class SellerSaleServlet extends HttpServlet {
         if(num==1) {
             session.commit();
             request.getSession().setAttribute("game", game);
-            response.sendRedirect("/sellerManage");
+            response.sendRedirect("/SellerManage");
         }
         else
         {

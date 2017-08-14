@@ -48,9 +48,7 @@
 					<li class="fl topbar-info-item">
 					<div class="dropdown">
 						<a href="#" class="topbar-btn">
-						<span class="fl text-normal">
-							<%=session.getAttribute("username")%>
-						</span>
+						<span class="fl text-normal">欢迎</span>
 						<span class="icon-arrow-down"></span>
 						</a>
 						<ul class="dropdown-menu">
@@ -189,69 +187,45 @@
 				<div class="authority">
 					<div class="authority-head">
 						<div class="manage-head">
-							<h6 class="layout padding-left manage-head-con">用户管理</h6>
+							<h6 class="layout padding-left manage-head-con">交易信息</h6>
 						</div>
 					</div>
 					<div class="authority-content">
 						<div class="list-content show">
 							<div class="offcial-table tr-border margin-big-top clearfix">
 								<div class="tr-th clearfix">
-									<div class="th w10">
+									<div class="th w15">
+										记录ID
+									</div>
+									<div class="th w15">
 										用户ID
 									</div>
-									<div class="th w10">
-										登陆名
+									<div class="th w30">
+										交易时间
 									</div>
-									<div class="th w15">
-										登陆密码
+									<div class="th w20">
+										交易金额
 									</div>
-									<div class="th w15">
-										电话
-									</div>
-									<div class="th w15">
-										地址
-									</div>
-									<div class="th w10">
-										用户状态
-									</div>
-									<div class="th w10">
-										用户角色
-									</div>
-									<div class="th w15">
+									<div class="th w20">
 										操作
 									</div>
 								</div>
-								<c:forEach var="list" items="${alluser}">
+								<c:forEach var="list" items="${allrecord}">
 								<div class="tr clearfix border-bottom-none">
-									<div class="td w10">
+									<div class="td w15">
+										${list.orderId}
+									</div>
+									<div class="td w15">
 										${list.userId}
 									</div>
-									<div class="td w10">
-										${list.loginName}
+									<div class="td w30">
+										${list.date}
 									</div>
-									<div class="td w15">
-										${list.loginPwd}
+									<div class="td w20">
+										${list.price}
 									</div>
-									<div class="td w15">
-										${list.tel}
-									</div>
-									<div class="td w15">
-										${list.address}
-									</div>
-									<div class="td w10">
-										${list.userState.userState}
-									</div>
-									<div class="td w10">
-										${list.roleInfo.roleName}
-									</div>
-									<div class="td w5">
-										<a href="adminstartstate?userid=${list.userId}"  class="button-word2 btn_ajax_confirm">启用</a>
-									</div>
-									<div class="td w5">
-										<a href="adminfreezestate?userid=${list.userId}"  class="button-word2 btn_ajax_confirm">冻结</a>
-									</div>
-									<div class="td w5">
-										<a href="admindeleteuser?uid=${list.userId}" class="button-word2 btn_ajax_confirm">删除</a>
+									<div class="td w20">
+										<a href="OrderGameList?orderId=${list.orderId}" class="button-word2 btn_ajax_confirm">查询明细</a>
 									</div>
 								</div>
 								</c:forEach>
