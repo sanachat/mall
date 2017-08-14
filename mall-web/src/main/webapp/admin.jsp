@@ -78,12 +78,7 @@
 									<span class="text-normal">用户列表</span>
 								</a>
 							</li>
-							<li>
-								<a href="adminupdatestate.jsp">
-									<b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-									<span class="text-normal">修改用户状态</span>
-								</a>
-							</li>
+
 							<li>
 								<a href="admininsert.jsp">
 									<b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
@@ -215,10 +210,10 @@
 										地址
 									</div>
 									<div class="th w10">
-										用户状态
+										用户角色
 									</div>
 									<div class="th w10">
-										用户角色
+										用户状态
 									</div>
 									<div class="th w10">
 										操作
@@ -242,10 +237,10 @@
 										${list.address}
 									</div>
 									<div class="td w10">
-										${list.userState.userState}
+										${list.userStateId}
 									</div>
 									<div class="td w10">
-										${list.roleInfo.roleName}
+										${list.roleId}
 									</div>
 									<div class="td w5">
 										<a href="#"  class="button-word2 btn_ajax_confirm">修改</a>

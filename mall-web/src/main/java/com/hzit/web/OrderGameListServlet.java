@@ -19,7 +19,7 @@ import java.util.List;
 @WebServlet(name = "OrderGameListServlet",value = "/OrderGameList")
 public class OrderGameListServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-     /*   response.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html");
         SqlSession session=SqlSessionHelper.getSqlSession();
@@ -27,7 +27,7 @@ public class OrderGameListServlet extends HttpServlet {
         String id=request.getParameter("orderId");
         List<Order> l=dao.selectdetail(Integer.parseInt(id));
         request.setAttribute("l",l);
-        request.getRequestDispatcher("OrderGameFind.jsp").forward(request,response);*/
+        request.getRequestDispatcher("OrderGameFind.jsp").forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
