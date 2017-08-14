@@ -1,7 +1,5 @@
 package com.hzit.entity;
 
-import java.util.List;
-
 /**
  * 　　  　  　           \\\|///
  * 　　　 　  　   \\　.-.-　//
@@ -25,7 +23,6 @@ public class GamegoodInfo {
     private String describe;
     private String sellerName;//卖家店铺名称
     private double unitPrice;//商品单价
-    private List<Order> list;
     private String pictureUrl;
     private GameInfo gameInfo;
     private GameServer gameServer;
@@ -154,13 +151,6 @@ public class GamegoodInfo {
         this.sellerName = sellerName;
     }
 
-    public List<Order> getList() {
-        return list;
-    }
-
-    public void setList(List<Order> list) {
-        this.list = list;
-    }
 
     @Override
     public String toString() {
@@ -176,8 +166,7 @@ public class GamegoodInfo {
                 ", describe='" + describe + '\'' +
                 ", sellerName='" + sellerName + '\'' +
                 ", unitPrice=" + unitPrice +
-                ", list=" + list +
-                ", pictureUrl='" + pictureUrl + '\'' +
+                ", prictureUrl='" + pictureUrl + '\'' +
                 ", gameInfo=" + gameInfo +
                 ", gameServer=" + gameServer +
                 ", gameType=" + gameType +
