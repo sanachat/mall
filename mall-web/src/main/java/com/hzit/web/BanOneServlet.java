@@ -21,11 +21,11 @@ public class BanOneServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         ShoppingCartDao dao= SqlSessionHelper.getSqlSession().getMapper(ShoppingCartDao.class);
         UserInfo userInfo=(UserInfo)request.getSession().getAttribute("user");
-        int num=userInfo.getUserId();
+        int uid=userInfo.getUserId();
         int Id=Integer.parseInt(request.getParameter("pid"));
-        int money=dao.banlanceBygameGoodId(Id,num);
+        int money=dao.banlanceBygameGoodId(Id,uid);
         request.setAttribute("money",money);
-        request.setAttribute("uId",num);
+        request.setAttribute("uId",uid);
         request.getRequestDispatcher("").forward(request,response);
     }
 

@@ -3,6 +3,7 @@ package com.hzit.web;
 import com.hzit.dao.ShoppingCartDao;
 import com.hzit.dao.SqlSessionHelper;
 import com.hzit.entity.UserInfo;
+import org.apache.ibatis.session.SqlSession;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,13 +20,22 @@ public class BanAllServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setCharacterEncoding("utf-8");
         request.setCharacterEncoding("utf-8");
-        ShoppingCartDao dao= SqlSessionHelper.getSqlSession().getMapper(ShoppingCartDao.class);
+        SqlSession session=SqlSessionHelper.getSqlSession();
+        ShoppingCartDao dao= session.getMapper(ShoppingCartDao.class);
         UserInfo userInfo=(UserInfo)request.getSession().getAttribute("user");
-        int num=userInfo.getUserId();
-        int money=dao.allmoney(num);
+        int uid=Integer.parseInt(request.getParameter("uid"));
+       /* int money=dao.allmoney(uid);
         request.setAttribute("allmoney",money);
-        request.setAttribute("userId",num);
-        request.getRequestDispatcher("").forward(request,response);
+        request.setAttribute("userId",uid);*/
+        int num=dao.banAll(uid);
+        if (num==1){
+            session.commit();
+            response.sendRedirect("/findAllcart");
+        }else {
+            response.getWriter().append("删除失败！");
+        }
+
+       // request.getRequestDispatcher("").forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

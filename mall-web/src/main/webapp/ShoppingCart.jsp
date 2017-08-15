@@ -139,7 +139,7 @@
                 单价
               </div>
               <div class="th w20">
-                商品编号
+                商品名称
               </div>
               <div class="th w20">
                 数量
@@ -157,19 +157,21 @@
                     ${o.price}
                 </div>
                 <div class="td w20">
-                    ${o.gameGoodId}
+                    ${o.gameGoodName}
                 </div>
                 <div class="td w20">
                     ${o.num}
                 </div>
                 <div class="td w20">
                   <a href="shoppingdelete.action?pid=${o.shopId}"  class="button-word2 btn_ajax_confirm">删除</a>
-                  <a href=""  class="button-word2 btn_ajax_confirm">结算</a>
+                  <a href="/BanOne?uid=${o.shopId}"  class="button-word2 btn_ajax_confirm">结算</a>
                   <a href="/gamedetail?oid=${o.gameGoodId}"  class="button-word2 btn_ajax_confirm">查看</a>
                 </div>
-
               </div>
             </c:forEach>
+            <h4>
+              <a href="/BanAll?uid=${o.userId}">结算所有</a>
+            </h4>
           </div>
         </div>
         <div class="show-page padding-big-right">
@@ -189,8 +191,8 @@
           <br>
           <br>
           <br>
-          <h4>
-          <a href="BanAll">结算所有</a></h4>
+
+
         </div>
       </div>
     </div>

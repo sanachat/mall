@@ -15,17 +15,15 @@ import java.io.IOException;
 /**
  * Created by acer on 2017/8/11.
  */
-@WebServlet(name = "BalanceServlet",value = "/balance")
+@WebServlet(name = "BalanceServlet")
 public class BalanceServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html;charset=utf-8");
+        response.setCharacterEncoding("utf-8");
         request.setCharacterEncoding("utf-8");
         BalanceDao dao = SqlSessionHelper.getSqlSession().getMapper(BalanceDao.class);
         UserInfo userInfo=(UserInfo)request.getSession().getAttribute("user");
-        Balance balance=new Balance();
-        balance.setUserId(userInfo.getUserId());
-        Balance b=dao.findBalanceByUserid(balance);
-        request.getSession().setAttribute("balance", b);
+        Balance balance=dao.findBalanceByUserid(userInfo.getUserId());
+        request.getSession().setAttribute("balance", balance);
         request.getRequestDispatcher("balance.jsp").forward(request, response);
     }
 
