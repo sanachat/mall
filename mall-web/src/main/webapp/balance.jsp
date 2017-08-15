@@ -32,7 +32,7 @@
       <li class="fl topbar-info-item">
         <div class="dropdown">
           <a href="#" class="topbar-btn">
-            <span class="fl text-normal">小朱</span>
+            <span class="fl text-normal">${user.userName}</span>
             <span class="icon-arrow-down"></span>
           </a>
           <ul class="dropdown-menu">
@@ -70,12 +70,12 @@
         </div>
 
 
-            <form action="balance" method="post" style="margin-left: 200px;margin-top: 60px;font-size: 18px;">
-              您的余额为：￥${balance.money}<br/>
+            <form action="balance" method="post" style="margin-left: 100px;margin-top: 60px;font-size: 18px;">
+              ${user.userName}，您的余额为：￥${balance.money}<br/>
 
             </form>
         <form action="recharge" method="post" style="margin-left: 200px;margin-top: 60px;font-size: 18px;">
-          <button type="button" name="recharge" style="background: lightgreen;font-size: 20px">充值</button>
+          <button type="button" name="recharge" style="background: lightgreen;font-size: 20px;margin-left: 50px;">充值</button>
 
         </form>
 
