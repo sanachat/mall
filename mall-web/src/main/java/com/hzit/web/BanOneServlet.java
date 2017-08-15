@@ -1,8 +1,7 @@
 package com.hzit.web;
 
-import com.hzit.dao.BalanceDao;
+import com.hzit.dao.ShoppingCartDao;
 import com.hzit.dao.SqlSessionHelper;
-import com.hzit.entity.Balance;
 import com.hzit.entity.UserInfo;
 
 import javax.servlet.ServletException;
@@ -13,23 +12,24 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by acer on 2017/8/11.
+ * Created by THINK on 2017/8/14.
  */
-@WebServlet(name = "BalanceServlet",value = "/balance")
-public class BalanceServlet extends HttpServlet {
+@WebServlet(name = "BanOneServlet",urlPatterns = "/BanOne")
+public class BanOneServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html;charset=utf-8");
+        response.setCharacterEncoding("utf-8");
         request.setCharacterEncoding("utf-8");
-        BalanceDao dao = SqlSessionHelper.getSqlSession().getMapper(BalanceDao.class);
+        ShoppingCartDao dao= SqlSessionHelper.getSqlSession().getMapper(ShoppingCartDao.class);
         UserInfo userInfo=(UserInfo)request.getSession().getAttribute("user");
-        Balance balance=new Balance();
-        balance.setUserId(userInfo.getUserId());
-        Balance b=dao.findBalanceByUserid(balance);
-        request.getSession().setAttribute("balance", b);
-        request.getRequestDispatcher("balance.jsp").forward(request, response);
+        int num=userInfo.getUserId();
+        int Id=Integer.parseInt(request.getParameter("pid"));
+        int money=dao.banlanceBygameGoodId(Id,num);
+        request.setAttribute("money",money);
+        request.setAttribute("uId",num);
+        request.getRequestDispatcher("").forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
+       doPost(request,response);
     }
 }

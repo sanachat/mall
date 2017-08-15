@@ -6,7 +6,7 @@
         select * from ShoppingCart WHERE userId=#{userId}
     </select>
     <insert id="insertshoppingcart" parameterType="ShoppingCart" >
-        INSERT INTO ShoppingCart VALUES (#{shopId},#{userId},#{price},#{gameGoodId},#{num})
+        INSERT INTO ShoppingCart VALUES (NULL ,#{userId},#{price},#{gameGoodId},#{num})
     </insert>
     <delete id="deleteshoppingcart" parameterType="int" >
         DELETE from ShoppingCart WHERE shopId=#{shopId}

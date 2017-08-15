@@ -16,11 +16,17 @@ public class ShoppingCart
     private int shopId;
     private int userId;
     private double price;
-    private int gameGoodId;
+    private String gameGoodName;
     private int num;
+    private int gameGoodId;
 
+    public int getGameGoodId() {
+        return gameGoodId;
+    }
 
-
+    public void setGameGoodId(int gameGoodId) {
+        this.gameGoodId = gameGoodId;
+    }
 
     public int getShopId() {
         return shopId;
@@ -54,12 +60,12 @@ public class ShoppingCart
         this.num = num;
     }
 
-    public int getGameGoodId() {
-        return gameGoodId;
+    public String getGameGoodName() {
+        return gameGoodName;
     }
 
-    public void setGameGoodId(int gameGoodId) {
-        this.gameGoodId = gameGoodId;
+    public void setGameGoodName(String gameGoodName) {
+        this.gameGoodName = gameGoodName;
     }
 
     @Override
@@ -68,8 +74,9 @@ public class ShoppingCart
                 "shopId=" + shopId +
                 ", userId=" + userId +
                 ", price=" + price +
+                ", gameGoodName='" + gameGoodName + '\'' +
+                ", num=" + num +
                 ", gameGoodId=" + gameGoodId +
-                ", count=" + num +
                 '}';
     }
 }

@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Tracy McGrady
-  Date: 2017/8/10
-  Time: 17:51
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -22,6 +15,13 @@
   <script type="text/javascript" src="Js/haidao.offcial.general.js"></script>
   <script type="text/javascript" src="Js/select.js"></script>
   <script type="text/javascript" src="Js/haidao.validate.js"></script>
+  <style>
+    h4{
+
+      font-size: 16px;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
@@ -148,7 +148,6 @@
             <span class="text-normal">返回首页</span>
           </a>
         </div>
-
       </div>
     </div>
   </div>
@@ -156,30 +155,28 @@
     <div class="authority">
       <div class="authority-head">
         <div class="manage-head">
-          <h6 class="layout padding-left manage-head-con">卖家管理</h6>
+          <h5 class="layout padding-left manage-head-con">卖家管理</h5>
+          <h4 style="margin-left: 90%">
+          <a href="SellerSale.jsp">上架商品</a>
+          </h4>
         </div>
+
       </div>
       <div class="authority-content">
         <div class="list-content show">
           <div class="offcial-table tr-border margin-big-top clearfix">
             <div class="tr-th clearfix">
-              <div class="th w15">
+              <div class="th w20">
+                图片
+              </div>
+              <div class="th w10">
                 游戏编号
               </div>
-              <div class="th w15">
+              <div class="th w10">
                 商品名称
               </div>
               <div class="th w10">
                 游戏名称
-              </div>
-              <div class="th w10">
-                游戏大区
-              </div>
-              <div class="th w10">
-               游戏服务器
-              </div>
-              <div class="th w10">
-                角色名
               </div>
               <div class="th w10">
                 材料名称
@@ -191,43 +188,28 @@
                 库存
               </div>
               <div class="th w10">
-                描述
-              </div>
-              <div class="th w10">
-                卖家
-              </div>
-              <div class="th w10">
                 单价
-              </div>
-              <div class="th w10">
-                图片
               </div>
               <div class="th w10">
                 操作
               </div>
             </div>
+            <c:forEach var="c" items="${list}">
             <div class="tr clearfix border-bottom-none">
-             <c:forEach var="c" items="${list}">
-               <div class="td w15">
+              <div class="td w20">
+                <img src=" ${c.pictureUrl}" title="${c.describe}">
+              </div>
+               <div class="td w10">
                ${c.gameGoodId}
                </div>
-               <div class="td w15">
+               <div class="td w10">
                ${c.gameGoodName}
                </div>
                <div class="td w10">
-               ${c.gameName}
+               ${c.gameInfo.gameName}
                </div>
                <div class="td w10">
-               ${c.gameArea}
-               </div>
-               <div class="td w10">
-               ${c.gameServerName}
-               </div>
-               <div class="td w10">
-               ${c.roleName}
-               </div>
-               <div class="td w10">
-               ${c.gameTypeName}
+               ${c.gameType.gameGoodType}
                </div>
                <div class="td w10">
                ${c.gameGoodSellCount}
@@ -236,21 +218,16 @@
                ${c.gameGoodCount}
               </div>
               <div class="td w10">
-                ${c.describe}
-              </div>
-              <div class="td w10">
-                ${c.sellerName}
-              </div>
-              <div class="td w10">
                 ${c.unitPrice}
               </div>
-              <div class="td w15">
-                <a href="#" class="button-word2">无</a>
+              <div class="td w5">
+                <a href="SellerUpdate.jsp"  class="button-word2 btn_ajax_confirm">修改</a>
               </div>
-              <div class="td w15">
-                <a href="#" msg="您是否删除此站点，如果删除会影响站点通信导致部分功能无法使用？" callback="del_site(624)" data-id="" class="button-word2 btn_ajax_confirm">删除</a>
+              <div class="td w5">
+                <a href="SellerDelete?id=${c.gameGoodId}" class="button-word2 btn_ajax_confirm">删除</a>
               </div>
             </div>
+            </c:forEach>
           </div>
         </div>
         <div class="show-page padding-big-right">

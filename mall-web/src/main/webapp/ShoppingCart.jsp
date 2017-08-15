@@ -46,7 +46,7 @@
 </div>
 <div class="view-body">
   <div class="view-sidebar">
-    <div class="sidebar-content">
+    <%--<div class="sidebar-content">
       <!--一级菜单循环从这里开始 ，动态循环显示一级菜单-->
       <div class="sidebar-nav">
         <div class="sidebar-title">
@@ -115,7 +115,7 @@
         </ul>
       </div>
       <!--一级菜单循环从这里结束 ，动态循环显示一级菜单-->
-    </div>
+    </div>--%>
   </div>
   <div class="view-product">
     <div class="authority">
@@ -164,8 +164,8 @@
                 </div>
                 <div class="td w20">
                   <a href="shoppingdelete.action?pid=${o.shopId}"  class="button-word2 btn_ajax_confirm">删除</a>
-                  <a href="OrderUpdate.jsp"  class="button-word2 btn_ajax_confirm">结算</a>
-                  <a href="OrderGameList.jsp"  class="button-word2 btn_ajax_confirm">查询</a>
+                  <a href=""  class="button-word2 btn_ajax_confirm">结算</a>
+                  <a href="/gamedetail?oid=${o.gameGoodId}"  class="button-word2 btn_ajax_confirm">查看</a>
                 </div>
 
               </div>
@@ -186,6 +186,11 @@
               </ul>
             </div>
           </div>
+          <br>
+          <br>
+          <br>
+          <h4>
+          <a href="BanAll">结算所有</a></h4>
         </div>
       </div>
     </div>
@@ -205,4 +210,3 @@
 </script>
 </body>
 </html>
-//

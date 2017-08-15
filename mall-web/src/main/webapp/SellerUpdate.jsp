@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,9 +48,7 @@
       <li class="fl topbar-info-item">
         <div class="dropdown">
           <a href="#" class="topbar-btn">
-						<span class="fl text-normal">
-							<%=session.getAttribute("username")%>
-						</span>
+            <span class="fl text-normal">欢迎</span>
             <span class="icon-arrow-down"></span>
           </a>
           <ul class="dropdown-menu">
@@ -69,14 +68,26 @@
 
           <a href="#">
             <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">个人信息</span>
+            <span class="text-normal">用户管理</span>
           </a>
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="webSet.html">
+            <a href="/adminshow">
               <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">我的信息</span>
+              <span class="text-normal">用户列表</span>
+            </a>
+          </li>
+          <li>
+            <a href="adminupdatestate.jsp">
+              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
+              <span class="text-normal">修改用户状态</span>
+            </a>
+          </li>
+          <li>
+            <a href="admininsert.jsp">
+              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
+              <span class="text-normal">增加管理员</span>
             </a>
           </li>
 
@@ -86,12 +97,29 @@
         <div class="sidebar-title">
           <a href="#">
             <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">商品信息</span>
+            <span class="text-normal">交易信息</span>
           </a>
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="userInfo.html">
+            <a href="/adminrecord">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">交易信息记录</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-nav">
+        <div class="sidebar-title">
+          <a href="#">
+            <span class="icon"><b class="fl icon-arrow-down"></b></span>
+            <span class="text-normal">商品管理</span>
+          </a>
+        </div>
+        <ul class="sidebar-trans">
+
+          <li>
+            <a href="/admingood">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">商品列表</span>
             </a>
@@ -102,47 +130,20 @@
         <div class="sidebar-title">
           <a href="#">
             <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">账户信息</span>
+            <span class="text-normal">游戏管理</span>
           </a>
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="balance">
+            <a href="/admingame">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
-              <span class="text-normal">我的账户</span>
+              <span class="text-normal">游戏列表</span>
             </a>
           </li>
           <li>
-            <a href="userInfo.html">
+            <a href="admininsertgame.jsp">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
-              <span class="text-normal">购物车</span>
-            </a>
-          </li>
-          <li>
-            <a href="userInfo.html">
-              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
-              <span class="text-normal">购物记录</span>
-            </a>
-          </li>
-          <a href="ChangePayPwd.jsp">
-            <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
-            <span class="text-normal">修改密码</span>
-          </a>
-          </li>
-        </ul>
-      </div>
-      <div class="sidebar-nav">
-        <div class="sidebar-title">
-          <a href="#">
-            <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">商家信息</span>
-          </a>
-        </div>
-        <ul class="sidebar-trans">
-          <li>
-            <a href="userInfo.html">
-              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
-              <span class="text-normal">成为商家</span>
+              <span class="text-normal">增加游戏</span>
             </a>
           </li>
         </ul>
@@ -156,13 +157,19 @@
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="/findAllAnnouncement">
+            <a href="userInfo.html">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
-              <span class="text-normal">投诉</span>
+              <span class="text-normal">投诉处理</span>
             </a>
           </li>
           <li>
-            <a href="/findAllComplain">
+            <a href="userInfo.html">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">发布公告</span>
+            </a>
+          </li>
+          <li>
+            <a href="userInfo.html">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">公告</span>
             </a>
@@ -172,7 +179,7 @@
 
       <div class="sidebar-nav">
         <div class="sidebar-title">
-          <a href="#">
+          <a href="/adminshow">
             <span class="icon"><b ></b></span>
             <span class="text-normal">返回首页</span>
           </a>
@@ -182,72 +189,67 @@
     </div>
   </div>
   <div class="view-product">
-    <div class="authority">
-      <div class="authority-head">
-        <div class="manage-head">
-          <h6 class="layout padding-left manage-head-con">站点管理</h6>
-        </div>
+    <div class="company_identify">
+      <div class="manage-head">
+        <h6 class="padding-left manage-head-con">修改商品</h6>
       </div>
-      <div class="authority-content">
-        <div class="list-content show">
-          <div class="offcial-table tr-border margin-big-top clearfix">
-            <div class="tr-th clearfix">
-              <div class="th w20">
-                站点名称
-              </div>
-              <div class="th w20">
-                站点域名
-              </div>
-              <div class="th w15">
-                版本号
-              </div>
-              <div class="th w15">
-                安装时间
-              </div>
-              <div class="th w15">
-                授权证书
-              </div>
-              <div class="th w15">
-                操作
+      <form name="setp0" action="/SellerUpdate" method="post" autocomplete="off">
+        <div class="basic-info-detail clearfix">
+
+          <div class="unit-style padding-big-lr clearfix">
+            <h4 class="real-name-head margin-large-top">修改商品信息</h4>
+            <div class="real-name-con height-main margin-top-25">
+              <p class="content-left-zoon">
+                售出商品数量
+              </p>
+              <div class="content-right-zoon">
+                <input class="width-main input" type="text" name="gamegoodsellcount" datatype="*" value="">
               </div>
             </div>
-            <div class="tr clearfix border-bottom-none">
-              <div class="td w20">
-                我的系统
-              </div>
-              <div class="td w20">
-                localhost
-              </div>
-              <div class="td w15">
-                --
-              </div>
-              <div class="td w15">
-                2016-01-10 11:54:07
-              </div>
-              <div class="td w15">
-                <a href="#" class="button-word2">无</a>
-              </div>
-              <div class="td w15">
-                <a href="#" msg="您是否删除此站点，如果删除会影响站点通信导致部分功能无法使用？" callback="del_site(624)" data-id="" class="button-word2 btn_ajax_confirm">删除</a>
+            <div class="real-name-con height-main margin-top-25">
+              <p class="content-left-zoon">
+                库存
+              </p>
+              <div class="content-right-zoon">
+                <input class="width-main input" type="text" name="gamegoodcount" datatype="*" value="">
               </div>
             </div>
+
+            <div class="real-name-con height-main margin-top-25">
+              <p class="content-left-zoon">
+                描述
+              </p>
+              <div class="content-right-zoon">
+                <input class="width-main input" type="text" name="describe" datatype="*" value="">
+              </div>
+            </div>
+            <div class="real-name-con height-main margin-top-25">
+              <p class="content-left-zoon">
+                单价
+              </p>
+              <div class="content-right-zoon">
+                <input class="width-main input" type="text" name="unitprice" datatype="*" value="">
+              </div>
+            </div>
+            <div class="real-name-con height-main margin-top-25">
+              <p class="content-left-zoon">
+                图片
+              </p>
+              <div class="content-right-zoon">
+                <input class="width-main input" type="text" name="pictureUrl" datatype="*" value="">
+              </div>
+            </div>
+
+          </div>
+          <p>&nbsp;</p>
+        </div>
+
+        <div class="unit-style padding-large-tb clearfix">
+          <div class="margin-large-top padding-left text-left content-right-zoon">
+            <input type="submit" value="确认" class="submit fl">
           </div>
         </div>
-        <div class="show-page padding-big-right">
-          <div class="page">
-            <div class="page">
-              <ul class="offcial-page margin-top margin-big-right">
-                <li>共<em class="margin-small-left margin-small-right">1</em>条数据</li>
-                <li>每页显示<em class="margin-small-left margin-small-right">15</em>条</li>
-                <li><a class="next disable">上一页</a></li>
-                <li></li>
-                <li><a class="next disable">下一页</a></li>
-                <li><span class="fl">共<em class="margin-small-left margin-small-right">1</em>页</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+      </form>
     </div>
   </div>
 </div>
