@@ -66,7 +66,6 @@
                         <span class="fr margin-large-right padding-top text-small text-normal">最新版本：<em
                                 class="text-main">2.4.0.160708</em></span>
           </h6>
-
         </div>
 
         <div class="authority">
