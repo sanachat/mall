@@ -7,12 +7,12 @@
         select * from balance where userId=#{userId}
     </select>
 
-    <update id="addMoney" parameterType="double">
-        update balance set money=#{money}+#{payMoney} where userId=#{userId}
+    <update id="addMoney" parameterType="com.hzit.entity.Balance">
+        update balance set money=money+#{money} where userId=#{userId}
     </update>
 
-    <update id="subMoney" parameterType="double">
-        update balance set money=#{money}-#{payMoney} where userId=#{userId}
+    <update id="subMoney" parameterType="com.hzit.entity.Balance">
+        update balance set money=money-#{money} where userId=#{userId}
     </update>
 
     <insert id="insert" parameterType="com.hzit.entity.Balance" >

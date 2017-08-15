@@ -13,9 +13,9 @@ public interface BalanceDao {
 
     public Balance findBalanceByUserid(Balance balance);
 
-    public int addMoney(double payMoney);
+    public int addMoney(Balance balance);
 
-    public int subMoney(double payMoney);
+    public int subMoney(Balance balance);
 
     public int insert(Balance balance);
 
