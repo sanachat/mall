@@ -17,17 +17,17 @@ import java.io.PrintWriter;
 /**
  * Created by acer on 2017/8/15.
  */
-@WebServlet(name = "RechargeServlet",value = "/recharge")
+@WebServlet(name = "RechargeServlet", value = "/recharge")
 public class RechargeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
         SqlSession session = SqlSessionHelper.getSqlSession();
         BalanceDao dao = session.getMapper(BalanceDao.class);
-        UserInfo userInfo=(UserInfo)request.getSession().getAttribute("user");
-        Balance balance=new Balance();
+        UserInfo userInfo = (UserInfo) request.getSession().getAttribute("user");
+        Balance balance = new Balance();
         balance.setUserId(userInfo.getUserId());
-        balance=dao.findBalanceByUserid(balance);
+        balance = dao.findBalanceByUserid(balance);
         String password = request.getParameter("password");
         String money = request.getParameter("money");
         balance.setMoney(Integer.parseInt(money));
@@ -35,6 +35,8 @@ public class RechargeServlet extends HttpServlet {
         if (password.equals(balance.getPayPwd()) == false) {
             out.print("密码输入错误！");
 
+        } else if (balance.getMoney() <= 0) {
+            out.print("您的金额输入不合法");
         } else {
             dao.addMoney(balance);
             session.commit();
