@@ -296,7 +296,7 @@ label{cursor: pointer;}
 
 .input.h6{font-size: 12px;}
 .real-name-head{border-bottom:1px dashed #d9d9d9;color:#333;height:35px;line-height:35px;}
-.height-main{height: 35px;width: 50%;float: left}
+.height-main{height: 35px;}
 .height-large{height:60px;}
 .w48{width:48%;}
 .border-tab-rig{border-right: 1px solid #e8e8e9;}
@@ -348,7 +348,7 @@ label{cursor: pointer;}
 .margin-super-top{margin-top:50px;}
 .margin-large-35{margin-right:35px;}
 .margin-top-35{margin-top:35px;}
-.margin-top-25{margin-top:25px;width: 50%;float: left}
+.margin-top-25{margin-top:25px;}
 .margin-tb-25{margin:25px 0;}
 .margin-large-tb{margin:30px 0;}
 
