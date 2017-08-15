@@ -79,6 +79,12 @@
             </a>
           </li>
           <li>
+            <a href="adminupdatestate.jsp">
+              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
+              <span class="text-normal">修改用户状态</span>
+            </a>
+          </li>
+          <li>
             <a href="admininsert.jsp">
               <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
               <span class="text-normal">增加管理员</span>
@@ -182,41 +188,105 @@
       </div>
     </div>
   </div>
+
   <div class="view-product">
     <div class="company_identify">
       <div class="manage-head">
-        <h6 class="padding-left manage-head-con">新增游戏</h6>
+        <h6 class="padding-left manage-head-con">新增商品</h6>
       </div>
-      <form name="setp0" action="/admininsertgame" method="post" autocomplete="off">
+      <form name="setp0" action="/SellerSale" method="post" autocomplete="off">
         <div class="basic-info-detail clearfix">
-
           <div class="unit-style padding-big-lr clearfix">
-            <h4 class="real-name-head margin-large-top">填写游戏信息</h4>
+            <h4 class="real-name-head margin-large-top">填写商品信息</h4>
             <div class="real-name-con height-main margin-top-25">
               <p class="content-left-zoon">
-                游戏名称
+                游戏商品名称
               </p>
               <div class="content-right-zoon">
-                <input class="width-main input" type="text" name="gamename" datatype="*" value="">
+                <input class="width-main input" type="text" name="gamegoodname" datatype="*" value="">
               </div>
             </div>
             <div class="real-name-con height-main margin-top-25">
               <p class="content-left-zoon">
-                游戏描述
+                游戏种类
               </p>
               <div class="content-right-zoon">
-                <input class="width-main input" type="text" name="area" datatype="*" value="">
+                <input class="width-main input" type="text" name="gameid" datatype="*" value="">
               </div>
             </div>
 
             <div class="real-name-con height-main margin-top-25">
-              <p class="content-right-zoon">
-                注：由于政策原因 目前运营区域只支持中国大陆
+              <p class="content-left-zoon">
+                服务器类型
               </p>
-
+              <div class="content-right-zoon">
+                <input class="width-main input" type="text" name="gameserverid" datatype="*" value="">
+              </div>
             </div>
-
-
+            <div class="real-name-con height-main margin-top-25">
+              <p class="content-left-zoon">
+                角色名称
+              </p>
+              <div class="content-right-zoon">
+                <input class="width-main input" type="text" name="rolename" datatype="*" value="">
+              </div>
+            </div>
+            <div class="real-name-con height-main margin-top-25">
+              <p class="content-left-zoon">
+                商品材料类型
+              </p>
+              <div class="content-right-zoon">
+                <input class="width-main input" type="text" name="gametypeid" datatype="*" value="">
+              </div>
+            </div>
+            <div class="real-name-con height-main margin-top-25">
+              <p class="content-left-zoon">
+                售出数量
+              </p>
+              <div class="content-right-zoon">
+                <input class="width-main input" type="text" name="gamegoodsellcount" datatype="*" value="">
+              </div>
+            </div>
+            <div class="real-name-con height-main margin-top-25">
+              <p class="content-left-zoon">
+                库存数量
+              </p>
+              <div class="content-right-zoon">
+                <input class="width-main input" type="text" name="gamegoodcount" datatype="*" value="">
+              </div>
+            </div>
+            <div class="real-name-con height-main margin-top-25">
+              <p class="content-left-zoon">
+                描述
+              </p>
+              <div class="content-right-zoon">
+                <input class="width-main input" type="text" name="describe" datatype="*" value="">
+              </div>
+            </div>
+            <div class="real-name-con height-main margin-top-25">
+              <p class="content-left-zoon">
+                卖家名称
+              </p>
+              <div class="content-right-zoon">
+                <input class="width-main input" type="text" name="sellername" datatype="*" value="">
+              </div>
+            </div>
+            <div class="real-name-con height-main margin-top-25">
+              <p class="content-left-zoon">
+                单价
+              </p>
+              <div class="content-right-zoon">
+                <input class="width-main input" type="text" name="unitprice" datatype="*" value="">
+              </div>
+            </div>
+            <div class="real-name-con height-main margin-top-25">
+              <p class="content-left-zoon">
+                图片地址
+              </p>
+              <div class="content-right-zoon">
+                <input class="width-main input" type="text" name="pictureurl" datatype="*" value="">
+              </div>
+            </div>
           </div>
           <p>&nbsp;</p>
         </div>
@@ -245,3 +315,4 @@
 </body>
 
 </html>
+

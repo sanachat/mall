@@ -15,15 +15,14 @@ import java.io.IOException;
 /**
  * Created by Tracy McGrady on 2017/8/9.
  */
-@WebServlet(name = "SellerServlet",value = "/seller")
+@WebServlet(name = "SellerServlet",value = "/Seller")
 public class SellerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         SqlSession session = SqlSessionHelper.getSqlSession();
         UserInfoDao dao = session.getMapper(UserInfoDao.class);
-        UserInfo userInfo =(UserInfo)request.getSession().getAttribute("");
+        UserInfo userInfo =(UserInfo)request.getSession().getAttribute("user");
         dao.updateSeller(userInfo.getUserId());
         session.commit();
-        response.sendRedirect("BecomeSeller.jsp");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
