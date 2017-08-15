@@ -32,7 +32,7 @@
             <li class="fl topbar-info-item">
                 <div class="dropdown">
                     <a href="#" class="topbar-btn">
-                        <span class="fl text-normal">小朱</span>
+                        <span class="fl text-normal">${user.userName}</span>
                         <span class="icon-arrow-down"></span>
                     </a>
                     <ul class="dropdown-menu">
