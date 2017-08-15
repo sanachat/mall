@@ -39,7 +39,7 @@ public class ChangePaypwdServlet extends HttpServlet {
             out.print("两次密码输入不相同！");
         } else {
             b.setPayPwd(newpwd1);
-            dao.updatePwd(balance);
+            dao.updatePwd(b);
             session.commit();
             out.print("修改成功！");
         }
