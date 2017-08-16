@@ -22,8 +22,6 @@ public class EditUserServlet extends HttpServlet {
         response.setCharacterEncoding("utf-8");
         SqlSession session= SqlSessionHelper.getSqlSession();
         UserInfoDao dao=session.getMapper(UserInfoDao.class);
-        UserInfo userInfo=(UserInfo)request.getSession().getAttribute("user");
-        userInfo.getUserId();
         String pwd=request.getParameter("loginPwd");
         String tel=request.getParameter("tel");
         String emil=request.getParameter("email");
@@ -31,6 +29,8 @@ public class EditUserServlet extends HttpServlet {
         String question=request.getParameter("question");
         String answer=request.getParameter("answer");
         UserInfo user=new UserInfo();
+        user=(UserInfo)request.getSession().getAttribute("user");
+        user.getUserId();
         user.setLoginPwd(pwd);
         user.setTel(tel);
         user.setUserEmail(emil);
