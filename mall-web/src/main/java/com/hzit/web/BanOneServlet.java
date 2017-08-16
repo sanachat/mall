@@ -23,7 +23,6 @@ public class BanOneServlet extends HttpServlet {
         SqlSession session=SqlSessionHelper.getSqlSession();
         ShoppingCartDao dao=session.getMapper(ShoppingCartDao.class);
         //获取金额，userId，gamegoodId
-        //int uid=Integer.parseInt(request.getParameter("userId"));
         UserInfo userInfo=(UserInfo)request.getSession().getAttribute("user");
         int uid=userInfo.getUserId();
         int gid=Integer.parseInt(request.getParameter("goodId"));
@@ -37,10 +36,10 @@ public class BanOneServlet extends HttpServlet {
         num=dao.deleteshoppingcart(sId);
         if (num==1){
             session.commit();
+            request.getRequestDispatcher("/CartOrderinsert").forward(request,response);
         }else {
             response.getWriter().append("删除失败！");
         }
-        request.getRequestDispatcher("/CartOrderinsert").forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
