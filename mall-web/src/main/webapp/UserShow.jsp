@@ -183,10 +183,10 @@
         <div class="list-content show">
           <div class="offcial-table tr-border margin-big-top clearfix">
             <div class="tr-th clearfix">
-              <div class="th w10">
+              <div class="th w5">
                 登录名
               </div>
-              <div class="th w8">
+              <div class="th w10">
                 登录密码
               </div>
               <div class="th w10">
@@ -222,10 +222,10 @@
             </div>
             <c:forEach var="u" items="${find}">
               <div class="tr clearfix border-bottom-none">
-                <div class="td w10">
+                <div class="td w5">
                     ${u.loginName}
                 </div>
-                <div class="td w8">
+                <div class="td w10">
                     ${u.loginPwd}
                 </div>
                 <div class="td w10">
