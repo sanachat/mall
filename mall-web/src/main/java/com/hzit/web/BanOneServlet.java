@@ -42,7 +42,7 @@ public class BanOneServlet extends HttpServlet {
         }
         request.getRequestDispatcher("/CartOrderinsert").forward(request,response);
     }
-//gddgh
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
        doPost(request,response);
     }
