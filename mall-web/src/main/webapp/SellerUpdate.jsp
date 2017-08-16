@@ -16,7 +16,6 @@
   <script type="text/javascript" src="Js/select.js"></script>
   <script type="text/javascript" src="Js/haidao.validate.js"></script>
 </head>
-
 <body>
 <div class="view-topbar">
   <div class="topbar-console">
@@ -36,7 +35,6 @@
           <!--have表示有消息，没有消息去掉have-->
         </a>
       </li>
-
       <li class="fl topbar-info-item">
         <div class="dropdown">
           <a href="#" class="topbar-btn">
@@ -48,7 +46,9 @@
       <li class="fl topbar-info-item">
         <div class="dropdown">
           <a href="#" class="topbar-btn">
-            <span class="fl text-normal">欢迎</span>
+            <span class="fl text-normal">
+              <%=session.getAttribute("username")%>
+            </span>
             <span class="icon-arrow-down"></span>
           </a>
           <ul class="dropdown-menu">
@@ -63,31 +63,17 @@
   <div class="view-sidebar">
     <div class="sidebar-content">
       <div class="sidebar-nav">
-
         <div class="sidebar-title">
-
           <a href="#">
             <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">用户管理</span>
+            <span class="text-normal">个人信息</span>
           </a>
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="/adminshow">
+            <a href="/userShow">
               <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">用户列表</span>
-            </a>
-          </li>
-          <li>
-            <a href="adminupdatestate.jsp">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">修改用户状态</span>
-            </a>
-          </li>
-          <li>
-            <a href="admininsert.jsp">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">增加管理员</span>
+              <span class="text-normal">我的信息</span>
             </a>
           </li>
 
@@ -97,53 +83,70 @@
         <div class="sidebar-title">
           <a href="#">
             <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">交易信息</span>
+            <span class="text-normal">商品信息</span>
           </a>
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="/adminrecord">
-              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
-              <span class="text-normal">交易信息记录</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="sidebar-nav">
-        <div class="sidebar-title">
-          <a href="#">
-            <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">商品管理</span>
-          </a>
-        </div>
-        <ul class="sidebar-trans">
-
-          <li>
-            <a href="/admingood">
+            <a href="/GameIndex">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">商品列表</span>
             </a>
           </li>
+          <li>
+            <a href="/SellerManage">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">商品管理</span>
+            </a>
+          </li>
         </ul>
       </div>
       <div class="sidebar-nav">
         <div class="sidebar-title">
           <a href="#">
             <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">游戏管理</span>
+            <span class="text-normal">账户信息</span>
           </a>
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="/admingame">
+            <a href="/balance">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
-              <span class="text-normal">游戏列表</span>
+              <span class="text-normal">我的账户</span>
             </a>
           </li>
           <li>
-            <a href="admininsertgame.jsp">
+            <a href="/findAllcart">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
-              <span class="text-normal">增加游戏</span>
+              <span class="text-normal">购物车</span>
+            </a>
+          </li>
+          <li>
+            <a href="/OrderGameList">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">购物记录</span>
+            </a>
+          </li>
+          <li>
+            <a href="ChangePayPwd.jsp">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">修改支付密码</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-nav">
+        <div class="sidebar-title">
+          <a href="#">
+            <span class="icon"><b class="fl icon-arrow-down"></b></span>
+            <span class="text-normal">商家信息</span>
+          </a>
+        </div>
+        <ul class="sidebar-trans">
+          <li>
+            <a href="/Seller">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">成为商家</span>
             </a>
           </li>
         </ul>
@@ -157,34 +160,26 @@
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="userInfo.html">
+            <a href="/findAllAnnouncement">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
-              <span class="text-normal">投诉处理</span>
+              <span class="text-normal">投诉</span>
             </a>
           </li>
           <li>
-            <a href="userInfo.html">
-              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
-              <span class="text-normal">发布公告</span>
-            </a>
-          </li>
-          <li>
-            <a href="userInfo.html">
+            <a href="/findAllComplain">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">公告</span>
             </a>
           </li>
         </ul>
       </div>
-
       <div class="sidebar-nav">
         <div class="sidebar-title">
-          <a href="/adminshow">
+          <a href="/SellerManage">
             <span class="icon"><b ></b></span>
             <span class="text-normal">返回首页</span>
           </a>
         </div>
-
       </div>
     </div>
   </div>
