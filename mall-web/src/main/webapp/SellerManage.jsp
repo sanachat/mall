@@ -72,7 +72,6 @@
       <div class="sidebar-nav">
 
         <div class="sidebar-title">
-
           <a href="#">
             <span class="icon"><b class="fl icon-arrow-down"></b></span>
             <span class="text-normal">个人信息</span>
@@ -103,7 +102,7 @@
             </a>
           </li>
           <li>
-            <a href="userInfo.html">
+            <a href="/SellerManage">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">商品管理</span>
             </a>
