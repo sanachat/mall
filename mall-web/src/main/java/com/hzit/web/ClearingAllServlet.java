@@ -19,7 +19,7 @@ import java.io.PrintWriter;
 /**
  * Created by acer on 2017/8/16.
  */
-@WebServlet(name = "ClearingAllServlet",value = "/clearing")
+@WebServlet(name = "ClearingAllServlet",value = "/clearingAll")
 public class ClearingAllServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
