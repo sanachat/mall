@@ -15,10 +15,11 @@ import java.io.IOException;
 /**
  * Created by THINK on 2017/8/9.
  */
-@WebServlet(name = "RegisterServlet")
+@WebServlet(name = "RegisterServlet",value = "/register")
 public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
         response.setCharacterEncoding("utf-8");
         SqlSession session= SqlSessionHelper.getSqlSession();
         UserInfoDao dao=session.getMapper(UserInfoDao.class);
@@ -38,7 +39,7 @@ public class RegisterServlet extends HttpServlet {
         user.setLoginName(name);
         user.setUserSex(sex);
         user.setLoginPwd(pwd);
-        user.setUserName(tureName);
+        user.setUserName(tureName);//
         user.setTel(tel);
         user.setUserEmail(emil);
         user.setIdCard(idcard);
@@ -46,11 +47,11 @@ public class RegisterServlet extends HttpServlet {
         user.setStoreName(storeName);
         user.setPwdQuestion(question);
         user.setPwdAnswer(answer);
-        UserInfo userInfo=dao.checkLogin(user);
-        if(userInfo==null){
-            response.sendRedirect("index.jsp");
-        }else{
-            request.getSession().setAttribute("user",userInfo);
+        int num=dao.insertUser(user);
+        if(num==1){
+            session.commit();
+            String script = "<script>alert('注册成功！请登录！');location.href='login.html'</script>";
+            response.getWriter().print(script);
         }
     }
 
