@@ -24,7 +24,7 @@
       <a href="#" class="topbar-logo fl">
         <span><img src="Images/logo.png" width="20" height="20"/></span>
       </a>
-      <a href="index.html" class="topbar-home-link topbar-btn text-center fl"><span>订单管理</span></a>
+      <a href="index.html" class="topbar-home-link topbar-btn text-center fl"><span>商品首页</span></a>
     </div>
   </div>
   <div class="topbar-info">
@@ -49,7 +49,7 @@
 </div>
 <div class="view-body">
   <div class="view-sidebar">
-    <%--<div class="sidebar-content">
+    <div class="sidebar-content">
       <!--一级菜单循环从这里开始 ，动态循环显示一级菜单-->
       <div class="sidebar-nav">
         <div class="sidebar-title">
@@ -118,15 +118,15 @@
         </ul>
       </div>
       <!--一级菜单循环从这里结束 ，动态循环显示一级菜单-->
-    </div>--%>
+    </div>
   </div>
   <div class="view-product">
     <div class="authority">
       <div class="authority-head">
         <div class="manage-head">
-          <h6 class="layout padding-left manage-head-con">购物车
+          <h6 class="layout padding-left manage-head-con">商品详细信息
             <span class="fr text-small text-normal padding-top">发布时间：2017-08-11</span>
-            <span class="fr margin-large-right padding-top text-small text-normal">最新版本：<em class="text-main">2.4.0.160708</em></span>
+            <span class="fr  margin-large-right padding-top text-small text-normal">最新版本：<em class="text-main">2.4.0.160708</em></span>
           </h6>
         </div>
 
@@ -135,46 +135,60 @@
         <div class="list-content show">
           <div class="offcial-table tr-border margin-big-top clearfix">
             <div class="tr-th clearfix">
-              <div class="th w20">
-                商品名称
+              <div class="th w15">
+                商品名字
               </div>
-              <div class="th w20">
-                单价
+              <div class="th w15">
+                商品店铺
               </div>
-              <div class="th w20">
-                数量
+              <div class="th w15">
+                商品单价
               </div>
-              <div class="th w20">
-                详情
+              <div class="th w15">
+                卖出数量
               </div>
-              <div class="th w20">
-                <a href="OrderInsert.jsp"  class="button-word2 btn_ajax_confirm">增加订单</a>
+              <div class="th w15">
+                存货
+              </div>
+              <div class="th w15">
+                描述
+              </div>
+              <div class="th w10">
+                <a href="#"  class="button-word2 btn_ajax_confirm"> 我的购物车</a>
               </div>
             </div>
-            <c:forEach var="o" items="${list}">
+            <%--//<c:forEach var="o" items="${gd}">--%>
               <div class="tr clearfix border-bottom-none">
-                <div class="td w20">
-                    ${o.gameGoodName}
+                <div class="td w15">
+                    ${gd.gameGoodName}
                 </div>
-                <div class="td w20">
-                    ${o.price}
+                <div class="td w15">
+                    ${gd.sellerName}
                 </div>
-                <div class="td w20">
-                    ${o.num}
+                <div class="td w15">
+                    ${gd.unitPrice}
                 </div>
-                <div class="td w20">
-                  <a href="/gamedetail?oid=${o.gameGoodId}"  class="button-word2 btn_ajax_confirm">查看</a>
+                <div class="td w15">
+                  ${gd. gameGoodSellCount}
                 </div>
-                <div class="td w20">
-                  <a href="/shoppingdelete.action?pid=${o.shopId}"  class="button-word2 btn_ajax_confirm">删除</a>
-                  <a href="/BanOne?uid=${o.shopId}"  class="button-word2 btn_ajax_confirm">结算</a>
+                <div class="td w15">
+                  ${gd. gameGoodCount}
                 </div>
+                <div class="td w15">
+                  ${gd. describe}
+                </div>
+
+                  <%--<div class="td w20">
+                      ${o.gamegoodinfo}
+                  </div>--%>
+                <div class="td w10">
+                  <a href="#"  class="button-word2 btn_ajax_confirm">购买</a>
+                  <a href="#"  class="button-word2 btn_ajax_confirm">返回</a>
+                </div>
+
               </div>
-            </c:forEach>
+            <%--</c:forEach>--%>
           </div>
-          <h4>
-            <a href="clearing.jsp?uid=${o.userId}"><button style="margin-top:20px;margin-bottom:20px;margin-left: 90%; ">全部结算</button></a>
-          </h4>
         </div>
         <div class="show-page padding-big-right">
           <div class="page">
@@ -190,11 +204,6 @@
               </ul>
             </div>
           </div>
-          <br>
-          <br>
-          <br>
-
-
         </div>
       </div>
     </div>
@@ -213,4 +222,47 @@
   });
 </script>
 </body>
+
 </html>
+<%--
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+&lt;%&ndash;
+  Created by IntelliJ IDEA.
+  User: wan
+  Date: 2017/8/10
+  Time: 14:12
+  To change this template use File | Settings | File Templates.
+&ndash;%&gt;
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>所有订单信息</title>
+</head>
+<body>
+<div>
+  <div class="th w20">订单编号</div>
+  <div class="th w20">下单用户</div>
+  <div class="th w20">订单日期</div>
+  <div class="th w20">订单金额</div>
+</div>
+<c:forEach var="o" items="${l}">
+  <div class="td w20">
+      ${o.orderId}
+  </div>
+  <div class="td w20">
+      ${o.userId}
+  </div>
+  <div class="td w20">
+      ${o.date}
+  </div>
+  <div class="td w20">
+    ${o.price}
+  </div>
+  <div class="td w20">
+      ${o.gamegoodinfo}
+  </div>
+</c:forEach>
+
+</body>
+</html>
+--%>
