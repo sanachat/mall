@@ -16,6 +16,9 @@
     <select id="selectbyid" parameterType="int" resultType="Order">
         SELECT * FROM `order` WHERE OrderId=#{orderId}
     </select>
+    <select id="selectbyuid" parameterType="int" resultType="Order">
+        SELECT * FROM `order` WHERE userId=#{userId}
+    </select>
 
     <resultMap type="Order" id="orderMap">
         <id property="orderId" column="orderId" />
