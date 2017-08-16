@@ -49,7 +49,7 @@
 				<div class="dropdown">
 					<a href="#" class="topbar-btn">
 						<span class="fl text-normal">
-							<%=session.getAttribute("username")%>
+							管理员
 						</span>
 						<span class="icon-arrow-down"></span>
 					</a>
