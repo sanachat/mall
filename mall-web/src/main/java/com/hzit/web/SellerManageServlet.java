@@ -25,7 +25,7 @@ public class SellerManageServlet extends HttpServlet {
         response.setContentType("text/html;charset=utf-8");
         List<GamegoodInfo> list = dao.findAllGood();
         request.getSession().setAttribute("list", list);
-        response.sendRedirect("login.html");
+        response.sendRedirect("SellerManage.jsp");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
