@@ -48,7 +48,7 @@ public class LoginServlet extends HttpServlet {
                 } else if (roleid==3){
                     response.sendRedirect("/SellerManage");
                 }else{
-                    response.sendRedirect("buy.jsp");
+                    response.sendRedirect("/GameIndex");
                 }
             }
         }

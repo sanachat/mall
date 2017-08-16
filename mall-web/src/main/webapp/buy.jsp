@@ -180,7 +180,7 @@
 
       <div class="sidebar-nav">
         <div class="sidebar-title">
-          <a href="#">
+          <a href="/GameIndex">
             <span class="icon"><b ></b></span>
             <span class="text-normal">返回首页</span>
           </a>
