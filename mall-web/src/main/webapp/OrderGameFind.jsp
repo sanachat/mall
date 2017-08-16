@@ -31,7 +31,7 @@
       <a href="#" class="topbar-logo fl">
         <span><img src="Images/logo.png" width="20" height="20"/></span>
       </a>
-      <a href="index.html" class="topbar-home-link topbar-btn text-center fl"><span>订单管理</span></a>
+      <a href="/GameIndex" class="topbar-home-link topbar-btn text-center fl"><span>订单管理</span></a>
     </div>
   </div>
   <div class="topbar-info">
@@ -40,9 +40,9 @@
       <li class="fl topbar-info-item">
         <div class="dropdown">
           <a href="#" class="topbar-btn">
-            <span class="fl text-normal">
-              <%=session.getAttribute("username")%>
-            </span>
+                        <span class="fl text-normal">
+                            <%=session.getAttribute("username")%>
+                        </span>
             <span class="icon-arrow-down"></span>
           </a>
           <ul class="dropdown-menu">
@@ -56,74 +56,129 @@
 <div class="view-body">
   <div class="view-sidebar">
     <div class="sidebar-content">
-      <!--一级菜单循环从这里开始 ，动态循环显示一级菜单-->
+      <div class="sidebar-nav">
+
+        <div class="sidebar-title">
+
+          <a href="#">
+            <span class="icon"><b class="fl icon-arrow-down"></b></span>
+            <span class="text-normal">个人信息</span>
+          </a>
+        </div>
+        <ul class="sidebar-trans">
+          <li>
+            <a href="#">
+              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
+              <span class="text-normal">我的信息</span>
+            </a>
+          </li>
+
+        </ul>
+      </div>
       <div class="sidebar-nav">
         <div class="sidebar-title">
           <a href="#">
             <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">一级菜单</span>
+            <span class="text-normal">商品信息</span>
           </a>
         </div>
         <ul class="sidebar-trans">
-          <!--二级菜单循环从这里开始 ，动态循环显示二级菜单-->
           <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
+            <a href="/GameIndex">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">商品列表</span>
             </a>
           </li>
-          <!--二级菜单循环从这里结束 ，动态循环显示二级菜单-->
-          <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
-            </a>
-          </li>
-
-
         </ul>
       </div>
-      <!--一级菜单循环从这里结束 ，动态循环显示一级菜单-->
-      <!--一级菜单循环从这里开始 ，动态循环显示一级菜单-->
       <div class="sidebar-nav">
         <div class="sidebar-title">
           <a href="#">
             <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">一级菜单</span>
+            <span class="text-normal">账户信息</span>
           </a>
         </div>
         <ul class="sidebar-trans">
-          <!--二级菜单循环从这里开始 ，动态循环显示二级菜单-->
           <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
-            </a>
-          </li>
-          <!--二级菜单循环从这里结束 ，动态循环显示二级菜单-->
-          <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
+            <a href="/balance">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">我的账户</span>
             </a>
           </li>
           <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
+            <a href="/myorder">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">我的订单</span>
             </a>
           </li>
-
-
+          <li>
+            <a href="/findAllcart">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">购物车</span>
+            </a>
+          </li>
+          <li>
+            <a href="/findAllcart">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">购物记录</span>
+            </a>
+          </li>
+          <li>
+            <a href="ChangePayPwd.jsp">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">修改支付密码</span>
+            </a>
+          </li>
         </ul>
       </div>
-      <!--一级菜单循环从这里结束 ，动态循环显示一级菜单-->
+      <div class="sidebar-nav">
+        <div class="sidebar-title">
+          <a href="#">
+            <span class="icon"><b class="fl icon-arrow-down"></b></span>
+            <span class="text-normal">商家信息</span>
+          </a>
+        </div>
+        <ul class="sidebar-trans">
+          <li>
+            <a href="/seller">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">成为商家</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-nav">
+        <div class="sidebar-title">
+          <a href="#">
+            <span class="icon"><b class="fl icon-arrow-down"></b></span>
+            <span class="text-normal">客户服务</span>
+          </a>
+        </div>
+        <ul class="sidebar-trans">
+          <li>
+            <a href="/findAllComplain">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">投诉</span>
+            </a>
+          </li>
+          <li>
+            <a href="/findAllAnnouncement">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">公告</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-nav">
+        <div class="sidebar-title">
+          <a href="/GameIndex">
+            <span class="icon"><b ></b></span>
+            <span class="text-normal">返回首页</span>
+          </a>
+        </div>
+
+      </div>
     </div>
   </div>
   <div class="view-product">
@@ -141,66 +196,89 @@
         <div class="list-content show">
           <div class="offcial-table tr-border margin-big-top clearfix">
             <div class="tr-th clearfix">
-              <div class="th w20">
+              <div class="th w25">
                 订单编号
               </div>
-              <div class="th w20">
+              <div class="th w25">
                 下单用户
               </div>
-              <div class="th w20">
+              <div class="th w25">
                 订单日期
               </div>
-              <div class="th w20">
-                创建时间
+              <div class="th w25">
+                总价
               </div>
-              <div class="th w20">
-                商品信息
-              </div>
+
             </div>
             <c:forEach var="o" items="${l}">
-              <div class="tr clearfix border-bottom-none">
-                <div class="td w10">
-                    ${o.orderId}
-                </div>
-                <div class="td w10">
-                    ${o.userId}
-                </div>
-                <div class="td w10">
-                    ${o.date}
-                </div>
-                <div class="td w10">
-                    ${o.price}
-                </div>
-                  <div class="td w50">
-                    <c:forEach items="${o.orderDetail}" var="d">
-                      ${d.summoney}${d.gamegoodId}<br/>
-                    </c:forEach>
-
-                  </div>
-
-
+            <div class="tr clearfix border-bottom-none">
+              <div class="td w25">
+                  ${o.orderId}
               </div>
-            </c:forEach>
-          </div>
-        </div>
-        <div class="show-page padding-big-right">
-          <div class="page">
-            <div class="page">
-              <ul class="offcial-page margin-top margin-big-right">
+              <div class="td w25">
+                  ${o.userId}
+              </div>
+              <div class="td w25">
+                  ${o.date}
+              </div>
+              <div class="td w25">
+                  ${o.price}
+              </div></div><br/>
+            <div class=" tr-th clearfix">
 
-                <li>共<em class="margin-small-left margin-small-right">1</em>条数据</li>
-                <li>每页显示<em class="margin-small-left margin-small-right">15</em>条</li>
-                <li><a class="next disable">上一页</a></li>
-                <li></li>
-                <li><a class="next disable">下一页</a></li>
-                <li><span class="fl">共<em class="margin-small-left margin-small-right">1</em>页</span></li>
-              </ul>
+              <div class="th w25">
+                商品id
+              </div>
+              <div class="th w25">
+                单价
+              </div>
+              <div class="th w25">
+                数量
+              </div>
+              <div class="th w25">
+                总价
+              </div>
+              <c:forEach items="${o.orderDetail}" var="d">
+
+                <div class="td w25">
+                    ${d.gamegoodId}
+                </div>
+                <div class="td w25">
+                    ${d.prices}
+                </div>
+                <div class="td w25">
+                    ${d.count}
+                </div>
+                <div class="td w25">
+                    ${d.summoney}
+                </div><br/>
+              </c:forEach>
+
             </div>
+
+
+          </div>
+          </c:forEach>
+        </div>
+      </div>
+      <div class="show-page padding-big-right">
+        <div class="page">
+          <div class="page">
+            <ul class="offcial-page margin-top margin-big-right">
+
+              <li>共<em class="margin-small-left margin-small-right">1</em>条数据</li>
+              <li>每页显示<em class="margin-small-left margin-small-right">15</em>条</li>
+              <li><a class="next disable">上一页</a></li>
+              <li></li>
+              <li><a class="next disable">下一页</a></li>
+              <li><span class="fl">共<em class="margin-small-left margin-small-right">1</em>页</span></li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 </div>
 
 <script>
