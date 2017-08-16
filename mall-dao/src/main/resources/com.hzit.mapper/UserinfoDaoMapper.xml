@@ -10,6 +10,9 @@
     <select id="checkLogin"  parameterType="UserInfo" resultType="UserInfo">
         SELECT * FROM userinfo WHERE LoginName=#{loginName} AND LoginPwd=#{loginPwd}
     </select>
+    <select id="findUserById" parameterType="int" resultType="UserInfo">
+        SELECT * FROM userinfo WHERE UserId=#{userId}
+    </select>
     <select id="findAll" resultType="com.hzit.entity.UserInfo" resultMap="UserMap">
         SELECT * FROM userinfo LEFT JOIN userstate ON userinfo.`UserStateId`=userstate.`UserStateId`
                       LEFT JOIN roleinfo ON userinfo.`RoleId`=roleinfo.`RoleId`
