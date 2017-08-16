@@ -7,7 +7,9 @@
              parameterType代表方法参数指定类型，
              resultType代表方法返回集合中元素的类型
     -->
-
+    <select id="list"  resultType="GamegoodInfo">
+        SELECT *FROM  gamegood
+    </select>
     <select id="findAllGood"  resultType="com.hzit.entity.GamegoodInfo" resultMap="GameGoodMap">
         SELECT * FROM GAMEGOOD A  JOIN GAMEINFO B ON A.`GameId` = B.`GameId`
                                   JOIN gameserver C ON A.`GameServerId` = C.`GameServerId`

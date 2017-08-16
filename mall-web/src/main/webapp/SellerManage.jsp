@@ -55,7 +55,9 @@
       <li class="fl topbar-info-item">
         <div class="dropdown">
           <a href="#" class="topbar-btn">
-            <span class="fl text-normal">欢迎</span>
+            <span class="fl text-normal">
+              <%=session.getAttribute("username")%>
+            </span>
             <span class="icon-arrow-down"></span>
           </a>
           <ul class="dropdown-menu">
