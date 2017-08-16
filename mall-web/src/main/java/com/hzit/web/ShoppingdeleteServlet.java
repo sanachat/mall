@@ -28,7 +28,6 @@ public class ShoppingdeleteServlet extends HttpServlet {
         }else {
             response.getWriter().append("删除失败！");
         }
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

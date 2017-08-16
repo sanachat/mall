@@ -133,13 +133,10 @@
           <div class="offcial-table tr-border margin-big-top clearfix">
             <div class="tr-th clearfix">
               <div class="th w20">
-                编号
+                商品名称
               </div>
               <div class="th w20">
                 单价
-              </div>
-              <div class="th w20">
-                商品名称
               </div>
               <div class="th w20">
                 数量
@@ -151,19 +148,16 @@
             <c:forEach var="o" items="${list}">
               <div class="tr clearfix border-bottom-none">
                 <div class="td w20">
-                    ${o.shopId}
+                    ${o.gameGoodName}
                 </div>
                 <div class="td w20">
                     ${o.price}
                 </div>
                 <div class="td w20">
-                    ${o.gameGoodName}
-                </div>
-                <div class="td w20">
                     ${o.num}
                 </div>
                 <div class="td w20">
-                  <a href="shoppingdelete.action?pid=${o.shopId}"  class="button-word2 btn_ajax_confirm">删除</a>
+                  <a href="/shoppingdelete.action?pid=${o.shopId}"  class="button-word2 btn_ajax_confirm">删除</a>
                   <a href="/BanOne?uid=${o.shopId}"  class="button-word2 btn_ajax_confirm">结算</a>
                   <a href="/gamedetail?oid=${o.gameGoodId}"  class="button-word2 btn_ajax_confirm">查看</a>
                 </div>
