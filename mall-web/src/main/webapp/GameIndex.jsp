@@ -167,7 +167,7 @@
                                     </div>--%>
                                 <div class="td w20">
                                     <a href="#"  class="button-word2 btn_ajax_confirm">购买</a>
-                                    <a href="/Addcart?price=${o.unitPrice}&gameGoodId=${o.gameGoodId}"  class="button-word2 btn_ajax_confirm">加入购物车</a>
+                                    <a href="/Addcart?price=${o.unitPrice}&gameGoodName=${o.gameGoodName}&gameGoodId=${o.gameGoodId}"  class="button-word2 btn_ajax_confirm">加入购物车</a>
                                     <a href="/gamedetail?oid=${o.gameGoodId}"  class="button-word2 btn_ajax_confirm">查看</a>
                                 </div>
 

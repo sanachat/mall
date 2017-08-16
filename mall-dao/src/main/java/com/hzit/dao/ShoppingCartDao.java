@@ -13,5 +13,6 @@ public interface ShoppingCartDao {
     public int deleteshoppingcart(int shopId);//根据编号删除
     public int allmoney(int userId);//结算所有商品
     public int banlanceBygameGoodId(int userId,int gameGoodId);//结算单个商品
+    public int banAll(int userId);//结算所有商品
 
 }

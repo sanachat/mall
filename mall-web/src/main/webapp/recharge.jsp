@@ -32,7 +32,7 @@
       <li class="fl topbar-info-item">
         <div class="dropdown">
           <a href="#" class="topbar-btn">
-            <span class="fl text-normal">小朱</span>
+            <span class="fl text-normal">${user.userName}</span>
             <span class="icon-arrow-down"></span>
           </a>
           <ul class="dropdown-menu">
@@ -61,26 +61,35 @@
     <div class="authority">
       <div class="authority-head">
         <div class="manage-head">
-          <h6 class="layout padding-left manage-head-con">结算
+          <h6 class="layout padding-left manage-head-con">充值
             <span class="fr text-small text-normal padding-top">发布时间：2017-08-14</span>
                         <span class="fr margin-large-right padding-top text-small text-normal">最新版本：<em
                                 class="text-main">2.4.0.160708</em></span>
           </h6>
+
         </div>
 
         <div class="authority">
           <h6 class="layout padding-left manage-head-con">
-            <form action="" method="post" style="margin-left: 300px;margin-top: 60px;">
-              请输入支付密码：<input type="password" name="password" style="margin-top: 50px;border: solid;color: #66c1e1"><br/>
-              <button type="submit" name="sub" style="margin-top: 30px;font-size: 16px;">确定</button>
+            <form action="recharge" method="post" style="margin-left: 300px;margin-top: 60px;">
+              请选择充值方式：
+              <select name="name" style="font-size: 16px">
+                <option>中国工商银行</option>
+                <option>中国建设银行</option>
+                <option>支付宝</option>
+              </select></br>
+              账号：<input type="text" style="margin-top: 50px;border: solid;color: #66c1e1"><br/>
+              密码：<input type="password" name="password" style="margin-top: 50px;border: solid;color: #66c1e1"><br/>
+              金额：<input type="text" name="money" style="margin-top: 50px;border: solid;color: #66c1e1"><br/>
+              <button type="submit" name="sub" style="margin-top: 30px;font-size: 16px;">提交</button>
             </form>
           </h6>
         </div>
+
       </div>
     </div>
   </div>
 </div>
-
 
 <script>
   $(".sidebar-title").live('click', function () {

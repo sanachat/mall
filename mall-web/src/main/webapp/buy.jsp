@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: THINK
+  Date: 2017/8/11
+  Time: 11:08
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -107,7 +114,7 @@
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="balance">
+            <a href="/balance">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">我的账户</span>
             </a>
@@ -124,10 +131,11 @@
               <span class="text-normal">购物记录</span>
             </a>
           </li>
-          <a href="ChangePayPwd.jsp">
-            <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
-            <span class="text-normal">修改密码</span>
-          </a>
+          <li>
+            <a href="ChangePayPwd.jsp">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">修改支付密码</span>
+            </a>
           </li>
         </ul>
       </div>

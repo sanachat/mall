@@ -32,7 +32,7 @@
             <li class="fl topbar-info-item">
                 <div class="dropdown">
                     <a href="#" class="topbar-btn">
-                        <span class="fl text-normal">小朱</span>
+                        <span class="fl text-normal">${user.userName}</span>
                         <span class="icon-arrow-down"></span>
                     </a>
                     <ul class="dropdown-menu">
@@ -49,10 +49,6 @@
             <!--一级菜单循环从这里开始 ，动态循环显示一级菜单-->
             <div class="sidebar-nav">
                 <div class="sidebar-title">
-                    <a href="buy.jsp">
-                        <span class="icon"><b class="fl icon-arrow-down"></b></span>
-                        <span class="text-normal">我的账户</span>
-                    </a>
                 </div>
             </div>
         </div>
@@ -71,7 +67,7 @@
 
                     <div class="authority">
                         <h6 class="layout padding-left manage-head-con">
-                            <form action="changePayPwd" method="post" style="margin-left: 300px;margin-top: 60px;">
+                            <form action="/changePayPwd" method="post" style="margin-left: 300px;margin-top: 60px;">
                                 请输入原密码：<input type="password" name="oldpassword" style="margin-top: 50px;border: solid;color: #66c1e1"><br/>
                                 请输入新密码：<input type="password" name="newpassword1" style="margin-top: 50px;border: solid;color: #66c1e1"><br/>
                                 请确定新密码：<input type="password" name="newpassword2" style="margin-top: 50px;border: solid;color: #66c1e1"><br/>

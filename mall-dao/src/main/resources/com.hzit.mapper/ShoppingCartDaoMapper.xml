@@ -6,7 +6,7 @@
         select * from ShoppingCart WHERE userId=#{userId}
     </select>
     <insert id="insertshoppingcart" parameterType="ShoppingCart" >
-        INSERT INTO ShoppingCart VALUES (NULL ,#{userId},#{price},#{gameGoodId},#{num})
+        INSERT INTO ShoppingCart VALUES (NULL ,#{userId},#{price},#{gameGoodName},#{num},#{gameGoodId})
     </insert>
     <delete id="deleteshoppingcart" parameterType="int" >
         DELETE from ShoppingCart WHERE shopId=#{shopId}
@@ -15,6 +15,6 @@
     SELECT SUM(price*num) from ShoppingCart WHERE userId=#{userId}
 </select>
     <select id="banlanceBygameGoodId" parameterType="int" resultType="int" >
-        SELECT SUM(price*num) from ShoppingCart WHERE userId=#{userId} and gamegoodId=#{gamegoodId}
+        SELECT SUM(price*num) from ShoppingCart WHERE userId=#{userId} and gameGoodId=#{gameGoodId}
     </select>
 </mapper>

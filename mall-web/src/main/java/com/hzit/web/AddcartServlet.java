@@ -25,12 +25,14 @@ public class AddcartServlet extends HttpServlet {
         UserInfo userInfo=(UserInfo)request.getSession().getAttribute("user");
         int uid=userInfo.getUserId();
         double price=Double.parseDouble(request.getParameter("price"));
+        String gname=request.getParameter("gameGoodName");
         int gid=Integer.parseInt(request.getParameter("gameGoodId"));
         ShoppingCart shoppingCart=new ShoppingCart();
         shoppingCart.setUserId(uid);
-        shoppingCart.setGameGoodId(gid);
+        shoppingCart.setGameGoodName(gname);
         shoppingCart.setPrice(price);
         shoppingCart.setNum(1);
+        shoppingCart.setGameGoodId(gid);
         int num=dao.insertshoppingcart(shoppingCart);
         if (num==1){
             session.commit();

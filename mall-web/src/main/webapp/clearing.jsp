@@ -23,7 +23,7 @@
       <a href="#" class="topbar-logo fl">
         <span><img src="Images/logo.png" width="20" height="20"/></span>
       </a>
-      <a href="index.html" class="topbar-home-link topbar-btn text-center fl"><span>账户管理</span></a>
+      <a href="buy.jsp" class="topbar-home-link topbar-btn text-center fl"><span>账户管理</span></a>
     </div>
   </div>
   <div class="topbar-info">
@@ -49,7 +49,6 @@
       <!--一级菜单循环从这里开始 ，动态循环显示一级菜单-->
       <div class="sidebar-nav">
         <div class="sidebar-title">
-
         </div>
       </div>
     </div>
@@ -58,26 +57,26 @@
     <div class="authority">
       <div class="authority-head">
         <div class="manage-head">
-          <h6 class="layout padding-left manage-head-con">我的余额
+          <h6 class="layout padding-left manage-head-con">结算
             <span class="fr text-small text-normal padding-top">发布时间：2017-08-14</span>
                         <span class="fr margin-large-right padding-top text-small text-normal">最新版本：<em
                                 class="text-main">2.4.0.160708</em></span>
           </h6>
-
         </div>
 
-
-            <form action="balance" method="post" style="margin-left: 100px;margin-top: 60px;font-size: 18px;">
-              ${user.userName}，您的余额为：￥${balance.money}
-                <a href="recharge.jsp">
-                  <button type="button" name="recharge" style="background: lightgreen;font-size: 20px;margin-left: 50px;">充值</button>
-                </a>
-        </form>
-
+        <div class="authority">
+          <h6 class="layout padding-left manage-head-con">
+            <form action="" method="post" style="margin-left: 300px;margin-top: 60px;">
+              请输入支付密码：<input type="password" name="password" style="margin-top: 50px;border: solid;color: #66c1e1"><br/>
+              <button type="submit" name="sub" style="margin-top: 30px;font-size: 16px;">确定</button>
+            </form>
+          </h6>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
 
 <script>
   $(".sidebar-title").live('click', function () {

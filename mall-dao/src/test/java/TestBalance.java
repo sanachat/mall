@@ -24,5 +24,6 @@ public class TestBalance {
         System.out.println(num + "行受到影响");
         session.commit();*/
 
+
     }
 }
