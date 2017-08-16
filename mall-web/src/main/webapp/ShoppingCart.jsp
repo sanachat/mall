@@ -163,10 +163,10 @@
                 </div>
               </div>
             </c:forEach>
-            <h4>
-              <a href="/BanAll?uid=${o.userId}">结算所有</a>
-            </h4>
           </div>
+          <h4>
+            <a href="clearing.jsp?uid=${o.userId}"><button style="margin-top:20px;margin-bottom:20px;margin-left: 90%; ">全部结算</button></a>
+          </h4>
         </div>
         <div class="show-page padding-big-right">
           <div class="page">

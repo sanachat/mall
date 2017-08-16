@@ -1,6 +1,5 @@
 package com.hzit.dao;
 
-
 import com.hzit.entity.Balance;
 
 /**
@@ -12,14 +11,14 @@ import com.hzit.entity.Balance;
  */
 public interface BalanceDao {
 
-    public Balance findBalanceByUserid(int userId);
+    public Balance findBalanceByUserid(Balance balance);
 
-    public int addMoney(double payMoney);
+    public int addMoney(Balance balance);
 
-    public int subMoney(double payMoney);
+    public int subMoney(Balance balance);
 
     public int insert(Balance balance);
 
-    public int updatePwd(String pwd,int userId);
+    public int updatePwd(Balance balance);
 
 }

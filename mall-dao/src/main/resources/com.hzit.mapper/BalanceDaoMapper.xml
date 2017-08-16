@@ -2,24 +2,24 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hzit.dao.BalanceDao">
 
-    <select id="findBalanceByUserid" parameterType="java.lang.Integer"
+    <select id="findBalanceByUserid" parameterType="com.hzit.entity.Balance"
             resultType="com.hzit.entity.Balance">
         select * from balance where userId=#{userId}
     </select>
 
-    <update id="addMoney" parameterType="double">
-        update balance set money=#{money}+#{payMoney} where userId=#{userId}
+    <update id="addMoney" parameterType="com.hzit.entity.Balance">
+        update balance set money=money+#{money} where userId=#{userId}
     </update>
 
-    <update id="subMoney" parameterType="double">
-        update balance set money=#{money}-#{payMoney} where userId=#{userId}
+    <update id="subMoney" parameterType="com.hzit.entity.Balance">
+        update balance set money=money-#{money} where userId=#{userId}
     </update>
 
     <insert id="insert" parameterType="com.hzit.entity.Balance" >
         insert into balance values(null,#{userId},#{money},#{payPwd})
     </insert>
 
-    <update id="updatePwd" parameterType="String">
+    <update id="updatePwd" parameterType="com.hzit.entity.Balance">
         update balance set payPwd=#{payPwd} where userId=#{userId}
     </update>
 </mapper>

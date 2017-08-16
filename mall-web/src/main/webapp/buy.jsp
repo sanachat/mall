@@ -115,7 +115,7 @@
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="userInfo.html">
+            <a href="/balance">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">我的账户</span>
             </a>
@@ -130,6 +130,12 @@
             <a href="/findAllcart">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">购物记录</span>
+            </a>
+          </li>
+          <li>
+            <a href="ChangePayPwd.jsp">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">修改支付密码</span>
             </a>
           </li>
         </ul>
