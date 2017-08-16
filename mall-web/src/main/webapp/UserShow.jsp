@@ -1,16 +1,10 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: THINK
-  Date: 2017/8/11
-  Time: 11:08
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
-  <title>网游交易平台</title>
+  <title>4396游戏交易平台</title>
   <link rel="stylesheet" type="text/css" href="Css/identify.css" />
   <link rel="stylesheet" type="text/css" href="Css/layout.css" />
   <link rel="stylesheet" type="text/css" href="Css/account.css" />
@@ -30,33 +24,18 @@
       <a href="#" class="topbar-logo fl">
         <span><img src="Images/logo.png" width="20" height="20"/></span>
       </a>
-      <a href="#" class="topbar-home-link topbar-btn text-center fl"><span>4396网游交易平台</span></a>
+      <a href="index.html" class="topbar-home-link topbar-btn text-center fl"><span>订单管理</span></a>
     </div>
   </div>
   <div class="topbar-info">
     <ul class="fr">
-      <li class="fl dropdown topbar-notice topbar-btn">
-        <a href="#" class="dropdown-toggle">
-          <span class="icon-notice"></span>
-          <span class="topbar-num have">0</span>
-          <!--have表示有消息，没有消息去掉have-->
-        </a>
-      </li>
 
       <li class="fl topbar-info-item">
         <div class="dropdown">
           <a href="#" class="topbar-btn">
-            <span class="fl text-normal">帮助</span>
-            <span ></span>
-          </a>
-        </div>
-      </li>
-      <li class="fl topbar-info-item">
-        <div class="dropdown">
-          <a href="#" class="topbar-btn">
-						<span class="fl text-normal">
-							<%=session.getAttribute("username")%>
-						</span>
+            <span class="fl text-normal">
+              <%=session.getAttribute("username")%>
+            </span>
             <span class="icon-arrow-down"></span>
           </a>
           <ul class="dropdown-menu">
@@ -193,60 +172,103 @@
     <div class="authority">
       <div class="authority-head">
         <div class="manage-head">
-          <h6 class="layout padding-left manage-head-con">站点管理</h6>
+          <h6 class="layout padding-left manage-head-con">用户个人信息
+            <span class="fr text-small text-normal padding-top">发布时间：2017-08-11</span>
+            <span class="fr margin-large-right padding-top text-small text-normal">最新版本：<em class="text-main">2.4.0.160708</em></span>
+          </h6>
         </div>
+
       </div>
       <div class="authority-content">
         <div class="list-content show">
           <div class="offcial-table tr-border margin-big-top clearfix">
             <div class="tr-th clearfix">
-              <div class="th w20">
-                站点名称
+              <div class="th w5">
+                登录名
               </div>
-              <div class="th w20">
-                站点域名
+              <div class="th w10">
+                登录密码
               </div>
-              <div class="th w15">
-                版本号
+              <div class="th w10">
+                密保问题
               </div>
-              <div class="th w15">
-                安装时间
+              <div class="th w5">
+                密保答案
               </div>
-              <div class="th w15">
-                授权证书
+              <div class="th w10">
+                性别
               </div>
-              <div class="th w15">
+              <div class="th w5">
+                真实姓名
+              </div>
+              <div class="th w10">
+                手机号码
+              </div>
+              <div class="th w5">
+                地址
+              </div>
+              <div class="th w10">
+                身份证号
+              </div>
+              <div class="th w10">
+                店铺名称
+              </div>
+              <div class="th w10">
+                邮箱
+              </div>
+              <div class="th w10">
                 操作
               </div>
             </div>
-            <div class="tr clearfix border-bottom-none">
-              <div class="td w20">
-                我的系统
+            <c:forEach var="u" items="${find}">
+              <div class="tr clearfix border-bottom-none">
+                <div class="td w5">
+                    ${u.loginName}
+                </div>
+                <div class="td w10">
+                    ${u.loginPwd}
+                </div>
+                <div class="td w10">
+                    ${u.pwdQuestion}
+                </div>
+                <div class="td w5">
+                    ${u.pwdAnswer}
+                </div>
+                <div class="td w10">
+                    ${u.userSex}
+                </div>
+                <div class="td w5">
+                    ${u.userName}
+                </div>
+                <div class="td w10">
+                    ${u.tel}
+                </div>
+                <div class="td w5">
+                    ${u.address}
+                </div>
+                <div class="td w10">
+                    ${u.idCard}
+                </div>
+                <div class="td w10">
+                    ${u.storeName}
+                </div>
+                <div class="td w10">
+                    ${u.userEmail}
+                </div>
+                <div class="td w10">
+                  <a href="editUser.jsp"  class="button-word2 btn_ajax_confirm">修改</a>
+                </div>
               </div>
-              <div class="td w20">
-                localhost
-              </div>
-              <div class="td w15">
-                --
-              </div>
-              <div class="td w15">
-                2016-01-10 11:54:07
-              </div>
-              <div class="td w15">
-                <a href="#" class="button-word2">无</a>
-              </div>
-              <div class="td w15">
-                <a href="#" msg="您是否删除此站点，如果删除会影响站点通信导致部分功能无法使用？" callback="del_site(624)" data-id="" class="button-word2 btn_ajax_confirm">删除</a>
-              </div>
-            </div>
+            </c:forEach>
           </div>
         </div>
         <div class="show-page padding-big-right">
           <div class="page">
             <div class="page">
               <ul class="offcial-page margin-top margin-big-right">
+
                 <li>共<em class="margin-small-left margin-small-right">1</em>条数据</li>
-                <li>每页显示<em class="margin-small-left margin-small-right">15</em>条</li>
+                <li>每页显示<em class="margin-small-left margin-small-right">1</em>条</li>
                 <li><a class="next disable">上一页</a></li>
                 <li></li>
                 <li><a class="next disable">下一页</a></li>
@@ -254,6 +276,11 @@
               </ul>
             </div>
           </div>
+          <br>
+          <br>
+          <br>
+
+
         </div>
       </div>
     </div>
@@ -272,5 +299,4 @@
   });
 </script>
 </body>
-
 </html>

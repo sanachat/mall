@@ -40,7 +40,7 @@ public class EditUserServlet extends HttpServlet {
         int num=dao.updateUser(user);
         session.commit();
         if(num!=0){
-            response.sendRedirect("login.html");
+            response.sendRedirect("/userShow");
         }
 
     }
