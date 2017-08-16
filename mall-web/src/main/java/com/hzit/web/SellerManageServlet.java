@@ -21,9 +21,11 @@ public class SellerManageServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         SqlSession session = SqlSessionHelper.getSqlSession();
         GameGoodInfoDao dao = session.getMapper(GameGoodInfoDao.class);
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
         List<GamegoodInfo> list = dao.findAllGood();
         request.getSession().setAttribute("list", list);
-        response.sendRedirect("SellerManage.jsp");
+        response.sendRedirect("login.html");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
