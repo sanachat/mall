@@ -225,7 +225,7 @@
 										${list.price}
 									</div>
 									<div class="td w20">
-										<a href="OrderGameList?orderId=${list.orderId}" class="button-word2 btn_ajax_confirm">查询明细</a>
+										<a href="OrderGameList?oid=${list.orderId}" class="button-word2 btn_ajax_confirm">查询明细</a>
 									</div>
 								</div>
 								</c:forEach>
