@@ -23,7 +23,7 @@ public class SellerServlet extends HttpServlet {
         UserInfo userInfo =(UserInfo)request.getSession().getAttribute("user");
         dao.updateSeller(userInfo.getUserId());
         session.commit();
-        response.sendRedirect("SellerManage.jsp");
+        response.sendRedirect("login.html");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

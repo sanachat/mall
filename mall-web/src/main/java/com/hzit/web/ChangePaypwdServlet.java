@@ -24,21 +24,21 @@ public class ChangePaypwdServlet extends HttpServlet {
         response.setContentType("text/html;charset=utf-8");
         SqlSession session = SqlSessionHelper.getSqlSession();
         BalanceDao dao = session.getMapper(BalanceDao.class);
-        UserInfo userInfo=(UserInfo)request.getSession().getAttribute("user");
-        Balance balance=new Balance();
+        UserInfo userInfo = (UserInfo) request.getSession().getAttribute("user");
+        Balance balance = new Balance();
         balance.setUserId(userInfo.getUserId());
-        Balance b=dao.findBalanceByUserid(balance);
+        Balance b = dao.findBalanceByUserid(balance);
         String oldpwd = request.getParameter("oldpassword");
         String newpwd1 = request.getParameter("newpassword1");
         String newpwd2 = request.getParameter("newpassword2");
         PrintWriter out = response.getWriter();
-        if (oldpwd.equals(b.getPayPwd()) == false) {
+        if (oldpwd == null || oldpwd.length() <= 0 || newpwd1 == null || newpwd1.length() <= 0 || newpwd2 == null || newpwd2.length() <= 0) {
+            out.print("输入不能为空");
+        } else if (oldpwd.equals(b.getPayPwd()) == false) {
             out.print("原密码输入错误！");
-
-        }else if(newpwd1.equals(oldpwd)){
+        } else if (newpwd1.equals(oldpwd)) {
             out.print("新密码不能和原密码相同！");
-        }
-        else if (newpwd1.equals(newpwd2) == false) {
+        } else if (newpwd1.equals(newpwd2) == false) {
             out.print("两次密码输入不相同！");
         } else {
             b.setPayPwd(newpwd1);
