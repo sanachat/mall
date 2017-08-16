@@ -1,17 +1,10 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: THINK
-  Date: 2017/8/10
-  Time: 11:01
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
-  <title>控制台-新增公告</title>
+  <title>控制台-根据用户查询投诉</title>
   <link rel="stylesheet" type="text/css" href="Css/identify.css" />
   <link rel="stylesheet" type="text/css" href="Css/layout.css" />
   <link rel="stylesheet" type="text/css" href="Css/account.css" />
@@ -63,48 +56,28 @@
 
       <!--这里请使用Foreach标签和if标签循环加载用户的模块列表-->
       <!--这里请使用Foreach标签和if标签循环加载用户的模块列表-->
-
-
     </div>
   </div>
   <div class="view-product">
     <div class="company_identify">
       <div class="manage-head">
-        <h6 class="padding-left manage-head-con">新增公告</h6>
+        <h6 class="padding-left manage-head-con">根据用户查询投诉</h6>
       </div>
-      <form name="" action="/addAnnouncement" method="post" autocomplete="off">
+      <form name="" action="/findComplainByUserId" method="post" autocomplete="off">
         <div class="basic-info-detail clearfix">
 
           <div class="unit-style padding-big-lr clearfix">
-            <h4 class="real-name-head margin-large-top">填写公告信息</h4>
+            <h4 class="real-name-head margin-large-top">显示投诉信息</h4>
             <div class="real-name-con height-main margin-top-25">
               <p class="content-left-zoon">
-                公告编号
+                请输入用户ID：
               </p>
               <div class="content-right-zoon">
-                <input class="width-main input" type="text" name="announcementId" datatype="*" value="">
-              </div>
-            </div>
-            <div class="real-name-con height-main margin-top-25">
-              <p class="content-left-zoon">
-                公告名称
-              </p>
-              <div class="content-right-zoon">
-                <input class="width-main input" type="text" name="announcementName" datatype="*" value="">
-              </div>
-            </div>
-            <div class="real-name-con height-main margin-top-25">
-              <p class="content-left-zoon">
-                公告内容
-              </p>
-              <div class="content-right-zoon">
-                <textarea name="announcementContent" id="" style="height: 150px;width:300px"></textarea>
+                <input class="width-main input" type="text" name="userId" datatype="*" value="">
               </div>
             </div>
           </div>
-          <p>&nbsp;</p>
         </div>
-
         <div class="unit-style padding-large-tb clearfix">
           <div class="margin-large-top padding-left text-left content-right-zoon">
             <input type="submit" value="确认" class="submit fl">
@@ -112,8 +85,39 @@
         </div>
       </form>
     </div>
+    <div class="authority-content">
+      <div class="list-content show">
+        <div class="offcial-table tr-border margin-big-top clearfix">
+          <div class="tr-th clearfix">
+            <div class="th w33">
+              投诉编号
+            </div>
+            <div class="th w33">
+              投诉人ID
+            </div>
+            <div class="th w33">
+              投诉内容
+            </div>
+          </div>
+          <a href="/findComplainByUserId"></a>
+          <c:forEach var="c" items="${complainbyuserid}" >
+            <div class="tr clearfix border-bottom-none">
+              <div class="td w33">
+                  ${c.complainId}
+              </div>
+              <div class="td w33">
+                  ${c.userId}
+              </div>
+              <div class="td w33">
+                  ${c.content}
+              </div>
+            </div>
+          </c:forEach>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+
 
 <script>
   $(".sidebar-title").live('click', function() {
