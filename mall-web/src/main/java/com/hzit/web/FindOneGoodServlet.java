@@ -1,8 +1,8 @@
 package com.hzit.web;
 
+import com.hzit.dao.GameGoodInfoDao;
 import com.hzit.dao.SqlSessionHelper;
-import com.hzit.dao.UserInfoDao;
-import com.hzit.entity.UserInfo;
+import com.hzit.entity.GamegoodInfo;
 import org.apache.ibatis.session.SqlSession;
 
 import javax.servlet.ServletException;
@@ -13,21 +13,21 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by Tracy McGrady on 2017/8/9.
+ * Created by Tracy McGrady on 2017/8/15.
  */
-@WebServlet(name = "SellerServlet",value = "/Seller")
-public class SellerServlet extends HttpServlet {
+@WebServlet(name = "FindOneGoodServlet",value = "/FindOneGood")
+public class FindOneGoodServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        SqlSession session = SqlSessionHelper.getSqlSession();
-        UserInfoDao dao = session.getMapper(UserInfoDao.class);
-        UserInfo userInfo =(UserInfo)request.getSession().getAttribute("user");
-        dao.updateSeller(userInfo.getUserId());
-        session.commit();
-        response.sendRedirect("SellerManage.jsp");
+        SqlSession session= SqlSessionHelper.getSqlSession();
+        GameGoodInfoDao dao = session.getMapper(GameGoodInfoDao.class);
+        int id = Integer.parseInt(request.getParameter("id"));
+        GamegoodInfo g =dao.findOneGood(id);
+        request.getSession().setAttribute("g",g);
+        response.sendRedirect("SellerUpdate.jsp");
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request,response);
-
     }
 }

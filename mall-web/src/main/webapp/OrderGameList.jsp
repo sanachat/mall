@@ -52,7 +52,6 @@
             <span class="icon-arrow-down"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="editUser.jsp">编辑</a></li>
             <li><a href="login.html">退出</a></li>
           </ul>
         </div>

@@ -11,21 +11,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Tracy McGrady on 2017/8/10.
  */
-@WebServlet(name = "SellerManageServlet",value = "/sellerManage")
+@WebServlet(name = "SellerManageServlet",value = "/SellerManage")
 public class SellerManageServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         SqlSession session = SqlSessionHelper.getSqlSession();
         GameGoodInfoDao dao = session.getMapper(GameGoodInfoDao.class);
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
         List<GamegoodInfo> list = dao.findAllGood();
         request.getSession().setAttribute("list", list);
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("login.html");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

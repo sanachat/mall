@@ -2,6 +2,7 @@ package com.hzit.web;
 
 import com.hzit.dao.ShoppingCartDao;
 import com.hzit.dao.SqlSessionHelper;
+import com.hzit.dao.UserInfoDao;
 import com.hzit.entity.ShoppingCart;
 import com.hzit.entity.UserInfo;
 
@@ -14,22 +15,23 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Created by THINK on 2017/8/10.
+ * Created by THINK on 2017/8/16.
  */
-@WebServlet(name = "ShoppingCartServlet",urlPatterns = "/findAllcart")
-public class ShoppingCartServlet extends HttpServlet {
+@WebServlet(name = "UserShowServlet",value = "/userShow")
+public class UserShowServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setCharacterEncoding("utf-8");
         request.setCharacterEncoding("utf-8");
-        ShoppingCartDao dao= SqlSessionHelper.getSqlSession().getMapper(ShoppingCartDao.class);
+        UserInfoDao dao=SqlSessionHelper.getSqlSession().getMapper(UserInfoDao.class);
         UserInfo userInfo=(UserInfo)request.getSession().getAttribute("user");
-        int num=userInfo.getUserId();
-        List<ShoppingCart> list=dao.findshoppingcart(num);
-        request.setAttribute("list",list);
-        request.getRequestDispatcher("ShoppingCart.jsp").forward(request,response);
+        int id=userInfo.getUserId();
+        List<UserInfo> findUserById=dao.findUserById(id);
+        request.getSession().setAttribute("find",findUserById);
+        //response.sendRedirect("UserShow.jsp");
+        request.getRequestDispatcher("UserShow.jsp").forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      doPost(request,response);
+        doPost(request,response);
     }
 }

@@ -1,17 +1,10 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: wan
-  Date: 2017/8/10
-  Time: 17:19
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
-  <title>控制台-修改模块</title>
+  <title>4396游戏交易平台</title>
   <link rel="stylesheet" type="text/css" href="Css/identify.css" />
   <link rel="stylesheet" type="text/css" href="Css/layout.css" />
   <link rel="stylesheet" type="text/css" href="Css/account.css" />
@@ -106,12 +99,6 @@
             </a>
           </li>
           <li>
-            <a href="/myorder">
-              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
-              <span class="text-normal">我的订单</span>
-            </a>
-          </li>
-          <li>
             <a href="/findAllcart">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">购物车</span>
@@ -169,7 +156,6 @@
           </li>
         </ul>
       </div>
-
       <div class="sidebar-nav">
         <div class="sidebar-title">
           <a href="/GameIndex">
@@ -182,58 +168,78 @@
     </div>
   </div>
   <div class="view-product">
-    <div class="company_identify">
-      <div class="manage-head">
-        <h6 class="padding-left manage-head-con">修改订单</h6>
+    <div class="authority">
+      <div class="authority-head">
+        <div class="manage-head">
+          <h6 class="layout padding-left manage-head-con">订单管理
+            <span class="fr text-small text-normal padding-top">发布时间：2017-08-11</span>
+            <span class="fr margin-large-right padding-top text-small text-normal">最新版本：<em class="text-main">2.4.0.160708</em></span>
+          </h6>
+        </div>
+
       </div>
-      <form name="setp0" action="/OrderUpdate" method="post" autocomplete="off">
-        <div class="basic-info-detail clearfix">
-
-          <div class="unit-style padding-big-lr clearfix">
-            <h4 class="real-name-head margin-large-top">修改订单信息</h4>
-            <div class="real-name-con height-main margin-top-25">
-              <p class="content-left-zoon">
-                订单id
-              </p>
-              <div class="content-right-zoon">
-                <input class="width-main input" type="text" name="orderId" datatype="*" value="">
+      <div class="authority-content">
+        <div class="list-content show">
+          <div class="offcial-table tr-border margin-big-top clearfix">
+            <div class="tr-th clearfix">
+              <div class="th w20">
+                订单编号
               </div>
-            </div>
-            <div class="real-name-con height-main margin-top-25">
-              <p class="content-left-zoon">
+              <div class="th w20">
                 下单用户
-              </p>
-              <div class="content-right-zoon">
-                <input class="width-main input" type="text" name="userId" datatype="*" value="">
+              </div>
+              <div class="th w20">
+                订单日期
+              </div>
+              <div class="th w20">
+                创建时间
+              </div>
+              <div class="th w20">
+                <a href="#"  class="button-word2 btn_ajax_confirm"> 操作</a>
               </div>
             </div>
-            <div class="real-name-con height-main margin-top-25">
-              <p class="content-left-zoon">
-                下单时间
-              </p>
-              <div class="content-right-zoon">
-                <input class="width-main input" type="text" name="date" datatype="*" value="">
-              </div>
-            </div>
-            <div class="real-name-con height-main margin-top-25">
-              <p class="content-left-zoon">
-                金额
-              </p>
-              <div class="content-right-zoon">
-                <input class="width-main input" type="text" name="price" datatype="*" value="">
-              </div>
-            </div>
+            <c:forEach var="o" items="${od}">
+              <div class="tr clearfix border-bottom-none">
+                <div class="td w20">
+                    ${o.orderId}
+                </div>
+                <div class="td w20">
+                    ${o.userId}
+                </div>
+                <div class="td w20">
+                    ${o.date}
+                </div>
+                <div class="td w20">
+                    ${o.price}
+                </div>
+                  <%--<div class="td w20">
+                      ${o.gamegoodinfo}
+                  </div>--%>
+                <div class="td w20">
+                  <a href="/orderdelete?oid=${o.orderId}"  class="button-word2 btn_ajax_confirm">删除</a>
+                  <a href="/OrderGameList?oid=${o.orderId}"  class="button-word2 btn_ajax_confirm">查询</a>
+                </div>
 
+              </div>
+            </c:forEach>
           </div>
-          <p>&nbsp;</p>
         </div>
+        <div class="show-page padding-big-right">
+          <div class="page">
+            <div class="page">
+              <ul class="offcial-page margin-top margin-big-right">
 
-        <div class="unit-style padding-large-tb clearfix">
-          <div class="margin-large-top padding-left text-left content-right-zoon">
-            <input type="submit" value="确认" class="submit fl">
+                <li>共<em class="margin-small-left margin-small-right">1</em>条数据</li>
+                <li>每页显示<em class="margin-small-left margin-small-right">15</em>条</li>
+                <li><a class="next disable">上一页</a></li>
+                <li></li>
+                <li><a class="next disable">下一页</a></li>
+                <li><span class="fl">共<em class="margin-small-left margin-small-right">1</em>页</span></li>
+              </ul>
+            </div>
           </div>
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </div>
@@ -252,19 +258,45 @@
 </body>
 
 </html>
-<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%--
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+&lt;%&ndash;
+  Created by IntelliJ IDEA.
+  User: wan
+  Date: 2017/8/10
+  Time: 14:12
+  To change this template use File | Settings | File Templates.
+&ndash;%&gt;
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>更新订单</title>
+    <title>所有订单信息</title>
 </head>
 <body>
-<form action="/OrderUpdate" method="post">
+<div>
+  <div class="th w20">订单编号</div>
+  <div class="th w20">下单用户</div>
+  <div class="th w20">订单日期</div>
+  <div class="th w20">订单金额</div>
+</div>
+<c:forEach var="o" items="${l}">
+  <div class="td w20">
+      ${o.orderId}
+  </div>
+  <div class="td w20">
+      ${o.userId}
+  </div>
+  <div class="td w20">
+      ${o.date}
+  </div>
+  <div class="td w20">
+    ${o.price}
+  </div>
+  <div class="td w20">
+      ${o.gamegoodinfo}
+  </div>
+</c:forEach>
 
-  订单编号：<input type="text" name="orderId" ><br><br>
-  订单用户：<input type="text" name="userId" ><br><br>
-  日期：<input type="text" name="date" ><br><br>
-  金额：<input type="text" name="price" ><br><br>
-  <input type="submit" name="submit" value="提交">
-  </form>
 </body>
-</html>--%>
+</html>
+--%>

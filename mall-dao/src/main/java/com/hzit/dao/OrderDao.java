@@ -10,6 +10,7 @@ public interface OrderDao {
     public List<Order> selectall();//   查询所有订单
     public List<Order> selectbyid(int orderId);//通过订单号查询
     public List<Order> selectdetail(int orderId);//通过订单号关联查询商品信息
+    public List<Order> selectbyuid(int userId);
     public int update(Order order);//更新订单
     public int delete(int orderId);//根据订单号删除
     public int insert(Order order);//新增订单

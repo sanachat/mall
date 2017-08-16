@@ -3,6 +3,7 @@ package com.hzit.web;
 import com.hzit.dao.OrderDao;
 import com.hzit.dao.SqlSessionHelper;
 import com.hzit.entity.Order;
+import com.hzit.entity.UserInfo;
 import org.apache.ibatis.session.SqlSession;
 
 import javax.servlet.ServletException;
@@ -25,13 +26,16 @@ public class OrderInsertServlet extends HttpServlet {
         response.setContentType("text/html");
         SqlSession session=SqlSessionHelper.getSqlSession();
         OrderDao dao= session.getMapper(OrderDao.class);
-        String Id=request.getParameter("orderId");
-        String userId=request.getParameter("userId");
+        UserInfo userInfo = (UserInfo) request.getSession().getAttribute("user");
+        int i=userInfo.getUserId();
+
+        //String Id=request.getParameter("orderId");
+        //String userId=request.getParameter("userId");
         String date=request.getParameter("date");
         String price=request.getParameter("price");
         Order o=new Order();
-        o.setOrderId(Integer.parseInt(Id));
-        o.setUserId(Integer.parseInt(userId));
+        //o.setOrderId(Integer.parseInt(Id));
+        o.setUserId(userInfo.getUserId());
         o.setDate(date);
         o.setPrice(Double.parseDouble(price));
         int num=dao.insert(o);

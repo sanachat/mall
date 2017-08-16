@@ -1,17 +1,10 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: wan
-  Date: 2017/8/10
-  Time: 17:19
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
-  <title>控制台-修改模块</title>
+  <title>4396游戏交易平台</title>
   <link rel="stylesheet" type="text/css" href="Css/identify.css" />
   <link rel="stylesheet" type="text/css" href="Css/layout.css" />
   <link rel="stylesheet" type="text/css" href="Css/account.css" />
@@ -31,7 +24,7 @@
       <a href="#" class="topbar-logo fl">
         <span><img src="Images/logo.png" width="20" height="20"/></span>
       </a>
-      <a href="/GameIndex" class="topbar-home-link topbar-btn text-center fl"><span>订单管理</span></a>
+      <a href="index.html" class="topbar-home-link topbar-btn text-center fl"><span>订单管理</span></a>
     </div>
   </div>
   <div class="topbar-info">
@@ -40,9 +33,9 @@
       <li class="fl topbar-info-item">
         <div class="dropdown">
           <a href="#" class="topbar-btn">
-                        <span class="fl text-normal">
-                            <%=session.getAttribute("username")%>
-                        </span>
+            <span class="fl text-normal">
+              <%=session.getAttribute("username")%>
+            </span>
             <span class="icon-arrow-down"></span>
           </a>
           <ul class="dropdown-menu">
@@ -67,7 +60,7 @@
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="#">
+            <a href="/userShow">
               <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
               <span class="text-normal">我的信息</span>
             </a>
@@ -84,7 +77,7 @@
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="/GameIndex">
+            <a href="userInfo.html">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">商品列表</span>
             </a>
@@ -106,19 +99,13 @@
             </a>
           </li>
           <li>
-            <a href="/myorder">
-              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
-              <span class="text-normal">我的订单</span>
-            </a>
-          </li>
-          <li>
-            <a href="/findAllcart">
+            <a href="userInfo.html">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">购物车</span>
             </a>
           </li>
           <li>
-            <a href="/findAllcart">
+            <a href="userInfo.html">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">购物记录</span>
             </a>
@@ -140,7 +127,7 @@
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="/seller">
+            <a href="userInfo.html">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">成为商家</span>
             </a>
@@ -156,13 +143,13 @@
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="/findAllComplain">
+            <a href="/findAllAnnouncement">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">投诉</span>
             </a>
           </li>
           <li>
-            <a href="/findAllAnnouncement">
+            <a href="/findAllComplain">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">公告</span>
             </a>
@@ -172,7 +159,7 @@
 
       <div class="sidebar-nav">
         <div class="sidebar-title">
-          <a href="/GameIndex">
+          <a href="#">
             <span class="icon"><b ></b></span>
             <span class="text-normal">返回首页</span>
           </a>
@@ -182,58 +169,120 @@
     </div>
   </div>
   <div class="view-product">
-    <div class="company_identify">
-      <div class="manage-head">
-        <h6 class="padding-left manage-head-con">修改订单</h6>
+    <div class="authority">
+      <div class="authority-head">
+        <div class="manage-head">
+          <h6 class="layout padding-left manage-head-con">用户个人信息
+            <span class="fr text-small text-normal padding-top">发布时间：2017-08-11</span>
+            <span class="fr margin-large-right padding-top text-small text-normal">最新版本：<em class="text-main">2.4.0.160708</em></span>
+          </h6>
+        </div>
+
       </div>
-      <form name="setp0" action="/OrderUpdate" method="post" autocomplete="off">
-        <div class="basic-info-detail clearfix">
-
-          <div class="unit-style padding-big-lr clearfix">
-            <h4 class="real-name-head margin-large-top">修改订单信息</h4>
-            <div class="real-name-con height-main margin-top-25">
-              <p class="content-left-zoon">
-                订单id
-              </p>
-              <div class="content-right-zoon">
-                <input class="width-main input" type="text" name="orderId" datatype="*" value="">
+      <div class="authority-content">
+        <div class="list-content show">
+          <div class="offcial-table tr-border margin-big-top clearfix">
+            <div class="tr-th clearfix">
+              <div class="th w5">
+                登录名
+              </div>
+              <div class="th w10">
+                登录密码
+              </div>
+              <div class="th w10">
+                密保问题
+              </div>
+              <div class="th w5">
+                密保答案
+              </div>
+              <div class="th w10">
+                性别
+              </div>
+              <div class="th w5">
+                真实姓名
+              </div>
+              <div class="th w10">
+                手机号码
+              </div>
+              <div class="th w5">
+                地址
+              </div>
+              <div class="th w10">
+                身份证号
+              </div>
+              <div class="th w10">
+                店铺名称
+              </div>
+              <div class="th w10">
+                邮箱
+              </div>
+              <div class="th w10">
+                操作
               </div>
             </div>
-            <div class="real-name-con height-main margin-top-25">
-              <p class="content-left-zoon">
-                下单用户
-              </p>
-              <div class="content-right-zoon">
-                <input class="width-main input" type="text" name="userId" datatype="*" value="">
+            <c:forEach var="u" items="${find}">
+              <div class="tr clearfix border-bottom-none">
+                <div class="td w5">
+                    ${u.loginName}
+                </div>
+                <div class="td w10">
+                    ${u.loginPwd}
+                </div>
+                <div class="td w10">
+                    ${u.pwdQuestion}
+                </div>
+                <div class="td w5">
+                    ${u.pwdAnswer}
+                </div>
+                <div class="td w10">
+                    ${u.userSex}
+                </div>
+                <div class="td w5">
+                    ${u.userName}
+                </div>
+                <div class="td w10">
+                    ${u.tel}
+                </div>
+                <div class="td w5">
+                    ${u.address}
+                </div>
+                <div class="td w10">
+                    ${u.idCard}
+                </div>
+                <div class="td w10">
+                    ${u.storeName}
+                </div>
+                <div class="td w10">
+                    ${u.userEmail}
+                </div>
+                <div class="td w10">
+                  <a href="editUser.jsp"  class="button-word2 btn_ajax_confirm">修改</a>
+                </div>
               </div>
-            </div>
-            <div class="real-name-con height-main margin-top-25">
-              <p class="content-left-zoon">
-                下单时间
-              </p>
-              <div class="content-right-zoon">
-                <input class="width-main input" type="text" name="date" datatype="*" value="">
-              </div>
-            </div>
-            <div class="real-name-con height-main margin-top-25">
-              <p class="content-left-zoon">
-                金额
-              </p>
-              <div class="content-right-zoon">
-                <input class="width-main input" type="text" name="price" datatype="*" value="">
-              </div>
-            </div>
-
+            </c:forEach>
           </div>
-          <p>&nbsp;</p>
         </div>
+        <div class="show-page padding-big-right">
+          <div class="page">
+            <div class="page">
+              <ul class="offcial-page margin-top margin-big-right">
 
-        <div class="unit-style padding-large-tb clearfix">
-          <div class="margin-large-top padding-left text-left content-right-zoon">
-            <input type="submit" value="确认" class="submit fl">
+                <li>共<em class="margin-small-left margin-small-right">1</em>条数据</li>
+                <li>每页显示<em class="margin-small-left margin-small-right">1</em>条</li>
+                <li><a class="next disable">上一页</a></li>
+                <li></li>
+                <li><a class="next disable">下一页</a></li>
+                <li><span class="fl">共<em class="margin-small-left margin-small-right">1</em>页</span></li>
+              </ul>
+            </div>
           </div>
+          <br>
+          <br>
+          <br>
+
+
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </div>
@@ -250,21 +299,4 @@
   });
 </script>
 </body>
-
 </html>
-<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>更新订单</title>
-</head>
-<body>
-<form action="/OrderUpdate" method="post">
-
-  订单编号：<input type="text" name="orderId" ><br><br>
-  订单用户：<input type="text" name="userId" ><br><br>
-  日期：<input type="text" name="date" ><br><br>
-  金额：<input type="text" name="price" ><br><br>
-  <input type="submit" name="submit" value="提交">
-  </form>
-</body>
-</html>--%>

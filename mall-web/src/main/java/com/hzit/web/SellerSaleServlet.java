@@ -15,7 +15,7 @@ import java.io.IOException;
 /**
  * Created by Tracy McGrady on 2017/8/10.
  */
-@WebServlet(name = "SellerSaleServlet",value = "/sellerSale")
+@WebServlet(name = "SellerSaleServlet",value = "/SellerSale")
 public class SellerSaleServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         SqlSession session = SqlSessionHelper.getSqlSession();
@@ -46,7 +46,7 @@ public class SellerSaleServlet extends HttpServlet {
         if(num==1) {
             session.commit();
             request.getSession().setAttribute("game", game);
-            response.sendRedirect("/sellerManage");
+            response.sendRedirect("/SellerManage");
         }
         else
         {

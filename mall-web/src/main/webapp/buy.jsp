@@ -60,7 +60,6 @@
             <span class="icon-arrow-down"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="editUser.jsp">编辑</a></li>
             <li><a href="login.html">退出</a></li>
           </ul>
         </div>
@@ -82,7 +81,7 @@
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="webSet.html">
+            <a href="/userShow">
               <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
               <span class="text-normal">我的信息</span>
             </a>
