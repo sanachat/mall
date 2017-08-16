@@ -225,7 +225,7 @@
                 <div class="td w10">
                     ${u.loginName}
                 </div>
-                <div class="td w5">
+                <div class="td w8">
                     ${u.loginPwd}
                 </div>
                 <div class="td w10">
