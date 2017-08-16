@@ -19,8 +19,8 @@ import java.io.PrintWriter;
 /**
  * Created by acer on 2017/8/16.
  */
-@WebServlet(name = "ClearingServlet", value = "/clearingOne")
-public class ClearingOneServlet extends HttpServlet {
+@WebServlet(name = "ClearingAllServlet",value = "/clearingAll")
+public class ClearingAllServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
@@ -28,7 +28,7 @@ public class ClearingOneServlet extends HttpServlet {
         BalanceDao balanceDao = session.getMapper(BalanceDao.class);
         OrderDao orderDao = session.getMapper(OrderDao.class);
         UserInfo userInfo = (UserInfo) request.getSession().getAttribute("user");
-        Order order = (Order) request.getSession().getAttribute("order");
+        Order order = (Order) request.getSession().getAttribute("orderAll");
         String pwd = request.getParameter("password");
         Balance balance = new Balance();
         balance.setUserId(userInfo.getUserId());
@@ -46,7 +46,6 @@ public class ClearingOneServlet extends HttpServlet {
             orderDao.delete(userInfo.getUserId());
             session.commit();
         }
-
 
     }
 

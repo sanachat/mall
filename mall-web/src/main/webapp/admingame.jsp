@@ -48,13 +48,10 @@
       <li class="fl topbar-info-item">
         <div class="dropdown">
           <a href="#" class="topbar-btn">
-            <span class="fl text-normal">
-              <%=session.getAttribute("username")%>
-            </span>
+            <span class="fl text-normal">管理员</span>
             <span class="icon-arrow-down"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="editUser.jsp">编辑</a></li>
             <li><a href="login.html">退出</a></li>
           </ul>
         </div>
@@ -153,19 +150,19 @@
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="userInfo.html">
+            <a href="/findAllComplain">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">投诉处理</span>
             </a>
           </li>
           <li>
-            <a href="userInfo.html">
+            <a href="AnnouncementAdd.jsp">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">发布公告</span>
             </a>
           </li>
           <li>
-            <a href="userInfo.html">
+            <a href="/findAllAnnouncement">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">公告</span>
             </a>
@@ -195,7 +192,7 @@
         <div class="list-content show">
           <div class="offcial-table tr-border margin-big-top clearfix">
             <div class="tr-th clearfix">
-              <div class="th w10">
+              <div class="th w15">
                 游戏ID
               </div>
               <div class="th w20">
@@ -207,13 +204,13 @@
               <div class="th w20">
                 运营区域
               </div>
-              <div class="th w15">
+              <div class="th w20">
                 操作
               </div>
             </div>
             <c:forEach var="li" items="${allgame}">
               <div class="tr clearfix border-bottom-none">
-                <div class="td w10">
+                <div class="td w15">
                     ${li.gameId}
                 </div>
                 <div class="td w20">
@@ -223,10 +220,10 @@
                     ${li.gameArea}
                 </div>
                 <div class="td w20">
-                    中国大陆
+                  中国大陆
                 </div>
-                <div class="td w15">
-                  <a href="admindeletegame" msg="您是否删除此站点，如果删除会影响站点通信导致部分功能无法使用？" callback="del_site(624)" data-id="" class="button-word2 btn_ajax_confirm">删除</a>
+                <div class="td w20">
+                  <a href="admindeletegame?gameid=${li.gameId}" class="button-word2 btn_ajax_confirm">删除</a>
                 </div>
               </div>
             </c:forEach>

@@ -31,28 +31,21 @@
       <a href="#" class="topbar-logo fl">
         <span><img src="Images/logo.png" width="20" height="20"/></span>
       </a>
-      <a href="index.html" class="topbar-home-link topbar-btn text-center fl"><span>管理控制台</span></a>
+      <a href="/GameIndex" class="topbar-home-link topbar-btn text-center fl"><span>订单管理</span></a>
     </div>
   </div>
   <div class="topbar-info">
     <ul class="fr">
-      <li class="fl dropdown topbar-notice topbar-btn">
-        <a href="#" class="dropdown-toggle">
-          <span class="icon-notice"></span>
-          <span class="topbar-num have">0</span>
-
-        </a>
 
       <li class="fl topbar-info-item">
         <div class="dropdown">
           <a href="#" class="topbar-btn">
-            <span class="fl text-normal">
-              <%=session.getAttribute("username")%>
-            </span>
+                        <span class="fl text-normal">
+                            <%=session.getAttribute("username")%>
+                        </span>
             <span class="icon-arrow-down"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="editUser.jsp">编辑</a></li>
             <li><a href="login.html">退出</a></li>
           </ul>
         </div>
@@ -63,37 +56,129 @@
 <div class="view-body">
   <div class="view-sidebar">
     <div class="sidebar-content">
+      <div class="sidebar-nav">
 
-      <!--这里请使用Foreach标签和if标签循环加载用户的模块列表-->
-      <c:forEach var="r" items="${relist}">
-        <c:if test="${r.parentId==0}">
-          <div class="sidebar-nav">
-            <div class="sidebar-title">
-              <a href="#">
-                <span class="icon"><b class="fl icon-arrow-down"></b></span>
-                <span class="text-normal">${r.rname}</span>
-              </a>
-            </div>
-            <ul class="sidebar-trans">
-              <c:forEach var="ro" items="${relist}">
-                <c:if test="${ro.parentId==r.rid}">
-                  <!--二级菜单循环从这里开始 ，动态循环显示二级菜单-->
-                  <li>
-                    <a href="#">
-                      <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-                      <span class="text-normal">${ro.rname}</span>
-                    </a>
-                  </li>
-                </c:if>
-              </c:forEach>
-              <!--二级菜单循环从这里结束 ，动态循环显示二级菜单-->
-            </ul>
-          </div>
-        </c:if>
-      </c:forEach>
-      <!--这里请使用Foreach标签和if标签循环加载用户的模块列表-->
+        <div class="sidebar-title">
 
+          <a href="#">
+            <span class="icon"><b class="fl icon-arrow-down"></b></span>
+            <span class="text-normal">个人信息</span>
+          </a>
+        </div>
+        <ul class="sidebar-trans">
+          <li>
+            <a href="#">
+              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
+              <span class="text-normal">我的信息</span>
+            </a>
+          </li>
 
+        </ul>
+      </div>
+      <div class="sidebar-nav">
+        <div class="sidebar-title">
+          <a href="#">
+            <span class="icon"><b class="fl icon-arrow-down"></b></span>
+            <span class="text-normal">商品信息</span>
+          </a>
+        </div>
+        <ul class="sidebar-trans">
+          <li>
+            <a href="/GameIndex">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">商品列表</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-nav">
+        <div class="sidebar-title">
+          <a href="#">
+            <span class="icon"><b class="fl icon-arrow-down"></b></span>
+            <span class="text-normal">账户信息</span>
+          </a>
+        </div>
+        <ul class="sidebar-trans">
+          <li>
+            <a href="/balance">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">我的账户</span>
+            </a>
+          </li>
+          <li>
+            <a href="/myorder">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">我的订单</span>
+            </a>
+          </li>
+          <li>
+            <a href="/findAllcart">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">购物车</span>
+            </a>
+          </li>
+          <li>
+            <a href="/findAllcart">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">购物记录</span>
+            </a>
+          </li>
+          <li>
+            <a href="ChangePayPwd.jsp">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">修改支付密码</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-nav">
+        <div class="sidebar-title">
+          <a href="#">
+            <span class="icon"><b class="fl icon-arrow-down"></b></span>
+            <span class="text-normal">商家信息</span>
+          </a>
+        </div>
+        <ul class="sidebar-trans">
+          <li>
+            <a href="/seller">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">成为商家</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-nav">
+        <div class="sidebar-title">
+          <a href="#">
+            <span class="icon"><b class="fl icon-arrow-down"></b></span>
+            <span class="text-normal">客户服务</span>
+          </a>
+        </div>
+        <ul class="sidebar-trans">
+          <li>
+            <a href="/findAllComplain">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">投诉</span>
+            </a>
+          </li>
+          <li>
+            <a href="/findAllAnnouncement">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">公告</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-nav">
+        <div class="sidebar-title">
+          <a href="/GameIndex">
+            <span class="icon"><b ></b></span>
+            <span class="text-normal">返回首页</span>
+          </a>
+        </div>
+
+      </div>
     </div>
   </div>
   <div class="view-product">
