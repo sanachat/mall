@@ -27,12 +27,8 @@
 <body>
 <h1><font color="red">修改成功</font></h1>
 <br>
-<button type="button">返回</button>
+<button type="button">请重新登陆</button>
 <form action="index.jsp" method="post"></form>
 <iframe name="sell" width="100%" height="200" frameborder="5"></iframe>
-<h2>
-    <ul>联系我们</ul>
-    <ul>站内公告</ul>
-</h2>
 </body>
 </html>

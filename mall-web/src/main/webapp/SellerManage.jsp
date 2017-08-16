@@ -72,7 +72,6 @@
   <div class="view-sidebar">
     <div class="sidebar-content">
       <div class="sidebar-nav">
-
         <div class="sidebar-title">
           <a href="#">
             <span class="icon"><b class="fl icon-arrow-down"></b></span>
@@ -81,7 +80,7 @@
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="webSet.html">
+            <a href="/userShow">
               <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
               <span class="text-normal">我的信息</span>
             </a>
@@ -98,7 +97,7 @@
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="userInfo.html">
+            <a href="/GameIndex">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">商品列表</span>
             </a>
@@ -120,31 +119,72 @@
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="userInfo.html">
+            <a href="/balance">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">我的账户</span>
             </a>
           </li>
           <li>
-            <a href="userInfo.html">
+            <a href="/findAllcart">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">购物车</span>
             </a>
           </li>
           <li>
-            <a href="userInfo.html">
+            <a href="/OrderGameList">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">购物记录</span>
             </a>
           </li>
+          <li>
+            <a href="ChangePayPwd.jsp">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">修改支付密码</span>
+            </a>
+          </li>
         </ul>
       </div>
-
-
-
       <div class="sidebar-nav">
         <div class="sidebar-title">
           <a href="#">
+            <span class="icon"><b class="fl icon-arrow-down"></b></span>
+            <span class="text-normal">商家信息</span>
+          </a>
+        </div>
+        <ul class="sidebar-trans">
+          <li>
+            <a href="/Seller">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">成为商家</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-nav">
+        <div class="sidebar-title">
+          <a href="#">
+            <span class="icon"><b class="fl icon-arrow-down"></b></span>
+            <span class="text-normal">客户服务</span>
+          </a>
+        </div>
+        <ul class="sidebar-trans">
+          <li>
+            <a href="/findAllAnnouncement">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">投诉</span>
+            </a>
+          </li>
+          <li>
+            <a href="/findAllComplain">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">公告</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-nav">
+        <div class="sidebar-title">
+          <a href="/SellerManage">
             <span class="icon"><b ></b></span>
             <span class="text-normal">返回首页</span>
           </a>
