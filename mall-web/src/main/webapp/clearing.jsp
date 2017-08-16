@@ -50,10 +50,6 @@
       <!--一级菜单循环从这里开始 ，动态循环显示一级菜单-->
       <div class="sidebar-nav">
         <div class="sidebar-title">
-          <a href="buy.jsp">
-            <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">我的账户</span>
-          </a>
         </div>
       </div>
     </div>

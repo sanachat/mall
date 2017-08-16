@@ -145,6 +145,9 @@
                 数量
               </div>
               <div class="th w20">
+                详情
+              </div>
+              <div class="th w20">
                 <a href="OrderInsert.jsp"  class="button-word2 btn_ajax_confirm">增加订单</a>
               </div>
             </div>
@@ -160,9 +163,11 @@
                     ${o.num}
                 </div>
                 <div class="td w20">
+                  <a href="/gamedetail?oid=${o.gameGoodId}"  class="button-word2 btn_ajax_confirm">查看</a>
+                </div>
+                <div class="td w20">
                   <a href="/shoppingdelete.action?pid=${o.shopId}"  class="button-word2 btn_ajax_confirm">删除</a>
                   <a href="/BanOne?uid=${o.shopId}"  class="button-word2 btn_ajax_confirm">结算</a>
-                  <a href="/gamedetail?oid=${o.gameGoodId}"  class="button-word2 btn_ajax_confirm">查看</a>
                 </div>
               </div>
             </c:forEach>

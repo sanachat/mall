@@ -35,7 +35,10 @@ public class ChangePaypwdServlet extends HttpServlet {
         if (oldpwd.equals(b.getPayPwd()) == false) {
             out.print("原密码输入错误！");
 
-        } else if (newpwd1.equals(newpwd2) == false) {
+        }else if(newpwd1.equals(oldpwd)){
+            out.print("新密码不能和原密码相同！");
+        }
+        else if (newpwd1.equals(newpwd2) == false) {
             out.print("两次密码输入不相同！");
         } else {
             b.setPayPwd(newpwd1);
