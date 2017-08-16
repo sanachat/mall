@@ -20,7 +20,7 @@ import java.io.PrintWriter;
  * Created by acer on 2017/8/16.
  */
 @WebServlet(name = "ClearingServlet", value = "/clearingOne")
-public class ClearingServlet extends HttpServlet {
+public class ClearingOneServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
