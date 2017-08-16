@@ -3,7 +3,7 @@ package com.hzit.web;
 import com.hzit.dao.OrderDao;
 import com.hzit.dao.SqlSessionHelper;
 import com.hzit.entity.Order;
-import org.apache.ibatis.session.SqlSession;
+import com.hzit.entity.UserInfo;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,23 +14,23 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Created by wan on 2017/8/10.
+ * Created by wan on 2017/8/16.
  */
-@WebServlet(name = "OrderGameListServlet",value = "/OrderGameList")
-public class OrderGameListServlet extends HttpServlet {
+@WebServlet(name = "MyOrderServlet",value = "/myorder")
+public class MyOrderServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setCharacterEncoding("utf-8");
         request.setCharacterEncoding("utf-8");
-        response.setContentType("text/html");
-        SqlSession session=SqlSessionHelper.getSqlSession();
-        OrderDao dao= session.getMapper(OrderDao.class);
-        String id=request.getParameter("oid");
-        List<Order> l=dao.selectdetail(Integer.parseInt(id));
-        request.setAttribute("l",l);
-        request.getRequestDispatcher("OrderGameFind.jsp").forward(request,response);
+        OrderDao dao= SqlSessionHelper.getSqlSession().getMapper(OrderDao.class);
+        UserInfo userInfo = (UserInfo) request.getSession().getAttribute("user");
+        int i=userInfo.getUserId();
+        List<Order> od=dao.selectbyuid(i);
+        request.setAttribute("od",od);
+        request.getRequestDispatcher("MyOrder.jsp").forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request,response);
+
     }
 }

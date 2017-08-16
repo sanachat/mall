@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.hzit.dao.OrderDao">
-    <insert id="insert" parameterType="Order">
-        INSERT INTO `order` VALUES(#{orderId},#{userId},#{date},#{price})
+<mapper namespace="com.hzit.dao.OrderDetailDao">
+    <insert id="insert" parameterType="OrderDetail">
+        INSERT INTO `orderdetail` VALUES(#{detailId},#{orderId},#{gamegoodId},#{prices},#{count},#{summoney})
     </insert>
-    <update id="update" parameterType="Order">
-        UPDATE `order` SET UserId=#{userId},date=#{date},Price=#{price} where  orderId=#{orderId}
+    <update id="update" parameterType="OrderDetail">
+        UPDATE `orderdetail` SET orderId=#{orderId},gamegoodId=#{gamegoodId},Prices=#{prices},`count`=#{count},summoney=#{summoney} where  orderId=#{orderId}
     </update>
     <delete id="delete"  parameterType="int">
-        delete  FROM `order` WHERE orderId=#{orderId}
+        delete  FROM `orderdetail` WHERE orderId=#{orderId}
     </delete>
-    <select id="selectall"  resultType="Order">
-        SELECT * FROM `order`
+    <select id="findall"  resultType="OrderDetail">
+        SELECT * FROM `orderdetail`
     </select>
-    <select id="selectbyid" parameterType="int" resultType="Order">
-        SELECT * FROM `order` WHERE OrderId=#{orderId}
-    </select>
-    <select id="selectbyuid" parameterType="int" resultType="Order">
-        SELECT * FROM `order` WHERE userId=#{userId}
+    <select id="findbyid" parameterType="int" resultType="OrderDetail">
+        SELECT * FROM `orderdetail` WHERE OrderId=#{orderId}
     </select>
 
     <resultMap type="Order" id="orderMap">
@@ -35,9 +32,9 @@
         </collection>
     </resultMap>
     <select id="selectdetail"  parameterType="int"  resultMap="orderMap">
-    select o.*,de.*
+        select o.*,de.*
 
-     from  `order` o, orderdetail de where  o.orderid=de.orderid and o.orderId=#{orderId}
+        from  `order` o, orderdetail de where  o.orderid=de.orderid and o.orderId=#{orderId}
 
     </select>
 </mapper>
