@@ -18,6 +18,8 @@ import java.io.IOException;
 @WebServlet(name = "SellerServlet",value = "/Seller")
 public class SellerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
         SqlSession session = SqlSessionHelper.getSqlSession();
         UserInfoDao dao = session.getMapper(UserInfoDao.class);
         UserInfo userInfo =(UserInfo)request.getSession().getAttribute("user");
