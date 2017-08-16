@@ -28,7 +28,6 @@ public class ShoppingCartServlet extends HttpServlet {
         request.setAttribute("list",list);
         request.getRequestDispatcher("ShoppingCart.jsp").forward(request,response);
     }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       doPost(request,response);
     }
