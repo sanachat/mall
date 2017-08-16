@@ -104,7 +104,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/OrderGameList">
+                        <a href="/myorder">
                             <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
                             <span class="text-normal">购物记录</span>
                         </a>
