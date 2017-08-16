@@ -46,10 +46,13 @@
       <li class="fl topbar-info-item">
         <div class="dropdown">
           <a href="#" class="topbar-btn">
-            <span class="fl text-normal">小朱</span>
+            <span class="fl text-normal">
+              <%=session.getAttribute("username")%>
+            </span>
             <span class="icon-arrow-down"></span>
           </a>
           <ul class="dropdown-menu">
+            <li><a href="editUser.jsp">编辑</a></li>
             <li><a href="login.html">退出</a></li>
           </ul>
         </div>

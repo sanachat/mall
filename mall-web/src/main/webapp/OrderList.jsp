@@ -33,10 +33,13 @@
             <li class="fl topbar-info-item">
                 <div class="dropdown">
                     <a href="#" class="topbar-btn">
-                        <span class="fl text-normal">小朱</span>
+                        <span class="fl text-normal">
+                            <%=session.getAttribute("username")%>
+                        </span>
                         <span class="icon-arrow-down"></span>
                     </a>
                     <ul class="dropdown-menu">
+                        <li><a href="editUser.jsp">编辑</a></li>
                         <li><a href="login.html">退出</a></li>
                     </ul>
                 </div>
@@ -166,7 +169,7 @@
                                     ${o.gamegoodinfo}
                                 </div>--%>
                                 <div class="td w20">
-                                <a href="/orderdelete?oid=${o.orderId}"  class="button-word2 btn_ajax_confirm">删除</a>
+                                <a href="#"  class="button-word2 btn_ajax_confirm">删除</a>
                                 <a href="OrderUpdate.jsp"  class="button-word2 btn_ajax_confirm">修改</a>
                                 <a href="OrderGameList.jsp"  class="button-word2 btn_ajax_confirm">查询</a>
                             </div>

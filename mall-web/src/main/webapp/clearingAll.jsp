@@ -36,6 +36,7 @@
             <span class="icon-arrow-down"></span>
           </a>
           <ul class="dropdown-menu">
+            <li><a href="editUser.jsp">编辑</a></li>
             <li><a href="login.html">退出</a></li>
           </ul>
         </div>
@@ -66,7 +67,7 @@
 
         <div class="authority">
           <h6 class="layout padding-left manage-head-con">
-            <form action="" method="post" style="margin-left: 300px;margin-top: 60px;">
+            <form action="/clearingAll" method="post" style="margin-left: 300px;margin-top: 60px;">
               请输入支付密码：<input type="password" name="password" style="margin-top: 50px;border: solid;color: #66c1e1"><br/>
               <button type="submit" name="sub" style="margin-top: 30px;font-size: 16px;">确定</button>
             </form>

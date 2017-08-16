@@ -1,8 +1,8 @@
 package com.hzit.web;
 
-import com.hzit.dao.AnnouncementDao;
+import com.hzit.dao.ComplainInfoDao;
 import com.hzit.dao.SqlSessionHelper;
-import com.hzit.entity.Announcement;
+import com.hzit.entity.ComplainInfo;
 import org.apache.ibatis.session.SqlSession;
 
 import javax.servlet.ServletException;
@@ -14,17 +14,18 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Created by THINK on 2017/8/10.
+ * Created by THINK on 2017/8/14.
  */
-@WebServlet(name = "AnnouncementServlet",urlPatterns = "/findAllAnnouncement")
-public class AnnouncementServlet extends HttpServlet {
+@WebServlet(name = "FindComplainByUserIdServlet",urlPatterns = "/findComplainByUserId")
+public class FindComplainByUserIdServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setCharacterEncoding("utf-8");
         request.setCharacterEncoding("utf-8");
-        AnnouncementDao dao= SqlSessionHelper.getSqlSession().getMapper(AnnouncementDao.class);
-        List<Announcement> list=dao.findAll();
-        request.setAttribute("li",list);
-        request.getRequestDispatcher("AnnouncementFindAll.jsp").forward(request,response);
+        response.setCharacterEncoding("utf-8");
+        String userID=request.getParameter("userId");
+        ComplainInfoDao dao=SqlSessionHelper.getSqlSession().getMapper(ComplainInfoDao.class);
+        List<ComplainInfo> c=dao.findComplainByUserId(Integer.parseInt(userID));
+        request.setAttribute("complainbyuserid",c);
+        request.getRequestDispatcher("FindComplainByUserId.jsp").forward(request,response);
 
     }
 

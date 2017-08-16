@@ -15,6 +15,20 @@
   <script type="text/javascript" src="Js/haidao.offcial.general.js"></script>
   <script type="text/javascript" src="Js/select.js"></script>
   <script type="text/javascript" src="Js/haidao.validate.js"></script>
+  <style>
+    .td {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .box {
+      width: 500px;
+      height: 200px;
+      background: #fff;
+      position: fixed;
+      top: 100px;
+    }
+  </style>
 </head>
 
 <body>
@@ -51,80 +65,13 @@
   <div class="view-sidebar">
     <div class="sidebar-content">
       <!--一级菜单循环从这里开始 ，动态循环显示一级菜单-->
-      <div class="sidebar-nav">
-        <div class="sidebar-title">
-          <a href="#">
-            <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">一级菜单</span>
-          </a>
-        </div>
-        <ul class="sidebar-trans">
-          <!--二级菜单循环从这里开始 ，动态循环显示二级菜单-->
-          <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
-            </a>
-          </li>
-          <!--二级菜单循环从这里结束 ，动态循环显示二级菜单-->
-          <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
-            </a>
-          </li>
-
-
-        </ul>
-      </div>
-      <!--一级菜单循环从这里结束 ，动态循环显示一级菜单-->
-      <!--一级菜单循环从这里开始 ，动态循环显示一级菜单-->
-      <div class="sidebar-nav">
-        <div class="sidebar-title">
-          <a href="#">
-            <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">一级菜单</span>
-          </a>
-        </div>
-        <ul class="sidebar-trans">
-          <!--二级菜单循环从这里开始 ，动态循环显示二级菜单-->
-          <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
-            </a>
-          </li>
-          <!--二级菜单循环从这里结束 ，动态循环显示二级菜单-->
-          <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
-            </a>
-          </li>
-
-
-        </ul>
-      </div>
-      <!--一级菜单循环从这里结束 ，动态循环显示一级菜单-->
     </div>
   </div>
   <div class="view-product">
     <div class="authority">
       <div class="authority-head">
         <div class="manage-head">
-          <h6 class="layout padding-left manage-head-con">用户管理
+          <h6 class="layout padding-left manage-head-con">管理员公告管理
             <span class="fr text-small text-normal padding-top">发布时间：2016-07-08</span>
             <span class="fr margin-large-right padding-top text-small text-normal">最新版本：<em class="text-main">2.4.0.160708</em></span>
           </h6>
@@ -132,41 +79,40 @@
       </div>
       <div class="authority-content">
         <div class="list-content show">
+          <a href="findAllAnnouncement"></a><br>
           <div class="offcial-table tr-border margin-big-top clearfix">
             <div class="tr-th clearfix">
-              <div class="th w20">
-                管理员
+              <div class="th w25">
+                公告编号
               </div>
-              <div class="th w20">
-                所属于角色
+              <div class="th w25">
+                公告名称
               </div>
-              <div class="th w20">
-                状态
+              <div class="th w25">
+                公告内容
               </div>
-              <div class="th w20">
-                创建时间
-              </div>
-              <div class="th w20">
+              <div class="th w25">
                 操作
               </div>
             </div>
+            <a href="addAnnouncement"></a>
+            <c:forEach var="a" items="${li}" >
             <div class="tr clearfix border-bottom-none">
-              <div class="td w20">
-                吴文杰
+              <div class="td w25">
+                ${a.announcementId}
               </div>
-              <div class="td w20">
-                管理员
+              <div class="td w25">
+                ${a.announcementName}
               </div>
-              <div class="td w20">
-                水电费
+              <div class="td w25">
+                  ${a.announcementContent}
               </div>
-              <div class="td w20">
-                2016-01-10 11:54:07
-              </div>
-              <div class="td w20">
-                <a href="#"  class="button-word2 btn_ajax_confirm">删除</a>
+              <div class="td w25">
+                <a href="AnnouncementAdd.jsp"  class="button-word2 btn_ajax_confirm">增加</a> |
+                <a href="/dodeleteAnnouncement.action?pid=${a.announcementId}"  class="button-word2 btn_ajax_confirm">删除</a>
               </div>
             </div>
+            </c:forEach>
           </div>
         </div>
         <div class="show-page padding-big-right">
@@ -198,6 +144,18 @@
       $(this).parent(".sidebar-nav").addClass("sidebar-nav-fold");
     }
   });
+  $(".td").click(function () {
+    var $box = $("<div class='box'></div>");
+
+    $("body").append($box)
+    $box.html($(this).html())
+    $box.css({"left": parseInt($("body").width())/2 + "px","margin-left": -parseInt( $box.width())/2+"px"})
+
+    $box.click(function () {
+//     $(this).css({"display": "none"})
+      $(this).remove();
+    })
+  })
 </script>
 </body>
 

@@ -1,8 +1,10 @@
 package com.hzit.web;
 
 import com.hzit.dao.BalanceDao;
+import com.hzit.dao.OrderDao;
 import com.hzit.dao.SqlSessionHelper;
 import com.hzit.entity.Balance;
+import com.hzit.entity.Order;
 import com.hzit.entity.UserInfo;
 import org.apache.ibatis.session.SqlSession;
 
@@ -15,36 +17,34 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * Created by acer on 2017/8/12.
+ * Created by acer on 2017/8/16.
  */
-@WebServlet(name = "ChangePaypwdServle", value = "/changePayPwd")
-public class ChangePaypwdServlet extends HttpServlet {
+@WebServlet(name = "ClearingServlet", value = "/clearingOne")
+public class ClearingOneServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
         SqlSession session = SqlSessionHelper.getSqlSession();
-        BalanceDao dao = session.getMapper(BalanceDao.class);
-        UserInfo userInfo=(UserInfo)request.getSession().getAttribute("user");
-        Balance balance=new Balance();
+        BalanceDao balanceDao = session.getMapper(BalanceDao.class);
+        OrderDao orderDao = session.getMapper(OrderDao.class);
+        UserInfo userInfo = (UserInfo) request.getSession().getAttribute("user");
+        Order order = (Order) request.getSession().getAttribute("order");
+        String pwd = request.getParameter("password");
+        Balance balance = new Balance();
         balance.setUserId(userInfo.getUserId());
-        Balance b=dao.findBalanceByUserid(balance);
-        String oldpwd = request.getParameter("oldpassword");
-        String newpwd1 = request.getParameter("newpassword1");
-        String newpwd2 = request.getParameter("newpassword2");
+        balance = balanceDao.findBalanceByUserid(balance);
         PrintWriter out = response.getWriter();
-        if (oldpwd.equals(b.getPayPwd()) == false) {
-            out.print("原密码输入错误！");
-
-        }else if(newpwd1.equals(oldpwd)){
-            out.print("新密码不能和原密码相同！");
-        }
-        else if (newpwd1.equals(newpwd2) == false) {
-            out.print("两次密码输入不相同！");
-        } else {
-            b.setPayPwd(newpwd1);
-            dao.updatePwd(b);
+        if (pwd.equals(balance.getPayPwd()) == false) {
+            out.print("支付密码输入错误！");
+        } else if (balance.getMoney() >= order.getPrice()) {
+            balance.setMoney(order.getPrice());
+            balanceDao.subMoney(balance);
             session.commit();
-            out.print("修改成功！");
+            out.print("结算成功");
+        } else {
+            out.print("余额不足");
+            orderDao.delete(userInfo.getUserId());
+            session.commit();
         }
 
 

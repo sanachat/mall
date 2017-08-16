@@ -40,10 +40,13 @@
       <li class="fl topbar-info-item">
         <div class="dropdown">
           <a href="#" class="topbar-btn">
-            <span class="fl text-normal">小朱</span>
+            <span class="fl text-normal">
+              <%=session.getAttribute("username")%>
+            </span>
             <span class="icon-arrow-down"></span>
           </a>
           <ul class="dropdown-menu">
+            <li><a href="editUser.jsp">编辑</a></li>
             <li><a href="login.html">退出</a></li>
           </ul>
         </div>
@@ -139,65 +142,42 @@
         <div class="list-content show">
           <div class="offcial-table tr-border margin-big-top clearfix">
             <div class="tr-th clearfix">
-              <div class="th w25">
+              <div class="th w20">
                 订单编号
               </div>
-              <div class="th w25">
+              <div class="th w20">
                 下单用户
               </div>
-              <div class="th w25">
+              <div class="th w20">
                 订单日期
               </div>
-              <div class="th w25">
-                总价
+              <div class="th w20">
+                创建时间
               </div>
-
+              <div class="th w20">
+                商品信息
+              </div>
             </div>
             <c:forEach var="o" items="${l}">
               <div class="tr clearfix border-bottom-none">
-                <div class="td w25">
+                <div class="td w10">
                     ${o.orderId}
                 </div>
-                <div class="td w25">
+                <div class="td w10">
                     ${o.userId}
                 </div>
-                <div class="td w25">
+                <div class="td w10">
                     ${o.date}
                 </div>
-                <div class="td w25">
+                <div class="td w10">
                     ${o.price}
-                </div></div><br/>
-<div class=" tr-th clearfix">
-
-  <div class="th w25">
-    商品id
-  </div>
-  <div class="th w25">
-    单价
-  </div>
-  <div class="th w25">
-    数量
-  </div>
-  <div class="th w25">
-  总价
-</div>
+                </div>
+                  <div class="td w50">
                     <c:forEach items="${o.orderDetail}" var="d">
-
-                      <div class="td w25">
-                          ${d.gamegoodId}
-                      </div>
-                      <div class="td w25">
-                          ${d.prices}
-                      </div>
-                      <div class="td w25">
-                          ${d.count}
-                      </div>
-                      <div class="td w25">
-                          ${d.summoney}
-                      </div><br/>
+                      ${d.summoney}${d.gamegoodId}<br/>
                     </c:forEach>
 
-</div>
+                  </div>
 
 
               </div>
