@@ -39,7 +39,7 @@ public class RegisterServlet extends HttpServlet {
         user.setLoginName(name);
         user.setUserSex(sex);
         user.setLoginPwd(pwd);
-        user.setUserName(tureName);
+        user.setUserName(tureName);//
         user.setTel(tel);
         user.setUserEmail(emil);
         user.setIdCard(idcard);
