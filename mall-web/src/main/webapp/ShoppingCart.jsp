@@ -241,7 +241,7 @@
             </c:forEach>
           </div>
           <h4>
-            <a href="clearing.jsp?uid=${o.userId}"><button style="margin-top:20px;margin-bottom:20px;margin-left: 90%; ">全部结算</button></a>
+            <a href="clearingAll.jsp?uid=${o.userId}"><button style="margin-top:20px;margin-bottom:20px;margin-left: 90%; ">全部结算</button></a>
           </h4>
         </div>
         <div class="show-page padding-big-right">
