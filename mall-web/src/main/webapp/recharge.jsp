@@ -163,13 +163,19 @@
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="/findAllAnnouncement">
+            <a href="ComplainAdd.jsp">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">投诉</span>
             </a>
           </li>
           <li>
-            <a href="/findAllComplain">
+            <a href="/findComplainByUserId">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">查看自己发布的投诉</span>
+            </a>
+          </li>
+          <li>
+            <a href="/userFindAllAnnouncement">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">公告</span>
             </a>
