@@ -24,6 +24,10 @@ public class BalanceServlet extends HttpServlet {
         UserInfo userInfo=(UserInfo)request.getSession().getAttribute("user");
         Balance balance=new Balance();
         balance.setUserId(userInfo.getUserId());
+        if(dao.findBalanceByUserid(balance)==null){
+            balance.setPayPwd("123");
+            dao.insert(balance);
+        }
         Balance b=dao.findBalanceByUserid(balance);
         request.getSession().setAttribute("balance", b);
         request.getRequestDispatcher("balance.jsp").forward(request, response);
