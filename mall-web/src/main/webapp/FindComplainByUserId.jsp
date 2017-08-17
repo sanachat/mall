@@ -63,61 +63,45 @@
   <div class="view-product">
     <div class="company_identify">
       <div class="manage-head">
-        <h6 class="padding-left manage-head-con">根据用户查询投诉</h6>
+        <h6 class="padding-left manage-head-con">显示投诉信息</h6>
       </div>
       <form name="" action="/findComplainByUserId" method="post" autocomplete="off">
-        <div class="basic-info-detail clearfix">
 
-          <div class="unit-style padding-big-lr clearfix">
-            <h4 class="real-name-head margin-large-top">显示投诉信息</h4>
-            <div class="real-name-con height-main margin-top-25">
-              <p class="content-left-zoon">
-                请输入用户ID：
-              </p>
-              <div class="content-right-zoon">
-                <input class="width-main input" type="text" name="userId" datatype="*" value="">
+          <div class="authority-content">
+            <div class="list-content show">
+              <div class="offcial-table tr-border margin-big-top clearfix">
+                <div class="tr-th clearfix">
+                  <div class="th w33">
+                    投诉编号
+                  </div>
+                  <div class="th w33">
+                    投诉人ID
+                  </div>
+                  <div class="th w33">
+                    投诉内容
+                  </div>
+                </div>
+                <a href="/findComplainByUserId"></a>
+                <c:forEach var="c" items="${complainbyuserid}" >
+                  <div class="tr clearfix border-bottom-none">
+                    <div class="td w33">
+                        ${c.complainId}
+                    </div>
+                    <div class="td w33">
+                        ${c.userId}
+                    </div>
+                    <div class="td w33">
+                        ${c.content}
+                    </div>
+                  </div>
+                </c:forEach>
               </div>
             </div>
           </div>
-        </div>
-        <div class="unit-style padding-large-tb clearfix">
-          <div class="margin-large-top padding-left text-left content-right-zoon">
-            <input type="submit" value="确认" class="submit fl">
-          </div>
-        </div>
+
       </form>
     </div>
-    <div class="authority-content">
-      <div class="list-content show">
-        <div class="offcial-table tr-border margin-big-top clearfix">
-          <div class="tr-th clearfix">
-            <div class="th w33">
-              投诉编号
-            </div>
-            <div class="th w33">
-              投诉人ID
-            </div>
-            <div class="th w33">
-              投诉内容
-            </div>
-          </div>
-          <a href="/findComplainByUserId"></a>
-          <c:forEach var="c" items="${complainbyuserid}" >
-            <div class="tr clearfix border-bottom-none">
-              <div class="td w33">
-                  ${c.complainId}
-              </div>
-              <div class="td w33">
-                  ${c.userId}
-              </div>
-              <div class="td w33">
-                  ${c.content}
-              </div>
-            </div>
-          </c:forEach>
-        </div>
-      </div>
-    </div>
+
   </div>
 
 

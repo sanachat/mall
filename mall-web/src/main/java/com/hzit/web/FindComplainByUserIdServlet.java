@@ -3,6 +3,7 @@ package com.hzit.web;
 import com.hzit.dao.ComplainInfoDao;
 import com.hzit.dao.SqlSessionHelper;
 import com.hzit.entity.ComplainInfo;
+import com.hzit.entity.UserInfo;
 import org.apache.ibatis.session.SqlSession;
 
 import javax.servlet.ServletException;
@@ -21,9 +22,10 @@ public class FindComplainByUserIdServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
-        String userID=request.getParameter("userId");
+        UserInfo userInfo=(UserInfo)request.getSession().getAttribute("user");
+        int id=userInfo.getUserId();
         ComplainInfoDao dao=SqlSessionHelper.getSqlSession().getMapper(ComplainInfoDao.class);
-        List<ComplainInfo> c=dao.findComplainByUserId(Integer.parseInt(userID));
+        List<ComplainInfo> c=dao.findComplainByUserId(id);
         request.setAttribute("complainbyuserid",c);
         request.getRequestDispatcher("FindComplainByUserId.jsp").forward(request,response);
 
