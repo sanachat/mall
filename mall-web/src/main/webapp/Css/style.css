@@ -6,7 +6,7 @@ body{font-family: 'Lantinghei SC','microsoft yahei', Tahoma, Helvetica, SimSun, 
 .icon-notice { background-position: -26px 0; }
 
 /*框架*/
-.view-topbar {position: relative; position: fixed;  width: 100%; min-width: 640px; height: 50px; background: #045eca; z-index: 101; }
+.view-topbar {position: relative; position: fixed;  width: 100%; min-width: 640px; height: 50px; background: #097ac8; z-index: 101; }
 .view-body { position: absolute; width: 100%; min-width: 1200px; top: 50px; bottom: 0px; background-color: #045eca; }
 .view-body .view-sidebar { position: fixed; top: 50px; bottom: 0px; background-color: #293038; z-index: 102; }
 .view-product { width: auto; position: absolute; top: 0px; left: 180px; bottom: 0px; right: 0px;padding-bottom:50px;overflow: auto; background: #FFF; }
@@ -24,11 +24,11 @@ body{font-family: 'Lantinghei SC','microsoft yahei', Tahoma, Helvetica, SimSun, 
 .topbar-info { position: absolute; right: 0; top: 0; background: #097ac8; }
 .topbar-info .topbar-notice { position: relative; margin-left: 1px; padding: 0 20px; }
 .topbar-info .topbar-notice .icon-notice { float: left; margin: 17px 5px 17px 0; }
-.topbar-info .topbar-notice .topbar-num { font-size: 12px; color: #00ace9; background: #0087b4; border-radius: 5px; padding: 2px 5px; display: inline-block; margin-top: 15px; line-height: 16px; vertical-align: top; text-align: center; }
+.topbar-info .topbar-notice .topbar-num { font-size: 12px; color: #097ac8; background: #097ac8; border-radius: 5px; padding: 2px 5px; display: inline-block; margin-top: 15px; line-height: 16px; vertical-align: top; text-align: center; }
 .topbar-info .topbar-notice .topbar-num.have { color: #cccc00; background: #f90; }
 .topbar-info .topbar-info-item { margin-left: 1px; }
 .view-topbar .topbar-info .topbar-btn { padding: 0 10px; height: 50px; display: block; z-index: 2; background: #097ac8; }
-.topbar-info .topbar-btn:hover,.topbar-info .topbar-btn.topbar-btn-dark { background: #; }
+.topbar-info .topbar-btn:hover,.topbar-info .topbar-btn.topbar-btn-dark { background: #097ac8; }
 .topbar-info .dropdown-menu { width: 100%; z-index: 1; }
 .topbar-info .icon-arrow-down { float: right; margin: 17px 0 17px 5px; }
 .topbar-info .dropdown-menu { width: 100%; min-width: 0px; margin-top: -1px; }
@@ -47,7 +47,7 @@ body{font-family: 'Lantinghei SC','microsoft yahei', Tahoma, Helvetica, SimSun, 
 .sidebar-nav .sidebar-title .icon { float: left; padding: 12px 17px; width: 50px; height: 40px;background: none; }
 .sidebar-nav .sidebar-title .icon b { transition: all 0.2s; }
 .sidebar-nav .sidebar-trans li a:hover { background-color: #000000; }
-.sidebar-nav .sidebar-trans li.active a { background: #2a94de; }
+.sidebar-nav .sidebar-trans li.active a { background: #097ac8; }
 .sidebar-nav .sidebar-trans .sidebar-icon { float: left; padding: 12px 17px; width: 50px; height: 40px; opacity: 0.65; filter: alpha(opacity=65); }
 .sidebar-nav .sidebar-trans a:hover .sidebar-icon,
 .sidebar-nav .sidebar-trans li.active .sidebar-icon { opacity: 1; filter: alpha(opacity=100); }
@@ -78,14 +78,14 @@ body{font-family: 'Lantinghei SC','microsoft yahei', Tahoma, Helvetica, SimSun, 
 
 
 .manage-detail{border-bottom:1px dashed #959595;margin:0 20px;padding: 20px 10px;}
-.manage-detail h6{color:#098cba;line-height:26px;}
+.manage-detail h6{color:#097ac8;line-height:26px;}
 .manage-detail-con{height:30px;}
 .manage-detail-con span{display:block;margin-right:45px;margin-top:7px;}
 .manage-detail-con span em{font-style:normal;color:#ea544a;line-height:22px;}
 .manage-detail-con .recharge{width:80px;height:30px;background:#ea544a;text-align:center;line-height:30px;color:#fff;display:block;border-radius:3px;}
 .manage-detail-con .recharge:hover{background:#ef7f77;}
-.manage-detail-con .custom{width:120px;hegiht:30px;background:#0098ce;text-align:center;line-height:30px;color:#fff;display:block;border-radius:3px;}
-.manage-detail-con .custom:hover{background:#40b2da;}
+.manage-detail-con .custom{width:120px;hegiht:30px;background:#097ac8;text-align:center;line-height:30px;color:#fff;display:block;border-radius:3px;}
+.manage-detail-con .custom:hover{background:#097ac8;}
 .manage-detail-con .title{margin-top: 0;line-height: 26px;}
 .manage-detail-con .title em{padding-top: 2px;}
 .charge-now{display: block;width: 260px;line-height: 40px;padding:0;font-size:14px;margin:0 auto;}
@@ -108,9 +108,9 @@ body{font-family: 'Lantinghei SC','microsoft yahei', Tahoma, Helvetica, SimSun, 
 
 /*head*/
 .manage-head{border-bottom:1px solid #d9dfe4;padding:15px 0;margin:0 20px;}
-.manage-head-con{position:relative;height:18px;line-height:18px;color:#363636;border-left:2px solid #0098cd;font-size:16px;}
-.manage-title{display:block;color:#098cba;height:24px;line-height:24px;font-size: 14px;}
-.solid-slider{position:absolute;border-bottom:2px solid #098cba;}
+.manage-head-con{position:relative;height:18px;line-height:18px;color:#097ac8;border-left:2px solid #097ac8;font-size:16px;}
+.manage-title{display:block;color:#097ac8;height:24px;line-height:24px;font-size: 14px;}
+.solid-slider{position:absolute;border-bottom:2px solid #097ac8;}
 .manage-head a {border: 1px solid #cecece;padding: 0 10px;margin-top: -5px;line-height: 25px;border-radius: 3px;display: block;font-size: 10px;color: #565656;font-weight: normal;background-color: #f4f4f4;}
 .manage-head .order-back {background-size: 12px;background-color: #F7F7F7;}
 
@@ -120,7 +120,7 @@ body{font-family: 'Lantinghei SC','microsoft yahei', Tahoma, Helvetica, SimSun, 
 
 /*金币管理*/
 .own{margin-left:45px;font-size:12px;color:#505050}
-.coin_attent{border-bottom:1px dashed #dedede;color:#0098ce;font-size:14px;padding:20px 0;padding-left: 10px;}
+.coin_attent{border-bottom:1px dashed #dedede;color:#097ac8;font-size:14px;padding:20px 0;padding-left: 10px;}
 
 
 .table-margin{margin:20px 20px 0 20px;}
@@ -129,8 +129,8 @@ body{font-family: 'Lantinghei SC','microsoft yahei', Tahoma, Helvetica, SimSun, 
 .border-dd{border-bottom: 1px dashed #d9d9d9;margin-top:15px;}
 .custom-lists,.cost-lists{margin-top:20px;}
 .cost-lists li a{display: block;padding: 0 15px;color:#404040;cursor: pointer;}
-.cost-lists li a:hover{color:#098cba;}
-.cost-lists .list-tab a{background:#fff;height:32px;border-top: 2px solid #0098cd;margin-top:-1px;margin-bottom:-1px;}
+.cost-lists li a:hover{color:#097ac8;}
+.cost-lists .list-tab a{background:#fff;height:32px;border-top: 2px solid #097ac8;margin-top:-1px;margin-bottom:-1px;}
 .cost-lists .list-tab a:hover{color:#404040;}
 .cost-check{padding: 15px;line-height: 34px;border-bottom: 1px solid #d9d9d9;}
 .cost-product{width: 150px;float: left;height: 32px;line-height: 32px;color:#575757;font-size: 14px;}
@@ -146,7 +146,7 @@ body{font-family: 'Lantinghei SC','microsoft yahei', Tahoma, Helvetica, SimSun, 
 .pay-index li{line-height: 28px;float: left;margin-right: 10px;}
 .pay-index li a{color:#5f5f5f;background: #c7cdd3;padding: 0 10px;display: block;cursor: pointer;}
 .pay-index li a:hover{color: #353535;background: #e1e1e1;}
-.pay-index .list-tab a,.pay-index .list-tab a:hover{color:#fff;background: #0098ce;}
+.pay-index .list-tab a,.pay-index .list-tab a:hover{color:#fff;background: #097ac8;}
 
 
 .record-content,.border-gray-around{border:1px solid #C6C6C6;}
@@ -188,7 +188,7 @@ body{font-family: 'Lantinghei SC','microsoft yahei', Tahoma, Helvetica, SimSun, 
 .offcial-table .offical-td{width:100%;height:40px;overflow:hidden;}
 .white-space{white-space:nowrap;}
 .table-radius{display:block;width:5px;height:5px;border-radius:5px;margin-top:18px;padding:0;}
-.tr-show-hover .table-radius{background:#1491bd;}
+.tr-show-hover .table-radius{background:#097ac8;}
 .tr-show-hover .color-black{color:#585858;}
 .tr-float{height:50px;padding-left:20px;}
 .tr-float li{float: left;}
