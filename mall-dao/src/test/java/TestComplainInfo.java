@@ -20,7 +20,7 @@ public class TestComplainInfo {
         }*/
 
         //用户根据自己的userid查看自己发布的投诉
-        list=dao.findComplainByUserId(2);
+        list=dao.findComplainByUserId(1);
         for(ComplainInfo s:list){
             System.out.println(s);
         }

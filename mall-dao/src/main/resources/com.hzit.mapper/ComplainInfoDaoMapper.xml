@@ -5,7 +5,7 @@
         SELECT * FROM complain
     </select>
     <select id="findComplainByUserId" parameterType="java.lang.Integer" resultType="ComplainInfo">
-        SELECT * FROM complain WHERE UserId=#{userId}
+        SELECT complain.`ComplainId`,complain.`UserId`,complain.`Content` FROM userinfo JOIN complain ON userinfo.`UserId`=complain.`UserId` WHERE complain.`UserId`=#{userId}
     </select>
     <insert id="insertComplain" parameterType="ComplainInfo">
         INSERT INTO complain VALUES (#{complainId},#{userId},#{content})
