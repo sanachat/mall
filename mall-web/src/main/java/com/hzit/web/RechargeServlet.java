@@ -32,7 +32,9 @@ public class RechargeServlet extends HttpServlet {
         String money = request.getParameter("money");
         balance.setMoney(Integer.parseInt(money));
         PrintWriter out = response.getWriter();
-        if (password.equals(balance.getPayPwd()) == false) {
+        if (password == null || password.length() <= 0) {
+            out.print("密码不能为空！");
+        } else if (password.equals(balance.getPayPwd()) == false) {
             out.print("密码输入错误！");
 
         } else if (balance.getMoney() <= 0) {

@@ -27,6 +27,7 @@ public class BalanceServlet extends HttpServlet {
         Balance balance=new Balance();
         balance.setUserId(userInfo.getUserId());
         if(dao.findBalanceByUserid(balance)==null){
+            balance.setUserId(userInfo.getUserId());
             balance.setPayPwd("123");
             dao.insert(balance);
             session.commit();
