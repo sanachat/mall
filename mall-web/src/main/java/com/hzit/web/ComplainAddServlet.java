@@ -22,7 +22,8 @@ import java.io.IOException;
 public class ComplainAddServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
-        response.setContentType("text/html;charset=utf-8");
+        response.setCharacterEncoding("utf-8");
+        //response.setContentType("text/html;charset=utf-8");
         UserInfo userInfo=(UserInfo)request.getSession().getAttribute("user");
         int id=userInfo.getUserId();
         String content=request.getParameter("content");
@@ -34,12 +35,14 @@ public class ComplainAddServlet extends HttpServlet {
         int num=dao.insertComplain(c);
         if(num==1){
             session.commit();
-            String script = "<script>alert('添加成功')</script>";
-            response.getWriter().print(script);
+            //String script = "<script>alert('添加成功')</script>";
+            //response.getWriter().print(script);
+            request.getRequestDispatcher("/findComplainByUserId").forward(request,response);
         }else{
             session.rollback();
-            String script = "<script>alert('添加失败')</script>";
-            response.getWriter().print(script);
+           // String script = "<script>alert('添加失败')</script>";
+            //response.getWriter().print(script);
+            request.getRequestDispatcher("/addComplain").forward(request,response);
         }
     }
 
