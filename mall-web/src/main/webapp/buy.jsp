@@ -81,7 +81,7 @@
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="webSet.html">
+            <a href="/userShow">
               <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
               <span class="text-normal">我的信息</span>
             </a>
@@ -98,7 +98,7 @@
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="userInfo.html">
+            <a href="/GameIndex">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">商品列表</span>
             </a>
@@ -120,13 +120,13 @@
             </a>
           </li>
           <li>
-            <a href="userInfo.html">
+            <a href="/findAllcart">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">购物车</span>
             </a>
           </li>
           <li>
-            <a href="userInfo.html">
+            <a href="/OrderGameList">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">购物记录</span>
             </a>
@@ -148,7 +148,7 @@
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="userInfo.html">
+            <a href="/Seller">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">成为商家</span>
             </a>
@@ -186,7 +186,7 @@
 
       <div class="sidebar-nav">
         <div class="sidebar-title">
-          <a href="#">
+          <a href="/GameIndex">
             <span class="icon"><b ></b></span>
             <span class="text-normal">返回首页</span>
           </a>

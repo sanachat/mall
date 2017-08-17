@@ -24,7 +24,7 @@ public class OrderGameListServlet extends HttpServlet {
         response.setContentType("text/html");
         SqlSession session=SqlSessionHelper.getSqlSession();
         OrderDao dao= session.getMapper(OrderDao.class);
-        String id=request.getParameter("orderId");
+        String id=request.getParameter("oid");
         List<Order> l=dao.selectdetail(Integer.parseInt(id));
         request.setAttribute("l",l);
         request.getRequestDispatcher("OrderGameFind.jsp").forward(request,response);

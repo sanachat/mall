@@ -5,10 +5,13 @@
         INSERT INTO userinfo VALUES(null,#{loginName},#{loginPwd},#{pwdQuestion},#{pwdAnswer},#{userSex},#{userName},#{tel},#{address},#{idCard},#{storeName},#{userEmail},2,1)
     </insert>
     <update id="updateUser" parameterType="UserInfo">
-        UPDATE userinfo SET LoginPwd=#{LoginPwd},PwdQuestion=#{PwdQuestion},PwdAnswer=#{PwdAnswer},Tel=#{Tel},Address=#{Address},UserEmail=#{UserEmail}
+        UPDATE userinfo SET LoginPwd=#{loginPwd},PwdQuestion=#{pwdQuestion},PwdAnswer=#{pwdAnswer},Tel=#{tel},Address=#{address},UserEmail=#{userEmail} WHERE Userid=#{userId}
     </update>
     <select id="checkLogin"  parameterType="UserInfo" resultType="UserInfo">
         SELECT * FROM userinfo WHERE LoginName=#{loginName} AND LoginPwd=#{loginPwd}
+    </select>
+    <select id="findUserById" parameterType="int" resultType="UserInfo">
+        SELECT * FROM userinfo WHERE UserId=#{userId}
     </select>
     <select id="findAll" resultType="com.hzit.entity.UserInfo" resultMap="UserMap">
         SELECT * FROM userinfo LEFT JOIN userstate ON userinfo.`UserStateId`=userstate.`UserStateId`

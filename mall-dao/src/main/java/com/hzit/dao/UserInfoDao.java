@@ -17,4 +17,5 @@ public interface UserInfoDao {
     public UserInfo checkLogin(UserInfo userInfo);//检查登录名和密码
     public int stUserState(int userid);
     public int fzUserState(int userid);
+    public List<UserInfo> findUserById(int userid);
 }

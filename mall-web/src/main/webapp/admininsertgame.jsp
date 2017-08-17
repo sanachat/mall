@@ -48,7 +48,7 @@
       <li class="fl topbar-info-item">
         <div class="dropdown">
           <a href="#" class="topbar-btn">
-            <span class="fl text-normal">欢迎</span>
+            <span class="fl text-normal">管理员</span>
             <span class="icon-arrow-down"></span>
           </a>
           <ul class="dropdown-menu">
@@ -76,12 +76,6 @@
             <a href="/adminshow">
               <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
               <span class="text-normal">用户列表</span>
-            </a>
-          </li>
-          <li>
-            <a href="adminupdatestate.jsp">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">修改用户状态</span>
             </a>
           </li>
           <li>
@@ -157,19 +151,19 @@
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="userInfo.html">
+            <a href="/findAllComplain">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">投诉处理</span>
             </a>
           </li>
           <li>
-            <a href="userInfo.html">
+            <a href="AnnouncementAdd.jsp">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">发布公告</span>
             </a>
           </li>
           <li>
-            <a href="userInfo.html">
+            <a href="/findAllAnnouncement">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">公告</span>
             </a>

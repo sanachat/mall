@@ -20,4 +20,7 @@ public interface GameGoodInfoDao
     public int deleteGood(int gameGoodId);
 
     public List<GamegoodInfo> list();
+
+    public List<GamegoodInfo> findAllByName(String name);
+
 }

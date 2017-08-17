@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
         user.setLoginPwd(pwd);
         UserInfo userInfo=dao.checkLogin(user);
         if(userInfo==null){
-            response.sendRedirect("register.html");//
+            response.sendRedirect("register.html");
         }else{
             int stateid=userInfo.getUserStateId();
             if(stateid==2){
@@ -40,13 +40,15 @@ public class LoginServlet extends HttpServlet {
                 response.getWriter().print(script);
             }else {
                 request.getSession().setAttribute("user", userInfo);
-                String n = userInfo.getLoginName();
+                String n = userInfo.getUserName();
                 request.getSession().setAttribute("username", n);
                 int roleid = userInfo.getRoleId();
                 if (roleid == 1) {
                     response.sendRedirect("/adminshow");
-                } else {
-                    response.sendRedirect("buy.jsp");
+                } else if (roleid==3){
+                    response.sendRedirect("/SellerManage");
+                }else{
+                    response.sendRedirect("/GameIndex");
                 }
             }
         }
