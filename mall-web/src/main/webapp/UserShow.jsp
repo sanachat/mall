@@ -50,9 +50,7 @@
   <div class="view-sidebar">
     <div class="sidebar-content">
       <div class="sidebar-nav">
-
         <div class="sidebar-title">
-
           <a href="#">
             <span class="icon"><b class="fl icon-arrow-down"></b></span>
             <span class="text-normal">个人信息</span>
@@ -77,7 +75,7 @@
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="userInfo.html">
+            <a href="/GameIndex">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">商品列表</span>
             </a>
@@ -99,13 +97,13 @@
             </a>
           </li>
           <li>
-            <a href="userInfo.html">
+            <a href="/findAllcart">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">购物车</span>
             </a>
           </li>
           <li>
-            <a href="userInfo.html">
+            <a href="/myorder">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">购物记录</span>
             </a>
@@ -127,7 +125,7 @@
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="userInfo.html">
+            <a href="/Seller">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">成为商家</span>
             </a>
@@ -143,13 +141,19 @@
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="/findAllAnnouncement">
+            <a href="ComplainAdd.jsp">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">投诉</span>
             </a>
           </li>
           <li>
-            <a href="/findAllComplain">
+            <a href="/findComplainByUserId">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">查看自己发布的投诉</span>
+            </a>
+          </li>
+          <li>
+            <a href="/userFindAllAnnouncement">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">公告</span>
             </a>
@@ -159,7 +163,7 @@
 
       <div class="sidebar-nav">
         <div class="sidebar-title">
-          <a href="#">
+          <a href="/GameIndex">
             <span class="icon"><b ></b></span>
             <span class="text-normal">返回首页</span>
           </a>

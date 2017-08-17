@@ -27,7 +27,7 @@
 .step-going.border-dashed {border-style: dashed;}
 .step-going.border-main {border-color: #40b2da;}
 .step-going.border-dashed {border-style: dashed;}
-.basic-info-detail{border:1px solid #ebeef1;margin:0 20px;}
+.basic-info-detail{border:1px solid #ebeef1;margin:0 20px;height:400px;}
 .real-name-head span{color:#858585;font-size: 12px;letter-spacing: 1px;}
 .real-name-detail{width:75%;float:right;font-size: 14px;}
 .real-name-detail em{margin-top:-2px;margin-left:5px;}
