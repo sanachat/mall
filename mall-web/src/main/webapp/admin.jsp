@@ -154,19 +154,19 @@
 						</div>
 						<ul class="sidebar-trans">
 							<li>
-								<a href="userInfo.html">
+								<a href="/findAllComplain">
 									<b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
 									<span class="text-normal">投诉处理</span>
 								</a>
 							</li>
 							<li>
-								<a href="userInfo.html">
+								<a href="AnnouncementAdd.jsp">
 									<b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
 									<span class="text-normal">发布公告</span>
 								</a>
-							</li>
+							</li>o
 							<li>
-								<a href="userInfo.html">
+								<a href="/findAllAnnouncement">
 									<b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
 									<span class="text-normal">公告</span>
 								</a>
