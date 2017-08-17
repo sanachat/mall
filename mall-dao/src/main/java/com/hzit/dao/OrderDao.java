@@ -14,6 +14,7 @@ public interface OrderDao {
     public int update(Order order);//更新订单
     public int delete(int orderId);//根据订单号删除
     public int insert(Order order);//新增订单
+    public Order selectBytime(String time);
 
 
 }
