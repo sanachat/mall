@@ -45,8 +45,10 @@ public class LoginServlet extends HttpServlet {
                 int roleid = userInfo.getRoleId();
                 if (roleid == 1) {
                     response.sendRedirect("/adminshow");
-                } else {
-                    response.sendRedirect("buy.jsp");
+                } else if (roleid==3){
+                    response.sendRedirect("/SellerManage");
+                }else{
+                    response.sendRedirect("/GameIndex");
                 }
             }
         }

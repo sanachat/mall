@@ -54,67 +54,115 @@
                 <div class="sidebar-title">
                     <a href="#">
                         <span class="icon"><b class="fl icon-arrow-down"></b></span>
-                        <span class="text-normal">一级菜单</span>
+                        <span class="text-normal">个人信息</span>
                     </a>
                 </div>
                 <ul class="sidebar-trans">
-                    <!--二级菜单循环从这里开始 ，动态循环显示二级菜单-->
                     <li>
-                        <a href="#">
+                        <a href="/userShow">
                             <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-                            <span class="text-normal">二级菜单</span>
+                            <span class="text-normal">我的信息</span>
                         </a>
                     </li>
-                    <!--二级菜单循环从这里结束 ，动态循环显示二级菜单-->
-                    <li>
-                        <a href="#">
-                            <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-                            <span class="text-normal">二级菜单</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-                            <span class="text-normal">二级菜单</span>
-                        </a>
-                    </li>
-
 
                 </ul>
             </div>
-            <!--一级菜单循环从这里结束 ，动态循环显示一级菜单-->
-            <!--一级菜单循环从这里开始 ，动态循环显示一级菜单-->
             <div class="sidebar-nav">
                 <div class="sidebar-title">
                     <a href="#">
                         <span class="icon"><b class="fl icon-arrow-down"></b></span>
-                        <span class="text-normal">一级菜单</span>
+                        <span class="text-normal">商品信息</span>
                     </a>
                 </div>
                 <ul class="sidebar-trans">
-                    <!--二级菜单循环从这里开始 ，动态循环显示二级菜单-->
                     <li>
-                        <a href="#">
-                            <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-                            <span class="text-normal">二级菜单</span>
+                        <a href="/GameIndex">
+                            <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+                            <span class="text-normal">商品列表</span>
                         </a>
                     </li>
-                    <!--二级菜单循环从这里结束 ，动态循环显示二级菜单-->
-                    <li>
-                        <a href="#">
-                            <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-                            <span class="text-normal">二级菜单</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-                            <span class="text-normal">二级菜单</span>
-                        </a>
-                    </li>
-
-
                 </ul>
+            </div>
+            <div class="sidebar-nav">
+                <div class="sidebar-title">
+                    <a href="#">
+                        <span class="icon"><b class="fl icon-arrow-down"></b></span>
+                        <span class="text-normal">账户信息</span>
+                    </a>
+                </div>
+                <ul class="sidebar-trans">
+                    <li>
+                        <a href="/balance">
+                            <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+                            <span class="text-normal">我的账户</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/findAllcart">
+                            <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+                            <span class="text-normal">购物车</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/myorder">
+                            <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+                            <span class="text-normal">购物记录</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="ChangePayPwd.jsp">
+                            <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+                            <span class="text-normal">修改支付密码</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-nav">
+                <div class="sidebar-title">
+                    <a href="#">
+                        <span class="icon"><b class="fl icon-arrow-down"></b></span>
+                        <span class="text-normal">商家信息</span>
+                    </a>
+                </div>
+                <ul class="sidebar-trans">
+                    <li>
+                        <a href="/Seller">
+                            <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+                            <span class="text-normal">成为商家</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-nav">
+                <div class="sidebar-title">
+                    <a href="#">
+                        <span class="icon"><b class="fl icon-arrow-down"></b></span>
+                        <span class="text-normal">客户服务</span>
+                    </a>
+                </div>
+                <ul class="sidebar-trans">
+                    <li>
+                        <a href="/findAllAnnouncement">
+                            <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+                            <span class="text-normal">投诉</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/findAllComplain">
+                            <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+                            <span class="text-normal">公告</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-nav">
+                <div class="sidebar-title">
+                    <a href="/GameIndex">
+                        <span class="icon"><b ></b></span>
+                        <span class="text-normal">返回首页</span>
+                    </a>
+                </div>
             </div>
             <!--一级菜单循环从这里结束 ，动态循环显示一级菜单-->
         </div>
@@ -168,7 +216,7 @@
                                         ${o.gamegoodinfo}
                                     </div>--%>
                                 <div class="td w20">
-                                    <a href="#"  class="button-word2 btn_ajax_confirm">购买</a>
+                                    <a href="/jiesuan?price=${o.unitPrice}&gameGoodId=${o.gameGoodId}"  class="button-word2 btn_ajax_confirm">购买</a>
                                     <a href="/Addcart?price=${o.unitPrice}&gameGoodName=${o.gameGoodName}&gameGoodId=${o.gameGoodId}"  class="button-word2 btn_ajax_confirm">加入购物车</a>
                                     <a href="/gamedetail?oid=${o.gameGoodId}"  class="button-word2 btn_ajax_confirm">查看</a>
                                 </div>

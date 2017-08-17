@@ -11,24 +11,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 /**
- * Created by Tracy McGrady on 2017/8/10.
+ * Created by wan on 2017/8/12.
  */
-@WebServlet(name = "SellerManageServlet",value = "/SellerManage")
-public class SellerManageServlet extends HttpServlet {
+@WebServlet(name = "GameDetailServlet",value = "/gamedetail")
+public class GameDetailServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        SqlSession session = SqlSessionHelper.getSqlSession();
-        GameGoodInfoDao dao = session.getMapper(GameGoodInfoDao.class);
+        response.setCharacterEncoding("utf-8");
         request.setCharacterEncoding("utf-8");
-        response.setContentType("text/html;charset=utf-8");
-        List<GamegoodInfo> list = dao.findAllGood();
-        request.getSession().setAttribute("list", list);
-        response.sendRedirect("SellerManage.jsp");
+        response.setContentType("text/html");
+        PrintWriter ou = response.getWriter();
+        SqlSession session= SqlSessionHelper.getSqlSession();
+        GameGoodInfoDao dao=session.getMapper(GameGoodInfoDao.class);
+        String de=request.getParameter("oid");
+        GamegoodInfo gd=dao.findOneGood(Integer.parseInt(de));
+        request.setAttribute("gd",gd);
+        request.getRequestDispatcher("GameDetail.jsp").forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
+        doPost(request,response);
     }
 }

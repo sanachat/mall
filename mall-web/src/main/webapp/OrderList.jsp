@@ -60,7 +60,7 @@
                 </div>
                 <ul class="sidebar-trans">
                     <li>
-                        <a href="#">
+                        <a href="/userShow">
                             <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
                             <span class="text-normal">我的信息</span>
                         </a>
