@@ -30,16 +30,18 @@ public class RechargeServlet extends HttpServlet {
         balance = dao.findBalanceByUserid(balance);
         String password = request.getParameter("password");
         String money = request.getParameter("money");
-        balance.setMoney(Integer.parseInt(money));
         PrintWriter out = response.getWriter();
-        if (password == null || password.length() <= 0) {
-            out.print("密码不能为空！");
+        if (password == null || password.length() <= 0 || money == null || money.length() <= 0) {
+            out.print("密码或金额不能为空！");
         } else if (password.equals(balance.getPayPwd()) == false) {
             out.print("密码输入错误！");
+        }
 
-        } else if (balance.getMoney() <= 0) {
+        balance.setMoney(Double.parseDouble(money));
+        if (password.equals(balance.getPayPwd()) && balance.getMoney() <= 0) {
             out.print("您的金额输入不合法");
-        } else {
+        }
+        if (password.equals(balance.getPayPwd()) && balance.getMoney() > 0) {
             dao.addMoney(balance);
             session.commit();
             out.print("充值成功！");
