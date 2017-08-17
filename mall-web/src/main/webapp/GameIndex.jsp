@@ -15,6 +15,25 @@
     <script type="text/javascript" src="Js/haidao.offcial.general.js"></script>
     <script type="text/javascript" src="Js/select.js"></script>
     <script type="text/javascript" src="Js/haidao.validate.js"></script>
+    <style>
+       .smallImg{
+           width: 30px;
+           height:20px;
+       }
+    </style>
+    <script>
+        $(function(){
+        $("img.smallImg").each(function(){
+            $(this).hover(function(){
+                $(this).stop().animate({"width": "120px","height": "80px"});
+            },function(){
+                $(this).stop().animate({"width": "30px","height": "20px"});
+            })
+        })
+    })
+
+
+    </script>
 </head>
 
 <body>
@@ -216,7 +235,7 @@
                                         ${o.unitPrice}
                                 </div>
                                 <div class="td w20">
-                                    <img src="${o.pictureUrl}">
+                                    <img src="${o.pictureUrl}" class="smallImg">
                                 </div>
                                     <%--<div class="td w20">
                                         ${o.gamegoodinfo}
