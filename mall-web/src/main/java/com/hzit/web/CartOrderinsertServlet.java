@@ -53,7 +53,7 @@ public class CartOrderinsertServlet extends HttpServlet {
         orderdetail.setSummoney(price);
         detail.insert(orderdetail);
         session.commit();
-        request.getSession().setAttribute("orderAll", orderdetail);
+        request.getSession().setAttribute("order", o);
         response.sendRedirect("clearingOne.jsp");
     }
 
