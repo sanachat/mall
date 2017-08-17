@@ -37,24 +37,28 @@ public class JiesuanServlet extends HttpServlet {
         order.setPrice(Double.parseDouble(p));
         int num = or.insert(order);
         session.commit();
-        OrderDetail orderdetail = new OrderDetail();
-        String g = request.getParameter("gameGoodId");
-        orderdetail.setPrices(Double.parseDouble(p));
-        orderdetail.setOrderId(order.getOrderId());
-        orderdetail.setGamegoodId(Integer.parseInt(g));
-        orderdetail.setPrices(Double.parseDouble(p));
-        orderdetail.setCount(1);
-        orderdetail.setSummoney(orderdetail.getPrices());
-        detail.insert(orderdetail);
-        session.commit();
-
-        request.getSession().setAttribute("orderAll", orderdetail);
-        response.sendRedirect("OrderList.jsp");
-
+//        OrderDetail orderdetail = new OrderDetail();
+//        String g = request.getParameter("gameGoodId");
+//        orderdetail.setPrices(Double.parseDouble(p));
+//        orderdetail.setOrderId(order.getOrderId());
+//        orderdetail.setGamegoodId(Integer.parseInt(g));
+//        orderdetail.setPrices(Double.parseDouble(p));
+//        orderdetail.setCount(1);
+//        orderdetail.setSummoney(orderdetail.getPrices());
+//        detail.insert(orderdetail);
+//        session.commit();
+//
+//        request.getSession().setAttribute("orderAll", orderdetail);
+        if(num==1){
+            response.sendRedirect("clearingAll.jsp");
+        }
+        else{
+            response.sendRedirect("GameIndex.jsp");
+        }
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doPost(request,response);
     }
 }
