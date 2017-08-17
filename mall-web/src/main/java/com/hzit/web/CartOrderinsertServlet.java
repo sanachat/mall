@@ -1,8 +1,10 @@
 package com.hzit.web;
 
 import com.hzit.dao.OrderDao;
+import com.hzit.dao.OrderDetailDao;
 import com.hzit.dao.SqlSessionHelper;
 import com.hzit.entity.Order;
+import com.hzit.entity.OrderDetail;
 import org.apache.ibatis.session.SqlSession;
 
 import javax.servlet.ServletException;
@@ -27,30 +29,34 @@ public class CartOrderinsertServlet extends HttpServlet {
         response.setContentType("text/html");
         SqlSession session= SqlSessionHelper.getSqlSession();
         OrderDao dao= session.getMapper(OrderDao.class);
-        String userId=(String)request.getSession().getAttribute("uid");
-        String price= (String)request.getSession().getAttribute("money");
+        OrderDetailDao detail = session.getMapper(OrderDetailDao.class);
+        int userId= (Integer)request.getSession().getAttribute("uid");
+        double price= (Double)request.getSession().getAttribute("money");
         Date date=new Date();
         DateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String time=format.format(date);
         Order o=new Order();
-        o.setUserId(Integer.parseInt(userId));
+        o.setUserId(userId);
         o.setDate(time);
-        o.setPrice(Double.parseDouble(price));
+        o.setPrice(price);
         int num=dao.insert(o);
         session.commit();
-        PrintWriter ou = response.getWriter();
-        if(num==1){
-            System.out.println(num);
-            ou.print("添加订单成功");
-        }
-        else{
-            session.rollback();
-            System.out.println("增加失败");
-            ou.print("添加订单失败");
-        }
+        Order to=new Order();
+        to=dao.selectBytime(time);
+        int id=to.getOrderId();
+        OrderDetail orderdetail = new OrderDetail();
+        int g = (Integer)request.getSession().getAttribute("goodid");
+        orderdetail.setOrderId(id);
+        orderdetail.setGamegoodId(g);
+        orderdetail.setPrices(price);
+        orderdetail.setCount(1);
+        orderdetail.setSummoney(price);
+        detail.insert(orderdetail);
+        session.commit();
+        request.getSession().setAttribute("orderAll", orderdetail);
+        response.sendRedirect("clearingOne.jsp");
     }
-    //
-    //
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request,response);
     }

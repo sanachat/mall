@@ -147,7 +147,7 @@
                 详情
               </div>
               <div class="th w20">
-                <a href="OrderInsert.jsp"  class="button-word2 btn_ajax_confirm">增加订单</a>
+                操作
               </div>
             </div>
             <c:forEach var="o" items="${list}">
@@ -166,7 +166,7 @@
                 </div>
                 <div class="td w20">
                   <a href="/shoppingdelete.action?pid=${o.shopId}"  class="button-word2 btn_ajax_confirm">删除</a>
-                  <a href="/BanOne?sid=${o.shopId}&goodId=${o.gameGoodId}"  class="button-word2 btn_ajax_confirm">结算</a>
+                  <a href="/BanOne?sid=${o.shopId}&goodId=${o.gameGoodId}&uid=${o.userId}"  class="button-word2 btn_ajax_confirm">结算</a>
                 </div>
               </div>
             </c:forEach>

@@ -15,6 +15,6 @@
     SELECT SUM(price*num) from ShoppingCart WHERE userId=#{userId}
 </select>
     <select id="banlanceBygameGoodId" parameterType="int" resultType="int" >
-        SELECT SUM(price*num) from ShoppingCart WHERE userId=#{0} and gameGoodId=#{1}
+        SELECT SUM(price*num) from ShoppingCart WHERE userId=#{0} and shopId=#{1}
     </select>
 </mapper>
