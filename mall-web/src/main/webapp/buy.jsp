@@ -170,7 +170,7 @@
             </a>
           </li>
           <li>
-            <a href="FindComplainByUserId.jsp">
+            <a href="/findComplainByUserId">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">查看自己发布的投诉</span>
             </a>
