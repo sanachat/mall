@@ -202,7 +202,7 @@
 									<div class="th w10">
 										商品名
 									</div>
-									<div class="th w10">
+									<div class="th w15">
 										所属游戏
 									</div>
 									<div class="th w15">
@@ -215,12 +215,9 @@
 										库存数量
 									</div>
 									<div class="th w10">
-										商店名
-									</div>
-									<div class="th w10">
 										价格
 									</div>
-									<div class="th w10">
+									<div class="th w15">
 										操作
 									</div>
 								</div>
@@ -232,7 +229,7 @@
 									<div class="td w10">
 										${list.gameGoodName}
 									</div>
-									<div class="td w10">
+									<div class="td w15">
 										${list.gameInfo.gameName}
 									</div>
 									<div class="td w15">
@@ -245,14 +242,11 @@
 										${list.gameGoodCount}
 									</div>
 									<div class="td w10">
-										${list.sellerName}
-									</div>
-									<div class="td w10">
 										${list.unitPrice}
 									</div>
 
-									<div class="td w10">
-										<a href="admindeletegood?goodid=${list.gameGoodId}" class="button-word2 btn_ajax_confirm">删除</a>
+									<div class="td w15">
+										<a href="admindeletegood?goodid=${list.gameGoodId}" class="button-word2 btn_ajax_confirm">下架</a>
 									</div>
 								</div>
 								</c:forEach>

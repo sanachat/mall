@@ -34,7 +34,7 @@ public class AnnouncementAddServlet extends HttpServlet {
            response.sendRedirect("/findAllAnnouncement");
         }else{
             session.rollback();
-            System.out.println("AnnouncementAdd.jsp");
+            System.out.println("/findAllAnnouncement");
         }
 
     }
