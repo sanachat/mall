@@ -49,6 +49,7 @@ public class JiesuanServlet extends HttpServlet {
         session.commit();
 
         request.getSession().setAttribute("orderAll", orderdetail);
+        response.sendRedirect("OrderList.jsp");
 
 
     }

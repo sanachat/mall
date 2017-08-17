@@ -23,9 +23,12 @@ public class SellerServlet extends HttpServlet {
         SqlSession session = SqlSessionHelper.getSqlSession();
         UserInfoDao dao = session.getMapper(UserInfoDao.class);
         UserInfo userInfo =(UserInfo)request.getSession().getAttribute("user");
-        dao.updateSeller(userInfo.getUserId());
-        session.commit();
-        response.sendRedirect("login.html");
+        int num = dao.updateSeller(userInfo.getUserId());
+        if(num==1) {
+            session.commit();
+            String script = "<script>alert('修改成功！请重新登录！');location.href='login.html'</script>";
+            response.getWriter().print(script);
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
