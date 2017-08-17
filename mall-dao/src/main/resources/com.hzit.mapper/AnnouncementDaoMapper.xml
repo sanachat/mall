@@ -8,7 +8,7 @@
         SELECT * FROM announcement WHERE AnnouncementId=#{announcementId}
     </select>
     <insert id="insertAnnouncement" parameterType="Announcement">
-        INSERT INTO announcement VALUES (#{announcementId},#{announcementContent},#{announcementName})
+        INSERT INTO announcement VALUES (NULL,#{announcementName},#{announcementContent})
     </insert>
     <delete id="deleteAnnouncement" parameterType="String">
         DELETE FROM announcement WHERE AnnouncementId=#{announcementId}

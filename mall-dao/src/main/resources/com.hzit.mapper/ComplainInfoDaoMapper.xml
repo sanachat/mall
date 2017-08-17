@@ -8,7 +8,7 @@
         SELECT complain.`ComplainId`,complain.`UserId`,complain.`Content` FROM userinfo JOIN complain ON userinfo.`UserId`=complain.`UserId` WHERE complain.`UserId`=#{userId}
     </select>
     <insert id="insertComplain" parameterType="ComplainInfo">
-        INSERT INTO complain VALUES (#{complainId},#{userId},#{content})
+        INSERT INTO complain VALUES (NULL,#{userId},#{content})
     </insert>
     <delete id="deleteComplain" parameterType="java.lang.Integer">
         DELETE FROM complain WHERE ComplainId=#{complainId}

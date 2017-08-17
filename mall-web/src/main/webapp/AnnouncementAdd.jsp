@@ -81,14 +81,6 @@
             <h4 class="real-name-head margin-large-top">填写公告信息</h4>
             <div class="real-name-con height-main margin-top-25">
               <p class="content-left-zoon">
-                公告编号
-              </p>
-              <div class="content-right-zoon">
-                <input class="width-main input" type="text" name="announcementId" datatype="*" value="">
-              </div>
-            </div>
-            <div class="real-name-con height-main margin-top-25">
-              <p class="content-left-zoon">
                 公告名称
               </p>
               <div class="content-right-zoon">

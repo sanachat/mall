@@ -74,22 +74,6 @@
             <h4 class="real-name-head margin-large-top">填写投诉信息</h4>
             <div class="real-name-con height-main margin-top-25">
               <p class="content-left-zoon">
-                投诉编号
-              </p>
-              <div class="content-right-zoon">
-                <input class="width-main input" type="text" name="complainId" datatype="*" value="">
-              </div>
-            </div>
-            <div class="real-name-con height-main margin-top-25">
-              <p class="content-left-zoon">
-                投诉人编号
-              </p>
-              <div class="content-right-zoon">
-                <input class="width-main input" type="text" name="userId" datatype="*" value="">
-              </div>
-            </div>
-            <div class="real-name-con height-main margin-top-25">
-              <p class="content-left-zoon">
                 投诉内容
               </p>
               <div class="content-right-zoon">
