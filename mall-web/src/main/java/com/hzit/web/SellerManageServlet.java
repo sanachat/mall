@@ -3,6 +3,7 @@ package com.hzit.web;
 import com.hzit.dao.GameGoodInfoDao;
 import com.hzit.dao.SqlSessionHelper;
 import com.hzit.entity.GamegoodInfo;
+import com.hzit.entity.UserInfo;
 import org.apache.ibatis.session.SqlSession;
 
 import javax.servlet.ServletException;
@@ -23,7 +24,8 @@ public class SellerManageServlet extends HttpServlet {
         GameGoodInfoDao dao = session.getMapper(GameGoodInfoDao.class);
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
-        List<GamegoodInfo> list = dao.findAllGood();
+        UserInfo userInfo = (UserInfo)request.getSession().getAttribute("user");
+        List<GamegoodInfo> list = dao.findAllByName(userInfo.getLoginName());
         request.getSession().setAttribute("list", list);
         response.sendRedirect("SellerManage.jsp");
     }

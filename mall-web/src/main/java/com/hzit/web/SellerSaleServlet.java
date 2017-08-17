@@ -3,6 +3,7 @@ package com.hzit.web;
 import com.hzit.dao.GameGoodInfoDao;
 import com.hzit.dao.SqlSessionHelper;
 import com.hzit.entity.GamegoodInfo;
+import com.hzit.entity.UserInfo;
 import org.apache.ibatis.session.SqlSession;
 
 import javax.servlet.ServletException;
@@ -29,21 +30,20 @@ public class SellerSaleServlet extends HttpServlet {
         int c=Integer.parseInt(request.getParameter("gameserverid"));
         String d=request.getParameter("rolename");
         int e=Integer.parseInt(request.getParameter("gametypeid"));
-        int f=Integer.parseInt(request.getParameter("gamegoodsellcount"));
         int g=Integer.parseInt(request.getParameter("gamegoodcount"));
         String h=request.getParameter("describe");
-        String i=request.getParameter("sellername");
         double j =Double.parseDouble(request.getParameter("unitprice"));
+        UserInfo u = (UserInfo) request.getSession().getAttribute("user");
         gamegoodInfo.setUnitPrice(j);
         gamegoodInfo.setGameGoodName(a);
         gamegoodInfo.setGameId(b);
         gamegoodInfo.setGameServerId(c);
         gamegoodInfo.setRoleName(d);
         gamegoodInfo.setGameTypeId(e);
-        gamegoodInfo.setGameGoodSellCount(f);
+        gamegoodInfo.setGameGoodSellCount(0);
         gamegoodInfo.setGameGoodCount(g);
         gamegoodInfo.setDescribe(h);
-        gamegoodInfo.setSellerName(i);
+        gamegoodInfo.setUserId(u.getUserId());
         GamegoodInfo game = gamegoodInfo;
         int num = dao.insertGood(game);
         if(num==1) {

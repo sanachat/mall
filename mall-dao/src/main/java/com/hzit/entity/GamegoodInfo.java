@@ -30,7 +30,24 @@ public class GamegoodInfo {
     private GameInfo gameInfo;
     private GameServer gameServer;
     private GameType gameType;
+    private int userId;
+    private  UserInfo userInfo;
 
+    public UserInfo getUserInfo() {
+        return userInfo;
+    }
+
+    public void setUserInfo(UserInfo userInfo) {
+        this.userInfo = userInfo;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 
     public GameServer getGameServer() {
         return gameServer;
@@ -181,6 +198,8 @@ public class GamegoodInfo {
                 ", gameInfo=" + gameInfo +
                 ", gameServer=" + gameServer +
                 ", gameType=" + gameType +
+                ", userId=" + userId +
+                ", userInfo=" + userInfo +
                 '}';
     }
 }

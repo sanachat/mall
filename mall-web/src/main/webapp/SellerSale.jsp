@@ -122,7 +122,7 @@
             </a>
           </li>
           <li>
-            <a href="/OrderGameList">
+            <a href="/myorder">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">购物记录</span>
             </a>
@@ -235,14 +235,6 @@
             </div>
             <div class="real-name-con height-main margin-top-25">
               <p class="content-left-zoon">
-                售出数量
-              </p>
-              <div class="content-right-zoon">
-                <input class="width-main input" type="text" name="gamegoodsellcount" datatype="*" value="">
-              </div>
-            </div>
-            <div class="real-name-con height-main margin-top-25">
-              <p class="content-left-zoon">
                 库存数量
               </p>
               <div class="content-right-zoon">
@@ -255,14 +247,6 @@
               </p>
               <div class="content-right-zoon">
                 <input class="width-main input" type="text" name="describe" datatype="*" value="">
-              </div>
-            </div>
-            <div class="real-name-con height-main margin-top-25">
-              <p class="content-left-zoon">
-                卖家名称
-              </p>
-              <div class="content-right-zoon">
-                <input class="width-main input" type="text" name="sellername" datatype="*" value="">
               </div>
             </div>
             <div class="real-name-con height-main margin-top-25">

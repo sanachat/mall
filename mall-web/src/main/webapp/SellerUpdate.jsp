@@ -122,7 +122,7 @@
             </a>
           </li>
           <li>
-            <a href="/OrderGameList">
+            <a href="/myorder">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">购物记录</span>
             </a>
@@ -190,17 +190,8 @@
       </div>
       <form name="setp0" action="/SellerUpdate" method="post" autocomplete="off">
         <div class="basic-info-detail clearfix">
-
           <div class="unit-style padding-big-lr clearfix">
             <h4 class="real-name-head margin-large-top">修改商品信息</h4>
-            <div class="real-name-con height-main margin-top-25">
-              <p class="content-left-zoon">
-                商品编号
-              </p>
-              <div class="content-right-zoon">
-                <input class="width-main input" type="text" name="id" datatype="*" value="">
-              </div>
-            </div>
             <div class="real-name-con height-main margin-top-25">
               <p class="content-left-zoon">
                 售出商品数量

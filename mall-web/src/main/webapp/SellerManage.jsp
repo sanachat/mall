@@ -131,7 +131,7 @@
             </a>
           </li>
           <li>
-            <a href="/OrderGameList">
+            <a href="/myorder">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">购物记录</span>
             </a>
@@ -223,6 +223,9 @@
                 材料名称
               </div>
               <div class="th w10">
+                卖家
+              </div>
+              <div class="th w10">
                 售出数量
               </div>
               <div class="th w10">
@@ -251,6 +254,9 @@
                 </div>
                 <div class="td w10">
                     ${c.gameType.gameGoodType}
+                </div>
+                <div class="td w10">
+                    ${c.userInfo.loginName}
                 </div>
                 <div class="td w10">
                     ${c.gameGoodSellCount}

@@ -10,17 +10,19 @@
     <select id="list"  resultType="GamegoodInfo">
         SELECT *FROM  gamegood
     </select>
-    <select id="findAllGood"  resultType="com.hzit.entity.GamegoodInfo" resultMap="GameGoodMap">
+    <select id="findAllByName"  resultType="com.hzit.entity.GamegoodInfo" resultMap="SellerGameGoodMap">
         SELECT * FROM GAMEGOOD A  JOIN GAMEINFO B ON A.`GameId` = B.`GameId`
                                   JOIN gameserver C ON A.`GameServerId` = C.`GameServerId`
                                   JOIN GAMETYPE D ON A.`GameTypeId` = D.`GameTypeId`
+                                  JOIN userinfo E ON A.`UserId`=E.`UserId`
+                                  where loginName=#{loginName}
     </select>
     <select id="findOneGood" parameterType="java.lang.Integer" resultType="com.hzit.entity.GamegoodInfo">
         select * from gamegood where gamegoodid=#{gameGoodId}
     </select>
     <insert id="insertGood" parameterType="com.hzit.entity.GamegoodInfo">
-        insert into gamegood(gamegoodname,gameid,gameserverid,rolename,GameTypeId,gameGoodSellCount,gamegoodcount,`describe`,sellername,unitprice)
-                      values(#{gameGoodName},#{gameId},#{gameServerId},#{roleName},#{gameTypeId},#{gameGoodSellCount},#{gameGoodCount},#{describe},#{sellerName},#{unitPrice})
+        insert into gamegood(gamegoodname,gameid,gameserverid,rolename,GameTypeId,gameGoodSellCount,gamegoodcount,`describe`,userId,unitprice)
+                      values(#{gameGoodName},#{gameId},#{gameServerId},#{roleName},#{gameTypeId},#{gameGoodSellCount},#{gameGoodCount},#{describe},#{userId},#{unitPrice})
     </insert>
     <update id="updateGood" parameterType="com.hzit.entity.GamegoodInfo">
         update gamegood set gameGoodsellcount=#{gameGoodSellCount},gamegoodcount=#{gameGoodCount},`describe`=#{describe},unitprice=#{unitPrice},pictureUrl=#{pictureUrl}
@@ -29,9 +31,15 @@
     <delete id="deleteGood" parameterType="java.lang.Integer">
         delete from gamegood where gamegoodid = #{gameGoodId}
     </delete>
+    <select id="findAllGood"  resultType="com.hzit.entity.GamegoodInfo" resultMap="GameGoodMap">
+        SELECT * FROM GAMEGOOD A  JOIN GAMEINFO B ON A.`GameId` = B.`GameId`
+        JOIN gameserver C ON A.`GameServerId` = C.`GameServerId`
+        JOIN GAMETYPE D ON A.`GameTypeId` = D.`GameTypeId`
+    </select>
 
 
-    <resultMap type="GamegoodInfo" id="GameGoodMap">
+
+    <resultMap type="GamegoodInfo" id="SellerGameGoodMap">
         <id property="gameGoodId" column="GameGoodId"/>
         <result property="gameGoodName" column="GameGoodName"/>
         <result property="roleName" column="RoleName"/>
@@ -49,14 +57,40 @@
         <association property="gameType" javaType="com.hzit.entity.GameType">
             <result property="gameGoodType" column="GameGoodType"/>
         </association>
+        <association property="userInfo" javaType="com.hzit.entity.UserInfo">
+            <result property="loginName" column="LoginName"/>
+        </association>
     </resultMap>
 
+
+
+
+    <resultMap type="GamegoodInfo" id="GameGoodMap">
+    <id property="gameGoodId" column="GameGoodId"/>
+    <result property="gameGoodName" column="GameGoodName"/>
+    <result property="roleName" column="RoleName"/>
+    <result property="gameGoodSellCount" column="GameGoodSellCount"/>
+    <result property="gameGoodCount" column="GameGoodCount"/>
+    <result property="unitPrice" column="UnitPrice"/>
+    <result property="pictureUrl" column="PictureUrl"/>
+    <association property="gameInfo" javaType="com.hzit.entity.GameInfo">
+        <result property="gameName" column="GameName"/>
+        <result property="gameArea" column="GameArea"/>
+    </association>
+    <association property="gameServer" javaType="com.hzit.entity.GameServer">
+        <result property="gameServerName" column="GameServerName"/>
+    </association>
+    <association property="gameType" javaType="com.hzit.entity.GameType">
+        <result property="gameGoodType" column="GameGoodType"/>
+    </association>
+    </resultMap>
 
     <resultMap type="GamegoodInfo" id="gamegoodinfoMap">
         <id property="gamegoodid" column="gamegoodid" />
         <result property="gamegoodname" column="gamegoodname" />
         <result property="gameid" column="gameid" />
     </resultMap>
+
 
     <resultMap type="GamegoodInfo" id="gamegoodinfoOrderMap" extends="gamegoodinfoMap">
         <collection property="order" ofType="Order">
