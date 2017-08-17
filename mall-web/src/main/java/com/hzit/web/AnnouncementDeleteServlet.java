@@ -24,10 +24,10 @@ public class AnnouncementDeleteServlet extends HttpServlet {
         int num=dao.deleteAnnouncement(announcementid);
         session.commit();
         if(num==1){
-            response.sendRedirect("AnnouncementFindAll.jsp");
+            response.sendRedirect("/findAllAnnouncement");
         }else{
             session.rollback();
-            response.sendRedirect("AnnouncementFindAll.jsp");
+            response.sendRedirect("/findAllAnnouncement");
         }
     }
 
