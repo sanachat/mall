@@ -27,7 +27,6 @@ public class UserShowServlet extends HttpServlet {
         int id=userInfo.getUserId();
         List<UserInfo> findUserById=dao.findUserById(id);
         request.getSession().setAttribute("find",findUserById);
-        //response.sendRedirect("UserShow.jsp");
         request.getRequestDispatcher("UserShow.jsp").forward(request,response);
     }
 
