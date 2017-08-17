@@ -26,17 +26,18 @@ public class BanOneServlet extends HttpServlet {
         UserInfo userInfo=(UserInfo)request.getSession().getAttribute("user");
         int uid=userInfo.getUserId();
         int gid=Integer.parseInt(request.getParameter("goodId"));
-        int money=dao.banlanceBygameGoodId(uid,gid);
-        request.setAttribute("money",money);
-        request.setAttribute("uid",uid);
-        request.setAttribute("goodid",gid);
+        int sid=Integer.parseInt(request.getParameter("sid"));
+        double money=dao.banlanceBygameGoodId(uid,sid);
+        request.getSession().setAttribute("money", money);
+        request.getSession().setAttribute("uid", uid);
+        request.getSession().setAttribute("goodid",gid);
         //点击结算后清空购物车
         int sId=Integer.parseInt(request.getParameter("sid"));
         int num=0;
         num=dao.deleteshoppingcart(sId);
         if (num==1){
             session.commit();
-            request.getRequestDispatcher("/CartOrderinsert").forward(request,response);
+            response.sendRedirect("/CartOrderinsert");
         }else {
             response.getWriter().append("删除失败！");
         }

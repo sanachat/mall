@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hzit.dao.OrderDao">
     <insert id="insert" parameterType="Order">
-        INSERT INTO `order` VALUES(#{orderId},#{userId},#{date},#{price})
+        INSERT INTO `order` VALUES(NULL ,#{userId},#{date},#{price})
     </insert>
     <update id="update" parameterType="Order">
         UPDATE `order` SET UserId=#{userId},date=#{date},Price=#{price} where  orderId=#{orderId}
@@ -12,6 +12,9 @@
     </delete>
     <select id="selectall"  resultType="Order">
         SELECT * FROM `order`
+    </select>
+    <select id="selectBytime"  parameterType="String" resultType="Order">
+        SELECT * FROM `order` where Date=#{date}
     </select>
     <select id="selectbyid" parameterType="int" resultType="Order">
         SELECT * FROM `order` WHERE OrderId=#{orderId}
