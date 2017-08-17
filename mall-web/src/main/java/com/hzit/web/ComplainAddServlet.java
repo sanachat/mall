@@ -5,6 +5,7 @@ import com.hzit.dao.ComplainInfoDao;
 import com.hzit.dao.SqlSessionHelper;
 import com.hzit.entity.Announcement;
 import com.hzit.entity.ComplainInfo;
+import com.hzit.entity.UserInfo;
 import org.apache.ibatis.session.SqlSession;
 
 import javax.servlet.ServletException;
@@ -22,22 +23,26 @@ public class ComplainAddServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
-        String complainId=request.getParameter("complainId");
-        String userId=request.getParameter("userId");
+        //response.setContentType("text/html;charset=utf-8");
+        UserInfo userInfo=(UserInfo)request.getSession().getAttribute("user");
+        int id=userInfo.getUserId();
         String content=request.getParameter("content");
         SqlSession session=SqlSessionHelper.getSqlSession();
         ComplainInfoDao dao=session.getMapper(ComplainInfoDao.class);
         ComplainInfo c=new ComplainInfo();
-        c.setComplainId(Integer.parseInt(complainId));
-        c.setUserId(Integer.parseInt(userId));
+        c.setUserId(id);
         c.setContent(content);
         int num=dao.insertComplain(c);
         if(num==1){
             session.commit();
-            response.sendRedirect("ComplainFindAll.jsp");
+            //String script = "<script>alert('添加成功')</script>";
+            //response.getWriter().print(script);
+            request.getRequestDispatcher("/findComplainByUserId").forward(request,response);
         }else{
             session.rollback();
-            System.out.println("ComplainAdd.jsp");
+           // String script = "<script>alert('添加失败')</script>";
+            //response.getWriter().print(script);
+            request.getRequestDispatcher("/addComplain").forward(request,response);
         }
     }
 

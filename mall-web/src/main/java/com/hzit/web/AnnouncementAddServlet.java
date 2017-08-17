@@ -20,14 +20,12 @@ public class AnnouncementAddServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
-        String announcementId=request.getParameter("announcementId");
         String announcementname=request.getParameter("announcementName");
         String announcementContent=request.getParameter("announcementContent");
 
         SqlSession session=SqlSessionHelper.getSqlSession();
         AnnouncementDao dao= session.getMapper(AnnouncementDao.class);
         Announcement a=new Announcement();
-        a.setAnnouncementId(Integer.parseInt(announcementId));
         a.setAnnouncementName(announcementname);
         a.setAnnouncementContent(announcementContent);
         int num=dao.insertAnnouncement(a);

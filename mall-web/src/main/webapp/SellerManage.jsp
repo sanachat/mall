@@ -22,16 +22,23 @@
       font-size: 16px;
       text-align: center;
     }
+    .smallImg{
+      width: 30px;
+      height: 20px;
+    }
+
   </style>
   <script>
     $(function(){
+      $("img.smallImg").each(function(){
+        $(this).hover(function(){
+          $(this).stop().animate({"width": "120px","height": "80px"});
+        },function(){
+          $(this).stop().animate({"width": "30px","height": "20px"});
+        })
+      })
+    })
 
-    $("#img12").click(function(){
-    $(this).stop().animate({"width": "120px","height": "80px"});
-    },function(){
-    $(this).stop().animate({"width": "30px","height": "20px"});
-    })
-    })
 
   </script>
 </head>
@@ -180,19 +187,26 @@
         </div>
         <ul class="sidebar-trans">
           <li>
-            <a href="/findAllAnnouncement">
+            <a href="ComplainAdd.jsp">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">投诉</span>
             </a>
           </li>
           <li>
-            <a href="/findAllComplain">
+            <a href="/findComplainByUserId">
+              <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
+              <span class="text-normal">查看自己发布的投诉</span>
+            </a>
+          </li>
+          <li>
+            <a href="/userFindAllAnnouncement">
               <b class="sidebar-icon"><img src="Images/icon_cost.png" width="16" height="16" /></b>
               <span class="text-normal">公告</span>
             </a>
           </li>
         </ul>
       </div>
+
       <div class="sidebar-nav">
         <div class="sidebar-title">
           <a href="/SellerManage">
@@ -249,7 +263,7 @@
             <c:forEach var="c" items="${list}">
               <div class="tr clearfix border-bottom-none">
                 <div class="td w20" id="we">
-                  <img src=" ${c.pictureUrl}" title="${c.describe}" id="img12">
+                  <img src=" ${c.pictureUrl}" class="smallImg" title="${c.describe}">
                 </div>
                 <div class="td w10">
                     ${c.gameGoodId}

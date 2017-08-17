@@ -25,10 +25,10 @@ public class ComplainDeleteServlet extends HttpServlet {
         int num=dao.deleteComplain(Integer.parseInt(complainId));
         session.commit();
         if(num==1){
-            response.sendRedirect("ComplainFindAll.jsp");
+            response.sendRedirect("/findAllComplain");
         }else{
             session.rollback();
-            response.sendRedirect("ComplainFindAll.jsp");
+            response.sendRedirect("/findAllComplain");
         }
     }
 
