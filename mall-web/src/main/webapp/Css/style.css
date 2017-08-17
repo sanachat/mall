@@ -6,8 +6,8 @@ body{font-family: 'Lantinghei SC','microsoft yahei', Tahoma, Helvetica, SimSun, 
 .icon-notice { background-position: -26px 0; }
 
 /*框架*/
-.view-topbar {position: relative; position: fixed;  width: 100%; min-width: 640px; height: 50px; background: #2a94de; z-index: 101; }
-.view-body { position: absolute; width: 100%; min-width: 1200px; top: 50px; bottom: 0px; background-color: #000; }
+.view-topbar {position: relative; position: fixed;  width: 100%; min-width: 640px; height: 50px; background: #045eca; z-index: 101; }
+.view-body { position: absolute; width: 100%; min-width: 1200px; top: 50px; bottom: 0px; background-color: #045eca; }
 .view-body .view-sidebar { position: fixed; top: 50px; bottom: 0px; background-color: #293038; z-index: 102; }
 .view-product { width: auto; position: absolute; top: 0px; left: 180px; bottom: 0px; right: 0px;padding-bottom:50px;overflow: auto; background: #FFF; }
 #main-frame { width: 100%; height: 100%;}
@@ -20,15 +20,15 @@ body{font-family: 'Lantinghei SC','microsoft yahei', Tahoma, Helvetica, SimSun, 
 /*框架头部内容*/
 .tobar-head { width: 180px; }
 .tobar-head .topbar-logo { display: block; padding: 15px; width: 50px; height: 50px; background: #097ac8; }
-.topbar-console .topbar-home-link { width: 130px; border-right: 1px solid #008fbf; }
-.topbar-info { position: absolute; right: 0; top: 0; background: #008fbf; }
+.topbar-console .topbar-home-link { width: 130px; border-right: 1px solid #097ac8; }
+.topbar-info { position: absolute; right: 0; top: 0; background: #097ac8; }
 .topbar-info .topbar-notice { position: relative; margin-left: 1px; padding: 0 20px; }
 .topbar-info .topbar-notice .icon-notice { float: left; margin: 17px 5px 17px 0; }
 .topbar-info .topbar-notice .topbar-num { font-size: 12px; color: #00ace9; background: #0087b4; border-radius: 5px; padding: 2px 5px; display: inline-block; margin-top: 15px; line-height: 16px; vertical-align: top; text-align: center; }
-.topbar-info .topbar-notice .topbar-num.have { color: #fff; background: #f90; }
+.topbar-info .topbar-notice .topbar-num.have { color: #cccc00; background: #f90; }
 .topbar-info .topbar-info-item { margin-left: 1px; }
-.view-topbar .topbar-info .topbar-btn { padding: 0 10px; height: 50px; display: block; z-index: 2; background: #2a94de; }
-.topbar-info .topbar-btn:hover,.topbar-info .topbar-btn.topbar-btn-dark { background: #1380cb; }
+.view-topbar .topbar-info .topbar-btn { padding: 0 10px; height: 50px; display: block; z-index: 2; background: #097ac8; }
+.topbar-info .topbar-btn:hover,.topbar-info .topbar-btn.topbar-btn-dark { background: #; }
 .topbar-info .dropdown-menu { width: 100%; z-index: 1; }
 .topbar-info .icon-arrow-down { float: right; margin: 17px 0 17px 5px; }
 .topbar-info .dropdown-menu { width: 100%; min-width: 0px; margin-top: -1px; }
@@ -42,17 +42,17 @@ body{font-family: 'Lantinghei SC','microsoft yahei', Tahoma, Helvetica, SimSun, 
 /*框架左侧导航*/
 .sidebar-content { width: 180px; overflow: hidden; }
 .sidebar-nav a { display: block; width: 100%; height: 40px; line-height: 40px; color: #fff; }
-.sidebar-nav .sidebar-title a { background-color: #22282e; }
-.sidebar-nav .sidebar-title a:hover { background-color: #414d5c; }
+.sidebar-nav .sidebar-title a { background-color: #5f5f5f; }
+.sidebar-nav .sidebar-title a:hover { background-color: #5f5f5f; }
 .sidebar-nav .sidebar-title .icon { float: left; padding: 12px 17px; width: 50px; height: 40px;background: none; }
 .sidebar-nav .sidebar-title .icon b { transition: all 0.2s; }
-.sidebar-nav .sidebar-trans li a:hover { background-color: #37424f; }
+.sidebar-nav .sidebar-trans li a:hover { background-color: #000000; }
 .sidebar-nav .sidebar-trans li.active a { background: #2a94de; }
 .sidebar-nav .sidebar-trans .sidebar-icon { float: left; padding: 12px 17px; width: 50px; height: 40px; opacity: 0.65; filter: alpha(opacity=65); }
 .sidebar-nav .sidebar-trans a:hover .sidebar-icon,
 .sidebar-nav .sidebar-trans li.active .sidebar-icon { opacity: 1; filter: alpha(opacity=100); }
 .sidebar-nav .sidebar-trans .sidebar-icon img { display: block; width: 16px; height: 16px; }
-.sidebar-nav-fold .sidebar-title a { border-bottom: 1px solid #414d5c; background-color: #37424f; }
+.sidebar-nav-fold .sidebar-title a { border-bottom: 1px solid #000000; background-color: #293038; }
 .sidebar-nav-fold .sidebar-title .icon b { -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg); transform: rotate(-90deg); }
 .show-side {position: absolute;left: 0;bottom: 0px;width: 100%;height: 14px;text-align: center;display: none;}
 .show-side.show{display: block;}
