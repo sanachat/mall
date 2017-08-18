@@ -107,7 +107,7 @@
                     ${c.content}
                 </div>
                 <div class="td w25">
-                  <a href="ComplainAdd.jsp"  class="button-word2 btn_ajax_confirm">增加</a> |
+                  <a href="ComplainAdd.jsp"  class="button-word2 btn_ajax_confirm">回复</a> |
                   <a href="/dodeleteComplain.action?pid=${c.complainId}"  class="button-word2 btn_ajax_confirm">删除</a>
                 </div>
               </div>
