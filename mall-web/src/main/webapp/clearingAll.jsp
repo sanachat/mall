@@ -201,11 +201,13 @@
 
         <div class="authority">
           <h6 class="layout padding-left manage-head-con">
-            <form action="/clearingAll" method="post" style="margin-left: 300px;margin-top: 60px;">
-              共需支付：￥${orderAll.price}<br/>
-              请输入支付密码：<input type="password" name="password" style="margin-top: 50px;border: solid;color: #66c1e1"><br/>
-              <button type="submit" name="sub" style="margin-top: 30px;font-size: 16px;">确定</button>
-            </form>
+            <div align="center">
+              <form action="/clearingAll" method="post" style="margin-top: 30px;">
+                共需支付：￥${orderAll.price}<br/>
+                请输入支付密码：<input type="password" name="password" style="margin-top: 50px;border: solid;color: #66c1e1">
+                <button type="submit" name="sub" style="font-size: 16px;">确定</button>
+              </form>
+            </div>
           </h6>
         </div>
       </div>

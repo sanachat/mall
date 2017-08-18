@@ -202,12 +202,14 @@
 
                     <div class="authority">
                         <h6 class="layout padding-left manage-head-con">
-                            <form action="/changePayPwd" method="post" style="margin-left: 300px;margin-top: 60px;">
-                                请输入原密码：<input type="password" name="oldpassword" style="margin-top: 50px;border: solid;color: #66c1e1"><br/>
-                                请输入新密码：<input type="password" name="newpassword1" style="margin-top: 50px;border: solid;color: #66c1e1"><br/>
-                                请确定新密码：<input type="password" name="newpassword2" style="margin-top: 50px;border: solid;color: #66c1e1"><br/>
-                                <button type="submit" name="sub" style="margin-top: 30px;font-size: 16px;">提交</button>
-                            </form>
+                            <div align="center">
+                                <form action="/changePayPwd" method="post" style="margin-top: 30px;">
+                                    请输入原密码：<input type="password" name="oldpassword" style="margin-top: 50px;border: solid;color: #66c1e1"><br/>
+                                    请输入新密码：<input type="password" name="newpassword1" style="margin-top: 50px;border: solid;color: #66c1e1"><br/>
+                                    请确定新密码：<input type="password" name="newpassword2" style="margin-top: 50px;border: solid;color: #66c1e1"><br/>
+                                    <button type="submit" name="sub" style="margin-top: 30px;font-size: 16px;">提交</button>
+                                </form>
+                            </div>
                         </h6>
                     </div>
 

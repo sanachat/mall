@@ -198,7 +198,7 @@
                 订单日期
               </div>
               <div class="th w20">
-                创建时间
+                交易金额
               </div>
               <div class="th w20">
                 <a href="#"  class="button-word2 btn_ajax_confirm"> 操作</a>
