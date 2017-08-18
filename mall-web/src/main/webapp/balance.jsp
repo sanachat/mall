@@ -204,7 +204,7 @@
             <form action="balance" method="post" style="margin-left: 100px;margin-top: 60px;font-size: 18px;">
               ${user.userName}，您的余额为：￥${balance.money}
                 <a href="recharge.jsp">
-                  <button type="button" name="recharge" style="background: lightgreen;font-size: 20px;margin-left: 50px;">充值</button>
+                  <button type="button" name="recharge" style="background: #7b7b7b;font-size: 18px;margin-left: 50px;">充值</button>
                 </a>
         </form>
 

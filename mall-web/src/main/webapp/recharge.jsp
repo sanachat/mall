@@ -208,18 +208,21 @@
 
         <div class="authority">
           <h6 class="layout padding-left manage-head-con">
-            <form action="recharge" method="post" style="margin-left: 300px;margin-top: 60px;">
-              请选择充值方式：
-              <select name="name" style="font-size: 16px">
-                <option>中国工商银行</option>
-                <option>中国建设银行</option>
-                <option>支付宝</option>
-              </select></br>
-              账号：<input type="text" style="margin-top: 50px;border: solid;color: #66c1e1"><br/>
-              密码：<input type="password" name="password" style="margin-top: 50px;border: solid;color: #66c1e1"><br/>
-              金额：<input type="text" name="money" style="margin-top: 50px;border: solid;color: #66c1e1"><br/>
-              <button type="submit" name="sub" style="margin-top: 30px;font-size: 16px;">提交</button>
-            </form>
+            <div align="center">
+              <form action="recharge" method="post" style="margin-top: 30px;">
+                请选择充值方式：
+                <select name="name" style="font-size: 16px">
+                  <option>中国工商银行</option>
+                  <option>中国建设银行</option>
+                  <option>支付宝</option>
+                </select></br>
+                账号：<input type="text" style="margin-top: 50px;border: solid;color: #66c1e1"><br/>
+                密码：<input type="password" name="password" style="margin-top: 50px;border: solid;color: #66c1e1"><br/>
+                金额：<input type="text" name="money" style="margin-top: 50px;border: solid;color: #66c1e1"><br/>
+                <button type="submit" name="sub" style="margin-top: 30px;font-size: 16px;">提交</button>
+              </form>
+            </div>
+
           </h6>
         </div>
 
