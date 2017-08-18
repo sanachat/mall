@@ -8,11 +8,11 @@
 	<title>控制台-修改用户信息</title>
 	<link rel="stylesheet" type="text/css" href="Css/identify.css" />
 	<link rel="stylesheet" type="text/css" href="Css/layout.css" />
-	<link rel="stylesheet" type="text/css" href="Css/account.css" />
+	<%--<link rel="stylesheet" type="text/css" href="Css/account.css" />--%>
 	<link rel="stylesheet" type="text/css" href="Css/style.css" />
 	<link rel="stylesheet" type="text/css" href="Css/control_index.css" />
 	<script type="text/javascript" src="Js/jquery-1.7.2.min.js"></script>
-	<script type="text/javascript" src="Js/layer/layer.js"></script>
+	<script type="text/javascript" src="Js/layer.js"></script>
 	<script type="text/javascript" src="Js/haidao.offcial.general.js"></script>
 	<script type="text/javascript" src="Js/select.js"></script>
 	<script type="text/javascript" src="Js/haidao.validate.js"></script>
@@ -188,8 +188,14 @@
 			</div>
 
 			<form name="setp0" action="/edituser" method="post" autocomplete="off">
-				<div class="basic-info-detail clearfix">
-
+				<div class="basic-info-detail clearfix" style="position: relative">
+					<img src="" alt="" id="faceImg" style="border: 1px solid; width: 76px; height: 100px; padding: 5px; position: absolute;right: 32px; top: 20px"cursor: pointer;" onclick="toUpload();" />
+					<form id="formFile" method="post" enctype="multipart/form-data"  target="frameFile" >
+						<input type="button" value="上传" onclick="targ()" style="width: 60px;height:30px;line-height: 30px;text-align: center;background: #097ac8;border-radius: 3px;color:#fff;cursor: pointer"/>
+						<input type="file"  style="display: none" accept="image/*" onchange="getFilePath(this)" id="fileUpload" name="fileUpload" class="input-file" onchange="uploadFile();">
+						<input type="hidden" value="" id="oldFilePath" name="oldFilePath">
+					</form>
+					<img src="" id="Box" style="display:none;width: 76px;height: 100px;position: absolute;right: 32px; top: 20px" alt=""/>
 					<div class="unit-style padding-big-lr clearfix">
 						<div class="real-name-con height-main margin-top-25">
 							<table align = "left" border="0" cellpadding="0" cellspacing="20" style="font-size: medium"><!-- cellspacing="80"这个是外间距， -->
@@ -274,9 +280,9 @@
 						<div class="real-name-con height-main margin-top-25">
 							<table align = "left" border="0" cellpadding="0" cellspacing="20" style="font-size: medium"><!-- cellspacing="80"这个是外间距， -->
 								<tr>
-									<td>密保答案：</td>
+									<td>密保：</td>
 									<td><c:forEach var="u" items="${find}">
-										${u.pwdAnswer}
+										${u.pwdQuestion}
 									</c:forEach></td>
 								</tr>
 							</table>
@@ -284,9 +290,9 @@
 						<div class="real-name-con height-main margin-top-25">
 							<table align = "left" border="0" cellpadding="0" cellspacing="20" style="font-size: medium"><!-- cellspacing="80"这个是外间距， -->
 								<tr>
-									<td>密保：</td>
+									<td>密保答案：</td>
 									<td><c:forEach var="u" items="${find}">
-										${u.pwdQuestion}
+										${u.pwdAnswer}
 									</c:forEach></td>
 								</tr>
 							</table>
@@ -301,18 +307,31 @@
 								</tr>
 							</table>
 						</div>
+						<%--<div class="real-name-con height-main margin-top-25">
+
+							<img src="" alt="点击上传" id="faceImg" style="border: 1px solid; width: 50px; height: 50px; padding: 5px; cursor: pointer;" onclick="toUpload();" />
+							<form id="formFile" method="post" enctype="multipart/form-data"  target="frameFile" >
+								<input type="button" value="上传" onclick="targ()" style="width: 60px;height:30px;line-height: 30px;text-align: center;background: #097ac8;border-radius: 3px;color:#fff;cursor: pointer"/>
+								<input type="file"  style="display: none" accept="image/*" onchange="getFilePath(this)" id="fileUpload" name="fileUpload" class="input-file" onchange="uploadFile();">
+								<input type="hidden" value="" id="oldFilePath" name="oldFilePath">
+							</form>
+						</div>--%>
 						<div class="real-name-con height-main margin-top-25">
 							<a href="editUser.jsp" style="font-size: medium"  class="button-word2 btn_ajax_confirm">修改</a>
 						</div>
 						<p>&nbsp;</p>
+
 					</div>
 				</div>
 			</form>
 		</div>
 	</div>
 </div>
-
+<script src="Js/upload.js"></script>
 <script>
+	function targ(){
+		$("#fileUpload").trigger("click");
+	}
 	$(".sidebar-title").live('click', function() {
 		if($(this).parent(".sidebar-nav").hasClass("sidebar-nav-fold")) {
 			$(this).next().slideDown(200);
@@ -322,6 +341,27 @@
 			$(this).parent(".sidebar-nav").addClass("sidebar-nav-fold");
 		}
 	});
+	function toUpload() {
+		jQuery('#oldFilePath').val(getImgPath());
+		jQuery('#fileUpload').click();
+	};
+	function getImgPath() {
+		return jQuery('#faceImg').attr('src').replace(extApi.getWebRoot(), '');
+	};
+	function uploadFile() {
+		var form = jQuery("#formFile");
+		form.ajaxSubmit({
+			url : 'upload_img_used.action',
+			type : 'post',
+			beforeSubmit : function() {
+				layer.load();
+			},
+			success : function(data) {
+				layer.closeAll('loading');
+				jQuery('#faceImg').attr('src', extApi.getWebRoot() + data);
+			}
+		});
+	}
 </script>
 </body>
 
